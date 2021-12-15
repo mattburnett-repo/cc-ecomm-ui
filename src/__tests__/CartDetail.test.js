@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import CartDetail from '../components/carts';
+import Cart from '../components/cart/Cart';
 
-describe('CartDetail', () => {
+describe('Cart', () => {
     test('it has a cart detail component', () => {
 
     })
