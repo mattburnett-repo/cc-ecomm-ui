@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetail /> feature tests renders a snapshot 1`] = `
+<div>
+  <div
+    aria-label="name"
+    role="presentation"
+  >
+    product_name_02
+  </div>
+  <img
+    alt="product_name_02"
+    aria-label="product-image"
+    src="http://www.image.com/item/2"
+  />
+  <div
+    aria-label="description"
+    role="presentation"
+  >
+    Description: 
+    product_desc_02
+  </div>
+  <div
+    aria-label="price"
+    role="presentation"
+  >
+    Price: 
+    2.00
+  </div>
+  <input
+    aria-label="quantity"
+    placeholder="Enter product quantity"
+  />
+  <button
+    aria-label="add-to-cart"
+  >
+    Add To Cart
+  </button>
+</div>
+`;

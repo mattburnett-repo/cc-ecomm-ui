@@ -1,6 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, cleanup, fireEvent } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
+
 import ProductDetail from '../../components/product/ProductDetail';
-import fs from 'fs'
 
 const mockData = 
 {
@@ -12,41 +14,68 @@ const mockData =
     "price": "2.00"
 };
 
-describe('<ProductDetail /> basic render', () => {
+describe('<ProductDetail /> component tests', () => {
     // FIXME: this should be beforeAll, but beforeAll blows out the tests after the first one runs...
-    beforeEach(() => {
-        render(<ProductDetail data={mockData} />);
-    });
+    beforeEach(() => render(<ProductDetail data={mockData} />));
+    afterAll(() => cleanup());
 
-    it('should have a product image', () => {
+    it('should display a product image', () => {
         screen.getByRole('img', {name: /product-image/i});
     });
-    it('should have a description', () => {
+    it('should display a name', () => {
+        screen.getByRole('presentation', {name: /name/i});
+    });
+    it('should display a description', () => {
         screen.getByRole('presentation', {name: /description/i});
     });
-    it('should show a price', () => {
+    it('should display a price', () => {
         screen.getByRole('presentation', {name: /price/i});
     });
-    it('should have a quantity selector', () => {
+    it('should display a quantity selector', () => {
         screen.getByRole('textbox', {name: /quantity/i});
     });
-    it('should have an add-to-cart button', () => {
+    it('should display an add-to-cart button', () => {
         screen.getByRole('button', {name: /add-to-cart/i});
     });
 }) // end basic render
 
-describe('<ProductDetail /> correctly shows mock data', () => {
-    beforeEach(() => {
-        render(<ProductDetail data={mockData} />);
+describe('<ProductDetail /> feature tests', () => {
+    beforeEach(() => render(<ProductDetail data={mockData} />));
+    afterAll(() => cleanup());
+
+    it('displays a value for a url to an image', () => {
+        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'http://www.image.com/item/2');
+    });
+    it('displays a value for a product name', () => {
+        expect(screen.getByRole('presentation', {name: /name/i})).toHaveTextContent('product_name_02');
+    });
+    it('displays a value for a product description', () => {
+        expect(screen.getByRole('presentation', {name: /description/i})).toHaveTextContent('product_desc_02');
+    });
+    it('displays a value for a product price', () => {
+        expect(screen.getByRole('presentation', {name: /price/i})).toHaveTextContent('2.00');
     });
 
-    it('displays a product name', () => {
-            
-    });
-    it('displays a product description', () => {
-        
-    });
-    it('displays a product price', () => {
-        
+    it('renders a snapshot', () => {
+        const tree = renderer.create(<ProductDetail data={mockData} />).toJSON();
+        expect(tree).toMatchSnapshot();
     });
 }) // end mock data
+
+describe('<ProductDetail /> unit tests', () => {
+    beforeEach(() => render(<ProductDetail data={mockData} />));
+    afterAll(() => cleanup());
+
+    it('changes the value of the product quantity', () => {
+        const theVal = screen.getByRole('textbox', {name: /quantity/i});
+        userEvent.type(theVal, '10');
+        
+        expect(screen.getByRole('textbox', {name: /quantity/i})).toHaveValue('10');
+    });
+    it('clicks the add-to-cart button', () => {
+        const theVal = screen.getByRole('button', {name: /add-to-cart/i});
+        fireEvent.click(theVal);
+
+        // TODO: mock an onSubmit function and test that also
+    });
+})
