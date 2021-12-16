@@ -1,5 +1,5 @@
 export default function Product (props) {
-    const { img, name, description, price }  = props;
+    const { img, name, description, price } = props;
     return (
         <div>
             <h2>{name} Details</h2>

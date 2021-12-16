@@ -7,16 +7,14 @@ describe('<Product /> basic render', () => {
         render(<Product />);
     });
 
-    it('should have an image to display', () => {
+    it('should have a product image', () => {
         screen.getByRole('img', {name: /product-image/i});
     });
     it('should have a description', () => {
         screen.getByRole('presentation', {name: /description/i});
-        // expect(screen.getByText(/description/i)).toBeInTheDocument();
     });
     it('should show a price', () => {
         screen.getByRole('presentation', {name: /price/i});
-        // expect(screen.getByText(/price/i)).toBeInTheDocument();
     });
     it('should have a quantity selector', () => {
         screen.getByRole('textbox', {name: /quantity/i});
