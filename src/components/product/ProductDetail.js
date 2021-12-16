@@ -1,8 +1,8 @@
-export default function Product (props) {
+export default function ProductDetail (props) {
     const { img, name, description, price } = props;
     return (
         <div>
-            <h2>{name} Details</h2>
+            <h2 aria-label="product-detail-heading">{name} Details</h2>
             <img aria-label="product-image" src={img} alt={name}/>
             <div role="presentation" aria-label="description">Description: {description}</div>
             <div role="presentation" aria-label="price">Price: {price}</div>

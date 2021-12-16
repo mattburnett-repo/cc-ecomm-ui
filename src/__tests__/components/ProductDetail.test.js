@@ -1,10 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import Product from '../../components/product/Product';
+import ProductDetail from '../../components/product/ProductDetail';
 
-describe('<Product /> basic render', () => {
+describe('<ProductDetail /> basic render', () => {
     // FIXME: this should be beforeAll, but beforeAll blows out the tests after the first one runs...
     beforeEach(() => {
-        render(<Product />);
+        render(<ProductDetail />);
     });
 
     it('should have a product image', () => {
@@ -23,3 +23,5 @@ describe('<Product /> basic render', () => {
         screen.getByRole('button', {name: /add-to-cart/i});
     });
 })
+
+// TODO: now write tests with mock data
