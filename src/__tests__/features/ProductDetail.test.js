@@ -5,5 +5,8 @@ describe('ProductDetail', () => {
     test('it has a product detail feature', () => {
 
     })
+
+    // it gets a mock data
+
     // it has a product detail component
 })

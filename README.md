@@ -6,6 +6,7 @@ This is a portfolio project as part of the Codecademy Full Stack Engineer certif
 Only generally-worded requirements are provided. All design / test / code is done without assistance / guidance.
 
 It interfaces with a RESTful API developed in a previous Codecademy project
+* https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
   
 ---
 
