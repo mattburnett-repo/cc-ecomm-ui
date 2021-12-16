@@ -1,5 +1,4 @@
-// import mockResponse from '../../__mocks__/productDetail_response.json'
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import fetchMock from 'jest-fetch-mock';
 import Product from '../../features/product/product';
 
@@ -12,7 +11,10 @@ describe('ProductDetail', () => {
         // expect(fetch).toHaveBeenCalledWith('http://localhost:4000/api/v1/product/2')
     });
     it('calls a ProductDetail display component', () => {
-        render(<Product />)
+        render(<Product />);
+        screen.debug();
+        expect(screen.getByText('Product')).toBe(true);
+
     })
 
 })
