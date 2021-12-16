@@ -23,7 +23,7 @@ Wireframes:
 * 08-Browser Order Confirmation: https://wireframe.cc/KF5blD\
 
 
-Project Kanban: https://github.com/mattburnett-repo/ecomm-app-client-v1/projects/1
+Project Kanban: https://www.codecademy.com/paths/full-stack-engineer-career-path/tracks/fscp-full-stack-portfolio-project/modules/fscp-ecommerce-app-client/kanban_projects/ecommerce-app-client
 
 Datasource / API: https://e-commerce-rest-api-v2.herokuapp.com/
 * API source code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
