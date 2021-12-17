@@ -1,39 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-<div>
-  <div
-    aria-label="user-greeting"
-    role="presentation"
-  >
-    Hello username
-  </div>
-  <div
-    aria-label="product-categories"
-    role="presentation"
-  />
-  <div>
-    <input
-      aria-label="search-terms"
-      placeholder="Enter search terms"
-    />
-    <button
-      aria-label="search"
-    >
-      Search
-    </button>
-  </div>
-  <div
-    aria-label="orders"
-    role="presentation"
-  />
-  <div
-    aria-label="carts"
-    role="presentation"
-  />
-</div>
-`;
-
 exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
 <div>
   <div

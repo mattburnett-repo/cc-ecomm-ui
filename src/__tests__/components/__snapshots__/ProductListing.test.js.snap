@@ -2,6 +2,40 @@
 
 exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
 <div>
-  product listing
+  <div
+    aria-label="product-category"
+    role="presentation"
+  >
+    Product category
+  </div>
+  <div
+    aria-label="product-categories"
+    role="presentation"
+  >
+    select product categories
+  </div>
+  <input
+    aria-label="search-terms"
+    placeholder="Enter search terms"
+  />
+  <button
+    aria-label="search"
+  >
+    Search
+  </button>
+  <div
+    aria-label="product-listing"
+    role="presentation"
+  >
+    <div>
+      product 01
+    </div>
+    <div>
+      product 02
+    </div>
+    <div>
+      product 03
+    </div>
+  </div>
 </div>
 `;
