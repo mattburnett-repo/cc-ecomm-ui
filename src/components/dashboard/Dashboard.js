@@ -1,8 +1,10 @@
 import NavBar from '../nav/NavBar';
-import BrowseSearch from '../nav/BrowseSearch';
+import BrowseSearch from '../../features/nav/BrowseSearch';
+
+// import orderData from '../../__mocks__/orderData';
 
 export default function Dashboard () {
-    const mockOrderData = [{
+    const orderData = [{
         "order": {
             "cart": {
                 "cart_id": 1,
@@ -89,7 +91,7 @@ export default function Dashboard () {
 
             {/* FIXME: show actual data from mocks... */}
             <div role="presentation" aria-label="orders">
-                {mockOrderData.map((item, index) => (
+                {orderData.map((item, index) => (
                     // <div role="presentation" aria-label="order">order_id: {item.order_id} user_id: {item.user_id} order_date: {item.order_date} total_price: {item.total_price.sum}</div>
                     <div role="presentation" aria-label='order' key={index}>order</div>
                 ))}     

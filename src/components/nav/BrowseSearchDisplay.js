@@ -1,27 +1,10 @@
-export default function BrowseSearch () {
-    const mockProductCategories = [
-        {
-            "category_id": 4,
-            "description": "Auto"
-        },
-        {
-            "category_id": 3,
-            "description": "Health"
-        },
-        {
-            "category_id": 1,
-            "description": "Pets"
-        },
-        {
-            "category_id": 2,
-            "description": "Tech"
-        }
-    ];
+export default function BrowseSearchDisplay (props) {
+    const { data } = props;
 
     return (
         <div role="presentation" aria-label="browse-search">
             <select role="presentation" aria-label="product-categories">
-                {mockProductCategories.map(item => (
+                {data.map(item => (
                     <option key={item.category_id} value={item.category_id}>{item.description}</option>
                 ))}                    
             </select>

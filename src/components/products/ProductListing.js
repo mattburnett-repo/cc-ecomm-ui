@@ -1,5 +1,5 @@
 import NavBar from '../nav/NavBar';
-import BrowseSearch from "../nav/BrowseSearch";
+import BrowseSearch from "../../features/nav/BrowseSearch";
 
 export default function ProductListing () {
     const mockProductsData = [
