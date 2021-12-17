@@ -17,7 +17,8 @@ export default function Login () {
                 <button aria-label="login">Log in</button>
             </div>
             <div>
-                <a href="/register" aria-label="register">Regiuster</a>
+            <label htmlFor="register">Don't have an account yet? </label>
+                <a href="/register" id="register" aria-label="register">Register</a>
             </div>
         </div>
     )

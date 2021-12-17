@@ -45,11 +45,17 @@ exports[`<Login /> renders a snapshot renders a snapshot 1`] = `
     </button>
   </div>
   <div>
+    <label
+      htmlFor="register"
+    >
+      Don't have an account yet? 
+    </label>
     <a
       aria-label="register"
       href="/register"
+      id="register"
     >
-      Regiuster
+      Register
     </a>
   </div>
 </div>

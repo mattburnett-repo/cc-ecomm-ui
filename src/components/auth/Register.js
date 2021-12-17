@@ -18,10 +18,11 @@ export default function Register() {
                 <input id="password" type="password" aria-label="password" />
             </div>
             <div>
-                <button aria-label="register">Register</button>
+                <button aria-label="register">Create Account</button>
             </div>
             <div>
-                <a href="/login" aria-label="login">Login</a>
+                <label htmlFor="login">Already have an account? </label>
+                <a href="/login" id="login" aria-label="login">Login</a>
             </div>
         </div>
     )

@@ -53,13 +53,19 @@ exports[`<Register /> renders a snapshot renders a snapshot 1`] = `
     <button
       aria-label="register"
     >
-      Register
+      Create Account
     </button>
   </div>
   <div>
+    <label
+      htmlFor="login"
+    >
+      Already have an account? 
+    </label>
     <a
       aria-label="login"
       href="/login"
+      id="login"
     >
       Login
     </a>
