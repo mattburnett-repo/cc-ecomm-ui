@@ -1,5 +1,5 @@
 export default function NavBar (props) {
-    const { calledFrom } = props;
+    let { calledFrom } = props;
 
     return (
         <div>
