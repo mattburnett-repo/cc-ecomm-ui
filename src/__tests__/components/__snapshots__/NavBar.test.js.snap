@@ -11,7 +11,8 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
   >
     header message
   </div>
-  if(calledFrom !== 'landing') 
+  if(
+   !== 'landing') 
   <button
     aria-label="home"
   >
@@ -22,13 +23,15 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
   >
     Show Cart
   </button>
-  ; if(calledFrom === 'cart') 
+  ; if(
+   === 'cart') 
   <button
     aria-label="checkout"
   >
     Checkout
   </button>
-  if(calledFrom === 'shippingInfo' || calledFrom === 'paymentInfo') 
+  if(
+   === 'shippingInfo' || calledFrom === 'paymentInfo') 
   <button
     aria-label="cancel"
   >
