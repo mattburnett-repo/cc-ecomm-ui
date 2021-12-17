@@ -12,14 +12,8 @@ describe('<ProductListing /> component tests', () => {
     it('should display the selected product category', () => {
         screen.getByRole('presentation', {name: /product-category/i});
     });
-    it('should show product categories', () => {
-        screen.getByRole('presentation', {name: /product-categories/i});
-    });
-    it('should show search term input', () => {
-        screen.getByRole('textbox', {name: /search-terms/i});
-    });
-    it('should show search button', () => {
-        screen.getByRole('button', {name: /search/i});
+    it('should show browse and search', () => {
+        screen.getByRole('presentation', {name: /browse-search/i});
     });
     it('should show individual product listings', () => {
         screen.getByRole('presentation', {name: /product-listing/i});
@@ -29,9 +23,6 @@ describe('<ProductListing /> component tests', () => {
 describe('<ProductListing /> feature tests', () => {
     beforeEach(() => render(<ProductListing />));
 
-    it('displays product categories', () => {
-        expect(true).toBeFalsy();
-    })
     it('displays individual product listing', () => {
         expect(true).toBeFalsy();
     })
@@ -45,6 +36,9 @@ describe('<ProductListing /> feature tests', () => {
 describe('<ProductListing /> unit / functional tests', () => {
     beforeEach(() => render(<ProductListing />));
 
+    it('selects a product category', () => {
+        expect(true).toBeFalsy();
+    });
     it('accepts search text', () => {
         const theElement = screen.getByRole('textbox', {name: /search-terms/i});
         userEvent.type(theElement, 'here is some search text');

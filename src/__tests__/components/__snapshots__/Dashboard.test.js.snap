@@ -9,16 +9,21 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
     Hello username
   </div>
   <div
-    aria-label="product-categories"
+    aria-label="browse-search"
     role="presentation"
-  />
-  <div>
+  >
+    <div
+      aria-label="product-categories"
+      role="presentation"
+    >
+      select product categories
+    </div>
     <input
       aria-label="search-terms"
       placeholder="Enter search terms"
     />
     <button
-      aria-label="search"
+      aria-label="search-button"
     >
       Search
     </button>
@@ -26,10 +31,30 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
   <div
     aria-label="orders"
     role="presentation"
-  />
+  >
+    <div>
+      Order 01
+    </div>
+    <div>
+      Order 02
+    </div>
+    <div>
+      Order 03
+    </div>
+  </div>
   <div
     aria-label="carts"
     role="presentation"
-  />
+  >
+    <div>
+      Cart 01
+    </div>
+    <div>
+      Cart 02
+    </div>
+    <div>
+      Cart 03
+    </div>
+  </div>
 </div>
 `;

@@ -12,28 +12,24 @@ describe('<NavBar /> component tests', () => {
     it('should display a header message', () => {
         screen.getByRole('presentation', {name: /header-message/i});
     });
-    it('should display a home button if user is not on landing page', () => {
-        expect(true).toBeFalsy();
-    });
-    it('should display a show cart button if user is not on landing page', () => {
-        expect(true).toBeFalsy();
-    });
-    it('should display a checkout button if user is on the cart page', () => {
-        expect(true).toBeFalsy();
-    });
-    it('should display a cancel button if user is on the shipping info or payment info pages', () => {
-        expect(true).toBeFalsy();
-    });
     it('should display a logout button', () => {
         screen.getByRole('button', {name: /logout/i});
     });
-
 }); // end component
 
 describe('<NavBar /> feature tests', () => {
     beforeEach(() => render(<NavBar />));
 
-    it('doesnt do anything yet', () => {
+    it('displays a home button if user is not on landing page', () => {
+        expect(true).toBeFalsy();
+    });
+    it('displays a show cart button if user is not on landing page', () => {
+        expect(true).toBeFalsy();
+    });
+    it('displays a checkout button if user is on the cart page', () => {
+        expect(true).toBeFalsy();
+    });
+    it('displays a cancel button if user is on the shipping info or payment info pages', () => {
         expect(true).toBeFalsy();
     });
 

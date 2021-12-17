@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrowseSearch /> feature tests creates a snapshot 1`] = `
+<div
+  aria-label="browse-search"
+  role="presentation"
+>
+  <div
+    aria-label="product-categories"
+    role="presentation"
+  >
+    select product categories
+  </div>
+  <input
+    aria-label="search-terms"
+    placeholder="Enter search terms"
+  />
+  <button
+    aria-label="search-button"
+  >
+    Search
+  </button>
+</div>
+`;
