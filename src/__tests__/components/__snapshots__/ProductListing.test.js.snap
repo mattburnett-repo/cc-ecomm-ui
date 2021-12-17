@@ -3,10 +3,49 @@
 exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
 <div>
   <div
-    aria-label="product-category"
+    aria-label="nav-bar"
     role="presentation"
   >
-    product category goes here
+    <div
+      aria-label="header-message"
+      role="presentation"
+    >
+      header message
+    </div>
+    if(
+    productListing
+     !== 'landing') 
+    <button
+      aria-label="home"
+    >
+      Home
+    </button>
+    <button
+      aria-label="show-cart"
+    >
+      Show Cart
+    </button>
+    ; if(
+    productListing
+     === 'cart') 
+    <button
+      aria-label="checkout"
+    >
+      Checkout
+    </button>
+    if(
+    productListing
+     === 'shippingInfo' || calledFrom === 'paymentInfo') 
+    <button
+      aria-label="cancel"
+    >
+      Cancel
+    </button>
+    <button
+      aria-label="logout"
+    >
+      Log Out
+    </button>
   </div>
   <div
     aria-label="browse-search"
@@ -48,17 +87,32 @@ exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
     </button>
   </div>
   <div
-    aria-label="product-listing"
+    aria-label="products"
     role="presentation"
   >
-    <div>
-      product 01
+    <div
+      aria-label="product"
+      role="presentation"
+    >
+      product
     </div>
-    <div>
-      product 02
+    <div
+      aria-label="product"
+      role="presentation"
+    >
+      product
     </div>
-    <div>
-      product 03
+    <div
+      aria-label="product"
+      role="presentation"
+    >
+      product
+    </div>
+    <div
+      aria-label="product"
+      role="presentation"
+    >
+      product
     </div>
   </div>
 </div>
