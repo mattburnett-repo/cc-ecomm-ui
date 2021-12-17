@@ -90,28 +90,40 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
     aria-label="orders"
     role="presentation"
   >
-    <div>
-      Order 01
-    </div>
-    <div>
-      Order 02
-    </div>
-    <div>
-      Order 03
+    <div
+      aria-label="order"
+      role="presentation"
+    >
+      order
     </div>
   </div>
   <div
     aria-label="carts"
     role="presentation"
   >
-    <div>
-      Cart 01
+    <div
+      aria-label="cart"
+      role="presentation"
+    >
+      cart
     </div>
-    <div>
-      Cart 02
+    <div
+      aria-label="cart"
+      role="presentation"
+    >
+      cart
     </div>
-    <div>
-      Cart 03
+    <div
+      aria-label="cart"
+      role="presentation"
+    >
+      cart
+    </div>
+    <div
+      aria-label="cart"
+      role="presentation"
+    >
+      cart
     </div>
   </div>
 </div>
