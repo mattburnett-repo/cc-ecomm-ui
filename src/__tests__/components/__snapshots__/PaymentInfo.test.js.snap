@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentInfo /> feature tests creates a snapshot 1`] = `
+<div>
+  <div>
+    <label
+      htmlFor="name-on-card"
+    >
+      Name on Card:
+    </label>
+    <input
+      aria-label="name-on-card"
+      id="name-on-card"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="card-number"
+    >
+      Card Number:
+    </label>
+    <input
+      aria-label="card-number"
+      id="card-number"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="expiration-date"
+    >
+      Exp. Date:
+    </label>
+    <input
+      aria-label="expiration-date"
+      id="xpiration-date"
+    />
+  </div>
+  <button
+    aria-label="finish-order"
+  >
+    Finish Order
+  </button>
+</div>
+`;

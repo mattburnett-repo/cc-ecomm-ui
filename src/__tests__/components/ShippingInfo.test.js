@@ -93,7 +93,7 @@ describe('<ShippingInfo /> feature tests', () => {
     it('creates a snapshot', () => {
         const tree = renderer.create(<ShippingInfo />).toJSON();
         expect(tree).toMatchSnapshot();  
-    })
+    });
 });
 
 describe('<ShippingInfo /> unit / functional tests', () => {
