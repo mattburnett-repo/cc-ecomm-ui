@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShippingInfo /> feature tests creates a snapshot 1`] = `
+<div>
+  <div>
+    <label
+      htmlFor="first-name"
+    >
+      First Name:
+    </label>
+    <input
+      aria-label="first-name"
+      id="first-name"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="last-name"
+    >
+      Last Name:
+    </label>
+    <input
+      aria-label="last-name"
+      id="last-name"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="address-1"
+    >
+      Address 1:
+    </label>
+    <input
+      aria-label="address-1"
+      id="address-1"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="address-2"
+    >
+      Address 2:
+    </label>
+    <input
+      aria-label="address-2"
+      id="address-2"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="city"
+    >
+      City:
+    </label>
+    <input
+      aria-label="city"
+      id="city"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="state-province"
+    >
+      State / Province:
+    </label>
+    <input
+      aria-label="state-province"
+      id="state-province"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="postal-code"
+    >
+      Postal Code:
+    </label>
+    <input
+      aria-label="postal-code"
+      id="postal-code"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="country"
+    >
+      Country:
+    </label>
+    <input
+      aria-label="country"
+      id="country"
+    />
+  </div>
+  <button
+    aria-label="go-to-payment-info"
+  >
+    Go To Payment Info
+  </button>
+</div>
+`;
