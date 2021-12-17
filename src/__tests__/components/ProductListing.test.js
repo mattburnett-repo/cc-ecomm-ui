@@ -23,10 +23,9 @@ describe('<ProductListing /> component tests', () => {
 describe('<ProductListing /> feature tests', () => {
     beforeEach(() => render(<ProductListing />));
 
-    // FIXME: this test doesn't look right. only 4 items in mock array, but receives 6
     it('displays products', () => {
-        const theVal = screen.getAllByRole('presentation', {name: /product/i});
-        expect(theVal.length).toBe(6);
+        const theVal = screen.getAllByRole('presentation', {name: /^product$/i});
+        expect(theVal.length).toBe(4);
     })
 
     it('creates a snapshot', () => {

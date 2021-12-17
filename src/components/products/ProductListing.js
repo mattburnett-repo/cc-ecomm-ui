@@ -44,7 +44,6 @@ export default function ProductListing () {
             <BrowseSearch />
 
             <div role="presentation" aria-label="products">
-                {/* FIXME: test doesn't look right. only 4 items in mock array, but test receives 6 */}
                 {mockProductsData.map((item, index) => (
                     // <div role="presentation" aria-label="order">order_id: {item.order_id} user_id: {item.user_id} order_date: {item.order_date} total_price: {item.total_price.sum}</div>
                     // <div role="presentation" aria-label="product-category-id">{mockProductData.category_id}</div>

@@ -43,14 +43,13 @@ describe('<Dashboard /> component tests', () => {
 describe('<Dashboard /> feature tests', () => {
     beforeEach(() => render(<Dashboard />));
 
-    // FIXME: these tests don't look right.
     it('displays order info', () => {
-        const theVal = screen.getAllByRole('presentation', {name: /order/i});
-        expect(theVal.length).toBe(2);
+        const theVal = screen.getAllByRole('presentation', {name: /^order$/i});
+        expect(theVal.length).toBe(1);
     })
     it('displays cart info', () => {
-        const theVal = screen.getAllByRole('presentation', {name: /cart/i});
-        expect(theVal.length).toBe(5);
+        const theVal = screen.getAllByRole('presentation', {name: /^cart$/i});
+        expect(theVal.length).toBe(4);
     })
     
     it('creates a snapshot', () => {
