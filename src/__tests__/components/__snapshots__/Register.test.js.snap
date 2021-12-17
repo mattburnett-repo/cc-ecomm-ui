@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Register /> renders a snapshot renders a snapshot 1`] = `
+<div>
+  <div>
+    <button
+      aria-label="google-auth"
+    >
+      Log in with Google
+    </button>
+    <button
+      aria-label="github-auth"
+    >
+      Log in with Google
+    </button>
+  </div>
+  <div>
+    <label
+      htmlFor="username"
+    >
+      Username:
+    </label>
+    <input
+      aria-label="username"
+      id="username"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="email"
+    >
+      Email:
+    </label>
+    <input
+      aria-label="email"
+      id="email"
+      type="email"
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="password"
+    >
+      Password:
+    </label>
+    <input
+      aria-label="password"
+      id="password"
+      type="password"
+    />
+  </div>
+  <div>
+    <button
+      aria-label="register"
+    >
+      Register
+    </button>
+  </div>
+  <div>
+    <a
+      aria-label="login"
+      href="/login"
+    >
+      Login
+    </a>
+  </div>
+</div>
+`;

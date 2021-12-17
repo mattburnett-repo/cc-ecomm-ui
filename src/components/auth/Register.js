@@ -1,4 +1,4 @@
-export default function Login () {
+export default function Register() {
     return (
         <div>
             <div>
@@ -10,14 +10,18 @@ export default function Login () {
                 <input id="username" aria-label="username" />
             </div>
             <div>
+                <label htmlFor="email">Email:</label>
+                <input id="email" type="email" aria-label="email" />
+            </div>
+            <div>
                 <label htmlFor="password">Password:</label>
                 <input id="password" type="password" aria-label="password" />
             </div>
             <div>
-                <button aria-label="login">Log in</button>
+                <button aria-label="register">Register</button>
             </div>
             <div>
-                <a href="/register" aria-label="register">Regiuster</a>
+                <a href="/login" aria-label="login">Login</a>
             </div>
         </div>
     )
