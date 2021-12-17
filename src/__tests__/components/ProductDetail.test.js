@@ -35,7 +35,7 @@ describe('<ProductDetail /> component tests', () => {
     it('should display an add-to-cart button', () => {
         screen.getByRole('button', {name: /add-to-cart/i});
     });
-}) // end basic render
+}) // end component
 
 describe('<ProductDetail /> feature tests', () => {
     beforeEach(() => render(<ProductDetail data={mockData} />));
