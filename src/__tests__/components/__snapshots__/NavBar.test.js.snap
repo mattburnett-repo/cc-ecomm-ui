@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NavBar /> feature tests renders a snapshot 1`] = `
-<div>
+<div
+  aria-label="nav-bar"
+  role="presentation"
+>
   <div
     aria-label="header-message"
     role="presentation"

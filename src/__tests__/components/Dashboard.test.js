@@ -101,8 +101,11 @@ const mockCartData = [
 describe('<Dashboard /> component tests', () => {
     beforeEach(() => render(<Dashboard />));
 
-    it('should greet user', () => {
-        screen.getByRole('presentation', {name: /user-greeting/i});
+    // it('should greet user', () => {
+    //     screen.getByRole('presentation', {name: /user-greeting/i});
+    // });
+    it('should render a NavBar', () => {
+        screen.getByRole('presentation', {name: /nav-bar/i});
     });
     it('should show browse and search', () => {
         screen.getByRole('presentation', {name: /browse-search/i});

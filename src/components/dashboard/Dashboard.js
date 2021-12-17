@@ -1,10 +1,10 @@
+import NavBar from '../nav/NavBar';
 import BrowseSearch from '../nav/BrowseSearch';
 
 export default function Dashboard () {
     return (
         <div>
-            <div role="presentation" aria-label="user-greeting">Hello username</div>
-
+            <NavBar calledFrom="dashboard" />
             <BrowseSearch />
 
             <div role="presentation" aria-label="orders">

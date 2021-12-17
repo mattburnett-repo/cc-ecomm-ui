@@ -2,7 +2,6 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import userEvent from '@testing-library/user-event';
 
 import OrderConfirmation from '../../components/order/OrderConfirmation';
 
@@ -18,7 +17,6 @@ describe('<OrderConfirmation /> component tests', () => {
     it('should display a logout button', () => {
         screen.getByRole('button', {name: /logout/i});
     });
-
 }); // end component
 
 describe('<OrderConfirmation /> feature tests', () => {

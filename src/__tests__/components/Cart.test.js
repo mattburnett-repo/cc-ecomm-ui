@@ -23,10 +23,6 @@ describe('<Cart /> component tests', () => {
 describe('<Cart /> feature tests', () => {
     beforeEach(() => render(<Cart />));
 
-    it('does something else?', () => {
-        expect(true).toBeFalsy();
-    })
-
     it('creates a snapshot', () => {
         const tree = renderer.create(<Cart />).toJSON();
         expect(tree).toMatchSnapshot();  

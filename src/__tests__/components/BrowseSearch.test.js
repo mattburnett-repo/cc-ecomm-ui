@@ -6,25 +6,6 @@ import userEvent from '@testing-library/user-event';
 
 import BrowseSearch from '../../components/nav/BrowseSearch';
 
-const mockProductCategories = [
-    {
-        "category_id": 4,
-        "description": "Auto"
-    },
-    {
-        "category_id": 3,
-        "description": "Health"
-    },
-    {
-        "category_id": 1,
-        "description": "Pets"
-    },
-    {
-        "category_id": 2,
-        "description": "Tech"
-    }
-];
-
 describe('<BrowseSearch /> component tests', () => {
     beforeEach(() => render(<BrowseSearch />));
 
@@ -43,7 +24,8 @@ describe('<BrowseSearch /> feature tests', () => {
     beforeEach(() => render(<BrowseSearch />));
 
     it('displays product categories', () => {
-        expect(true).toBeFalsy();
+        const theVal = screen.getByRole('presentation', {name: /product-categories/i});
+        expect(theVal.length).toBe(4);
     })
 
     it('creates a snapshot', () => {
@@ -56,7 +38,12 @@ describe('<BrowseSearch /> unit / functional tests', () => {
     beforeEach(() => render(<BrowseSearch />));
 
     it('selects a product category', () => {
-        expect(true).toBeFalsy();
+        fireEvent.change(screen.getByRole('presentation', {name: /product-categories/i}), { target: { value: 2 } })
+        let options = screen.getByRole('presentation', {name: /product-categories/i});
+        expect(options[0].selected).toBeFalsy();
+        expect(options[1].selected).toBeFalsy();
+        expect(options[2].selected).toBeFalsy();
+        expect(options[3].selected).toBeTruthy();
     })
 
     it('accepts search text', () => {
