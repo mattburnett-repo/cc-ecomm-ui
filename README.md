@@ -32,8 +32,6 @@ Datasource / API: https://e-commerce-rest-api-v2.herokuapp.com/
 
 ## Testing
 Tests are located in two folders under the src/\__tests\__ folder
-* components: Tests for UI components
-* features: Unit tests for feature functionality derived from wireframes
 
 ---
 
@@ -42,8 +40,8 @@ Tests are located in two folders under the src/\__tests\__ folder
 * React 16
 * Redux
 * React Router
-* Jest / Enzyme
-* RESTful E-Commerce API 
+* React Testing Library
+*  E-Commerce REST API (built as previous project)
   * Production: https://e-commerce-rest-api-v2.herokuapp.com/
   * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
   
