@@ -47,7 +47,6 @@ export default function Dashboard () {
         }
     }];
     
-    // FIXME: these are cart items, not carts... check the API
     const mockCartData = [
         {
           "cart": {
