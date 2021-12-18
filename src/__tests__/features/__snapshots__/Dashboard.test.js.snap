@@ -12,35 +12,6 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
     >
       header message
     </div>
-    if(
-    dashboard
-     !== 'landing') 
-    <button
-      aria-label="home"
-    >
-      Home
-    </button>
-    <button
-      aria-label="show-cart"
-    >
-      Show Cart
-    </button>
-    ; if(
-    dashboard
-     === 'cart') 
-    <button
-      aria-label="checkout"
-    >
-      Checkout
-    </button>
-    if(
-    dashboard
-     === 'shippingInfo' || calledFrom === 'paymentInfo') 
-    <button
-      aria-label="cancel"
-    >
-      Cancel
-    </button>
     <button
       aria-label="logout"
     >
@@ -94,7 +65,13 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
       aria-label="order"
       role="presentation"
     >
-      order
+      order_id: 
+      1
+       user_id: 
+      1
+       order_date: 
+       total_price: 
+      30
     </div>
   </div>
   <div

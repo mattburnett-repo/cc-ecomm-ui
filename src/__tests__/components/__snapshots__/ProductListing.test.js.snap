@@ -12,9 +12,6 @@ exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
     >
       header message
     </div>
-    if(
-    productListing
-     !== 'landing') 
     <button
       aria-label="home"
     >
@@ -24,22 +21,6 @@ exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
       aria-label="show-cart"
     >
       Show Cart
-    </button>
-    ; if(
-    productListing
-     === 'cart') 
-    <button
-      aria-label="checkout"
-    >
-      Checkout
-    </button>
-    if(
-    productListing
-     === 'shippingInfo' || calledFrom === 'paymentInfo') 
-    <button
-      aria-label="cancel"
-    >
-      Cancel
     </button>
     <button
       aria-label="logout"

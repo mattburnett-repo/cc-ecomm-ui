@@ -1,44 +1,8 @@
-// 20211217: Wireframe https://wireframe.cc/oEvbL9
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import Dashboard from '../../components/dashboard/Dashboard';
-
-const mockUserData = {
-    "id": 1,
-    "user_name": "username_01",
-    "password": "password_01",
-    "email": "1@1.com",
-    "google_id": null,
-    "google_display_name": null,
-    "google_first_name": null,
-    "google_last_name": null,
-    "google_image": null
-};
-
-
-
-describe('<Dashboard /> component tests', () => {
-    beforeEach(() => render(<Dashboard />));
-
-    // it('should greet user', () => {
-    //     screen.getByRole('presentation', {name: /user-greeting/i});
-    // });
-    it('should render a NavBar', () => {
-        screen.getByRole('presentation', {name: /nav-bar/i});
-    });
-    it('should show browse and search', () => {
-        screen.getByRole('presentation', {name: /browse-search/i});
-    });
-    it('should show orders', () => {
-        screen.getByRole('presentation', {name: /orders/i});
-    });
-    it('should show carts', () => {
-        screen.getByRole('presentation', {name: /carts/i});
-    });
-}); // end component
+import Dashboard from '../../features/dashboard/dashboard';
 
 describe('<Dashboard /> feature tests', () => {
     beforeEach(() => render(<Dashboard />));
@@ -80,4 +44,3 @@ describe('<Dashboard /> unit / functional tests', () => {
         fireEvent.click(theVal);
     });
 })
-

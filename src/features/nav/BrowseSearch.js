@@ -1,6 +1,7 @@
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
 export default function BrowseSearch () {
+    // TODO: this should be an API call, mocked in the test/s
     const mockProductCategories = [
         {
             "category_id": 4,
