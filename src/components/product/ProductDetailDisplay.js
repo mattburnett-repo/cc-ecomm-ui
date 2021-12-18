@@ -1,4 +1,4 @@
-export default function ProductDetail (props) {
+export default function ProductDetailDisplay (props) {
     const { name, description, price, image_url } = props.data;
 
     return (

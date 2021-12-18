@@ -1,24 +1,8 @@
-// 20211217: Wireframe https://wireframe.cc/D5VIOi
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import ProductListing from '../../components/products/ProductListing';
-
-describe('<ProductListing /> component tests', () => {
-    beforeEach(() => render(<ProductListing />));
-
-    it('should display a nav bar', () => {
-        screen.getByRole('presentation', {name: /nav-bar/i});
-    });
-    it('should show browse and search', () => {
-        screen.getByRole('presentation', {name: /browse-search/i});
-    });
-    it('should show products', () => {
-        screen.getByRole('presentation', {name: /products/i});
-    });
-}); // end component
+import ProductListing from '../../features/products/ProductListing';
 
 describe('<ProductListing /> feature tests', () => {
     beforeEach(() => render(<ProductListing />));

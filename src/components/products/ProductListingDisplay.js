@@ -1,41 +1,8 @@
 import NavBar from '../nav/NavBar';
 import BrowseSearch from "../../features/nav/BrowseSearch";
 
-export default function ProductListing () {
-    const mockProductsData = [
-        {
-            "id": 1,
-            "category_id": 1,
-            "name": "product_name_01",
-            "description": "product_desc_01",
-            "image_url": "http://www.image.com/item/1",
-            "price": "1.00"
-        },
-        {
-            "id": 2,
-            "category_id": 2,
-            "name": "product_name_02",
-            "description": "product_desc_02",
-            "image_url": "http://www.image.com/item/2",
-            "price": "2.00"
-        },
-        {
-            "id": 3,
-            "category_id": 3,
-            "name": "product_name_03",
-            "description": "product_desc_03",
-            "image_url": "http://www.image.com/item/3",
-            "price": "3.00"
-        },
-        {
-            "id": 4,
-            "category_id": 4,
-            "name": "product_name_04",
-            "description": "product_desc_04",
-            "image_url": "http://www.image.com/item/4",
-            "price": "4.00"
-        }
-    ];
+export default function ProductListingDisplay ( props ) {
+    const { data } = props;
 
     return (
         <div>
@@ -43,8 +10,9 @@ export default function ProductListing () {
             <NavBar calledFrom="productListing" />
             <BrowseSearch />
 
+            {/* FIXME: this doesn't render anything */}
             <div role="presentation" aria-label="products">
-                {mockProductsData.map((item, index) => (
+                {data.map((item, index) => (
                     // <div role="presentation" aria-label="order">order_id: {item.order_id} user_id: {item.user_id} order_date: {item.order_date} total_price: {item.total_price.sum}</div>
                     // <div role="presentation" aria-label="product-category-id">{mockProductData.category_id}</div>
                     // <div role="presentation" aria-label="product-image-url">{mockProductData.image_url}</div>
