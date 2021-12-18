@@ -4,23 +4,29 @@ import BrowseSearch from "../../features/nav/BrowseSearch";
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
 
+    // console.log(data);
+
+    // probably some sort of array ref/deref here...
     return (
         <div>
             {/* <div role='presentation' aria-label="product-category">product category goes here</div> */}
             <NavBar calledFrom="productListing" />
             <BrowseSearch />
 
-            {/* FIXME: this doesn't render anything */}
             <div role="presentation" aria-label="products">
                 {data.map((item, index) => (
-                    // <div role="presentation" aria-label="order">order_id: {item.order_id} user_id: {item.user_id} order_date: {item.order_date} total_price: {item.total_price.sum}</div>
-                    // <div role="presentation" aria-label="product-category-id">{mockProductData.category_id}</div>
-                    // <div role="presentation" aria-label="product-image-url">{mockProductData.image_url}</div>
-                    // <div role="presentation" aria-label="product-name">{mockProductData.name}</div>
-                    // <div role="presentation" aria-label="product-description">{mockProductData.description}</div>
-                    // <div role="presentation" aria-label="product-price">{mockProductData.price}</div> 
-                    // <div role="presentation" aria-label='order' key={index}>order</div>
-                    <div role="presentation" aria-label='product' key={index}>product</div>
+                    <div role="presentation" aria-label='product' key={index}>
+                        <label htmlFor='product-name'>Product Name:</label>
+                        <div role='presentation' aria-label='product-name'>{item.name}</div>
+                        <label htmlFor='product-description'>Product Description:</label>
+                        <div role='presentation' aria-label='product-description'>{item.description}</div>
+                        <label htmlFor='product-image-url'>Image:</label>
+                        <div role="img" id="product-image-url" aria-label='product-image-url'>
+                            <img src="item.image_url" alt={item.name} />
+                        </div>
+                        <label htmlFor='product-price'>Product Price:</label>
+                        <div role='presentation' aria-label='product-price'>{item.price}</div>
+                    </div>
                 ))}     
             </div>
         </div>

@@ -75,25 +75,213 @@ exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
       aria-label="product"
       role="presentation"
     >
-      product
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        role="presentation"
+      >
+        product_name_01
+      </div>
+      <label
+        htmlFor="product-description"
+      >
+        Product Description:
+      </label>
+      <div
+        aria-label="product-description"
+        role="presentation"
+      >
+        product_desc_01
+      </div>
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_01"
+          src="item.image_url"
+        />
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        role="presentation"
+      >
+        1.00
+      </div>
     </div>
     <div
       aria-label="product"
       role="presentation"
     >
-      product
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        role="presentation"
+      >
+        product_name_02
+      </div>
+      <label
+        htmlFor="product-description"
+      >
+        Product Description:
+      </label>
+      <div
+        aria-label="product-description"
+        role="presentation"
+      >
+        product_desc_02
+      </div>
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_02"
+          src="item.image_url"
+        />
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        role="presentation"
+      >
+        2.00
+      </div>
     </div>
     <div
       aria-label="product"
       role="presentation"
     >
-      product
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        role="presentation"
+      >
+        product_name_03
+      </div>
+      <label
+        htmlFor="product-description"
+      >
+        Product Description:
+      </label>
+      <div
+        aria-label="product-description"
+        role="presentation"
+      >
+        product_desc_03
+      </div>
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_03"
+          src="item.image_url"
+        />
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        role="presentation"
+      >
+        3.00
+      </div>
     </div>
     <div
       aria-label="product"
       role="presentation"
     >
-      product
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        role="presentation"
+      >
+        product_name_04
+      </div>
+      <label
+        htmlFor="product-description"
+      >
+        Product Description:
+      </label>
+      <div
+        aria-label="product-description"
+        role="presentation"
+      >
+        product_desc_04
+      </div>
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_04"
+          src="item.image_url"
+        />
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        role="presentation"
+      >
+        4.00
+      </div>
     </div>
   </div>
 </div>

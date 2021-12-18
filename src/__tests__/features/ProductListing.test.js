@@ -7,9 +7,19 @@ import ProductListing from '../../features/products/ProductListing';
 describe('<ProductListing /> feature tests', () => {
     beforeEach(() => render(<ProductListing />));
 
+    it('displays correct nav bar elements', () => {
+        screen.getByRole('button', { name: /home/i});
+        screen.getByRole('button', { name: /show-cart/i});
+        screen.getByRole('button', { name: /logout/i});
+    })
     it('displays products', () => {
-        const theVal = screen.getAllByRole('presentation', {name: /^product$/i});
-        expect(theVal.length).toBe(4);
+        let theVals = screen.getAllByRole('presentation', {name: /^product$/i});
+        expect(theVals.length).toBe(4);
+
+        expect(theVals[0]).toHaveTextContent('product_name_01');
+        expect(theVals[1]).toHaveTextContent('product_name_02');
+        expect(theVals[2]).toHaveTextContent('product_name_03');
+        expect(theVals[3]).toHaveTextContent('product_name_04');
     })
 
     it('creates a snapshot', () => {
