@@ -3,7 +3,8 @@ export default function NavBar (props) {
 
     return (
         <div role="presentation" aria-label="nav-bar">
-            <div role="presentation" aria-label="header-message">header message</div>
+            {/* TODO: make header-message dynamic depending on caller */}
+            <div role="presentation" aria-label="header-message">{calledFrom} header message</div>
   
             {(calledFrom !== 'dashboard') ? (
                 <>

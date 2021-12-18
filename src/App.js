@@ -1,7 +1,7 @@
 
 import './App.css';
 
-import Dashboard from './features/dashboard/Dashboard';
+import ProductListing from './features/products/productListing';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <Dashboard />
+      <ProductListing />
     </div>
   );
 }
