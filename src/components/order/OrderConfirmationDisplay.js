@@ -1,4 +1,6 @@
-export default function OrderConfirmation () {
+export default function OrderConfirmationDisplay ( props ) {
+    const { data } = props;
+    
     return (
         <div>
             <div role="presentation" aria-label="confirmation-info">

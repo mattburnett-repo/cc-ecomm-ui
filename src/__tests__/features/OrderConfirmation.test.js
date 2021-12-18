@@ -1,26 +1,10 @@
-// 20211217: Wireframe https://wireframe.cc/KF5blD
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
-import OrderConfirmation from '../../components/order/OrderConfirmation';
-
-describe('<OrderConfirmation /> component tests', () => {
-    beforeEach(() => render(<OrderConfirmation />));
-
-    it('should display confirmation info', () => {
-        screen.getByRole('presentation', {name: /confirmation-info/i});
-    });
-    it('should display a home button', () => {
-        screen.getByRole('button', {name: /home/i});
-    });
-    it('should display a logout button', () => {
-        screen.getByRole('button', {name: /logout/i});
-    });
-}); // end component
+import OrderConfirmation from '../../features/order/orderConfirmation';
 
 describe('<OrderConfirmation /> feature tests', () => {
-    beforeEach(() => render(<OrderConfirmation />));
+    beforeEach(() => render(<OrderConfirmation  />));
 
     it('creates a snapshot', () => {
         const tree = renderer.create(<OrderConfirmation />).toJSON();
@@ -28,7 +12,7 @@ describe('<OrderConfirmation /> feature tests', () => {
     });
 }); // end feature
 
-describe('<OrderConfirmation /> unit / functional tests', () => {
+describe('<OrderConfirmationDisplay data={mockData} /> unit / functional tests', () => {
     beforeEach(() => render(<OrderConfirmation />));
 
     it('clicks the home button', () => {
