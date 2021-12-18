@@ -64,38 +64,42 @@ const mockOrderData = [{
 
 const mockCartData = [
     {
-        "id": 1,
-        "product_id": 1,
-        "name": "product_name_01",
-        "product_quantity": 1,
-        "product_price": "1.00",
-        "line_item_total_price": "1.00"
-    },
-    {
-        "id": 1,
-        "product_id": 2,
-        "name": "product_name_02",
-        "product_quantity": 2,
-        "product_price": "2.00",
-        "line_item_total_price": "4.00"
-    },
-    {
-        "id": 1,
-        "product_id": 3,
-        "name": "product_name_03",
-        "product_quantity": 3,
-        "product_price": "3.00",
-        "line_item_total_price": "9.00"
-    },
-    {
-        "id": 1,
-        "product_id": 4,
-        "name": "product_name_04",
-        "product_quantity": 4,
-        "product_price": "4.00",
-        "line_item_total_price": "16.00"
+      "cart": {
+        "cart_id": 1,
+        "user_id": 1,
+        "cart_items": [
+          {
+            "product_id": 1,
+            "product_name": "product_name_01",
+            "product_price": 1,
+            "product_quantity": 1,
+            "product_total_price": 1
+          },
+          {
+            "product_id": 2,
+            "product_name": "product_name_02",
+            "product_price": 2,
+            "product_quantity": 2,
+            "product_total_price": 4
+          },
+          {
+            "product_id": 3,
+            "product_name": "product_name_03",
+            "product_price": 3,
+            "product_quantity": 3,
+            "product_total_price": 9
+          },
+          {
+            "product_id": 4,
+            "product_name": "product_name_04",
+            "product_price": 4,
+            "product_quantity": 4,
+            "product_total_price": 16
+          }
+        ]
+      }
     }
-];
+  ];
 
 describe('<DashboardDisplay /> component tests', () => {
     beforeEach(() => render(<DashboardDisplay orderData={ mockOrderData } cartData={ mockCartData } />));
@@ -106,13 +110,13 @@ describe('<DashboardDisplay /> component tests', () => {
     it('should render a NavBar', () => {
         screen.getByRole('presentation', {name: /nav-bar/i});
     });
-    it('should show browse and search', () => {
+    it('should render browse and search', () => {
         screen.getByRole('presentation', {name: /browse-search/i});
     });
-    it('should show orders', () => {
+    it('should render orders', () => {
         screen.getByRole('presentation', {name: /orders/i});
     });
-    it('should show carts', () => {
+    it('should render carts', () => {
         screen.getByRole('presentation', {name: /carts/i});
     });
 }); // end component

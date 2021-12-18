@@ -2,18 +2,22 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import Dashboard from '../../features/dashboard/dashboard';
+import Dashboard from '../../features/dashboard/Dashboard';
 
 describe('<Dashboard /> feature tests', () => {
     beforeEach(() => render(<Dashboard />));
 
+    it('displays a nav bar', () => {
+        const theVal = screen.getByRole('presentation', {name: /nav-bar/i});
+        expect(theVal).toBeInTheDocument();
+    })
     it('displays order info', () => {
         const theVal = screen.getAllByRole('presentation', {name: /^order$/i});
         expect(theVal.length).toBe(1);
     })
     it('displays cart info', () => {
         const theVal = screen.getAllByRole('presentation', {name: /^cart$/i});
-        expect(theVal.length).toBe(4);
+        expect(theVal.length).toBe(1);
     })
     
     it('creates a snapshot', () => {
