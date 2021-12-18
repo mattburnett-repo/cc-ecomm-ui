@@ -16,6 +16,7 @@ describe('<NavBar /> component tests', () => {
     });
 }); // end component
 
+// TODO: needs to test rendering based on calledFrom prop...
 describe('<NavBar /> feature tests', () => {
     it('renders a snapshot', () => {
         const tree = renderer.create(<NavBar />).toJSON();
