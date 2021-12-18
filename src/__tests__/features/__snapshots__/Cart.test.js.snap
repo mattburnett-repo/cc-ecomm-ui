@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartDisplay cartData={mockCartData} /> feature tests creates a snapshot 1`] = `
+<div>
+  <div
+    aria-label="nav-bar"
+    role="presentation"
+  >
+    <div
+      aria-label="header-message"
+      role="presentation"
+    >
+      header message
+    </div>
+    <button
+      aria-label="home"
+    >
+      Home
+    </button>
+    <button
+      aria-label="show-cart"
+    >
+      Show Cart
+    </button>
+    <button
+      aria-label="checkout"
+    >
+      Checkout
+    </button>
+    <button
+      aria-label="logout"
+    >
+      Log Out
+    </button>
+  </div>
+  <div
+    aria-label="cart-header"
+    role="presentation"
+  >
+    cart_id: 
+    1
+     user_id: 
+    1
+  </div>
+  <div
+    aria-label="cart-items"
+    role="presentation"
+  >
+    <div
+      aria-label="cart-item"
+      role="presentation"
+    >
+      <label
+        htmlFor="product-id"
+      >
+        Product ID:
+      </label>
+      <div
+        aria-label="product-id"
+        id="product-id"
+      >
+        1
+         
+      </div>
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        id="product-name"
+      >
+        product_name_01
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        id="product-price"
+      >
+        1
+      </div>
+      <label
+        htmlFor="product-quantity"
+      >
+        Product Quantity:
+      </label>
+      <input
+        aria-label="product-quantity"
+        id="product-quantity"
+        placeholder={1}
+        role="textbox"
+      />
+      <label
+        htmlFor="product-total-price"
+      >
+        Product Total Price:
+      </label>
+      <div
+        aria-label="product-total-price"
+        id="product-total-price"
+      >
+        1
+      </div>
+    </div>
+    <div
+      aria-label="cart-item"
+      role="presentation"
+    >
+      <label
+        htmlFor="product-id"
+      >
+        Product ID:
+      </label>
+      <div
+        aria-label="product-id"
+        id="product-id"
+      >
+        2
+         
+      </div>
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        id="product-name"
+      >
+        product_name_02
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        id="product-price"
+      >
+        2
+      </div>
+      <label
+        htmlFor="product-quantity"
+      >
+        Product Quantity:
+      </label>
+      <input
+        aria-label="product-quantity"
+        id="product-quantity"
+        placeholder={2}
+        role="textbox"
+      />
+      <label
+        htmlFor="product-total-price"
+      >
+        Product Total Price:
+      </label>
+      <div
+        aria-label="product-total-price"
+        id="product-total-price"
+      >
+        4
+      </div>
+    </div>
+    <div
+      aria-label="cart-item"
+      role="presentation"
+    >
+      <label
+        htmlFor="product-id"
+      >
+        Product ID:
+      </label>
+      <div
+        aria-label="product-id"
+        id="product-id"
+      >
+        3
+         
+      </div>
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        id="product-name"
+      >
+        product_name_03
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        id="product-price"
+      >
+        3
+      </div>
+      <label
+        htmlFor="product-quantity"
+      >
+        Product Quantity:
+      </label>
+      <input
+        aria-label="product-quantity"
+        id="product-quantity"
+        placeholder={3}
+        role="textbox"
+      />
+      <label
+        htmlFor="product-total-price"
+      >
+        Product Total Price:
+      </label>
+      <div
+        aria-label="product-total-price"
+        id="product-total-price"
+      >
+        9
+      </div>
+    </div>
+    <div
+      aria-label="cart-item"
+      role="presentation"
+    >
+      <label
+        htmlFor="product-id"
+      >
+        Product ID:
+      </label>
+      <div
+        aria-label="product-id"
+        id="product-id"
+      >
+        4
+         
+      </div>
+      <label
+        htmlFor="product-name"
+      >
+        Product Name:
+      </label>
+      <div
+        aria-label="product-name"
+        id="product-name"
+      >
+        product_name_04
+      </div>
+      <label
+        htmlFor="product-price"
+      >
+        Product Price:
+      </label>
+      <div
+        aria-label="product-price"
+        id="product-price"
+      >
+        4
+      </div>
+      <label
+        htmlFor="product-quantity"
+      >
+        Product Quantity:
+      </label>
+      <input
+        aria-label="product-quantity"
+        id="product-quantity"
+        placeholder={4}
+        role="textbox"
+      />
+      <label
+        htmlFor="product-total-price"
+      >
+        Product Total Price:
+      </label>
+      <div
+        aria-label="product-total-price"
+        id="product-total-price"
+      >
+        16
+      </div>
+    </div>
+  </div>
+  <div
+    aria-label="cart-total"
+    role="presentation"
+  >
+    <label
+      htmlFor="cart-total-price"
+    >
+      Cart Total:
+    </label>
+    <div
+      aria-label="cart-total-price"
+      id="cart-total-price"
+      role="presentation"
+    >
+      30
+       
+    </div>
+  </div>
+  <button
+    aria-label="checkout-button"
+  >
+    Checkout
+  </button>
+</div>
+`;
