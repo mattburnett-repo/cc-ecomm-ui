@@ -12,7 +12,7 @@ const mockData = [
         "category_id": 1,
         "name": "product_name_01",
         "description": "product_desc_01",
-        "image_url": "https://unsplash.com/photos/7eDCK1U--OE",
+        "image_url": "https://pixabay.com/images/id-71282/",
         "price": "1.00"
     },
     {

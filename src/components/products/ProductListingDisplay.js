@@ -4,9 +4,6 @@ import BrowseSearch from "../../features/nav/BrowseSearch";
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
 
-    // console.log(data);
-
-    // probably some sort of array ref/deref here...
     return (
         <div>
             {/* <div role='presentation' aria-label="product-category">product category goes here</div> */}
@@ -14,6 +11,7 @@ export default function ProductListingDisplay ( props ) {
             <BrowseSearch />
 
             <div role="presentation" aria-label="products">
+                {/* Object.keys(posts).map(key => <Post key={key} body={posts[key]} />)  */}
                 {data.map((item, index) => (
                     <div role="presentation" aria-label='product' key={index}>
                         <label htmlFor='product-name'>Product Name:</label>
