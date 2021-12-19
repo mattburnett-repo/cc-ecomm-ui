@@ -1,8 +1,7 @@
 // https://css-tricks.com/writing-tests-for-react-applications-using-jest-and-enzyme/
 
-// someday I will figure out how to do this correctly...
-
 module.exports = {
+    // someday I will figure out how to do this correctly...
     // getUserData: jest.fn(() => {
     //   return Promise.resolve({
     //   data: [

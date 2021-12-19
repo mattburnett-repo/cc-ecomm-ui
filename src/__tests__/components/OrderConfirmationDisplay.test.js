@@ -13,7 +13,6 @@ describe('<OrderConfirmationDisplay data={mockData} /> component tests', () => {
     it('should render confirmation info', () => {
         screen.getByRole('presentation', {name: /confirmation-info/i});
     });
- 
     it('should render a home button', () => {
         screen.getByRole('button', {name: /home/i});
     });
