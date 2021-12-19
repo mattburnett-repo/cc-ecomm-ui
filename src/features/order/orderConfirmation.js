@@ -1,8 +1,8 @@
 import OrderConfirmationDisplay from "../../components/order/OrderConfirmationDisplay";
 
-export default function OrderConfirmation () {
-    // TODO: data from API / Redux
-    const mockData = "asdfasdf";
+import { mockOrderConfirmationData } from "../../utils/mockData"; // TODO: data from API / Redux
 
-    return <OrderConfirmationDisplay data={ mockData } />
+export default function OrderConfirmation () {
+    
+    return <OrderConfirmationDisplay data={ mockOrderConfirmationData } />
 }

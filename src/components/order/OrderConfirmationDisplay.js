@@ -4,11 +4,18 @@ export default function OrderConfirmationDisplay ( props ) {
     return (
         <div>
             <div role="presentation" aria-label="confirmation-info">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-                ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                <div role="presentation" aria-label="order-amount-date">
+                    Your order for {data.total_amount} has been placed on {data.order_date}
+                </div>
+                <div role="presentation" aria-label="order-payment">
+                    Payment in the amount of {data.total_amount} was made using {data.payment_type}
+                </div>
+                <div role="presentation" aria-label="order-number">
+                    The order number is {data.order_id}
+                </div>
+                <div role="presentation" aria-label="order-delivery">
+                    Order will be delivered to {data.delivery_address}
+                </div>
             </div>
             <button aria-label="home">Home</button>
             <button aria-label="logout">Log Out</button>

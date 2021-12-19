@@ -5,23 +5,24 @@ import renderer from 'react-test-renderer';
 
 import OrderConfirmationDisplay from '../../components/order/OrderConfirmationDisplay';
 
-const mockData = "asdfasdfasdf";
+import { mockOrderConfirmationData } from '../../utils/mockData'
 
 describe('<OrderConfirmationDisplay data={mockData} /> component tests', () => {
-    beforeEach(() => render(<OrderConfirmationDisplay data={mockData} />));
+    beforeEach(() => render(<OrderConfirmationDisplay data={mockOrderConfirmationData} />));
 
-    it('should display confirmation info', () => {
+    it('should render confirmation info', () => {
         screen.getByRole('presentation', {name: /confirmation-info/i});
     });
-    it('should display a home button', () => {
+ 
+    it('should render a home button', () => {
         screen.getByRole('button', {name: /home/i});
     });
-    it('should display a logout button', () => {
+    it('should render a logout button', () => {
         screen.getByRole('button', {name: /logout/i});
     });
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<OrderConfirmationDisplay data={mockData} />).toJSON();
+        const tree = renderer.create(<OrderConfirmationDisplay data={mockOrderConfirmationData} />).toJSON();
         expect(tree).toMatchSnapshot();  
     });
 }); // end component

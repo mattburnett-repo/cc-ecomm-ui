@@ -6,7 +6,38 @@ exports[`<OrderConfirmationDisplay data={mockData} /> component tests creates a 
     aria-label="confirmation-info"
     role="presentation"
   >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    <div
+      aria-label="order-amount-date"
+      role="presentation"
+    >
+      Your order for 
+      1234
+       has been placed on 
+      12-Dez-2021
+    </div>
+    <div
+      aria-label="order-payment"
+      role="presentation"
+    >
+      Payment in the amount of 
+      1234
+       was made using 
+      Deutschmarks
+    </div>
+    <div
+      aria-label="order-number"
+      role="presentation"
+    >
+      The order number is 
+      1
+    </div>
+    <div
+      aria-label="order-delivery"
+      role="presentation"
+    >
+      Order will be delivered to 
+      123 Katzendamm, 90210 Berlin DE
+    </div>
   </div>
   <button
     aria-label="home"

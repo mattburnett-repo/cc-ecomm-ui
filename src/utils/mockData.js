@@ -100,6 +100,16 @@ module.exports = {
             }
         }
     }],
+    mockOrderConfirmationData:
+      {
+        "order_id": 1,
+        "total_amount": 1234,
+        "order_date": '12-Dez-2021',
+        "payment_type": 'Deutschmarks',
+        "delivery_address": '123 Katzendamm, 90210 Berlin DE'
+
+      }
+    ,
     mockProductCategories: [
         {
           "category_id": 4,
