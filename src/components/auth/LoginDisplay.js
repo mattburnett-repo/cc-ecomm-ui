@@ -1,10 +1,8 @@
 export default function LoginDisplay () {
     return (
         <div>
-            <div>
-                <button aria-label="google-auth">Log in with Google</button>
-                <button aria-label="github-auth">Log in with GitHub</button>
-            </div>
+            <div><a href="/auth/google" aria-label="google-auth">Log in with Google</a></div>
+            <div><a href="/auth/github" aria-label="github-auth">Log in with GitHub</a></div>
             <div>
                 <label htmlFor="username">Username:</label>
                 <input id="username" aria-label="username" />

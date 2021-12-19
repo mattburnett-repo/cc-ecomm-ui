@@ -3,28 +3,22 @@ import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
 import Login from '../../features/auth/login';
+// import { getUserData } from '../mockApi';
 
-describe('<Login /> renders a snapshot', () => {
-    it('renders a snapshot', () => {
-        const tree = renderer.create(<Login />).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-})
+jest.mock("../mockApi", () => ({
+    getUserData: () => ({ username: "qwer", password: "qwer" })
+  }));
 
 describe('<Login /> unit / functional tests', () => {
     beforeEach(() => render(<Login />));
 
-    it('clicks the Google auth button', () => {
-        const theVal = screen.getByRole('button', {name: /google-auth/i});
+    it('clicks the Google auth link', () => {
+        const theVal = screen.getByRole('link', {name: /google-auth/i});
         fireEvent.click(theVal);
-
-        // TODO: mock an onClick function and test that also
     });
     it('clicks the GitHub auth button', () => {
-        const theVal = screen.getByRole('button', {name: /github-auth/i});
+        const theVal = screen.getByRole('link', {name: /github-auth/i});
         fireEvent.click(theVal);
-
-        // TODO: mock an onClick function and test that also
     });
     it('accept a value for username', ()=> {
         const theElement = screen.getByRole('textbox', {name: /username/i});
@@ -49,3 +43,10 @@ describe('<Login /> unit / functional tests', () => {
         fireEvent.click(theVal);
     });
 }); // end unit
+
+describe('<Login /> renders a snapshot', () => {
+    it('renders a snapshot', () => {
+        const tree = renderer.create(<Login />).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+})

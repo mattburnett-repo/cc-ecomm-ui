@@ -8,12 +8,12 @@ import LoginDisplay from '../../components/auth/LoginDisplay';
 describe('<LoginDisplay /> component tests', () => {
     beforeEach(() => render(<LoginDisplay />));
 
-    it('renders a google oauth button', () => {
-        let theVal = screen.getByRole('button', { name: /google-auth/i});
+    it('renders a google oauth link', () => {
+        let theVal = screen.getByRole('link', { name: /google-auth/i});
         expect(theVal).toHaveTextContent('Log in with Google');
     });
-    it('renders a github oauth button', () => {
-        let theVal = screen.getByRole('button', { name: /github-auth/i});
+    it('renders a github oauth link', () => {
+        let theVal = screen.getByRole('link', { name: /github-auth/i});
         expect(theVal).toHaveTextContent('Log in with GitHub');
     });
     it('renders a username input', () => {
@@ -26,7 +26,8 @@ describe('<LoginDisplay /> component tests', () => {
         screen.getByRole('button', { name: /login/i});
     });
     it('renders a Register link', () => {
-        screen.getByRole('link', { name: /register/i});
+        let theVal = screen.getByRole('link', { name: /register/i});
+        expect(theVal).toHaveTextContent('Register');
     });
 
     it('renders a snapshot', () => {

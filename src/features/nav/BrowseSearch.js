@@ -1,5 +1,8 @@
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
+// import { getProductCategories } from '../../__tests__/mockApi';
+
+// export default async function BrowseSearch () {
 export default function BrowseSearch () {
     // TODO: this should be an API call, mocked in the test/s
     const mockProductCategories = [
@@ -20,6 +23,8 @@ export default function BrowseSearch () {
             "description": "Tech"
         }
     ];
+
+    // const mockProductCategories = await getProductCategories();
 
     return <BrowseSearchDisplay  data={ mockProductCategories } />
 }

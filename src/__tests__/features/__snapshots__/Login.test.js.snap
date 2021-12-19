@@ -3,16 +3,20 @@
 exports[`<Login /> renders a snapshot renders a snapshot 1`] = `
 <div>
   <div>
-    <button
+    <a
       aria-label="google-auth"
+      href="/auth/google"
     >
       Log in with Google
-    </button>
-    <button
+    </a>
+  </div>
+  <div>
+    <a
       aria-label="github-auth"
+      href="/auth/github"
     >
       Log in with GitHub
-    </button>
+    </a>
   </div>
   <div>
     <label
