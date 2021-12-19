@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CartDisplay cartData={mockCartData} /> feature tests creates a snapshot 1`] = `
+exports[`<Cart /> feature tests creates a snapshot 1`] = `
 <div>
   <div
     aria-label="nav-bar"
@@ -10,6 +10,8 @@ exports[`<CartDisplay cartData={mockCartData} /> feature tests creates a snapsho
       aria-label="header-message"
       role="presentation"
     >
+      cart
+       
       header message
     </div>
     <button

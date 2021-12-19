@@ -11,7 +11,8 @@ exports[`<ProductListing /> feature tests creates a snapshot 1`] = `
       role="presentation"
     >
       productListing
-       header message
+       
+      header message
     </div>
     <button
       aria-label="home"

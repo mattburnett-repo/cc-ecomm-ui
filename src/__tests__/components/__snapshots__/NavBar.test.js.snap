@@ -9,6 +9,7 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
     aria-label="header-message"
     role="presentation"
   >
+     
     header message
   </div>
   <button

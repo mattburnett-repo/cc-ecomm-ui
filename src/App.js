@@ -1,7 +1,8 @@
 
 import './App.css';
 
-import Login from './features/auth/login';
+// import Login from './features/auth/login';
+import BrowseSearch from './features/nav/BrowseSearch';
 
 // don't need to install dotenv since react 'uses it under the hood'
 //    https://stackoverflow.com/questions/42182577/is-it-possible-to-use-dotenv-in-a-react-project#56668716
@@ -16,7 +17,7 @@ import Login from './features/auth/login';
 function App() {
   return (
     <div className="App">
-      <Login />
+      <BrowseSearch />
     </div>
   );
 }

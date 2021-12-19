@@ -1,10 +1,12 @@
 export default function NavBar (props) {
     let { calledFrom } = props;
 
+    let headerMessageText = 'header message';
+
     return (
         <div role="presentation" aria-label="nav-bar">
             {/* TODO: make header-message dynamic depending on caller */}
-            <div role="presentation" aria-label="header-message">{calledFrom} header message</div>
+            <div role="presentation" aria-label="header-message">{calledFrom} {headerMessageText}</div>
   
             {(calledFrom !== 'dashboard') ? (
                 <>

@@ -6,18 +6,11 @@ import userEvent from '@testing-library/user-event';
 
 import ProductDetailDisplay from '../../components/product/ProductDetailDisplay';
 
-const mockData = 
-{
-    "id": 2,
-    "category_id": 2,
-    "name": "product_name_02",
-    "description": "product_desc_02",
-    "image_url": "http://www.image.com/item/2",
-    "price": "2.00"
-};
+import { mockProduct } from '../../utils/mockData'
+
 
 describe('<ProductDetailDisplay /> component tests', () => {
-    beforeEach(() => render(<ProductDetailDisplay data={mockData} />));
+    beforeEach(() => render(<ProductDetailDisplay data={mockProduct} />));
 
     it('should display a product image', () => {
         screen.getByRole('img', {name: /product-image/i});

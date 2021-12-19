@@ -10,6 +10,8 @@ exports[`<CartDisplay cartData={mockCartData} /> component tests creates a snaps
       aria-label="header-message"
       role="presentation"
     >
+      cart
+       
       header message
     </div>
     <button

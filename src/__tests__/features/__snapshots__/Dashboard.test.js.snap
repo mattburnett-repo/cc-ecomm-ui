@@ -10,6 +10,8 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
       aria-label="header-message"
       role="presentation"
     >
+      dashboard
+       
       header message
     </div>
     <button

@@ -5,10 +5,6 @@ import userEvent from '@testing-library/user-event';
 import Login from '../../features/auth/login';
 // import { getUserData } from '../mockApi';
 
-jest.mock("../mockApi", () => ({
-    getUserData: () => ({ username: "qwer", password: "qwer" })
-  }));
-
 describe('<Login /> unit / functional tests', () => {
     beforeEach(() => render(<Login />));
 

@@ -4,10 +4,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import Register from '../../components/auth/Register';
+import RegisterDisplay from '../../components/auth/RegisterDisplay';
 
-describe('<Register /> component tests', () => {
-    beforeEach(() => render(<Register />));
+describe('<RegisterDisplay /> component tests', () => {
+    beforeEach(() => render(<RegisterDisplay />));
 
     it('should display a google oauth button', () => {
         screen.getByRole('button', { name: /google-auth/i});
@@ -35,15 +35,15 @@ describe('<Register /> component tests', () => {
 
 // features?
 
-describe('<Register /> renders a snapshot', () => {
+describe('<RegisterDisplay /> renders a snapshot', () => {
     it('renders a snapshot', () => {
-        const tree = renderer.create(<Register />).toJSON();
+        const tree = renderer.create(<RegisterDisplay />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 })
 
-describe('<Register /> unit tests', () => {
-    beforeEach(() => render(<Register />));
+describe('<RegisterDisplay /> unit tests', () => {
+    beforeEach(() => render(<RegisterDisplay />));
 
     it('clicks the Google auth button', () => {
         const theVal = screen.getByRole('button', {name: /google-auth/i});
