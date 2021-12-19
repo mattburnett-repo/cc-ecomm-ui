@@ -1,7 +1,9 @@
 
 import './App.css';
 
-import ProductListing from './features/products/productListing';
+import Login from './features/auth/login';
+
+// TODO: add Router
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <ProductListing />
+      <Login />
     </div>
   );
 }

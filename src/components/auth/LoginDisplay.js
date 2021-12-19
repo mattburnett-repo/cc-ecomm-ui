@@ -1,9 +1,9 @@
-export default function Login () {
+export default function LoginDisplay () {
     return (
         <div>
             <div>
                 <button aria-label="google-auth">Log in with Google</button>
-                <button aria-label="github-auth">Log in with Google</button>
+                <button aria-label="github-auth">Log in with GitHub</button>
             </div>
             <div>
                 <label htmlFor="username">Username:</label>
