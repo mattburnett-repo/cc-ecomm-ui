@@ -1,5 +1,6 @@
 export default function LoginDisplay () {
     return (
+        // e.preventDefault()
         <div>
             <div><a href="/auth/google" aria-label="google-auth">Log in with Google</a></div>
             <div><a href="/auth/github" aria-label="github-auth">Log in with GitHub</a></div>
