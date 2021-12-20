@@ -26,5 +26,10 @@ describe('<DashboardDisplay /> component tests', () => {
     it('should render carts', () => {
         screen.getByRole('presentation', {name: /carts/i});
     });
+
+    it('renders a snapshot', () => {
+        const tree = renderer.create(<DashboardDisplay orderData={ mockOrderData } cartData={ mockCartData }  />).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 }); // end component
 

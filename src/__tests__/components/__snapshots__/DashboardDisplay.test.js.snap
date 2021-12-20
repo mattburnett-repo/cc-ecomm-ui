@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
+<div>
+  <div
+    aria-label="nav-bar"
+    role="presentation"
+  >
+    <div
+      aria-label="header-message"
+      role="presentation"
+    >
+      dashboard
+       
+      header message
+    </div>
+    <button
+      aria-label="logout"
+    >
+      Log Out
+    </button>
+  </div>
+  <div
+    aria-label="browse-search"
+    role="presentation"
+  >
+    <select
+      aria-label="product-categories"
+      role="presentation"
+    >
+      <option
+        value={4}
+      >
+        Auto
+      </option>
+      <option
+        value={3}
+      >
+        Health
+      </option>
+      <option
+        value={1}
+      >
+        Pets
+      </option>
+      <option
+        value={2}
+      >
+        Tech
+      </option>
+    </select>
+    <input
+      aria-label="search-terms"
+      placeholder="Enter search terms"
+    />
+    <button
+      aria-label="search-button"
+    >
+      Search
+    </button>
+  </div>
+  <div
+    aria-label="orders"
+    role="presentation"
+  >
+    <div
+      aria-label="order"
+      role="presentation"
+    >
+      order_id: 
+      1
+       user_id: 
+      1
+       order_date: 
+       total_price: 
+      30
+    </div>
+  </div>
+  <div
+    aria-label="carts"
+    role="presentation"
+  >
+    <div
+      aria-label="cart"
+      role="presentation"
+    >
+      cart_id: 
+      1
+       user_id: 
+      1
+    </div>
+  </div>
+</div>
+`;

@@ -2,7 +2,7 @@ import NavBar from '../nav/NavBar';
 import BrowseSearch from '../../features/nav/BrowseSearch';
 
 export default function DashboardDisplay (props) {
-    const { orderData, cartData } = props;
+    const { orderData, cartData } = props; // TODO: these should come fro state/redux
 
     return (
         <div>

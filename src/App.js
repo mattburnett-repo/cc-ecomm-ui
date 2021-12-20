@@ -2,22 +2,21 @@
 import './App.css';
 
 // import Login from './features/auth/login';
-import BrowseSearch from './features/nav/BrowseSearch';
+// import BrowseSearch from './features/nav/BrowseSearch';
+import Dashboard from './features/dashboard/dashboard';
 
-// don't need to install dotenv since react 'uses it under the hood'
-//    https://stackoverflow.com/questions/42182577/is-it-possible-to-use-dotenv-in-a-react-project#56668716
-        // With react-scripts@0.2.3 and higher, you can work with environment variables this way:
-
-        // create .env file in the root of the project
-        // set environment variables starting with REACT_APP_ there
-        // access it by process.env.REACT_APP_... in components
-        
 // TODO: add Router
+// TODO: ReactStrap npm i bootstrap reactstrap
+//        import 'bootstrap/dist/css/bootstrap.min.css'
+//        reactstrap: https://youtu.be/R54neaLznFA?t=923
+// TODO: React transition npm i react-transition-group
+//        https://youtu.be/fcna-jJtAXk?t=116
 
 function App() {
   return (
     <div className="App">
-      <BrowseSearch />
+      {/* <BrowseSearch /> */}
+      <Dashboard />
     </div>
   );
 }

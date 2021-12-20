@@ -12,6 +12,7 @@
     "jest-fetch-mock": "^3.0.3",
     "react": "^16",
     "react-dom": "^16",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^6.1.1",
     "react-scripts": "4.0.3",
     "react-test-renderer": "^16.13.1",
@@ -29,7 +30,7 @@
       "react-app/jest"
     ],
     "rules": {
-      "no-unused-vars": 0
+      "no-unused-vars": 1
     }
   },
   "browserslist": {
@@ -43,5 +44,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:4000"
 }
