@@ -1,9 +1,9 @@
 
 import './App.css';
 
-// import Login from './features/auth/login';
+import Login from './features/auth/login';
 // import BrowseSearch from './features/nav/BrowseSearch';
-import Dashboard from './features/dashboard/dashboard';
+// import Dashboard from './features/dashboard/dashboard';
 
 // TODO: add Router
 // TODO: ReactStrap npm i bootstrap reactstrap
@@ -15,8 +15,9 @@ import Dashboard from './features/dashboard/dashboard';
 function App() {
   return (
     <div className="App">
+      <Login />
       {/* <BrowseSearch /> */}
-      <Dashboard />
+      {/* <Dashboard /> */}
     </div>
   );
 }

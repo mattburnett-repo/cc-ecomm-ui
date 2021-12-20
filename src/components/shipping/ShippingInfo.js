@@ -1,3 +1,5 @@
+// TODO: should have PropTypes in this, and other, didsplay component/s
+
 export default function ShippingInfo () {
     return (
         <div>
