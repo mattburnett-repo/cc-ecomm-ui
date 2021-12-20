@@ -5,8 +5,8 @@ import renderer from 'react-test-renderer';
 
 import LoginDisplay from '../../components/auth/LoginDisplay';
 
-describe('<LoginDisplay /> component tests', () => {
-    beforeEach(() => render(<LoginDisplay />));
+describe('<LoginDisplay handleSubmit/> component tests', () => { 
+    beforeEach(() => render(<LoginDisplay/>));
 
     it('renders a google oauth link', () => {
         let theVal = screen.getByRole('link', { name: /google-auth/i});

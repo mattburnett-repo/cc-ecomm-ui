@@ -2,13 +2,13 @@ import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 import userEvent from '@testing-library/user-event';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-console.log('api base url ' + API_BASE_URL);
+// console.log('api base url ' + API_BASE_URL);
 
 export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
     async ( props ) => {
         const { username, password } = props;
-        console.log('authSlice: username: ' + username + ' password: ' + password);
+        // console.log('authSlice: username: ' + username + ' password: ' + password);
 
         // TODO: API call goes here... Use Passport local strategy.
         //      this fails, and sends back Swagger doc

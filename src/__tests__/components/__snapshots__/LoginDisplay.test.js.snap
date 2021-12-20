@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
+exports[`<LoginDisplay handleSubmit/> component tests renders a snapshot 1`] = `
 <div>
   <div>
     <a

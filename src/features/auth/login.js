@@ -5,6 +5,11 @@ import { localAuthLogin, selectIsAuthorized } from './authSlice';
 
 import LoginDisplay from "../../components/auth/LoginDisplay";
 
+export function handleClick (e) {
+    e.preventDefault();
+    console.log('login / LoginDisplay handleClick() called by clicking: ' + e.target.text);
+}
+
 export default function Login () {
     // get data from API / Redux
     //      just get test output in console from reducer, for now
@@ -19,16 +24,15 @@ export default function Login () {
     }, [dispatch]);
     
     // xx-auth and login button should dispatch actions to redux
-    
-    // create onClick function/s for google / github / local logins
-    if(isAuthorized) {
+
+    if(isAuthorized) { // FIXME: test this branch of the render
         return (
             <div>
                 <h1>login.js sees authorization</h1>
                 <h2>should redirect to dashboard</h2>            
             </div>
         )
-    } else {
-        return <LoginDisplay />
+    } else { // TODO: create onClick function/s for google / github / local logins
+        return <LoginDisplay handleClick={handleClick} />
     }
 }
