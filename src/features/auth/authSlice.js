@@ -76,15 +76,16 @@ export const localAuthLogin = createAsyncThunk (
     }
 ) // end localAuthLogin
 
-// TODO: implement this once we get auth flow sorted out
+// TODO: implement better this once we get auth flow sorted out
 // export const localAuthLogout = createAsyncThunk (
 //     'auth/localAuthLogout',
 //     async ( props ) => {
-//         const {user_id } = props;
+//         // const {user_id } = await props;
+
 //         console.log('localAuthLogout')
 
 //         try { 
-//             if(user_id) {
+//             if(true) { // FIXME
 //                 return { isAuthorized: false }
 //             } 
 //         } catch (e) {
@@ -103,9 +104,16 @@ const options = {
         isAuthorized: false
     },   
     reducers: {     
-        authLocalLoginTestOutput: (state, action) => {       
+        localAuthLoginTestOutput: (state, action) => {       
             console.log('auth/local/login/testOutput');
         },
+        localAuthLogout: (state, action) => {
+            state.userData = '';
+            state.isLoading = false;
+            state.hasError = false;
+            state.isAuthorized = false;
+            state.errorMsg = '';
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -135,6 +143,6 @@ export const selectIsAuthorized = state => state.auth.isAuthorized;
 export const selectUserData = state => state.auth.userData;
 
 export const authSlice = createSlice(options);
-export const { authLocalLoginTestOutput } = authSlice.actions;
+export const { localAuthLoginTestOutput , localAuthLogout } = authSlice.actions;
 
 export default authSlice.reducer;

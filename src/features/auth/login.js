@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { localAuthLogin, selectIsAuthorized } from './authSlice';
+import { localAuthLogin, localAuthLogout, selectIsAuthorized } from './authSlice';
 
 import LoginDisplay from "../../components/auth/LoginDisplay";
 
@@ -23,6 +23,10 @@ export default function Login () {
 
         dispatch(localAuthLogin({username, password}));
     }
+
+    function handleLogout (e) {
+        dispatch(localAuthLogout());
+    }
     
     // xx-auth and login button should also dispatch actions to redux
 
@@ -30,7 +34,8 @@ export default function Login () {
         return (
             <div>
                 <h1>login.js sees authorization</h1>
-                <h2>should redirect to dashboard</h2>            
+                <h2>should redirect to dashboard</h2>    
+                <button onClick={handleLogout}>Log Out</button>
             </div>
         )
     } else { 
