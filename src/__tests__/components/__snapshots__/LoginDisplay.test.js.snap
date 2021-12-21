@@ -1,66 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LoginDisplay handleSubmit/> component tests renders a snapshot 1`] = `
-<div>
-  <div>
-    <a
-      aria-label="google-auth"
-      href="/auth/google"
-    >
-      Log in with Google
-    </a>
+exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
+<form
+  method="post"
+  onSubmit={[MockFunction]}
+>
+  <div
+    aria-label="login-display-form"
+    role="presentation"
+  >
+    <div>
+      <a
+        aria-label="google-auth"
+        href="/auth/google"
+        onClick={[MockFunction]}
+      >
+        Log in with Google
+      </a>
+    </div>
+    <div>
+      <a
+        aria-label="github-auth"
+        href="/auth/github"
+        onClick={[MockFunction]}
+      >
+        Log in with GitHub
+      </a>
+    </div>
+    <div>
+      <label
+        htmlFor="username"
+      >
+        Username:
+      </label>
+      <input
+        aria-label="username"
+        id="username"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="password"
+      >
+        Password:
+      </label>
+      <input
+        aria-label="password"
+        id="password"
+        type="password"
+      />
+    </div>
+    <div>
+      <button
+        aria-label="login"
+        type="submit"
+      >
+        Log in
+      </button>
+    </div>
+    <div>
+      <label
+        htmlFor="register"
+      >
+        Don't have an account yet? 
+      </label>
+      <a
+        aria-label="register"
+        href="/register"
+        id="register"
+        onClick={[MockFunction]}
+      >
+        Register
+      </a>
+    </div>
   </div>
-  <div>
-    <a
-      aria-label="github-auth"
-      href="/auth/github"
-    >
-      Log in with GitHub
-    </a>
-  </div>
-  <div>
-    <label
-      htmlFor="username"
-    >
-      Username:
-    </label>
-    <input
-      aria-label="username"
-      id="username"
-    />
-  </div>
-  <div>
-    <label
-      htmlFor="password"
-    >
-      Password:
-    </label>
-    <input
-      aria-label="password"
-      id="password"
-      type="password"
-    />
-  </div>
-  <div>
-    <button
-      aria-label="login"
-    >
-      Log in
-    </button>
-  </div>
-  <div>
-    <label
-      htmlFor="register"
-    >
-      Don't have an account yet? 
-    </label>
-    <a
-      aria-label="register"
-      href="/register"
-      id="register"
-    >
-      Register
-    </a>
-  </div>
-</div>
+</form>
 `;

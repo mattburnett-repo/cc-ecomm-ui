@@ -19,7 +19,7 @@ export default function LoginDisplay ( props ) {
                 </div>
                 <div>
                 <label htmlFor="register">Don't have an account yet? </label>
-                    <a href="/register" id="register" aria-label="register">Register</a>
+                    <a href="/register" id="register" aria-label="register" onClick={handleClick}>Register</a>
                 </div>
             </div>            
         </form>

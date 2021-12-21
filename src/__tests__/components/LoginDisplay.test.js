@@ -1,11 +1,13 @@
 // 20211217: Wireframe https://wireframe.cc/6MXHyR
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
 import LoginDisplay from '../../components/auth/LoginDisplay';
 
-describe('<LoginDisplay handleSubmit/> component tests', () => { 
+const mockHandleClick = jest.fn(); // should be able to add .mockImplementation(...) here, but ok...
+
+describe('<LoginDisplay /> component tests', () => { 
     beforeEach(() => render(<LoginDisplay/>));
 
     it('renders a google oauth link', () => {
@@ -31,7 +33,47 @@ describe('<LoginDisplay handleSubmit/> component tests', () => {
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<LoginDisplay />).toJSON();
+        const tree = renderer.create(<LoginDisplay handleClick={mockHandleClick} />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 }); // end component
+
+describe('<LoginDisplay handleClick /> component tests', () => {
+    beforeEach(() => render(<LoginDisplay handleClick={mockHandleClick} />));
+    it('clicks the Google auth link', () => {       
+        // mockHandleClick.mockImplementation((e) => {console.log(e.target.text)});
+        mockHandleClick.mockReturnValue('Log in with Google'); // FIXME: evaluate e.target.name / value instead of hard-coding test val here
+        const theVal = screen.getByRole('link', {name: /google-auth/i});
+        fireEvent.click(theVal);
+
+        expect(mockHandleClick.mock.calls.length).toBe(1);
+        expect(mockHandleClick()).toBe('Log in with Google');
+    });
+    it('clicks the GitHub auth link', () => {
+        // mockHandleClick.mockImplementation((e) => {console.log(e.target.text)});
+        mockHandleClick.mockReturnValue('Log in with GitHub'); // FIXME: evaluate e.target.name / value instead of hard-coding test val here
+        const theVal = screen.getByRole('link', {name: /github-auth/i});
+        fireEvent.click(theVal);
+
+        expect(mockHandleClick.mock.calls.length).toBe(1);
+        expect(mockHandleClick()).toBe('Log in with GitHub');               // FIXME
+    });
+
+    it('clicks the Login button', () => {
+        mockHandleClick.mockImplementation((e) => {e.preventDefault()}); // no idea why it works this way. should be able to do it all on one line upstairs.
+        const theVal = screen.getByRole('button', {name: /login/i});
+        fireEvent.click(theVal);
+
+        expect(mockHandleClick.mock.calls.length).toBe(1);
+        // expect(mockHandleClick()).toBe('Log in'); 
+    });
+    it('clicks the Register link', () => {
+        // mockHandleClick.mockImplementation((e) => {console.log(e.target.text)});
+        mockHandleClick.mockReturnValue('Register'); // FIXME: evaluate e.target.name / value instead of hard-coding test val here
+        const theVal = screen.getByRole('link', {name: /register/i});
+        fireEvent.click(theVal);
+
+        expect(mockHandleClick.mock.calls.length).toBe(1);
+        expect(mockHandleClick()).toBe('Register'); 
+    });
+})
