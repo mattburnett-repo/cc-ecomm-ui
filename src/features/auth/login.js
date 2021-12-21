@@ -1,38 +1,39 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { localAuthLogin, selectIsAuthorized } from './authSlice';
 
 import LoginDisplay from "../../components/auth/LoginDisplay";
 
-export function handleClick (e) {
-    e.preventDefault();
-    console.log('login / LoginDisplay handleClick() called by clicking: ' + e.target.text);
-}
-
 export default function Login () {
-    // get data from API / Redux
-    //      just get test output in console from reducer, for now
     const isAuthorized = useSelector(selectIsAuthorized);
-
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        // dispatch should be called from form submit / oauth button click, not on load, here
-        // dispatch(localAuthLogin({username: 'asdf', password: 'asdf'})); // this should pass / fulfill / isAuthorized: true
-        dispatch(localAuthLogin({username: 'qwer', password: 'qwer'})); // this should fail / reject / isAuthorized: false
-    }, [dispatch]);
-    
-    // xx-auth and login button should dispatch actions to redux
+    // get data from API / Redux
+    function handleClick (e) {
+        e.preventDefault();
 
-    if(isAuthorized) { // FIXME: test this branch of the render
+        // yes, it is true that React components should use state instead of these types of vars,
+        //      but since we separate the display from the functionality / feature, we don't have
+        //      a single place to keep state. Therefore we don't have, in this case, a 'single authority' location.
+        //      Components like the Cart need state in the display component, because of user-editing,
+        //          but here it just doesn't make sense to bolt on additional code just to 
+        //          'do it the way everybody else does'. This does what is required ->
+        let username = e.target.username.value
+        let password = e.target.password.value
+
+        dispatch(localAuthLogin({username, password}));
+    }
+    
+    // xx-auth and login button should also dispatch actions to redux
+
+    if(isAuthorized) { // FIXME: test this branch of the render. maybe this is an integration test...
         return (
             <div>
                 <h1>login.js sees authorization</h1>
                 <h2>should redirect to dashboard</h2>            
             </div>
         )
-    } else { // TODO: create onClick function/s for google / github / local logins
+    } else { 
         return <LoginDisplay handleClick={handleClick} />
     }
 }

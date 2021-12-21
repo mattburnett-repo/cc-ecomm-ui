@@ -60,7 +60,7 @@ describe('<LoginDisplay handleClick /> component tests', () => {
     });
 
     it('clicks the Login button', () => {
-        mockHandleClick.mockImplementation((e) => {e.preventDefault()}); // no idea why it works this way. should be able to do it all on one line upstairs.
+        mockHandleClick.mockImplementation((e) => {e.preventDefault()});
         const theVal = screen.getByRole('button', {name: /login/i});
         fireEvent.click(theVal);
 

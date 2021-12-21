@@ -68,6 +68,7 @@ exports[`<Login /> renders a snapshot renders a snapshot 1`] = `
         aria-label="register"
         href="/register"
         id="register"
+        onClick={[Function]}
       >
         Register
       </a>

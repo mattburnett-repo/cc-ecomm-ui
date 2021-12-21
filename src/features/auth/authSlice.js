@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
-import userEvent from '@testing-library/user-event';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 // console.log('api base url ' + API_BASE_URL);
@@ -8,8 +7,9 @@ export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
     async ( props ) => {
         const { username, password } = props;
-        // console.log('authSlice: username: ' + username + ' password: ' + password);
-
+        console.log('localAuthLogin')
+        console.log('authSlice: username: ' + username + ' password: ' + password);
+        
         // TODO: API call goes here... Use Passport local strategy.
         //      this fails, and sends back Swagger doc
         //          we want to keep the local / oauth login strategies on the api server
@@ -67,7 +67,7 @@ export const localAuthLogin = createAsyncThunk (
 
                 return {userData: userData, isAuthorized: true}        // TODO: not sure if this is... legal, but it works...
             } else {
-                // console.log('authSlice un successful')
+                console.log('authSlice un successful')
                 return {message: 'login un successful', isAuthorized: false}    // TODO: not sure if this is... legal, but it works...
             }          
         } catch (e) {   
@@ -75,6 +75,23 @@ export const localAuthLogin = createAsyncThunk (
         } // end basic test
     }
 ) // end localAuthLogin
+
+// TODO: implement this once we get auth flow sorted out
+// export const localAuthLogout = createAsyncThunk (
+//     'auth/localAuthLogout',
+//     async ( props ) => {
+//         const {user_id } = props;
+//         console.log('localAuthLogout')
+
+//         try { 
+//             if(user_id) {
+//                 return { isAuthorized: false }
+//             } 
+//         } catch (e) {
+//             console.log('error in auth/localAuthLogout: ' + e);
+//         } // end try catch
+//     }
+// ) // end localAuthLogout
 
 const options = {
     name: 'auth',
