@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
+// eslint-disable-next-line 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 // console.log('api base url ' + API_BASE_URL);
 
