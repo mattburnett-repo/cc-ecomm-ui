@@ -7,73 +7,52 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
     async ( props ) => {
-        const { username, password } = props;
-        console.log('localAuthLogin')
-        console.log('authSlice: username: ' + username + ' password: ' + password);
-        
-        // TODO: API call goes here... Use Passport local strategy.
-        //      this fails, and sends back Swagger doc
-        //          we want to keep the local / oauth login strategies on the api server
-        //              but we need to be able to log in here as well
-        //          maybe have separate login routes on api server for remote login
-        //              zB /auth/login, auth/oauth
-        //          OR
-        //              spend a lot of time trying to make something that can't work, work...
-        //      look for token / localstorage???
-        
-        // try {
-        //     const response = await fetch(
-        //         API_BASE_URL,
-        //         {
-        //         method: "POST",
-        //         headers: {
-        //             Accept: "application/json, application/x-www-form-urlencoded",
-        //             // "Content-Type": "application/json",
-        //             "Content-Type": "application/x-www-form-urlencoded",
-        //         },
-        //         body: JSON.stringify({
-        //             username: username,
-        //             password: password,
-        //         }),
-        //         }
-        //     )
+        const { username, password } = props;     
+        let theApiUrl = API_BASE_URL + '/auth/local'
 
-        //     // let data = await response.json()
-        //     let data = await response;
-
-        //     // console.log("data ", data)
-
-        //     if (response.status === 200) {
-        //     //   localStorage.setItem("token", data.token)
-        //     //   return { ...data, username: name, email: email }
-        //         let userData = {user_id: 4, username: username, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'} // FIXME: better as an array?
-
-        //          return {userData: userData, isAuthorized: true}  
-        //     } else {
-        //     //   return thunkAPI.rejectWithValue(data)
-        //        console.log('authSlice un successful')
-        //        return {message: 'login un successful', isAuthorized: false} 
-        //     }
-        // } catch (e) {
-        // console.log("Error", e.response.data)
-        // // return thunkAPI.rejectWithValue(e.response.data)
-        // }
-
-        // basic test
         try {
-            if(username === 'asdf' && password === 'asdf') {
-                console.log('authSlice successful')
+            const response = await fetch(
+                theApiUrl,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Accept': "*/*",
+                        'Content-Type': "application/json"
+                    },
+                    body: JSON.stringify({
+                        username: username,
+                        password: password,
+                    }),
+                }
+            )
 
-                let userData = {user_id: 4, username: username, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'} // FIXME: better as an array?
+            let data = await response.json();
+            // let data = await response;
+            // let text = await response.text()
+            // let body = await text.body();
 
-                return {userData: userData, isAuthorized: true}        // TODO: not sure if this is... legal, but it works...
+            console.log('data.id ' + data.id)
+
+            if (response.status === 200) {
+                const { id, user_name, email} = data;
+                //   localStorage.setItem("token", data.token)
+                //   return { ...data, username: name, email: email }
+
+         
+                let userData = {user_id: id, username: user_name, email: email, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'} // FIXME: better as an array?
+    
+                return {userData: userData, isAuthorized: true}  
             } else {
-                console.log('authSlice un successful')
-                return {message: 'login un successful', isAuthorized: false}    // TODO: not sure if this is... legal, but it works...
-            }          
-        } catch (e) {   
-            console.log('error in auth/localAuthLogin: ' + e);
-        } // end basic test
+            //   return thunkAPI.rejectWithValue(data)
+                console.log('data.status ' + data.status + ' authSlice fetch un successful')
+                return {message: 'login un successful', isAuthorized: false} 
+            }
+        } catch (e) {
+            console.log("Error ", e.response.data)
+            // return thunkAPI.rejectWithValue(e.response.data)
+        }
+
+
     }
 ) // end localAuthLogin
 
