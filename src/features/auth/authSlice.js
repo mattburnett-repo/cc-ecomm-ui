@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
-// eslint-disable-next-line 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 // console.log('api base url ' + API_BASE_URL);
 
@@ -10,7 +9,9 @@ export const localAuthLogin = createAsyncThunk (
         const { username, password } = props;     
         let theApiUrl = API_BASE_URL + '/auth/local'
 
-        try {
+        // FIXME: needs to test if server is available and handle when it's down
+        //          test for response ERR_CONNECTION_REFUSED
+        try { 
             const response = await fetch(
                 theApiUrl,
                 {
@@ -51,8 +52,6 @@ export const localAuthLogin = createAsyncThunk (
             console.log("Error ", e.response.data)
             // return thunkAPI.rejectWithValue(e.response.data)
         }
-
-
     }
 ) // end localAuthLogin
 

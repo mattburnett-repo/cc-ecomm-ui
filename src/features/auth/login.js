@@ -1,11 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { localAuthLogin, localAuthLogout, selectIsAuthorized } from './authSlice';
+import { localAuthLogin, localAuthLogout, selectIsAuthorized, selectUserData } from './authSlice';
 
 import LoginDisplay from "../../components/auth/LoginDisplay";
 
+import Orders from '../../features/orders/orders'
+
 export default function Login () {
     const isAuthorized = useSelector(selectIsAuthorized);
+    const userData = useSelector(selectUserData)
+
     const dispatch = useDispatch();
 
     // get data from API / Redux
@@ -32,11 +36,18 @@ export default function Login () {
 
     if(isAuthorized) { // FIXME: test this branch of the render. maybe this is an integration test...
         return (
-            <div>
-                <h1>login.js sees authorization</h1>
-                <h2>should redirect to dashboard</h2>    
-                <button onClick={handleLogout}>Log Out</button>
-            </div>
+            <>
+                <div>
+                    <h1>login.js sees authorization</h1>
+                    <h2>should redirect to dashboard</h2>    
+                    <h3>user id: {userData.user_id} username: {userData.username} email: {userData.email}</h3>
+                    <Orders />
+                </div>
+                <div>
+                    <br />
+                    <button onClick={handleLogout}>Log Out</button>
+                </div>
+            </>
         )
     } else { 
         return <LoginDisplay handleClick={handleClick} />
