@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { localAuthLogin, selectIsAuthorized } from './authSlice';
 
 import LoginDisplay from "../../components/auth/LoginDisplay";
+import Dashboard from '../../features/dashboard/dashboard'
 
 export default function Login () {
-    const isAuthorized = useSelector(selectIsAuthorized);
+    const isAuthorized = useSelector(selectIsAuthorized); // FIXME: make sure this connects to Paasport.isAuthenticated() / req.body thing.
 
     const dispatch = useDispatch();
 
+    // TODO: xx-auth and login button should also dispatch actions to redux
     function handleClick (e) {
         e.preventDefault();
 
@@ -17,10 +19,13 @@ export default function Login () {
 
         dispatch(localAuthLogin({username, password}));
     }
-    
-    // xx-auth and login button should also dispatch actions to redux
 
-    console.log('features/login isAuthorized: ' + isAuthorized)
- 
-    return <LoginDisplay handleClick={handleClick} />
+    console.log('isAuthorized: ' + isAuthorized)
+    
+    if(!isAuthorized) {
+        return <LoginDisplay handleClick={handleClick} />
+    } else {
+        return <Dashboard />
+    }
+    
 }

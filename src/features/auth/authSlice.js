@@ -27,30 +27,27 @@ export const localAuthLogin = createAsyncThunk (
                 }
             )
 
-            console.log('authSlice pre text')
             try {
-                let text = await response.text();
-                console.log('text ' + text)
+                var data = await response.json();
+                // var text = await data.text(); // text() makes the json response into something readable    
+                // var body = await text.body();
             } catch(e) {
-                console.log('text json error' + e.message)
+                console.log('response.text() error' + e.message)
             }
+
+            // console.log('body ' + body)
             
             // let text = await response.text()
             // let body = await text.body();
-
-            // console.log('data ' + data)
             
-            console.log('authSlice post await response')
-
             if (response.status === 200) {
                 
-                // const { id, user_name, email} = response;
+                const { id, user_name, email} = data;
                 //   localStorage.setItem("token", data.token)
-                //   return { ...data, username: name, email: email }
-
-                // let userData = {user_id: id, username: user_name, email: email, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'} // FIXME: better as an array?
-                // return {userData: userData, isAuthorized: true}  
-                return {isAuthorized: true} 
+            
+                let userData = {user_id: id, username: user_name, email: email, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'}
+                return {userData: userData, isAuthorized: true}  
+                // return {isAuthorized: true} 
             } else {
             //   return thunkAPI.rejectWithValue(data)
                 console.log('response.status ' + response.status + ' authSlice fetch un successful')
