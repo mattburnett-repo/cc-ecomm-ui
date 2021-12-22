@@ -1,11 +1,10 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
 import Login from './features/auth/login';
-// import BrowseSearch from './features/nav/BrowseSearch';
-// import Dashboard from './features/dashboard/dashboard';
+import Dashboard from './features/dashboard/dashboard';
 
-// TODO: add Router
 // TODO: ReactStrap npm i bootstrap reactstrap
 //        import 'bootstrap/dist/css/bootstrap.min.css'
 //        reactstrap: https://youtu.be/R54neaLznFA?t=923
@@ -14,12 +13,17 @@ import Login from './features/auth/login';
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-      {/* <BrowseSearch /> */}
-      {/* <Dashboard /> */}
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path='/' exact><Login /></Route>
+          <Route path='/login' exact><Login /></Route>
+          <Route path='/dashboard' exact><Dashboard /> </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+

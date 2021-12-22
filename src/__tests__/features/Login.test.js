@@ -16,12 +16,12 @@ describe('<Login /> unit / functional tests', () => {
         
         expect(theElement).toHaveValue('asdf');
     });
-    it('accepts a value for password', ()=> {
-        const theElement = screen.getByLabelText('Password:');
-        userEvent.type(theElement, 'asdf');
+    // it('accepts a value for password', ()=> {
+    //     const theElement = screen.getByLabelText('Password:');
+    //     userEvent.type(theElement, 'asdf');
         
-        expect(theElement).toHaveValue('asdf');
-    });
+    //     expect(theElement).toHaveValue('asdf');
+    // });
 
     // it('submits the form', () => {
     //     // TODO: not sure how to mock / test this. maybe as integration test...

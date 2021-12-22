@@ -11,7 +11,10 @@ export default function Login () {
     const userData = useSelector(selectUserData)
 
     const dispatch = useDispatch();
-
+    console.log('calling API login')
+    dispatch(localAuthLogin({username: 'asdf', password: 'asdf'}));
+    console.log('API login called')
+    
     // get data from API / Redux
     function handleClick (e) {
         e.preventDefault();
@@ -25,7 +28,8 @@ export default function Login () {
         let username = e.target.username.value
         let password = e.target.password.value
 
-        dispatch(localAuthLogin({username, password}));
+        // this should get isAuthorized() from passport
+        // dispatch(localAuthLogin({username, password}));
     }
 
     function handleLogout (e) {

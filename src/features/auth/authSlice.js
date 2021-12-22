@@ -9,6 +9,7 @@ export const localAuthLogin = createAsyncThunk (
         const { username, password } = props;     
         let theApiUrl = API_BASE_URL + '/auth/local'
 
+        console.log('api pre-fetch')
         // FIXME: needs to test if server is available and handle when it's down
         //          test for response ERR_CONNECTION_REFUSED
         try { 
@@ -19,6 +20,7 @@ export const localAuthLogin = createAsyncThunk (
                     headers: {
                         'Accept': "*/*",
                         'Content-Type': "application/json"
+                        // some kind of auth goes here?
                     },
                     body: JSON.stringify({
                         username: username,
@@ -32,7 +34,10 @@ export const localAuthLogin = createAsyncThunk (
             // let text = await response.text()
             // let body = await text.body();
 
-            console.log('data.id ' + data.id)
+            // console.log('data.id ' + data.id)
+            
+            // never gets here?
+            console.log('authSlice post-fetch')
 
             if (response.status === 200) {
                 const { id, user_name, email} = data;
