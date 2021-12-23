@@ -1,10 +1,13 @@
+import { Provider } from 'react-redux';
+import store from '../../store'
+
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
 import OrderConfirmation from '../../features/order/orderConfirmation';
 
 describe('<OrderConfirmation /> feature tests', () => {
-    beforeEach(() => render(<OrderConfirmation  />));
+    beforeEach(() => render(<Provider store={store}><OrderConfirmation  /></Provider>));
     
     it('should display order amount and date', () => {
         let theVal = screen.getByRole('presentation', { name: /order-amount-date/i});
@@ -29,13 +32,13 @@ describe('<OrderConfirmation /> feature tests', () => {
         expect(theVal).toHaveTextContent('123 Katzendamm, 90210 Berlin DE');
     });
     it('creates a snapshot', () => {
-        const tree = renderer.create(<OrderConfirmation />).toJSON();
+        const tree = renderer.create(<Provider store={store}><OrderConfirmation  /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     });
 }); // end feature
 
 describe('<OrderConfirmationDisplay data={mockData} /> unit / functional tests', () => {
-    beforeEach(() => render(<OrderConfirmation />));
+    beforeEach(() => render(<Provider store={store}><OrderConfirmation  /></Provider>));
 
     it('clicks the home button', () => {
         const theVal = screen.getByRole('button', {name: /home/i});
