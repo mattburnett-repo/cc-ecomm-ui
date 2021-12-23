@@ -20,7 +20,7 @@ export default function Login () {
         dispatch(localAuthLogin({username, password}));
     }
 
-    console.log('isAuthorized: ' + isAuthorized)
+    // console.log('isAuthorized: ' + isAuthorized)
     
     if(!isAuthorized) {
         return <LoginDisplay handleClick={handleClick} />

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBarDisplay /> component tests renders a snapshot 1`] = `
+<div
+  aria-label="nav-bar"
+  role="presentation"
+>
+  <div
+    aria-label="header-message"
+    role="presentation"
+  >
+     
+  </div>
+  <button
+    aria-label="home"
+  >
+    Home
+  </button>
+  <button
+    aria-label="show-cart"
+  >
+    Show Cart
+  </button>
+  <button
+    aria-label="logout"
+  >
+    Log Out
+  </button>
+</div>
+`;

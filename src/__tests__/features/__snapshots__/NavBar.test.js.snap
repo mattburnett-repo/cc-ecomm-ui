@@ -10,10 +10,11 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
     role="presentation"
   >
      
-    header message
+    
   </div>
   <button
     aria-label="home"
+    onClick={[Function]}
   >
     Home
   </button>
@@ -24,6 +25,7 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
   </button>
   <button
     aria-label="logout"
+    onClick={[Function]}
   >
     Log Out
   </button>

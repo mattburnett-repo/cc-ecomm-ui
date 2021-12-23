@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-// console.log('api base url ' + API_BASE_URL);
 
 export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
@@ -32,22 +31,18 @@ export const localAuthLogin = createAsyncThunk (
                 // var text = await data.text(); // text() makes the json response into something readable    
                 // var body = await text.body();
             } catch(e) {
-                console.log('response.text() error' + e.message)
+                console.log('authSlice / response.json() error' + e.message)
             }
 
-            // console.log('body ' + body)
-            
             // let text = await response.text()
             // let body = await text.body();
             
             if (response.status === 200) {
-                
                 const { id, user_name, email} = data;
                 //   localStorage.setItem("token", data.token)
             
                 let userData = {user_id: id, username: user_name, email: email, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'}
                 return {userData: userData, isAuthorized: true}  
-                // return {isAuthorized: true} 
             } else {
             //   return thunkAPI.rejectWithValue(data)
                 console.log('response.status ' + response.status + ' authSlice fetch un successful')
@@ -60,23 +55,36 @@ export const localAuthLogin = createAsyncThunk (
     }
 ) // end localAuthLogin
 
-// TODO: implement better this once we get auth flow sorted out
-// export const localAuthLogout = createAsyncThunk (
-//     'auth/localAuthLogout',
-//     async ( props ) => {
-//         // const {user_id } = await props;
+// TODO: implement better this once we get auth flow sorted out. API needs a route to handle this
+export const localAuthLogout = createAsyncThunk (
+    'auth/localAuthLogout',
+    async ( ) => {
+        console.log('localAuthLogout')
+        let theApiUrl = API_BASE_URL + '/auth/logout'
+        try { 
+            const response = await fetch(
+                theApiUrl,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Accept': "*/*",
+                        'Content-Type': "application/json"
+                    },
+                }
+            )
 
-//         console.log('localAuthLogout')
-
-//         try { 
-//             if(true) { // FIXME
-//                 return { isAuthorized: false }
-//             } 
-//         } catch (e) {
-//             console.log('error in auth/localAuthLogout: ' + e);
-//         } // end try catch
-//     }
-// ) // end localAuthLogout
+            if (response.status === 200) {            
+                return {userData: '', isAuthorized: false}  
+            } else {
+            //   return thunkAPI.rejectWithValue(data)
+                console.log('response.status ' + response.status + ' authSlice fetch un successful')
+                return {message: 'logout un successful'} 
+            }
+        } catch (e) {
+            console.log('error in auth/localAuthLogout: ' + e);
+        } // end try catch
+    }
+) // end localAuthLogout
 
 const options = {
     name: 'auth',
@@ -91,13 +99,6 @@ const options = {
         localAuthLoginTestOutput: (state, action) => {       
             console.log('auth/local/login/testOutput');
         },
-        localAuthLogout: (state, action) => {
-            state.userData = '';
-            state.isLoading = false;
-            state.hasError = false;
-            state.isAuthorized = false;
-            state.errorMsg = '';
-        }
     },
     extraReducers: (builder) => {
         builder
@@ -112,10 +113,28 @@ const options = {
                 state.isLoading = false;
                 state.hasError = false;
                 state.isAuthorized = action.payload.isAuthorized;
-                // state.isAuthorized = true
                 state.errorMsg = '';
             })
             .addCase(localAuthLogin.rejected, (state, action) => {
+                state.isLoading = false;
+                state.hasError = true;
+                state.errorMsg = action.error; 
+            })  
+
+            .addCase(localAuthLogout.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+                state.isAuthorized = false;
+                state.errorMsg = '';
+            })
+            .addCase(localAuthLogout.fulfilled, (state, action) => {
+                state.userData = action.payload.userData;
+                state.isLoading = false;
+                state.hasError = false;
+                state.isAuthorized = action.payload.isAuthorized;
+                state.errorMsg = '';
+            })
+            .addCase(localAuthLogout.rejected, (state, action) => {
                 state.isLoading = false;
                 state.hasError = true;
                 state.errorMsg = action.error; 
@@ -127,6 +146,6 @@ export const selectIsAuthorized = state => state.auth.isAuthorized;
 export const selectUserData = state => state.auth.userData;
 
 export const authSlice = createSlice(options);
-export const { localAuthLoginTestOutput , localAuthLogout } = authSlice.actions;
+export const { localAuthLoginTestOutput } = authSlice.actions;
 
 export default authSlice.reducer;

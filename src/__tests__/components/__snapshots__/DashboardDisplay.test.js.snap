@@ -63,18 +63,7 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     aria-label="orders"
     role="presentation"
   >
-    <div
-      aria-label="order"
-      role="presentation"
-    >
-      order_id: 
-      1
-       user_id: 
-      1
-       order_date: 
-       total_price: 
-      30
-    </div>
+    orders feature / display goes here
   </div>
   <div
     aria-label="carts"

@@ -38,6 +38,9 @@ describe('<LoginDisplay /> component tests', () => {
     });
 }); // end component
 
+// these look like feature / functional tests, because they 'do stuff', but what we're really
+//      testing is the handleClick part of the display component, which is not
+//      exposed in the feature / function
 describe('<LoginDisplay handleClick /> component tests', () => {
     beforeEach(() => render(<LoginDisplay handleClick={mockHandleClick} />));
     it('clicks the Google auth link', () => {       

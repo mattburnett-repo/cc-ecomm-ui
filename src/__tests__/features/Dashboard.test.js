@@ -8,11 +8,11 @@ describe('<Dashboard /> feature tests', () => {
     beforeEach(() => render(<Dashboard />));
 
     it('displays a nav bar', () => {
-        const theVal = screen.getByRole('presentation', {name: /nav-bar/i});
-        expect(theVal).toBeInTheDocument();
+        const theVal = screen.getAllByRole('presentation', {name: /nav-bar/i});
+        expect(theVal).toHaveLength(1)
     })
-    it('displays order info', () => {
-        const theVal = screen.getAllByRole('presentation', {name: /^order$/i});
+    it('displays orders info', () => {
+        const theVal = screen.getAllByRole('presentation', {name: /^orders$/i});
         expect(theVal.length).toBe(1);
     })
     it('displays cart info', () => {

@@ -1,4 +1,4 @@
-import NavBar from '../nav/NavBar';
+import NavBar from '../../features/nav/navBar';
 import BrowseSearch from '../../features/nav/BrowseSearch';
 
 import Orders from '../../features/orders/orders'
