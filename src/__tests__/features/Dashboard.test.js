@@ -2,10 +2,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux'
+import store from '../../store'
+
 import Dashboard from '../../features/dashboard/Dashboard';
 
 describe('<Dashboard /> feature tests', () => {
-    beforeEach(() => render(<Dashboard />));
+    beforeEach(() => render(<Provider store={store}><Dashboard /></Provider>));
 
     it('displays a nav bar', () => {
         const theVal = screen.getAllByRole('presentation', {name: /nav-bar/i});
@@ -21,13 +24,13 @@ describe('<Dashboard /> feature tests', () => {
     })
     
     it('creates a snapshot', () => {
-        const tree = renderer.create(<Dashboard />).toJSON();
+        const tree = renderer.create(<Provider store={store}><Dashboard /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     })
 }) // end feature
 
 describe('<Dashboard /> unit / functional tests', () => {
-    beforeEach(() => render(<Dashboard />));
+    beforeEach(() => render(<Provider store={store}><Dashboard /></Provider>));
 
     it('selects a product category', () => {
         fireEvent.change(screen.getByRole('presentation', {name: /product-categories/i}), { target: { value: 2 } })

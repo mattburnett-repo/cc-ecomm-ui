@@ -26,23 +26,19 @@ export const localAuthLogin = createAsyncThunk (
                 }
             )
 
-            try {
-                var data = await response.json();
-                // var text = await data.text(); // text() makes the json response into something readable    
-                // var body = await text.body();
-            } catch(e) {
-                console.log('authSlice / response.json() error' + e.message)
-            }
+            let data = await response.json()
 
-            // let text = await response.text()
-            // let body = await text.body();
-            
-            if (response.status === 200) {
-                const { id, user_name, email} = data;
-                //   localStorage.setItem("token", data.token)
-            
-                let userData = {user_id: id, username: user_name, email: email, someFakeAuthToken: 'asdlfue84to53fkasjhgkah'}
-                return {userData: userData, isAuthorized: true}  
+            if(response.status === 401) {
+                console.log('401 unauthorized message from passport / server')
+                // send flash message / redirect to login
+                return {isAuthorized: false}  
+            } else if (response.status === 200) {
+                const { id, user_name, email } = data.user;
+                const { token } = data;
+                
+                // localStorage.setItem("token", data.token)
+
+                return {user_id: id, username: user_name, email: email, jwtAuthToken: token};
             } else {
             //   return thunkAPI.rejectWithValue(data)
                 console.log('response.status ' + response.status + ' authSlice fetch un successful')
@@ -109,10 +105,10 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(localAuthLogin.fulfilled, (state, action) => {
-                state.userData = action.payload.userData;
+                state.userData = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
-                state.isAuthorized = action.payload.isAuthorized;
+                state.isAuthorized = true;
                 state.errorMsg = '';
             })
             .addCase(localAuthLogin.rejected, (state, action) => {
@@ -144,6 +140,7 @@ const options = {
 
 export const selectIsAuthorized = state => state.auth.isAuthorized;
 export const selectUserData = state => state.auth.userData;
+export const selectJwtToken = state => state.auth.userData.jwtAuthToken;
 
 export const authSlice = createSlice(options);
 export const { localAuthLoginTestOutput } = authSlice.actions;

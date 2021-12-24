@@ -6,5 +6,5 @@ import { mockOrderData, mockCartData } from "../../utils/mockData"; // TODO: thi
 export default function Dashboard () {
     CheckLoginStatus()
 
-    return <DashboardDisplay  orderData={ mockOrderData } cartData={ mockCartData } />
+    return <DashboardDisplay  orderData={mockOrderData} cartData={ mockCartData } />
 }

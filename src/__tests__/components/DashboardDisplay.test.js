@@ -1,15 +1,19 @@
 // 20211217: Wireframe https://wireframe.cc/oEvbL9
 
+// FIXME: these includes should be in a utils file
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
+
+import { Provider } from 'react-redux'
+import store from '../../store'
 
 import DashboardDisplay from '../../components/dashboard/DashboardDisplay';
 
 import { mockOrderData, mockCartData } from '../../utils/mockData'
 
 describe('<DashboardDisplay /> component tests', () => {
-    beforeEach(() => render(<DashboardDisplay orderData={ mockOrderData } cartData={ mockCartData } />));
+    beforeEach(() => render(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>));
 
     // it('should greet user', () => {
     //     screen.getByRole('presentation', {name: /user-greeting/i});
@@ -28,7 +32,7 @@ describe('<DashboardDisplay /> component tests', () => {
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<DashboardDisplay orderData={ mockOrderData } cartData={ mockCartData }  />).toJSON();
+        const tree = renderer.create(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();
     });
 }); // end component
