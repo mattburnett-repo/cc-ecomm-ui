@@ -5,9 +5,9 @@ exports[`<OrdersDisplay orderData={mockOrderData} /> component tests creates a s
   aria-label="orders"
   role="presentation"
 >
-  <h1>
+  <h2>
     OrdersDisplay
-  </h1>
+  </h2>
   <div
     aria-label="order"
     role="presentation"

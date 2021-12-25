@@ -64,21 +64,9 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
     aria-label="orders"
     role="presentation"
   >
-    <h1>
+    <h2>
       OrdersDisplay
-    </h1>
-    <div
-      aria-label="order"
-      role="presentation"
-    >
-      order_id: 
-      1
-       user_id: 
-      1
-       order_date: 
-       total_price: 
-      30
-    </div>
+    </h2>
   </div>
   <div
     aria-label="carts"

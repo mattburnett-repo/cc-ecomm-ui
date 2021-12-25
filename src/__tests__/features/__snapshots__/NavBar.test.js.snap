@@ -20,6 +20,7 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
   </button>
   <button
     aria-label="show-cart"
+    onClick={[Function]}
   >
     Show Cart
   </button>
