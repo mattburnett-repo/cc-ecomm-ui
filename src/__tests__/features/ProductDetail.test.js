@@ -2,10 +2,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux';
+import store from '../../store'
+
 import ProductDetail from '../../features/product/productDetail';
 
 describe('<ProductDetail /> feature tests', () => {
-    beforeEach(() => render(<ProductDetail />));
+    beforeEach(() => render(<Provider store={store}><ProductDetail /></Provider>));
 
     it('displays a value for a url to an image', () => {
         expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'http://www.image.com/item/2');
@@ -24,13 +27,13 @@ describe('<ProductDetail /> feature tests', () => {
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<ProductDetail />).toJSON();
+        const tree = renderer.create(<Provider store={store}><ProductDetail /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();
     });
 }) // end mock data
 
 describe('<ProductDetail /> unit tests', () => {
-    beforeEach(() => render(<ProductDetail />));
+    beforeEach(() => render(<Provider store={store}><ProductDetail /></Provider>));
 
     it('changes the value of the product quantity', () => {
         const theElement = screen.getByRole('textbox', {name: /quantity/i});

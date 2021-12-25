@@ -2,10 +2,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux';
+import store from '../../store'
+
 import BrowseSearch from '../../features/nav/BrowseSearch';
 
 describe('<BrowseSearch /> feature tests', () => {
-    beforeEach(() => render(<BrowseSearch />));
+    beforeEach(() => render(<Provider store={store}><BrowseSearch /></Provider>));
 
     it('displays product categories', () => {
         const theVal = screen.getByRole('presentation', {name: /product-categories/i});
@@ -31,7 +34,7 @@ describe('<BrowseSearch /> feature tests', () => {
         fireEvent.click(theVal);
     });
     it('creates a snapshot', () => {
-        const tree = renderer.create(<BrowseSearch />).toJSON();
+        const tree = renderer.create(<Provider store={store}><BrowseSearch /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     })
 }); // end feature

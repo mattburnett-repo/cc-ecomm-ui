@@ -2,10 +2,14 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import ProductListing from '../../features/products/ProductListing';
+import { Provider } from 'react-redux';
+import store from '../../store'
+
+import ProductListing from '../../features/products/productListing';
 
 describe('<ProductListing /> feature tests', () => {
-    beforeEach(() => render(<ProductListing />));
+    // beforeEach(() => render(<Provider store={store}><ProductListing /></ Provider>));
+    beforeEach(() => render(<Provider store={store}><ProductListing /></ Provider>));
 
     it('displays correct nav bar elements', () => {
         screen.getByRole('button', { name: /home/i});
@@ -23,13 +27,13 @@ describe('<ProductListing /> feature tests', () => {
     })
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<ProductListing />).toJSON();
+        const tree = renderer.create(<Provider store={store}><ProductListing /></ Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     })
 }); // end feature
 
 describe('<ProductListing /> unit / functional tests', () => {
-    beforeEach(() => render(<ProductListing />));
+    beforeEach(() => render(<Provider store={store}><ProductListing /></ Provider>));
 
     it('selects a product category', () => {
         fireEvent.change(screen.getByRole('presentation', {name: /product-categories/i}), { target: { value: 2 } })

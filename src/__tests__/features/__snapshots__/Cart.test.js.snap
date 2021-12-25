@@ -12,7 +12,6 @@ exports[`<Cart /> feature tests creates a snapshot 1`] = `
     >
       cart
        
-      header message
     </div>
     <button
       aria-label="home"

@@ -12,7 +12,6 @@ exports[`<CartDisplay cartData={mockCartData} /> component tests creates a snaps
     >
       cart
        
-      header message
     </div>
     <button
       aria-label="home"

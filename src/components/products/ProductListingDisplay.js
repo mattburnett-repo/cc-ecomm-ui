@@ -1,4 +1,4 @@
-import NavBar from '../nav/NavBar';
+import NavBarDisplay from '../nav/NavBarDisplay';
 import BrowseSearch from "../../features/nav/BrowseSearch";
 
 export default function ProductListingDisplay ( props ) {
@@ -7,7 +7,7 @@ export default function ProductListingDisplay ( props ) {
     return (
         <div>
             {/* <div role='presentation' aria-label="product-category">product category goes here</div> */}
-            <NavBar calledFrom="productListing" />
+            <NavBarDisplay calledFrom="productListing" />
             <BrowseSearch />
 
             <div role="presentation" aria-label="products">

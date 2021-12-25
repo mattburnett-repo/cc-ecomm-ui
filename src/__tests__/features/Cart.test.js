@@ -3,10 +3,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 // import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux';
+import store from '../../store'
+
 import Cart from '../../features/cart/cart';
 
 describe('<Cart /> feature tests', () => {
-    beforeEach(() => render(<Cart />));
+    beforeEach(() => render(<Provider store={store}><Cart /></Provider>));
 
     it('shows cart and user info from data', () => {
         let theVal = screen.getByRole('presentation', { name: /cart-header/i });
@@ -28,13 +31,13 @@ describe('<Cart /> feature tests', () => {
         expect(theVal).toHaveTextContent(30);
     })
     it('creates a snapshot', () => {
-        const tree = renderer.create(<Cart />).toJSON();
+        const tree = renderer.create(<Provider store={store}><Cart /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     })
 }); // end feature
 
 describe('<Cart /> unit / functional tests', () => {
-    beforeEach(() => render(<Cart />));
+    beforeEach(() => render(<Provider store={store}><Cart /></Provider>));
 
     // TODO: don't forget about this...u
     // it('changes a product quantity value', () => {

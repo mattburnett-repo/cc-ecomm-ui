@@ -1,6 +1,6 @@
 // TODO: cart should have its own state, to manage changes in line-item status like quanity / deletion
 
-import NavBar from '../../components/nav/NavBar';
+import NavBarDisplay from '../../components/nav/NavBarDisplay';
 
 export default function CartDisplay ( props )  { // TODO: cartData should come from state / redux
     const { cartData } = props;
@@ -8,7 +8,7 @@ export default function CartDisplay ( props )  { // TODO: cartData should come f
 
     return (
         <div>
-            <NavBar calledFrom="cart" />
+            <NavBarDisplay calledFrom="cart" />
             <div role="presentation" aria-label="cart-header">
                 cart_id: {theCart.cart_id} user_id: {theCart.user_id}
             </div>
