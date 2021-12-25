@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 
 import { getOrders } from '../orders/ordersSlice'
 import { getCarts } from '../carts/cartsSlice'
+import { getProductCategories } from '../productCategory/productCategorySlice'
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import DashboardDisplay from "../../components/dashboard/DashboardDisplay";
@@ -11,9 +12,13 @@ export default function Dashboard () {
 
     const dispatch = useDispatch()
 
-    // don't understand how this works without async / await, but it does
+    // don't understand how loadData() works without async / await, but it does what we want it to
     //      async / await, useEffect( etc. don't work...
+
+    // FIXME: is this function calling the dispatches twice?
+    //         there are two calls to each fetch...
     function loadData() {
+        dispatch(getProductCategories())
         dispatch(getOrders()); 
         dispatch(getCarts());
     };

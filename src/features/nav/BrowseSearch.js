@@ -1,10 +1,16 @@
+import { useSelector } from "react-redux";
+
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
-import { mockProductCategories } from '../../utils/mockData';   // TODO: this should be an API call, mocked in the test/s
+import { selectProductCategories } from "../productCategory/productCategorySlice";
+
+// TODO: should send handleChange, handleSearch as props
 
 export default function BrowseSearch () {
     CheckLoginStatus()
 
-    return <BrowseSearchDisplay  data={ mockProductCategories } />
+    const productCategories = useSelector(selectProductCategories)
+
+    return <BrowseSearchDisplay  data={ productCategories } />
 }

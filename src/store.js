@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import authReducer from './features/auth/authSlice';
+import productCategoryReducer from './features/productCategory/productCategorySlice'
 // import dashboardReducer from './features/dashboard/dashboardSlice'
 import ordersReducer from './features/orders/ordersSlice'
 import cartsReducer from './features/carts/cartsSlice'
@@ -11,6 +12,7 @@ function rootReducer() {
         reducer: {
             auth: authReducer,
             // dashboard: dashboardReducer,
+            productCategories: productCategoryReducer,
             orders: ordersReducer,
             carts: cartsReducer,
             // order: orderReducer
