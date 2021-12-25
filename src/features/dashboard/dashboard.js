@@ -1,4 +1,3 @@
-// import { useEffect  } from 'react'
 import { useDispatch } from 'react-redux';
 
 import { getOrders } from '../orders/ordersSlice'
@@ -12,23 +11,12 @@ export default function Dashboard () {
 
     const dispatch = useDispatch()
 
-    // data gets loaded here, but is accessed / selected in individual features (zB features/orders, features/carts)
-    // useEffect(() => {
-    //     async function loadData() { // add authIsExpired test
-    //         console.log('useEffect loadData / getOrders')
-    //         await dispatch(getOrders()); 
-    //         // await dispatch(getCarts());
-    //     };
-    //     loadData();
-    // }, [dispatch]); 
-
-    // const someVar = () => dispatch(someDispatch())
-
-    async function loadData() { 
-        await dispatch(getOrders()); 
-        await dispatch(getCarts());
+    // don't understand how this works without async / await, but it does
+    //      async / await, useEffect( etc. don't work...
+    function loadData() {
+        dispatch(getOrders()); 
+        dispatch(getCarts());
     };
-    // }();
     loadData();
 
     return <DashboardDisplay />
