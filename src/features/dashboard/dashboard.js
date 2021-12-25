@@ -1,10 +1,33 @@
+import { useEffect  } from 'react'
+import { useDispatch } from 'react-redux';
+
+import { getOrders } from '../orders/ordersSlice'
+// import { getCarts } from '../carts/cartsSlice'
+
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import DashboardDisplay from "../../components/dashboard/DashboardDisplay";
-
-import { mockOrderData, mockCartData } from "../../utils/mockData"; // TODO: this should be an API call / Redux route, mocked in the test/s
 
 export default function Dashboard () {
     CheckLoginStatus()
 
-    return <DashboardDisplay  orderData={mockOrderData} cartData={ mockCartData } />
+    const dispatch = useDispatch()
+
+    // data gets loaded here, but is accessed / selected in individual features (zB features/orders, features/cars)
+    // useEffect(() => {
+    //     async function loadData() { // add authIsExpired test
+    //         console.log('useEffect loadData / getOrders')
+    //         await dispatch(getOrders()); 
+    //         // await dispatch(getCarts());
+    //     };
+    //     loadData();
+    // }, [dispatch]); 
+
+    async function loadData() { // add authIsExpired test
+        console.log('useEffect loadData / getOrders')
+        await dispatch(getOrders()); 
+        // await dispatch(getCarts());
+    };
+    loadData();
+
+    return <DashboardDisplay />
 }

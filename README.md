@@ -41,6 +41,10 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Redux
 * React Router
 * React Testing Library
+* Passport Authentication Library
+  * Local Strategy
+  * Google OAuth Strategy
+* JSON Web Token authorization
 *  E-Commerce REST API (built as previous project)
   * Production: https://e-commerce-rest-api-v2.herokuapp.com/
   * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
@@ -49,6 +53,7 @@ Tests are located in two folders under the src/\__tests\__ folder
 
 ## Features
 * User can log in with either a local account, or with OAuth through Google
+* API calls are authenticated using Json Web Tokens
 * Displays a user-specific dashboard
 * Users can browse / search product categories
 * Users can add / read / update / delete cart items

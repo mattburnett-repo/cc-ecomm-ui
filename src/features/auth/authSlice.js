@@ -6,7 +6,7 @@ export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
     async ( props ) => {
         const { username, password } = props;     
-        let theApiUrl = API_BASE_URL + '/auth/local'
+        let theApiUrl = API_BASE_URL + '/api/v1/auth/local'
 
         // FIXME: needs to test if server is available and handle when it's down
         //          test for response ERR_CONNECTION_REFUSED

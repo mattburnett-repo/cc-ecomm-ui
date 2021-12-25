@@ -1,7 +1,6 @@
 export default function NavBarDisplay (props) {
     return (
         <div role="presentation" aria-label="nav-bar">
-            {/* TODO: make header-message dynamic depending on caller */}
             <div role="presentation" aria-label="header-message">{props.calledFrom} {props.headerMessage}</div>
   
             {(props.calledFrom !== 'dashboard') ? (

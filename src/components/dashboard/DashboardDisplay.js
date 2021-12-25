@@ -2,8 +2,10 @@ import NavBar from '../../features/nav/navBar';
 import BrowseSearch from '../../features/nav/BrowseSearch';
 import Orders from '../../features/orders/orders'
 
-export default function DashboardDisplay (props) {
-    const { cartData } = props; // TODO: these should come fro state/redux in the Cart feature
+import { mockCartData } from '../../utils/mockData';
+
+export default function DashboardDisplay () {
+    const cartData = mockCartData;
 
     return (
         <div>
