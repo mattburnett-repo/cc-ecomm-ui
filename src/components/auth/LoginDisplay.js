@@ -1,6 +1,7 @@
 export default function LoginDisplay ( props ) {
     const { handleClick } = props;
 
+    // TODO: enable message / flash message when there are login errors
     return (
         <form onSubmit={handleClick} method="post">
             <div role="presentation" aria-label="login-display-form">
@@ -19,7 +20,7 @@ export default function LoginDisplay ( props ) {
                 </div>
                 <div>
                 <label htmlFor="register">Don't have an account yet? </label>
-                    <a href="/register" id="register" aria-label="register" onClick={handleClick}>Register</a>
+                    <a href="/register" id="register" aria-label="register" onClick={handleClick}>Register</a> 
                 </div>
             </div>            
         </form>

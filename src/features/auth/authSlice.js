@@ -4,7 +4,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
-    async ( props ) => {
+    async ( props, thunkAPI ) => {
         const { username, password } = props;     
         let theApiUrl = API_BASE_URL + '/api/v1/auth/local'
 
@@ -29,24 +29,23 @@ export const localAuthLogin = createAsyncThunk (
             let data = await response.json()
 
             if(response.status === 401) {
-                console.log('401 unauthorized message from passport / server')
-                // send flash message / redirect to login
-                return {isAuthorized: false}  
+
+                return thunkAPI.rejectWithValue(data)
             } else if (response.status === 200) {
                 const { id, user_name, email } = data.user;
                 const { token } = data;
-                
-                // localStorage.setItem("token", data.token)
 
+                // localStorage.setItem("token", data.token)
                 return {user_id: id, username: user_name, email: email, jwtAuthToken: token};
             } else {
-            //   return thunkAPI.rejectWithValue(data)
-                console.log('response.status ' + response.status + ' authSlice fetch un successful')
-                return {message: 'login un successful', isAuthorized: false} 
+                // console.log('response.status ' + response.status + ' authSlice fetch un successful')
+                // return {message: 'login un successful', isAuthorized: false} 
+
+                return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
             console.log("Error ", e.response.data)
-            // return thunkAPI.rejectWithValue(e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 ) // end localAuthLogin
@@ -102,7 +101,6 @@ const options = {
             .addCase(localAuthLogin.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
-                state.isAuthorized = false;
                 state.errorMsg = '';
             })
             .addCase(localAuthLogin.fulfilled, (state, action) => {
@@ -121,14 +119,13 @@ const options = {
             .addCase(localAuthLogout.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
-                state.isAuthorized = false;
                 state.errorMsg = '';
             })
             .addCase(localAuthLogout.fulfilled, (state, action) => {
                 state.userData = action.payload.userData;
                 state.isLoading = false;
                 state.hasError = false;
-                state.isAuthorized = action.payload.isAuthorized;
+                state.isAuthorized = false;
                 state.errorMsg = '';
             })
             .addCase(localAuthLogout.rejected, (state, action) => {
