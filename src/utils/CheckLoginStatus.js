@@ -10,7 +10,9 @@ export default function CheckLoginStatus () {
     // FIXME: enable this after development
     // if(!isLoggedIn) {
     //     return <Redirect to='/' />
+    // } else {
+    //     return true;
     // }
-    
+
     return true;
 }        

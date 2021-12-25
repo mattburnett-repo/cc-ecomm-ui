@@ -40,6 +40,9 @@ export default function NavBar ( props ) {
         case 'cart':
             headerMessage = 'Cart Details'
             break;
+        case 'order':
+            headerMessage = 'Order Details'
+            break;
         case 'shippingInfo':
             headerMessage = 'Order Checkout / Shipping Info'
             break;

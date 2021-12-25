@@ -69,7 +69,8 @@ export const localAuthLogout = createAsyncThunk (
                 }
             )
 
-            if (response.status === 200) {            
+            if (response.status === 200) {         
+                // TODO: needs to clear out other slices (orders, carts, etc)   
                 return {userData: '', isAuthorized: false}  
             } else {
             //   return thunkAPI.rejectWithValue(data)

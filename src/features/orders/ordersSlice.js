@@ -8,7 +8,7 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const getOrders = createAsyncThunk (
     'orders/getOrders',
-    async (  ) => {
+    async () => {
         // const { user_id } = props;     
         let theApiUrl = API_BASE_URL + '/api/v1/order'
         let authToken = useSelector(selectJwtToken)
