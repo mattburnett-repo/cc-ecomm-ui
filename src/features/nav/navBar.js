@@ -1,12 +1,13 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { localAuthLogout } from '../../features/auth/authSlice';
+import { localAuthLogout, selectUserData } from '../../features/auth/authSlice';
 
 import NavBarDisplay from '../../components/nav/NavBarDisplay'
 
 export default function NavBar ( props ) {
     // const { calledFrom } = props;
     const dispatch = useDispatch()
+    const user = useSelector(selectUserData)
 
     let headerMessage = ''
 
@@ -28,7 +29,7 @@ export default function NavBar ( props ) {
 
     switch(props.calledFrom) {
         case 'dashboard':
-            headerMessage = 'Hello (username goes here)'
+            headerMessage = `Hello ${user.username}`
             break;
         case 'productsListing':
             headerMessage = '(Category) Products'
