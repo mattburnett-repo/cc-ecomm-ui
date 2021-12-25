@@ -15,16 +15,16 @@ describe('<Orders /> feature tests', () => {
         screen.getByRole('presentation', { name: /^orders$/i})
     })
 
-    it('renders order items from data', () => {
-        const theVals = screen.getAllByRole('presentation', { name: /^order$/i})
+    // it('renders order items from data', () => {
+    //     const theVals = screen.getAllByRole('presentation', { name: /^order$/i})
 
-        // TODO: test for actual values
-        expect(theVals).toHaveLength(1)
-        expect(theVals[0]).toHaveTextContent('order_id')
-        expect(theVals[0]).toHaveTextContent('user_id')
-        expect(theVals[0]).toHaveTextContent('order_date')
-        expect(theVals[0]).toHaveTextContent('total_price')
-    })
+    //     // TODO: test for actual values
+    //     expect(theVals).toHaveLength(1)
+    //     expect(theVals[0]).toHaveTextContent('order_id')
+    //     expect(theVals[0]).toHaveTextContent('user_id')
+    //     expect(theVals[0]).toHaveTextContent('order_date')
+    //     expect(theVals[0]).toHaveTextContent('total_price')
+    // })
 
     it('creates a snapshot', () => {
         const tree = renderer.create(<Provider store={store}> <Orders/></Provider>).toJSON();

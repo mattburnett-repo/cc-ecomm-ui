@@ -1,8 +1,6 @@
 export default function OrdersDisplay ( props ) {
     const { ordersData } = props;
-
-    console.log('ordersData', ordersData)
-
+    
     return (
         <div role="presentation" aria-label="orders">
             <h2>OrdersDisplay</h2>

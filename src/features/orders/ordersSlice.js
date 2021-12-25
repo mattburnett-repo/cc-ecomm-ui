@@ -13,9 +13,6 @@ export const getOrders = createAsyncThunk (
         let theApiUrl = API_BASE_URL + '/api/v1/order'
         let authToken = useSelector(selectJwtToken)
 
-        console.log('getOrders pre fetch')
-        // console.log('authToken', authToken)
-
         // FIXME: needs to test if server is available and handle when it's down
         //          test for response ERR_CONNECTION_REFUSED
         try { 
@@ -32,8 +29,6 @@ export const getOrders = createAsyncThunk (
                 }
             )
 
-            console.log('getOrders post fetch')
-
             let data = await response.json();
             console.log('data[0] ', data[0])
 
@@ -47,8 +42,6 @@ export const getOrders = createAsyncThunk (
             // console.log('text: ' + text)
 
             if (response.status === 200) {
-                console.log('getOrders 200', data[0])
-                 
                 return data
             } else if (response.status === 401) {
                 console.log('getOrders get request auth fail.')

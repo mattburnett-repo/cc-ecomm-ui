@@ -10,7 +10,6 @@ export default function Orders () {
     CheckLoginStatus()
 
     const ordersData = useSelector(selectOrders)
-    console.log('orders / ordersData', ordersData)
     // const ordersData = mockOrderData
     
     return (

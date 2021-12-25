@@ -23,7 +23,6 @@ export default function Dashboard () {
     // }, [dispatch]); 
 
     async function loadData() { // add authIsExpired test
-        console.log('useEffect loadData / getOrders')
         await dispatch(getOrders()); 
         // await dispatch(getCarts());
     };
