@@ -18,8 +18,8 @@ describe('<Dashboard /> feature tests', () => {
         const theVal = screen.getAllByRole('presentation', {name: /^orders$/i});
         expect(theVal.length).toBe(1);
     })
-    it('displays cart info', () => {
-        const theVal = screen.getAllByRole('presentation', {name: /^cart$/i});
+    it('displays carts info', () => {
+        const theVal = screen.getAllByRole('presentation', {name: /^carts$/i});
         expect(theVal.length).toBe(1);
     })
     
@@ -29,25 +29,3 @@ describe('<Dashboard /> feature tests', () => {
     })
 }) // end feature
 
-describe('<Dashboard /> unit / functional tests', () => {
-    beforeEach(() => render(<Provider store={store}><Dashboard /></Provider>));
-
-    it('selects a product category', () => {
-        fireEvent.change(screen.getByRole('presentation', {name: /product-categories/i}), { target: { value: 2 } })
-        let options = screen.getByRole('presentation', {name: /product-categories/i});
-        expect(options[0].selected).toBeFalsy();
-        expect(options[1].selected).toBeFalsy();
-        expect(options[2].selected).toBeFalsy();
-        expect(options[3].selected).toBeTruthy();
-    });
-    it('accepts search text', () => {
-        const theElement = screen.getByRole('textbox', {name: /search-terms/i});
-        userEvent.type(theElement, 'here is some search text');
-        
-        expect(theElement).toHaveValue('here is some search text');
-    });
-    it('clicks the search button', () => {
-        const theVal = screen.getByRole('button', {name: /search/i});
-        fireEvent.click(theVal);
-    });
-})

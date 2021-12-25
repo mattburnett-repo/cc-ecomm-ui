@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartsDisplay cartsData={mockCartData} /> component tests creates a snapshot 1`] = `
+<div
+  aria-label="carts"
+  role="presentation"
+>
+  <h2>
+    CartsDisplay
+  </h2>
+  <div
+    aria-label="cart"
+    role="presentation"
+  >
+    cart_id: 
+    1
+    user_id: 
+    1
+  </div>
+</div>
+`;

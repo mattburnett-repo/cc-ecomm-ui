@@ -12,7 +12,7 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     >
       dashboard
        
-      Hello (username goes here)
+      Hello undefined
     </div>
     <button
       aria-label="logout"
@@ -25,31 +25,11 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     aria-label="browse-search"
     role="presentation"
   >
+    Product Categories:
     <select
       aria-label="product-categories"
       role="presentation"
-    >
-      <option
-        value={4}
-      >
-        Auto
-      </option>
-      <option
-        value={3}
-      >
-        Health
-      </option>
-      <option
-        value={1}
-      >
-        Pets
-      </option>
-      <option
-        value={2}
-      >
-        Tech
-      </option>
-    </select>
+    />
     <input
       aria-label="search-terms"
       placeholder="Enter search terms"
@@ -73,17 +53,8 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     role="presentation"
   >
     <h2>
-      Carts
+      CartsDisplay
     </h2>
-    <div
-      aria-label="cart"
-      role="presentation"
-    >
-      cart_id: 
-      1
-       user_id: 
-      1
-    </div>
   </div>
 </div>
 `;

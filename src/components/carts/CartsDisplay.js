@@ -7,7 +7,7 @@ export default function CartsDisplay ( props )  { // TODO: cartData should come 
         <div role="presentation" aria-label="carts">
             <h2>CartsDisplay</h2>
             {cartsData.map((item, index) => (
-                <div role="presentation" arial-label="cart" key={index}>
+                <div role="presentation" aria-label="cart" key={index}>
                     cart_id: {item.cart.cart_id}  
                     user_id: {item.cart.user_id}
                 </div>

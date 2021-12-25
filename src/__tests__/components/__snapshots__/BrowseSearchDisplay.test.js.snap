@@ -5,10 +5,16 @@ exports[`<BrowseSearchDisplay /> component tests creates a snapshot 1`] = `
   aria-label="browse-search"
   role="presentation"
 >
+  Product Categories:
   <select
     aria-label="product-categories"
     role="presentation"
   >
+    <option
+      value={0}
+    >
+      Please select a product category
+    </option>
     <option
       value={4}
     >
