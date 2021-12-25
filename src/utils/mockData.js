@@ -105,10 +105,12 @@ module.exports = {
         "order_date": '12-Dez-2021',
         "payment_type": 'Deutschmarks',
         "delivery_address": '123 Katzendamm, 90210 Berlin DE'
-
-      }
-    ,
+      },
     mockProductCategories: [
+        {
+          "category_id": 0,
+          "description": "Please select a product category"
+        },
         {
           "category_id": 4,
           "description": "Auto"

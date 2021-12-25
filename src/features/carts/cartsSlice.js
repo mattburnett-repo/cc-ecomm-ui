@@ -29,7 +29,7 @@ export const getCarts = createAsyncThunk (
             )
 
             let data = await response.json();
-            console.log('data[0] ', data[0])
+            // console.log('data[0] ', data[0])
 
             // let data = await response;
             // let text = await response.text()

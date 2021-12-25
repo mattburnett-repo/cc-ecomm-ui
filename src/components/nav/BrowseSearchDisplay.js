@@ -3,6 +3,7 @@ export default function BrowseSearchDisplay (props) {
 
     return (
         <div role="presentation" aria-label="browse-search">
+            Product Categories: 
             <select role="presentation" aria-label="product-categories">
                 {data.map(item => (
                     <option key={item.category_id} value={item.category_id}>{item.description}</option>
