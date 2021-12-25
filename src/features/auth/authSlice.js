@@ -89,7 +89,7 @@ const options = {
         isLoading: false,
         hasError: false,
         errorMsg: '',
-        isAuthorized: false
+        isAuthenticated: false
     },   
     reducers: {     
         localAuthLoginTestOutput: (state, action) => {       
@@ -107,7 +107,7 @@ const options = {
                 state.userData = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
-                state.isAuthorized = true;
+                state.isAuthenticated = true;
                 state.errorMsg = '';
             })
             .addCase(localAuthLogin.rejected, (state, action) => {
@@ -125,7 +125,7 @@ const options = {
                 state.userData = action.payload.userData;
                 state.isLoading = false;
                 state.hasError = false;
-                state.isAuthorized = false;
+                state.isAuthenticated = false;
                 state.errorMsg = '';
             })
             .addCase(localAuthLogout.rejected, (state, action) => {
@@ -136,7 +136,7 @@ const options = {
     } // end extraReducers
 } // end options
 
-export const selectIsAuthorized = state => state.auth.isAuthorized;
+export const selectIsAuthenticated = state => state.auth.isAuthenticated;
 export const selectUserData = state => state.auth.userData;
 export const selectJwtToken = state => state.auth.userData.jwtAuthToken;
 

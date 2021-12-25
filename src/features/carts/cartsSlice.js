@@ -70,7 +70,6 @@ const options = {
             .addCase(getCarts.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
-                state.isAuthorized = false;
                 state.errorMsg = '';
             })
             .addCase(getCarts.fulfilled, (state, action) => {

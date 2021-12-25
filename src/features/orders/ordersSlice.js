@@ -71,7 +71,6 @@ const options = {
             .addCase(getOrders.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
-                state.isAuthorized = false;
                 state.errorMsg = '';
             })
             .addCase(getOrders.fulfilled, (state, action) => {

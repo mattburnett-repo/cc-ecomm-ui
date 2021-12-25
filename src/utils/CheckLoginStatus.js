@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux'
-import { selectIsAuthorized } from '../features/auth/authSlice'
+import { selectIsAuthenticated} from '../features/auth/authSlice'
 // eslint-disable-next-line
 import { Redirect } from 'react-router-dom'
 
 export default function CheckLoginStatus () {
     // eslint-disable-next-line
-    const isLoggedIn = useSelector(selectIsAuthorized);
+    const isLoggedIn = useSelector(selectIsAuthenticated);
     
     // FIXME: enable this after development
     // if(!isLoggedIn) {
