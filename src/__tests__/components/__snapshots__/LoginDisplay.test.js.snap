@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
-<form
-  method="post"
-  onSubmit={[MockFunction]}
+<div
+  aria-label="login-register"
+  role="presentation"
 >
   <div
-    aria-label="login-display-form"
+    aria-label="oauth"
     role="presentation"
   >
     <div>
@@ -27,52 +27,64 @@ exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
         Log in with GitHub
       </a>
     </div>
-    <div>
-      <label
-        htmlFor="username"
-      >
-        Username:
-      </label>
-      <input
-        aria-label="username"
-        id="username"
-      />
-    </div>
-    <div>
-      <label
-        htmlFor="password"
-      >
-        Password:
-      </label>
-      <input
-        aria-label="password"
-        id="password"
-        type="password"
-      />
-    </div>
-    <div>
-      <button
-        aria-label="login"
-        type="submit"
-      >
-        Log in
-      </button>
-    </div>
-    <div>
-      <label
-        htmlFor="register"
-      >
-        Don't have an account yet? 
-      </label>
-      <a
-        aria-label="register"
-        href="/register"
-        id="register"
-        onClick={[MockFunction]}
-      >
-        Register
-      </a>
-    </div>
   </div>
-</form>
+  <div
+    aria-label="login-display-form"
+    role="presentation"
+  >
+    <form
+      method="post"
+      onSubmit={[MockFunction]}
+    >
+      <div>
+        <label
+          htmlFor="username"
+        >
+          Username:
+        </label>
+        <input
+          aria-label="username"
+          id="username"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="password"
+        >
+          Password:
+        </label>
+        <input
+          aria-label="password"
+          id="password"
+          type="password"
+        />
+      </div>
+      <div>
+        <button
+          aria-label="login"
+          type="submit"
+        >
+          Log in
+        </button>
+      </div>
+    </form>
+  </div>
+  <div
+    aria-label="register"
+    role="presentation"
+  >
+    <label
+      htmlFor="register"
+    >
+      Don't have an account yet? 
+    </label>
+    <button
+      aria-label="register"
+      id="register"
+      onClick={[MockFunction]}
+    >
+      Register
+    </button>
+  </div>
+</div>
 `;
