@@ -76,5 +76,15 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
       CartsDisplay
     </h2>
   </div>
+  <div>
+    <div
+      aria-label="products"
+      role="presentation"
+    >
+      <h2>
+        ProductsListingDisplay
+      </h2>
+    </div>
+  </div>
 </div>
 `;

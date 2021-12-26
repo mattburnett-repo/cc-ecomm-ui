@@ -1,74 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RegisterDisplay /> renders a snapshot renders a snapshot 1`] = `
-<div>
-  <div>
-    <button
-      aria-label="google-auth"
-    >
-      Log in with Google
-    </button>
-    <button
-      aria-label="github-auth"
-    >
-      Log in with Google
-    </button>
+exports[`<RegisterDisplay /> component tests renders a snapshot 1`] = `
+<div
+  aria-label="register-display"
+  role="presentation"
+>
+  <div
+    aria-label="oauth"
+    role="presentation"
+  >
+    <div>
+      <a
+        aria-label="google-auth"
+        href="/auth/google"
+        onClick={[MockFunction]}
+      >
+        Log in with Google
+      </a>
+    </div>
+    <div>
+      <a
+        aria-label="github-auth"
+        href="/auth/github"
+        onClick={[MockFunction]}
+      >
+        Log in with GitHub
+      </a>
+    </div>
   </div>
-  <div>
-    <label
-      htmlFor="username"
+  <div
+    aria-label="register-display-form"
+    role="presentation"
+  >
+    <form
+      method="post"
+      onSubmit={[MockFunction]}
     >
-      Username:
-    </label>
-    <input
-      aria-label="username"
-      id="username"
-    />
+      <div>
+        <label
+          htmlFor="username"
+        >
+          Username:
+        </label>
+        <input
+          aria-label="username"
+          id="username"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="email"
+        >
+          Email:
+        </label>
+        <input
+          aria-label="email"
+          id="email"
+          type="email"
+        />
+      </div>
+      <div>
+        <label
+          htmlFor="password"
+        >
+          Password:
+        </label>
+        <input
+          aria-label="password"
+          id="password"
+          type="password"
+        />
+      </div>
+      <div>
+        <button
+          aria-label="register-button"
+          onClick={[MockFunction]}
+        >
+          Create Account
+        </button>
+      </div>
+    </form>
   </div>
-  <div>
-    <label
-      htmlFor="email"
-    >
-      Email:
-    </label>
-    <input
-      aria-label="email"
-      id="email"
-      type="email"
-    />
-  </div>
-  <div>
-    <label
-      htmlFor="password"
-    >
-      Password:
-    </label>
-    <input
-      aria-label="password"
-      id="password"
-      type="password"
-    />
-  </div>
-  <div>
-    <button
-      aria-label="register"
-    >
-      Create Account
-    </button>
-  </div>
-  <div>
+  <div
+    aria-label="login"
+    role="presentation"
+  >
     <label
       htmlFor="login"
     >
       Already have an account? 
     </label>
-    <a
-      aria-label="login"
-      href="/login"
-      id="login"
+    <button
+      aria-label="login-button"
+      id="register"
+      onClick={[MockFunction]}
     >
       Login
-    </a>
+    </button>
   </div>
 </div>
 `;

@@ -23,7 +23,7 @@ describe('<LoginDisplay /> component tests', () => {
     beforeEach(() => render(<LoginDisplay handlers={mockHandlers()} />));
 
     it('renders the display component', () => {
-        screen.getByRole('presentation', { name: /login-register/i })
+        screen.getByRole('presentation', { name: /^login-display$/i })
     })
 
     it('renders an oauth section', () => {
@@ -33,10 +33,6 @@ describe('<LoginDisplay /> component tests', () => {
         let theVal = screen.getByRole('link', { name: /google-auth/i});
         expect(theVal).toHaveTextContent('Log in with Google');
     });
-    it('renders a github oauth link', () => {
-        let theVal = screen.getByRole('link', { name: /github-auth/i});
-        expect(theVal).toHaveTextContent('Log in with GitHub');
-    });
     it('clicks the Google auth link', () => {       
         // mockHandleClick.mockImplementation((e) => {console.log(e.target.text)});
         mockHandleClick.mockReturnValue('Log in with Google'); // FIXME: evaluate e.target.name / value instead of hard-coding test val here
@@ -45,6 +41,10 @@ describe('<LoginDisplay /> component tests', () => {
 
         expect(mockHandleClick.mock.calls.length).toBe(1);
         expect(mockHandleClick()).toBe('Log in with Google');
+    });
+    it('renders a github oauth link', () => {
+        let theVal = screen.getByRole('link', { name: /github-auth/i});
+        expect(theVal).toHaveTextContent('Log in with GitHub');
     });
     it('clicks the GitHub auth link', () => {
         // mockHandleClick.mockImplementation((e) => {console.log(e.target.text)});
@@ -89,14 +89,18 @@ describe('<LoginDisplay /> component tests', () => {
         // expect(mockHandleClick()).toBe('Log in'); 
     });
 
-    it('renders a Register button', () => {
-        let theVal = screen.getByRole('button', { name: /register/i});
+    it('renders a Register section', () => {
+        let theVal = screen.getByRole('presentation', { name: /^register$/i});
         expect(theVal).toHaveTextContent('Register');
     });
-    it('clicks the Register link', () => {
+    it('renders a Register button', () => {
+        let theVal = screen.getByRole('button', { name: /register-button/i});
+        expect(theVal).toHaveTextContent('Register');
+    });
+    it('clicks the Register button', () => {
         // mockHandleRegister.mockImplementation((e) => {console.log(e.target.text)});
         mockHandleRegister.mockReturnValue('Register'); // FIXME: evaluate e.target.name / value instead of hard-coding test val here
-        const theVal = screen.getByRole('button', {name: /register/i});
+        const theVal = screen.getByRole('button', {name: /^register-button$/i});
         fireEvent.click(theVal);
 
         expect(mockHandleRegister.mock.calls.length).toBe(1);

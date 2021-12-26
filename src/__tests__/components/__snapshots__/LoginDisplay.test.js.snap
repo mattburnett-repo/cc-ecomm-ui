@@ -2,7 +2,7 @@
 
 exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
 <div
-  aria-label="login-register"
+  aria-label="login-display"
   role="presentation"
 >
   <div
@@ -79,7 +79,7 @@ exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
       Don't have an account yet? 
     </label>
     <button
-      aria-label="register"
+      aria-label="register-button"
       id="register"
       onClick={[MockFunction]}
     >
