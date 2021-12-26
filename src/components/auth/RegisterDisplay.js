@@ -29,7 +29,7 @@ export default function Register( props ) {
             </div> 
             <div role="presentation" aria-label="login">
                 <label htmlFor="login">Already have an account? </label>
-                <button id="register" aria-label="login-button" onClick={handleRegister}>Login</button> 
+                <a href='/login' id="login" aria-label="login-link">Login</a>
             </div>
         </div>
     )

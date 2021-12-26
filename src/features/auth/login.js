@@ -26,19 +26,12 @@ export default function Login () {
 
         dispatch(localAuthLogin({username, password}));
     }
-    function handleRegister(e) {
-        // redirect to Register component, zB
-        // <p class="lead mt-4">
-        //     No Account? <a href="/register">Register</a>
-        // </p>
-        alert('handle register')
-    }
+
 
     function handlers() {
         return {
             handleClick: handleClick,
             handleLogin: handleLogin,
-            handleRegister: handleRegister
         }
     }
     

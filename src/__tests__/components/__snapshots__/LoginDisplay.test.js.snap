@@ -78,13 +78,13 @@ exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
     >
       Don't have an account yet? 
     </label>
-    <button
-      aria-label="register-button"
+    <a
+      aria-label="register-link"
+      href="/register"
       id="register"
-      onClick={[MockFunction]}
     >
       Register
-    </button>
+    </a>
   </div>
 </div>
 `;

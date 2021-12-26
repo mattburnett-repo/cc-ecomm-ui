@@ -90,13 +90,13 @@ exports[`<RegisterDisplay /> component tests renders a snapshot 1`] = `
     >
       Already have an account? 
     </label>
-    <button
-      aria-label="login-button"
-      id="register"
-      onClick={[MockFunction]}
+    <a
+      aria-label="login-link"
+      href="/login"
+      id="login"
     >
       Login
-    </button>
+    </a>
   </div>
 </div>
 `;

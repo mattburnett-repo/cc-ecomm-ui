@@ -8,13 +8,11 @@ import LoginDisplay from '../../components/auth/LoginDisplay';
 
 const mockHandleClick = jest.fn(); // should be able to add .mockImplementation(...) here, but ok...
 const mockHandleLogin = jest.fn();
-const mockHandleRegister = jest.fn();
 
 function mockHandlers() {
     return {
         handleClick: mockHandleClick,
         handleLogin: mockHandleLogin,
-        handleRegister: mockHandleRegister
     }
 }
 
@@ -93,18 +91,15 @@ describe('<LoginDisplay /> component tests', () => {
         let theVal = screen.getByRole('presentation', { name: /^register$/i});
         expect(theVal).toHaveTextContent('Register');
     });
-    it('renders a Register button', () => {
-        let theVal = screen.getByRole('button', { name: /register-button/i});
+    it('renders a Register link', () => {
+        let theVal = screen.getByRole('link', { name: /register-link/i});
         expect(theVal).toHaveTextContent('Register');
     });
-    it('clicks the Register button', () => {
-        // mockHandleRegister.mockImplementation((e) => {console.log(e.target.text)});
-        mockHandleRegister.mockReturnValue('Register'); // FIXME: evaluate e.target.name / value instead of hard-coding test val here
-        const theVal = screen.getByRole('button', {name: /^register-button$/i});
+    it('clicks the Register link', () => {
+        const theVal = screen.getByRole('link', {name: /register-link/i});
         fireEvent.click(theVal);
 
-        expect(mockHandleRegister.mock.calls.length).toBe(1);
-        expect(mockHandleRegister()).toBe('Register'); 
+        // expect(theVal).toHaveBeenClicked() // FIXME: find the appropriate matcher
     });
 
     it('renders a snapshot', () => {

@@ -48,6 +48,7 @@ export const localAuthLogin = createAsyncThunk (
             // TODO: catch / handle net::ERR_CONNECTION_REFUSED. e -> 'Type Error: Failed to fetch'
             //      send some sort of message back to the UI. right now a failed login just sits there, mutely
             console.log("Error in authSlice auth/localAuthLogin: ", e) 
+            console.log("Probably because the API server is down / not started.") 
             return thunkAPI.rejectWithValue(e.response.data)
         }
     }
