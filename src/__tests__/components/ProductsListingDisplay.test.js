@@ -1,8 +1,8 @@
 // 20211217: Wireframe https://wireframe.cc/D5VIOi
 
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';
-// import renderer from 'react-test-renderer';
-import userEvent from '@testing-library/user-event';
+import renderer from 'react-test-renderer';
+// import userEvent from '@testing-library/user-event';
 
 import { Provider } from 'react-redux';
 import store from '../../store'
@@ -13,19 +13,6 @@ import { mockProducts } from '../../utils/mockData'
 
 describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
     beforeEach(() => render(<Provider store={store}><ProductsListingDisplay data={mockProducts} /></ Provider>));
-
-    it('should render a nav bar', () => {
-        screen.getByRole('presentation', {name: /nav-bar/i});
-    });
-    it('should display correct nav bar elements', () => {
-        screen.getByRole('button', { name: /home/i});
-        screen.getByRole('button', { name: /show-cart/i});
-        screen.getByRole('button', { name: /logout/i});
-    })
-
-    it('should render browse and search', () => {
-        screen.getByRole('presentation', {name: /browse-search/i});
-    });
 
     it('should display products', () => { 
         screen.getByRole('presentation', {name: /products/i});
@@ -55,8 +42,8 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
         expect(theVal).toHaveLength(4);
     });
 
-    it('clicks the search button', () => {
-        const theVal = screen.getByRole('button', {name: /search/i});
-        fireEvent.click(theVal);
+    it('creates a snapshot', () => {
+        const tree = renderer.create(<Provider store={store}><ProductsListingDisplay data={mockProducts} /></ Provider>).toJSON();
+        expect(tree).toMatchSnapshot();  
     });
 }); // end component

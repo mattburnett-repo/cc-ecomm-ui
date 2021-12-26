@@ -1,13 +1,15 @@
-import CheckLoginStatus from "../../utils/checkLoginStatus";
+import { useSelector } from "react-redux";
+
+import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ProductsListingDisplay from "../../components/products/ProductsListingDisplay";
 
-import { mockProducts } from '../../utils/mockData';
+import { selectProductsListing } from '../products/productsSlice'
 
 export default function ProductsListing () {
     CheckLoginStatus()
     
-    // data should come from APi / Redux
- 
-    return <ProductsListingDisplay data={ mockProducts } />
+    const productsData = useSelector(selectProductsListing) // loaded from dispatch in dashboard.js
+
+    return <ProductsListingDisplay data={ productsData } />
 
 }

@@ -30,21 +30,12 @@ export const getOrders = createAsyncThunk (
             )
 
             let data = await response.json();
-            // console.log('data[0] ', data[0])
-
-            // let data = await response;
-            // let text = await response.text()
-            // let body = await text.body();
-
-            // console.log('data.id ' + data.id)
-
-            // console.log('response.status: ' + response.status)
-            // console.log('text: ' + text)
 
             if (response.status === 200) {
                 return data
             } else if (response.status === 401) {
                 console.log('getOrders get request auth fail.')
+                // return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
             console.log("Error: ", e.response.data)

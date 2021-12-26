@@ -1,16 +1,10 @@
-import NavBarDisplay from '../nav/NavBarDisplay';
-import BrowseSearch from "../../features/nav/BrowseSearch";
-
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
 
     return (
         <div>
-            {/* <div role='presentation' aria-label="product-category">product category goes here</div> */}
-            <NavBarDisplay calledFrom="productListing" />
-            <BrowseSearch />
-
             <div role="presentation" aria-label="products">
+                <h2>ProductsListingDisplay</h2>
                 {/* Object.keys(posts).map(key => <Post key={key} body={posts[key]} />)  */}
                 {data.map((item, index) => (
                     <div role="presentation" aria-label='product' key={index}>
