@@ -12,6 +12,10 @@ export default function Login () {
 
     // TODO: xx-auth and login button should also dispatch actions to redux
     function handleClick() {
+        // redirect to appropriate auth component, zB
+        // <p class="lead mt-4">
+        //     No Account? <a href="/register">Register</a>
+        // </p>
         alert('handle click')
     }
     function handleLogin(e) {
@@ -23,10 +27,14 @@ export default function Login () {
         dispatch(localAuthLogin({username, password}));
     }
     function handleRegister(e) {
+        // redirect to Register component, zB
+        // <p class="lead mt-4">
+        //     No Account? <a href="/register">Register</a>
+        // </p>
         alert('handle register')
     }
 
-    function loginProps() {
+    function handlers() {
         return {
             handleClick: handleClick,
             handleLogin: handleLogin,
@@ -35,7 +43,7 @@ export default function Login () {
     }
     
     if(!isAuthorized) {
-        return <LoginDisplay handlers={loginProps()} />
+        return <LoginDisplay handlers={handlers()} />
     } else {
         return <Dashboard />
     }
