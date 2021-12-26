@@ -14,7 +14,7 @@ import { mockProduct } from '../../utils/mockData'
 const mockHandleAddToCart = jest.fn()
 
 describe('<ProductDetailDisplay /> component tests', () => {
-    beforeEach(() => render(<ProductDetailDisplay data={mockProduct} />));
+    beforeEach(() => render(<ProductDetailDisplay data={mockProduct} handleAddToCart={ mockHandleAddToCart }/>));
 
     it('should display a product image', () => {
         screen.getByRole('img', {name: /product-image/i});

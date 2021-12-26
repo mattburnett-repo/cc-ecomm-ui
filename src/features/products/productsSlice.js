@@ -28,7 +28,7 @@ export const getProducts = createAsyncThunk (
             let data = await response.json();
 
             if (response.status === 200) {
-                console.log('getProducts 200', data)
+                // console.log('getProducts 200', data)
                 return data
             } else if (response.status === 401) {
                 console.log('getProducts get request auth fail.')

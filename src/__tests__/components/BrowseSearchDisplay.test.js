@@ -18,6 +18,7 @@ describe('<BrowseSearchDisplay /> component tests', () => {
         screen.getByRole('presentation', {name: /product-categories/i});
     });
     it('should select a product category', () => {
+        // FIXME: use mockHandleChange here, somehow
         fireEvent.change(screen.getByRole('presentation', {name: /product-categories/i}), { target: { value: 2 } })
         let options = screen.getByRole('presentation', {name: /product-categories/i});
         expect(options[0].selected).toBeFalsy();

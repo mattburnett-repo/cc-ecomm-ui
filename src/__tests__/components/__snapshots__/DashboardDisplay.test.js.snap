@@ -33,8 +33,16 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     <select
       aria-label="product-categories"
       id="product-categories"
+      onChange={[Function]}
       role="presentation"
-    />
+    >
+      <option
+        selected={true}
+        value="0"
+      >
+        Please select a product category
+      </option>
+    </select>
     <label
       htmlFor="search"
     >
@@ -47,6 +55,7 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     />
     <button
       aria-label="search-button"
+      onClick={[Function]}
     >
       Search
     </button>
@@ -66,16 +75,6 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     <h2>
       CartsDisplay
     </h2>
-  </div>
-  <div>
-    <div
-      aria-label="products"
-      role="presentation"
-    >
-      <h2>
-        ProductsListingDisplay
-      </h2>
-    </div>
   </div>
 </div>
 `;

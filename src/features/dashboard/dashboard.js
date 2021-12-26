@@ -23,7 +23,7 @@ export default function Dashboard () {
         dispatch(getOrders()); 
         dispatch(getCarts());
         dispatch(getProducts());
-        dispatch(getProductById(2))
+        dispatch(getProductById(2)) // FIXME: this has to go somewhere else. maybe the productListing thing, or maybe when it loads in productDetail
     };
     loadData();
 

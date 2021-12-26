@@ -6,7 +6,6 @@ import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 import { selectProduct } from '../products/productsSlice'
 
 function handleAddToCart(){
-    console.log('handleAddToCart')
     alert('handleAddToCart')
 }
 

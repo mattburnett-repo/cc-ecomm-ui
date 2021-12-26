@@ -15,9 +15,6 @@ import { mockOrderData, mockCartData } from '../../utils/mockData'
 describe('<DashboardDisplay /> component tests', () => {
     beforeEach(() => render(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>));
 
-    // it('should greet user', () => {
-    //     screen.getByRole('presentation', {name: /user-greeting/i});
-    // });
     it('should render a NavBar', () => {
         screen.getByRole('presentation', {name: /nav-bar/i});
     });
