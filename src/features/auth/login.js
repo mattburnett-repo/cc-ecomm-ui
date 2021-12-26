@@ -19,11 +19,14 @@ export default function Login () {
 
         dispatch(localAuthLogin({username, password}));
     }
+    function handleRegister(e) {
+        alert('handle register')
+    }
 
     // console.log('isAuthorized: ' + isAuthorized)
     
     if(!isAuthorized) {
-        return <LoginDisplay handleClick={handleClick} />
+        return <LoginDisplay handleClick={handleClick} handleRegister={handleRegister}/>
     } else {
         return <Dashboard />
     }
