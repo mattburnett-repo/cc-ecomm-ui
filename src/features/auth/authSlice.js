@@ -52,7 +52,7 @@ export const localAuthLogin = createAsyncThunk (
     }
 ) // end localAuthLogin
 
-// TODO: implement better this once we get auth flow sorted out. API needs a route to handle this
+// TODO: implement better this once we get auth flow sorted out. 
 // FIXME: other slices should be cleared out when logout successful
 export const localAuthLogout = createAsyncThunk (
     'auth/localAuthLogout',

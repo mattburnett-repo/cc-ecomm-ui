@@ -5,13 +5,24 @@ exports[`<BrowseSearch /> feature tests creates a snapshot 1`] = `
   aria-label="browse-search"
   role="presentation"
 >
-  Product Categories:
+  <label
+    htmlFor="product-categories"
+  >
+    Product Categories: 
+  </label>
   <select
     aria-label="product-categories"
+    id="product-categories"
     role="presentation"
   />
+  <label
+    htmlFor="search"
+  >
+    Search: 
+  </label>
   <input
     aria-label="search-terms"
+    id="search"
     placeholder="Enter search terms"
   />
   <button

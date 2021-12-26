@@ -7,16 +7,15 @@ export default function BrowseSearchDisplay (props) {
 
     return (
         <div role="presentation" aria-label="browse-search">
-            Product Categories: 
-            <select role="presentation" aria-label="product-categories">
+            <label htmlFor="product-categories">Product Categories: </label>
+            <select role="presentation" id="product-categories" aria-label="product-categories" onChange={handleChange}>
                 {data.map(item => (
-                    // <option key={item.categories.category_id} value={item.categories.category_id}>{item.categories.description}</option>
                     <option key={item.category_id} value={item.category_id}>{item.description}</option>
                 ))}                    
             </select>
-
-            <input aria-label="search-terms" placeholder="Enter search terms"></input>
-            <button aria-label="search-button">Search</button>
+            <label htmlFor="search">Search: </label>
+            <input id="search" aria-label="search-terms" placeholder="Enter search terms"></input>
+            <button aria-label="search-button" onClick={handleSearch}>Search</button>
         </div>
     )           
 }

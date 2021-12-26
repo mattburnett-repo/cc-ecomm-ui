@@ -8,8 +8,11 @@ import { mockProductCategories } from '../../utils/mockData';
 
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
+const mockHandleChange = jest.fn()
+const mockHandleSearch = jest.fn()
+
 describe('<BrowseSearchDisplay /> component tests', () => {
-    beforeEach(() => render(<BrowseSearchDisplay data={ mockProductCategories }/>));
+    beforeEach(() => render(<BrowseSearchDisplay data={ mockProductCategories } handleChange={mockHandleChange} handleSearch={mockHandleSearch} />));
 
     it('should show product categories', () => {
         screen.getByRole('presentation', {name: /product-categories/i});
