@@ -9,7 +9,7 @@ export const localAuthLogin = createAsyncThunk (
         let theApiUrl = API_BASE_URL + '/api/v1/auth/local'
 
         // FIXME: needs to test if server is available and handle when it's down
-        //          test for response ERR_CONNECTION_REFUSED
+        //          test for response net::ERR_CONNECTION_REFUSED
         try { 
             const response = await fetch(
                 theApiUrl,
@@ -44,13 +44,16 @@ export const localAuthLogin = createAsyncThunk (
                 return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
-            console.log("Error ", e.response.data)
+            // TODO: catch / handle net::ERR_CONNECTION_REFUSED. e -> 'Type Error: Failed to fetch'
+            //      send some sort of message back to the UI. right now a failed login just sits there, mutely
+            console.log("Error in authSlice auth/localAuthLogin: ", e) 
             return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 ) // end localAuthLogin
 
 // TODO: implement better this once we get auth flow sorted out. API needs a route to handle this
+// FIXME: other slices should be cleared out when logout successful
 export const localAuthLogout = createAsyncThunk (
     'auth/localAuthLogout',
     async ( ) => {
