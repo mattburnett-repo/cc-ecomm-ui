@@ -7,12 +7,12 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import store from '../../store'
 
-import ProductListingDisplay from '../../components/products/ProductListingDisplay';
+import ProductsListingDisplay from '../../components/products/ProductsListingDisplay';
 
 import { mockProducts } from '../../utils/mockData'
 
-describe('<ProductListingDisplay data={mockData} /> component tests', () => {
-    beforeEach(() => render(<Provider store={store}><ProductListingDisplay data={mockProducts} /></ Provider>));
+describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
+    beforeEach(() => render(<Provider store={store}><ProductsListingDisplay data={mockProducts} /></ Provider>));
 
     it('should render a nav bar', () => {
         screen.getByRole('presentation', {name: /nav-bar/i});

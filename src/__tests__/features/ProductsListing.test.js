@@ -5,8 +5,8 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import store from '../../store'
 
-import ProductListing from '../../features/products/productListing';
+import ProductsListing from '../../features/products/productsListing';
 
-describe('<ProductListing /> feature tests', () => {
+describe('<ProductsListing /> feature tests', () => {
     test.todo('there should be integration tests')
 }); // end unit / functional
