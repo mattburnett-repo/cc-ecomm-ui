@@ -1,4 +1,9 @@
 
+// import { useDispatch } from 'react-redux'
+
+// import localAuthRegister from './authSlice'
+
+
 import RegisterDisplay from '../../components/auth/RegisterDisplay'
 
 function handleClick() {
@@ -11,31 +16,21 @@ function handleClick() {
 function handleRegister(e) {
     e.preventDefault();
 
-    let username = e.target.username.value
-    let email = e.target.email.value
-    let password = e.target.password.value
+    let registerPayload = {
+        username: e.target.username.value,
+        email: e.target.email.value,
+        password: e.target.password.value
+    }
 
-    alert('implement handleRegister')
+    console.log('registerPayload: ', registerPayload)
 
-    // dispatch(localAuthLogin({username, password}));
-}
-function handleLogin(e) {
-    e.preventDefault();
-
-    let username = e.target.username.value
-    let email = e.target.email.value
-    let password = e.target.password.value
-
-    alert('implement handleLogin')
-
-    // dispatch(localAuthLogin({username, password}));
+    // dispatch(localAuthRegister({registerPayload}));
 }
 
 function handlers() {
     return {
         handleClick: handleClick,
         handleRegister: handleRegister,
-        handleLogin: handleLogin
     }
 }
 

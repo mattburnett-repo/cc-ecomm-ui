@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { getOrders } from '../orders/ordersSlice'
 import { getCarts } from '../carts/cartsSlice'
 import { getProductCategories } from '../productCategory/productCategorySlice'
-import { getProducts, getProductById } from '../products/productsSlice'
+import { getProducts } from '../products/productsSlice'
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import DashboardDisplay from "../../components/dashboard/DashboardDisplay";
@@ -23,7 +23,6 @@ export default function Dashboard () {
         dispatch(getOrders()); 
         dispatch(getCarts());
         dispatch(getProducts());
-        dispatch(getProductById(2)) // FIXME: this has to go somewhere else. maybe the productListing thing, or maybe when it loads in productDetail
     };
     loadData();
 

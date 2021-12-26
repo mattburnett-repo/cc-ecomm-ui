@@ -8,7 +8,7 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   <img
     alt="product_name_02"
     aria-label="product-image"
-    src="http://www.image.com/item/2"
+    src="https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg"
   />
   <label
     htmlFor="name"
@@ -21,6 +21,18 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
     role="presentation"
   >
     product_name_02
+  </div>
+  <label
+    htmlFor="product-id"
+  >
+    ID:
+  </label>
+  <div
+    aria-label="product-id"
+    id="product-id"
+    role="presentation"
+  >
+    2
   </div>
   <label
     htmlFor="description"

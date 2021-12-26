@@ -23,7 +23,7 @@ export default function Register( props ) {
                         <input id="password" type="password" aria-label="password" />
                     </div>
                     <div>
-                        <button aria-label="register-button" onClick={handleRegister}>Create Account</button>
+                        <button type="susbmit" aria-label="register-button">Create Account</button>
                     </div>
                 </form>
             </div> 

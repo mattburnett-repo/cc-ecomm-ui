@@ -74,7 +74,7 @@ exports[`<RegisterDisplay /> component tests renders a snapshot 1`] = `
       <div>
         <button
           aria-label="register-button"
-          onClick={[MockFunction]}
+          type="susbmit"
         >
           Create Account
         </button>

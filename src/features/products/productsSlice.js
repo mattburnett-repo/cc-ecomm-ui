@@ -65,6 +65,7 @@ export const getProductById = createAsyncThunk (
 
             if (response.status === 200) {
                 // console.log('getProductById 200', data[0]) 
+                console.log('productById ', data)
                 return data[0] // FIXME: shouldn't have to juggle arrays when assigning to state...
             } else if (response.status === 401) {
                 console.log('getProductById get request auth fail.')

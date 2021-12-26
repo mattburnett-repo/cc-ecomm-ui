@@ -18,7 +18,7 @@ describe('<ProductDetailDisplay /> component tests', () => {
 
     it('should display a product image', () => {
         screen.getByRole('img', {name: /product-image/i});
-        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'http://www.image.com/item/2');
+        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg');
     });
     it('should display a name', () => {
         screen.getByRole('presentation', {name: /name/i});
