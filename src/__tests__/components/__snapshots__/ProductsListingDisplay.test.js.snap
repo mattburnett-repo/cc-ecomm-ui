@@ -47,7 +47,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_01"
-          src="item.image_url"
+          src="https://pixabay.com/images/id-71282/"
         />
       </div>
       <label
@@ -100,7 +100,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_02"
-          src="item.image_url"
+          src="http://www.image.com/item/2"
         />
       </div>
       <label
@@ -153,7 +153,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_03"
-          src="item.image_url"
+          src="http://www.image.com/item/3"
         />
       </div>
       <label
@@ -206,7 +206,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_04"
-          src="item.image_url"
+          src="http://www.image.com/item/4"
         />
       </div>
       <label

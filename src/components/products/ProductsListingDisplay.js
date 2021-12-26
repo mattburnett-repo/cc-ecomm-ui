@@ -14,7 +14,7 @@ export default function ProductListingDisplay ( props ) {
                         <div role='presentation' aria-label='product-description'>{item.description}</div>
                         <label htmlFor='product-image-url'>Image:</label>
                         <div role="img" id="product-image-url" aria-label='product-image-url'>
-                            <img src="item.image_url" alt={item.name} />
+                            <img src={item.image_url} alt={item.name} />
                         </div>
                         <label htmlFor='product-price'>Product Price:</label>
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
