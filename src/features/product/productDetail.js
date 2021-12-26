@@ -1,12 +1,19 @@
-import CheckLoginStatus from "../../utils/checkLoginStatus";
+import { useSelector } from "react-redux";
+
+import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
-import { mockProduct } from '../../utils/mockData';
+import { selectProduct } from '../products/productsSlice'
 
-export default function ProductDetail (props) {
+function handleAddToCart(){
+    console.log('handleAddToCart')
+    alert('handleAddToCart')
+}
+
+export default function ProductDetail () {
     CheckLoginStatus()
     
-    // data should come from API / Redux
+    const productData = useSelector(selectProduct)
     
-    return <ProductDetailDisplay data={ mockProduct } />
+    return <ProductDetailDisplay data={ productData } handleAddToCart={ handleAddToCart }/>
 }

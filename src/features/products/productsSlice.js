@@ -5,8 +5,8 @@ import { selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-export const getProductsListing = createAsyncThunk (
-    'products/getProductsListing',
+export const getProducts = createAsyncThunk (
+    'products/getProducts',
     async () => {  
         let theApiUrl = API_BASE_URL + '/api/v1/product'
         let authToken = useSelector(selectJwtToken)
@@ -28,10 +28,10 @@ export const getProductsListing = createAsyncThunk (
             let data = await response.json();
 
             if (response.status === 200) {
-                console.log('getProductsListing 200', data)
+                console.log('getProducts 200', data)
                 return data
             } else if (response.status === 401) {
-                console.log('getProductsListing get request auth fail.')
+                console.log('getProducts get request auth fail.')
                 // return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
@@ -41,9 +41,46 @@ export const getProductsListing = createAsyncThunk (
     }
 ) // end getProductsListing
 
+export const getProductById = createAsyncThunk (
+    'products/getProductById',
+    async (product_id) => {  
+        let theApiUrl = API_BASE_URL + `/api/v1/product/${product_id}`
+        let authToken = useSelector(selectJwtToken)
+
+        try { 
+            const response = await fetch(
+                theApiUrl,
+                {
+                    method: 'GET',
+                        headers: {
+                            'Accept': "*/*",
+                            'Content-Type': "application/json",
+                            'Authorization': `Bearer ${authToken}`,
+                        },
+                        credentials: 'include',
+                }
+            )
+
+            let data = await response.json();
+
+            if (response.status === 200) {
+                // console.log('getProductById 200', data[0]) 
+                return data[0] // FIXME: shouldn't have to juggle arrays when assigning to state...
+            } else if (response.status === 401) {
+                console.log('getProductById get request auth fail.')
+                // return thunkAPI.rejectWithValue(data)
+            }
+        } catch (e) {
+            console.log("Error: ", e.response.data)
+            // return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+) // end getProductById
+
 const options = {
     name: 'products',
     initialState: {
+        product: [],
         products: [],
         isLoading: false,
         hasError: false,
@@ -56,18 +93,34 @@ const options = {
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getProductsListing.pending, (state) => {
+            .addCase(getProducts.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
                 state.errorMsg = '';
             })
-            .addCase(getProductsListing.fulfilled, (state, action) => {
+            .addCase(getProducts.fulfilled, (state, action) => {
                 state.products = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
                 state.errorMsg = '';
             })
-            .addCase(getProductsListing.rejected, (state, action) => {
+            .addCase(getProducts.rejected, (state, action) => {
+                state.isLoading = false;
+                state.hasError = true;
+                state.errorMsg = action.error; 
+            })  
+            .addCase(getProductById.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(getProductById.fulfilled, (state, action) => {
+                state.product = action.payload;
+                state.isLoading = false;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(getProductById.rejected, (state, action) => {
                 state.isLoading = false;
                 state.hasError = true;
                 state.errorMsg = action.error; 
@@ -75,8 +128,9 @@ const options = {
     } // end extraReducers
 } // end options
 
-export const selectProductsListing = state => state.products.products;
+export const selectProducts = state => state.products.products;
+export const selectProduct = state => state.products.product;
 
-export const productsListingsSlice = createSlice(options);
+export const productsSlice = createSlice(options);
 
-export default productsListingsSlice.reducer;
+export default productsSlice.reducer;

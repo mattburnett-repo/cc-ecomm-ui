@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
+<div>
+  <h3>
+    ProductDetailDisplay
+  </h3>
+  <img
+    alt="product_name_02"
+    aria-label="product-image"
+    src="http://www.image.com/item/2"
+  />
+  <label
+    htmlFor="name"
+  >
+    Name:
+  </label>
+  <div
+    aria-label="name"
+    id="name"
+    role="presentation"
+  >
+    product_name_02
+  </div>
+  <label
+    htmlFor="description"
+  >
+    Description:
+  </label>
+  <div
+    aria-label="description"
+    id="description"
+    role="presentation"
+  >
+    product_desc_02
+  </div>
+  <label
+    htmlFor="price"
+  >
+    Price:
+  </label>
+  <div
+    aria-label="price"
+    id="price"
+    role="presentation"
+  >
+    2.00
+  </div>
+  <label
+    htmlFor="quantity"
+  >
+    Quantity:
+  </label>
+  <input
+    aria-label="quantity"
+    id="quantity"
+    placeholder="Enter product quantity"
+  />
+  <button
+    aria-label="add-to-cart"
+  >
+    Add To Cart
+  </button>
+</div>
+`;

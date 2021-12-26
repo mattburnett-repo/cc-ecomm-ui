@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { getOrders } from '../orders/ordersSlice'
 import { getCarts } from '../carts/cartsSlice'
 import { getProductCategories } from '../productCategory/productCategorySlice'
-import { getProductsListing } from '../products/productsSlice'
+import { getProducts, getProductById } from '../products/productsSlice'
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import DashboardDisplay from "../../components/dashboard/DashboardDisplay";
@@ -22,7 +22,8 @@ export default function Dashboard () {
         dispatch(getProductCategories());
         dispatch(getOrders()); 
         dispatch(getCarts());
-        dispatch(getProductsListing());
+        dispatch(getProducts());
+        dispatch(getProductById(2))
     };
     loadData();
 

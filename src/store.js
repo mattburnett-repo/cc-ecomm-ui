@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import authReducer from './features/auth/authSlice';
 import productCategoryReducer from './features/productCategory/productCategorySlice'
-import productsListingReducer from './features/products/productsSlice'
+import productsReducer from './features/products/productsSlice'
 import ordersReducer from './features/orders/ordersSlice'
 import cartsReducer from './features/carts/cartsSlice'
 
@@ -13,7 +13,7 @@ function rootReducer() {
             productCategories: productCategoryReducer,
             orders: ordersReducer,
             carts: cartsReducer,
-            products: productsListingReducer,
+            products: productsReducer,
         }    
     }
 }
