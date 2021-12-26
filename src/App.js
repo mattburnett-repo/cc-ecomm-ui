@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import Login from './features/auth/login';
+import Register from './features/auth/register'
 import Dashboard from './features/dashboard/dashboard';
 
 // TODO: ReactStrap npm i bootstrap reactstrap
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route path='/' exact><Login /></Route>
           <Route path='/login' exact><Login /></Route>
+          <Route path='/register' exact><Register /></Route>
           <Route path='/dashboard' exact><Dashboard /> </Route>
         </Switch>
       </div>

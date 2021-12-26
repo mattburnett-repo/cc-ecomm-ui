@@ -10,8 +10,17 @@ const mockHandleClick = jest.fn(); // should be able to add .mockImplementation(
 const mockHandleLogin = jest.fn();
 const mockHandleRegister = jest.fn();
 
+function mockHandlers() {
+    return {
+        handleClick: mockHandleClick,
+        handleLogin: mockHandleLogin,
+        handleRegister: mockHandleRegister
+    }
+}
+
 describe('<LoginDisplay /> component tests', () => { 
-    beforeEach(() => render(<LoginDisplay handleClick={mockHandleClick} handleLogin={mockHandleLogin} handleRegister={mockHandleRegister} />));
+    // beforeEach(() => render(<LoginDisplay handleClick={mockHandleClick} handleLogin={mockHandleLogin} handleRegister={mockHandleRegister} />));
+    beforeEach(() => render(<LoginDisplay handlers={mockHandlers()} />));
 
     it('renders the display component', () => {
         screen.getByRole('presentation', { name: /login-register/i })
@@ -95,7 +104,7 @@ describe('<LoginDisplay /> component tests', () => {
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<LoginDisplay handleClick={mockHandleClick} handleLogin={mockHandleLogin} handleRegister={mockHandleRegister} />).toJSON();
+        const tree = renderer.create(<LoginDisplay handlers={mockHandlers()} />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 })

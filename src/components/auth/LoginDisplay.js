@@ -1,5 +1,5 @@
 export default function LoginDisplay ( props ) {
-    const { handleClick, handleLogin, handleRegister } = props;
+    const { handleClick, handleLogin, handleRegister } = props.handlers;
 
     // TODO: enable message / flash message when there are login errors
     return (

@@ -11,7 +11,10 @@ export default function Login () {
     const dispatch = useDispatch();
 
     // TODO: xx-auth and login button should also dispatch actions to redux
-    function handleClick (e) {
+    function handleClick() {
+        alert('handle click')
+    }
+    function handleLogin(e) {
         e.preventDefault();
 
         let username = e.target.username.value
@@ -23,10 +26,16 @@ export default function Login () {
         alert('handle register')
     }
 
-    // console.log('isAuthorized: ' + isAuthorized)
+    function loginProps() {
+        return {
+            handleClick: handleClick,
+            handleLogin: handleLogin,
+            handleRegister: handleRegister
+        }
+    }
     
     if(!isAuthorized) {
-        return <LoginDisplay handleClick={handleClick} handleRegister={handleRegister}/>
+        return <LoginDisplay handlers={loginProps()} />
     } else {
         return <Dashboard />
     }

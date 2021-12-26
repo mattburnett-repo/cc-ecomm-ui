@@ -29,13 +29,14 @@ export const localAuthLogin = createAsyncThunk (
             let data = await response.json()
 
             if(response.status === 401) {
-
+                console.log('authSlice auth fail')
+                // TODO: implement flash message to UI
                 return thunkAPI.rejectWithValue(data)
             } else if (response.status === 200) {
                 const { id, user_name, email } = data.user;
                 const { token } = data;
-
                 // localStorage.setItem("token", data.token)
+
                 return {user_id: id, username: user_name, email: email, jwtAuthToken: token};
             } else {
                 // console.log('response.status ' + response.status + ' authSlice fetch un successful')
@@ -51,6 +52,8 @@ export const localAuthLogin = createAsyncThunk (
         }
     }
 ) // end localAuthLogin
+
+// TODO: implement registration fetch
 
 // TODO: implement better this once we get auth flow sorted out. 
 // FIXME: other slices should be cleared out when logout successful
