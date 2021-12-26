@@ -32,12 +32,12 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
     </label>
     <select
       aria-label="product-categories"
+      defaultValue="0"
       id="product-categories"
       onChange={[Function]}
       role="presentation"
     >
       <option
-        selected={true}
         value="0"
       >
         Please select a product category
