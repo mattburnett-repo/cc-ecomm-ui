@@ -2,7 +2,7 @@ export default function ProductDetailDisplay (props) {
     const { name, description, price, image_url } = props.data
     const { handleAddToCart } = props
 
-    // console.log('ProductDetailDisplay props ', props)
+    console.log('ProductDetailDisplay props ', props)
 
     return (
         <div>

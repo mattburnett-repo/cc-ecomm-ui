@@ -9,6 +9,11 @@ export default function BrowseSearch () {
     CheckLoginStatus()
 
     function handleChange(){
+        // should dispatch getProduct/category/:category_id
+        //      we probably need a new slice / route / etc 
+        //      can we query the store on category_id?
+        //          something like useSelector(selectProducts(category_id = asdf))
+        //          we already pulled all of the data...
         alert('handleChange')
     }
     function handleSearch(){
