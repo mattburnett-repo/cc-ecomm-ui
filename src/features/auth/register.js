@@ -3,7 +3,7 @@ import RegisterDisplay from '../../components/auth/RegisterDisplay'
 export default function Register() {
     // use some state here?
     //      const [isRegistered, setIsRegistered] = useState(false)
-    
+
     function handleClick() {
         // redirect to appropriate auth component, zB
         // <p class="lead mt-4">
@@ -11,7 +11,7 @@ export default function Register() {
         // </p>
         alert('handle click')
     }
-    async function handleRegister(e) {
+    async function handleRegister(e) { // doing this with Redux is really messy and complicated. let's just send a fetch from here and get registration over with.
         e.preventDefault();
     
         // https://jasonwatmore.com/post/2020/02/01/react-fetch-http-post-request-examples

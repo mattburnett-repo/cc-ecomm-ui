@@ -6,7 +6,7 @@ import LoginDisplay from "../../components/auth/LoginDisplay";
 import Dashboard from '../../features/dashboard/dashboard'
 
 export default function Login () {
-    const isAuthorized = useSelector(selectIsAuthenticated); // FIXME: make sure this connects to Paasport.isAuthenticated() / req.body thing.
+    const isAuthorized = useSelector(selectIsAuthenticated); // FIXME: make sure this connects to Passport.isAuthenticated() / req.body thing.
 
     const dispatch = useDispatch();
 
