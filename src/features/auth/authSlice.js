@@ -54,14 +54,6 @@ export const localAuthLogin = createAsyncThunk (
     }
 ) // end localAuthLogin
 
-// TODO: implement registration fetch
-// localAuthRegister
-    // hit /api/v1/register on the API server (routes/registerRoutes.js)
-
-    // if registraton successful, run the login action creater (localAuthLogin, upstairs)
-
-
-
 // TODO: implement better this once we get auth flow sorted out. 
 // FIXME: other slices should be cleared out when logout successful
 export const localAuthLogout = createAsyncThunk (

@@ -72,6 +72,18 @@ exports[`<RegisterDisplay /> component tests renders a snapshot 1`] = `
         />
       </div>
       <div>
+        <label
+          htmlFor="password2"
+        >
+          Re-enter password:
+        </label>
+        <input
+          aria-label="password"
+          id="password2"
+          type="password"
+        />
+      </div>
+      <div>
         <button
           aria-label="register-button"
           type="susbmit"

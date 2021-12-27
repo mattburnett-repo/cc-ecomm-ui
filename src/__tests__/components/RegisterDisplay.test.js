@@ -85,6 +85,15 @@ describe('<RegisterDisplay /> component tests', () => {
         
         expect(theElement).toHaveValue('asdf');
     });
+    it('renders a password verification input', () => {
+        screen.getByLabelText('Re-enter password:');
+    });
+    it('accepts a value for password verification', ()=> {
+        const theElement = screen.getByLabelText('Re-enter password:');
+        userEvent.type(theElement, 'asdf');
+        
+        expect(theElement).toHaveValue('asdf');
+    });
 
     it('renders a Register button', () => {
         screen.getByRole('button', { name: /register/i});
