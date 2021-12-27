@@ -3,7 +3,6 @@
 
 // import localAuthRegister from './authSlice'
 
-
 import RegisterDisplay from '../../components/auth/RegisterDisplay'
 
 function handleClick() {
