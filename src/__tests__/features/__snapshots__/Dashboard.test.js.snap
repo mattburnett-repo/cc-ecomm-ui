@@ -60,6 +60,60 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
       Search
     </button>
   </div>
+  <div>
+    <h3>
+      ProductDetailDisplay
+    </h3>
+    <img
+      aria-label="product-image"
+    />
+    <label
+      htmlFor="name"
+    >
+      Name:
+    </label>
+    <div
+      aria-label="name"
+      id="name"
+      role="presentation"
+    />
+    <label
+      htmlFor="description"
+    >
+      Description:
+    </label>
+    <div
+      aria-label="description"
+      id="description"
+      role="presentation"
+    />
+    <label
+      htmlFor="price"
+    >
+      Price:
+    </label>
+    <div
+      aria-label="price"
+      id="price"
+      role="presentation"
+    />
+    <label
+      htmlFor="quantity"
+    >
+      Quantity:
+    </label>
+    <input
+      aria-label="quantity"
+      id="quantity"
+      placeholder="Enter product quantity"
+    />
+    <button
+      aria-label="add-to-cart"
+      onClick={[Function]}
+    >
+      Add To Cart
+    </button>
+  </div>
   <div
     aria-label="orders"
     role="presentation"

@@ -23,18 +23,6 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
     product_name_02
   </div>
   <label
-    htmlFor="product-id"
-  >
-    ID:
-  </label>
-  <div
-    aria-label="product-id"
-    id="product-id"
-    role="presentation"
-  >
-    2
-  </div>
-  <label
     htmlFor="description"
   >
     Description:

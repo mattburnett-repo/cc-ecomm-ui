@@ -22,7 +22,7 @@ export default function ProductDetail ( props ) {
     // const productData = mockProduct
     
     useEffect(() => {
-        console.log('useEffect()')
+        // console.log('useEffect()')
         dispatch(getProductById(productId));
     },[])
 
