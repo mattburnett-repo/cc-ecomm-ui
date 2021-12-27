@@ -47,6 +47,8 @@ export const getProductById = createAsyncThunk (
         let theApiUrl = API_BASE_URL + `/api/v1/product/${product_id}`
         let authToken = useSelector(selectJwtToken)
 
+        console.log('getProductById', product_id)
+
         try { 
             const response = await fetch(
                 theApiUrl,

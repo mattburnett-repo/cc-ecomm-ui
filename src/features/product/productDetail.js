@@ -6,25 +6,25 @@ import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
 import { selectProduct, getProductById } from '../products/productsSlice'
 
-// import { mockProduct } from '../../utils/mockData'
+import { mockProduct } from '../../utils/mockData'
 
 function handleAddToCart(){
     alert('handleAddToCart')
 }
 
 export default function ProductDetail ( props ) {
-    const { productId } = props
+    let { productId } = props
     CheckLoginStatus()
 
     const dispatch = useDispatch()
-    const productData = useSelector(selectProduct)
 
-    useEffect(() => {
-        async function loadData() {
-            await dispatch(getProductById(productId))
-        };
-        loadData();
-    },[productId, dispatch])
+    const productData = useSelector(selectProduct)
+    // const productData = mockProduct
     
-    return <ProductDetailDisplay data={ productData } handleAddToCart={ handleAddToCart }/>
+    useEffect(() => {
+        console.log('useEffect()')
+        dispatch(getProductById(productId));
+    },[])
+
+    return <ProductDetailDisplay data={productData} handleAddToCart={ handleAddToCart }/>
 }
