@@ -14,7 +14,6 @@ exports[`<BrowseSearch /> feature tests creates a snapshot 1`] = `
     aria-label="product-categories"
     defaultValue="0"
     id="product-categories"
-    onChange={[Function]}
     role="presentation"
   >
     <option
@@ -35,7 +34,6 @@ exports[`<BrowseSearch /> feature tests creates a snapshot 1`] = `
   />
   <button
     aria-label="search-button"
-    onClick={[Function]}
   >
     Search
   </button>

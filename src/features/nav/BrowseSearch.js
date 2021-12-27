@@ -5,17 +5,26 @@ import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
 import { selectProductCategories } from "../productCategory/productCategorySlice";
 
-function handleChange(){
-    alert('handleChange')
-}
-function handleSearch(){
-    alert('handleSearch')
-}
-
 export default function BrowseSearch () {
     CheckLoginStatus()
 
+    function handleChange(){
+        alert('handleChange')
+    }
+    function handleSearch(){
+        alert('handleSearch')
+    }
+    
+    // TODO: create handlers function to pass into display component
+    
+    function handlers() {
+        return {
+            handleChange: handleChange,
+            handleSearch: handleSearch,
+        }
+    }
+
     const productCategories = useSelector(selectProductCategories)
 
-    return <BrowseSearchDisplay  data={ productCategories } handleChange={handleChange} handleSearch={handleSearch}/>
+    return <BrowseSearchDisplay  data={ productCategories } handlers={handlers()}/>
 }

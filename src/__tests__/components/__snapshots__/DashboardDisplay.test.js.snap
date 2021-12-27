@@ -34,7 +34,6 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
       aria-label="product-categories"
       defaultValue="0"
       id="product-categories"
-      onChange={[Function]}
       role="presentation"
     >
       <option
@@ -55,10 +54,35 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     />
     <button
       aria-label="search-button"
-      onClick={[Function]}
     >
       Search
     </button>
+  </div>
+  <div
+    aria-label="orders"
+    role="presentation"
+  >
+    <h2>
+      OrdersDisplay
+    </h2>
+  </div>
+  <div
+    aria-label="carts"
+    role="presentation"
+  >
+    <h2>
+      CartsDisplay
+    </h2>
+  </div>
+  <div>
+    <div
+      aria-label="products"
+      role="presentation"
+    >
+      <h2>
+        ProductsListingDisplay
+      </h2>
+    </div>
   </div>
   <div>
     <h3>
@@ -113,32 +137,6 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     >
       Add To Cart
     </button>
-  </div>
-  <div
-    aria-label="orders"
-    role="presentation"
-  >
-    <h2>
-      OrdersDisplay
-    </h2>
-  </div>
-  <div
-    aria-label="carts"
-    role="presentation"
-  >
-    <h2>
-      CartsDisplay
-    </h2>
-  </div>
-  <div>
-    <div
-      aria-label="products"
-      role="presentation"
-    >
-      <h2>
-        ProductsListingDisplay
-      </h2>
-    </div>
   </div>
 </div>
 `;

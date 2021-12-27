@@ -26,13 +26,14 @@ export default function Register() {
             body: JSON.stringify({ 
                 username: e.target.username.value,
                 email: e.target.email.value,
-                password: e.target.password.value, })
+                password: e.target.password.value})
         };
 
         const response = await fetch(theUrl, requestOptions);
         const resStatus = response.status
         const data = await response.json();
 
+        // TODO: handle 200 / 400 statuses and render messages to user in display component
         console.log('response status ', resStatus)
         console.log('data ', data)
     }

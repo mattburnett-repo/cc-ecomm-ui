@@ -24,6 +24,7 @@ export default function Login () {
         let username = e.target.username.value
         let password = e.target.password.value
 
+        // TODO: handle 400 / 401 statuses and render messages to user in display component
         dispatch(localAuthLogin({username, password}));
     }
 
