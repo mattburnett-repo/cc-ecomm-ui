@@ -1,5 +1,6 @@
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
+    const { handleImageClick } = props.handlers
 
     return (
         <div>
@@ -8,14 +9,23 @@ export default function ProductListingDisplay ( props ) {
                 {/* Object.keys(posts).map(key => <Post key={key} body={posts[key]} />)  */}
                 {data.map((item, index) => (
                     <div role="presentation" aria-label='product' key={index}>
+                        <label htmlFor='product-id'>Product ID:</label>
+                        <div role='presentation' aria-label='product-id'>{item.id}</div>
                         <label htmlFor='product-name'>Product Name:</label>
                         <div role='presentation' aria-label='product-name'>{item.name}</div>
                         <label htmlFor='product-description'>Product Description:</label>
                         <div role='presentation' aria-label='product-description'>{item.description}</div>
                         <label htmlFor='product-image-url'>Image:</label>
-                        <div role="img" id="product-image-url" aria-label='product-image-url'>
-                            <img src={item.image_url} alt={item.name} />
+
+                        {/* // TODO: make each product clickable, with click going to ProductDetail  */}
+                        <div role="img" id="product-image-url" aria-label='product-image-url'> 
+                            {/* <a href="/product-detail"> */}
+                                {/* <img src={item.image_url} alt={item.name} /> */}
+                                {/* <img src={item.image_url} alt={item.name} onClick={handleImageClick}/> */}
+                                <img src={item.image_url} alt={item.name} onClick={() => alert('this should use handleImageClick instead of this text')} />
+                            {/* </a> */}
                         </div>
+
                         <label htmlFor='product-price'>Product Price:</label>
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
                     </div>

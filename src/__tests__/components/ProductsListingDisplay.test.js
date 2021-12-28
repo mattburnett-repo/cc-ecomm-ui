@@ -11,8 +11,16 @@ import ProductsListingDisplay from '../../components/products/ProductsListingDis
 
 import { mockProducts } from '../../utils/mockData'
 
+const mockHandleImageClick = jest.fn()
+
+function handlers() {
+    return {
+        handleImageClick: mockHandleImageClick
+    }
+}
+
 describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
-    beforeEach(() => render(<Provider store={store}><ProductsListingDisplay data={mockProducts} /></ Provider>));
+    beforeEach(() => render(<Provider store={store}><ProductsListingDisplay data={mockProducts} handlers={handlers()}/></ Provider>));
 
     it('should display products', () => { 
         screen.getByRole('presentation', {name: /products/i});
@@ -37,13 +45,18 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
         let theVal = screen.getAllByRole('img', {name: /image-url/i});
         expect(theVal).toHaveLength(4);
     });
+    it('should click the image as a link', () => {
+        let theVals = screen.getAllByRole('img', /product-image-url/i)
+        fireEvent.click(theVals[0])
+
+    })
     it('should render product prices', () => { 
         let theVal = screen.getAllByRole('presentation', {name: /product-price/i});
         expect(theVal).toHaveLength(4);
     });
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<Provider store={store}><ProductsListingDisplay data={mockProducts} /></ Provider>).toJSON();
+        const tree = renderer.create(<Provider store={store}><ProductsListingDisplay data={mockProducts}  handlers={handlers()} /></ Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     });
 }); // end component
