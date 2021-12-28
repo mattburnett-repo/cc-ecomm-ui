@@ -5,6 +5,9 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   <h3>
     ProductDetailDisplay
   </h3>
+  <h4>
+    you want one!!! add to cart for better happiments!
+  </h4>
   <img
     alt="product_name_02"
     aria-label="product-image"

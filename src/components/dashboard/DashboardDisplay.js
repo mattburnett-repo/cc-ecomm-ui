@@ -6,7 +6,7 @@ import ProductsListing from '../../features/products/productsListing'
 import ProductDetail from '../../features/product/productDetail'
 
 export default function DashboardDisplay () {
-    const randomProductId =  Math.floor(Math.random() * 31);
+    const randomProductId =  Math.floor(Math.random() * 30); // now we can show 'highlighted product' or something...
 
     return (
         <div>

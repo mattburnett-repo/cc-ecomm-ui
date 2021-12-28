@@ -1,12 +1,11 @@
 export default function ProductDetailDisplay (props) {
-    const { name, description, price, image_url } = props.data[0]
+    const { name, description, price, image_url } = props.data[0] // FIXME: this [0] is going to be a problem. fix it in the calling propu
     const { handleAddToCart } = props
-
-    console.log('ProductDetailDisplay props ', props)
 
     return (
         <div>
             <h3>ProductDetailDisplay</h3>
+            <h4>you want one!!! add to cart for better happiments!</h4>
             <img aria-label="product-image" src={image_url} alt={name}/>
             <label htmlFor="name">Name:</label>
             <div id="name" role="presentation" aria-label="name">{name}</div>

@@ -15,6 +15,7 @@ export default function ProductDetail ( props ) {
     }
 
     const products = useSelector(selectProducts)
+    // eslint-disable-next-line
     const productById = products.filter(item => item.id == productId) 
 
     return <ProductDetailDisplay data={productById} handleAddToCart={ handleAddToCart }/>

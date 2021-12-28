@@ -128,15 +128,16 @@ module.exports = {
             "description": "Tech"
         }
       ],
-    mockProduct:
-      {
-        "id": 2,
-        "category_id": 2,
-        "name": "product_name_02",
-        "description": "product_desc_02",
-        "image_url": "https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg",
-        "price": "2.00"
-      },
+    mockProduct:[
+        {
+          "id": 2,
+          "category_id": 2,
+          "name": "product_name_02",
+          "description": "product_desc_02",
+          "image_url": "https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg",
+          "price": "2.00"
+        },      
+      ],
     mockProducts: [
         {
             "id": 1,
