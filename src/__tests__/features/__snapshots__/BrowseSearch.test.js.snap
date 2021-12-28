@@ -5,37 +5,59 @@ exports[`<BrowseSearch /> feature tests creates a snapshot 1`] = `
   aria-label="browse-search"
   role="presentation"
 >
-  <label
-    htmlFor="product-categories"
-  >
-    Product Categories: 
-  </label>
-  <select
-    aria-label="product-categories"
-    defaultValue="0"
-    id="product-categories"
+  <div
+    aria-label="browse"
     role="presentation"
   >
-    <option
-      value="0"
+    <label
+      htmlFor="product-categories"
     >
-      Please select a product category
-    </option>
-  </select>
-  <label
-    htmlFor="search"
+      Product Categories: 
+    </label>
+    <select
+      aria-label="product-categories"
+      defaultValue="0"
+      id="product-categories"
+      name="productCategories"
+      onChange={[Function]}
+      role="presentation"
+    >
+      <option
+        value="0"
+      >
+        Show all products
+      </option>
+    </select>
+  </div>
+  <div
+    aria-label="search"
+    role="presentation"
   >
-    Search: 
-  </label>
-  <input
-    aria-label="search-terms"
-    id="search"
-    placeholder="Enter search terms"
-  />
-  <button
-    aria-label="search-button"
-  >
-    Search
-  </button>
+    <form
+      method="post"
+      onSubmit={[Function]}
+    >
+      <div>
+        <label
+          htmlFor="searchTerms"
+        >
+          Search: 
+        </label>
+        <input
+          aria-label="search-terms"
+          id="searchTerms"
+          placeholder="Enter search terms"
+        />
+      </div>
+      <div>
+        <button
+          aria-label="search-button"
+          type="submit"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 `;

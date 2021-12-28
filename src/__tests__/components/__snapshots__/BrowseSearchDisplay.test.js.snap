@@ -5,57 +5,79 @@ exports[`<BrowseSearchDisplay /> component tests creates a snapshot 1`] = `
   aria-label="browse-search"
   role="presentation"
 >
-  <label
-    htmlFor="product-categories"
-  >
-    Product Categories: 
-  </label>
-  <select
-    aria-label="product-categories"
-    defaultValue="0"
-    id="product-categories"
+  <div
+    aria-label="browse"
     role="presentation"
   >
-    <option
-      value="0"
+    <label
+      htmlFor="product-categories"
     >
-      Please select a product category
-    </option>
-    <option
-      value={4}
+      Product Categories: 
+    </label>
+    <select
+      aria-label="product-categories"
+      defaultValue="0"
+      id="product-categories"
+      name="productCategories"
+      onChange={[MockFunction]}
+      role="presentation"
     >
-      Auto
-    </option>
-    <option
-      value={3}
-    >
-      Health
-    </option>
-    <option
-      value={1}
-    >
-      Pets
-    </option>
-    <option
-      value={2}
-    >
-      Tech
-    </option>
-  </select>
-  <label
-    htmlFor="search"
+      <option
+        value="0"
+      >
+        Show all products
+      </option>
+      <option
+        value={4}
+      >
+        Auto
+      </option>
+      <option
+        value={3}
+      >
+        Health
+      </option>
+      <option
+        value={1}
+      >
+        Pets
+      </option>
+      <option
+        value={2}
+      >
+        Tech
+      </option>
+    </select>
+  </div>
+  <div
+    aria-label="search"
+    role="presentation"
   >
-    Search: 
-  </label>
-  <input
-    aria-label="search-terms"
-    id="search"
-    placeholder="Enter search terms"
-  />
-  <button
-    aria-label="search-button"
-  >
-    Search
-  </button>
+    <form
+      method="post"
+      onSubmit={[MockFunction]}
+    >
+      <div>
+        <label
+          htmlFor="searchTerms"
+        >
+          Search: 
+        </label>
+        <input
+          aria-label="search-terms"
+          id="searchTerms"
+          placeholder="Enter search terms"
+        />
+      </div>
+      <div>
+        <button
+          aria-label="search-button"
+          type="submit"
+        >
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 `;

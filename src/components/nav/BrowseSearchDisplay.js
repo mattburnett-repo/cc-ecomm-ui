@@ -1,5 +1,6 @@
 export default function BrowseSearchDisplay (props) {
-    const { data, handleChange, handleSearch } = props;
+    const { handleChange, handleSearch } = props.handlers;
+    const { data } = props
 
     // TODO: handleChange should dispatch a call to products, with the category id
 
@@ -7,16 +8,27 @@ export default function BrowseSearchDisplay (props) {
 
     return (
         <div role="presentation" aria-label="browse-search">
-            <label htmlFor="product-categories">Product Categories: </label>
-            <select role="presentation" id="product-categories" aria-label="product-categories" defaultValue="0" onChange={handleChange}>
-                <option key="0" value="0">Please select a product category</option>
-                {data.map(item => (
-                    <option key={item.category_id} value={item.category_id}>{item.description}</option>
-                ))}                    
-            </select>
-            <label htmlFor="search">Search: </label>
-            <input id="search" aria-label="search-terms" placeholder="Enter search terms"></input>
-            <button aria-label="search-button" onClick={handleSearch}>Search</button>
+            <div role="presentation" aria-label="browse">
+                <label htmlFor="product-categories">Product Categories: </label>
+                <select role="presentation" id="product-categories" name="productCategories" aria-label="product-categories" defaultValue="0" onChange={handleChange}>
+                    <option key="0" value="0">Show all products</option>
+                    {data.map(item => (
+                        <option key={item.category_id} value={item.category_id}>{item.description}</option>
+                    ))}                    
+                </select>
+            </div>
+            <div role="presentation" aria-label="search">
+                <form onSubmit={handleSearch} method="post">
+                    <div>
+                        <label htmlFor="searchTerms">Search: </label>
+                        <input id="searchTerms" aria-label="search-terms" placeholder="Enter search terms"></input>
+                    </div>
+                    <div>
+                        {/* <button aria-label="search-button" onClick={handleSearch}>Search</button> */}
+                        <button type="submit" aria-label="search-button">Search</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )           
 }

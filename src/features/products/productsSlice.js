@@ -41,6 +41,42 @@ export const getProducts = createAsyncThunk (
     }
 ) // end getProductsListing
 
+export const getProductsByCategory = createAsyncThunk (
+    'products/getProductsByCategory',
+    async (categoryId) => {  
+        let theApiUrl = API_BASE_URL + `/api/v1/product/category/${categoryId}`
+        let authToken = useSelector(selectJwtToken)
+
+        try { 
+            const response = await fetch(
+                theApiUrl,
+                {
+                    method: 'GET',
+                        headers: {
+                            'Accept': "*/*",
+                            'Content-Type': "application/json",
+                            'Authorization': `Bearer ${authToken}`,
+                        },
+                        credentials: 'include',
+                }
+            )
+
+            let data = await response.json();
+
+            if (response.status === 200) {
+                // console.log('getProducts 200', data)
+                return data
+            } else if (response.status === 401) {
+                console.log('getProductsByCategory get request auth fail.')
+                // return thunkAPI.rejectWithValue(data)
+            }
+        } catch (e) {
+            console.log("Error: ", e.response.data)
+            // return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+) // end getProductsByCategory
+
 export const getProductById = createAsyncThunk (
     'products/getProductById',
     async (product_id) => {  
@@ -112,6 +148,7 @@ const options = {
                 state.hasError = true;
                 state.errorMsg = action.error; 
             })  
+
             .addCase(getProductById.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
@@ -124,6 +161,23 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(getProductById.rejected, (state, action) => {
+                state.isLoading = false;
+                state.hasError = true;
+                state.errorMsg = action.error; 
+            })  
+
+            .addCase(getProductsByCategory.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(getProductsByCategory.fulfilled, (state, action) => {
+                state.products = action.payload;
+                state.isLoading = false;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(getProductsByCategory.rejected, (state, action) => {
                 state.isLoading = false;
                 state.hasError = true;
                 state.errorMsg = action.error; 

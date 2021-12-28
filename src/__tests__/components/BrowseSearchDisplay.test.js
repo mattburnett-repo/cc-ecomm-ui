@@ -11,10 +11,20 @@ import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 const mockHandleChange = jest.fn()
 const mockHandleSearch = jest.fn()
 
-describe('<BrowseSearchDisplay /> component tests', () => {
-    beforeEach(() => render(<BrowseSearchDisplay data={ mockProductCategories } handleChange={mockHandleChange} handleSearch={mockHandleSearch} />));
+function mockHandlers() {
+    return {
+        handleChange: mockHandleChange,
+        handleSearch: mockHandleSearch,
+    }
+}
 
-    it('should show product categories', () => {
+describe('<BrowseSearchDisplay /> component tests', () => {
+    beforeEach(() => render(<BrowseSearchDisplay data={ mockProductCategories } handlers={mockHandlers()} />));
+
+    it('should render a browse element', () => {
+        screen.getByRole('presentation', {name: /^browse$/i});
+    })
+    it('should render product categories', () => {
         screen.getByRole('presentation', {name: /product-categories/i});
     });
     it('should select a product category', () => {
@@ -28,10 +38,13 @@ describe('<BrowseSearchDisplay /> component tests', () => {
         expect(options[4].selected).toBeTruthy();
     });
 
-    it('should show search term input', () => {
+    it('should render a search element', () => {
+        screen.getByRole('presentation', {name: /^search$/i});
+    })
+    it('should render search term input', () => {
         screen.getByRole('textbox', {name: /search-terms/i});
     });
-    it('should show search button', () => {
+    it('should render search button', () => {
         screen.getByRole('button', {name: /search/i});
     });
     it('accepts search text', () => {
@@ -41,12 +54,16 @@ describe('<BrowseSearchDisplay /> component tests', () => {
         expect(theElement).toHaveValue('here is some search text');
     });
     it('clicks the search button', () => {
+        mockHandleSearch.mockImplementation((e) => {e.preventDefault()});
         const theVal = screen.getByRole('button', {name: /search/i});
         fireEvent.click(theVal);
+
+        expect(mockHandleSearch.mock.calls.length).toBe(1);
+        // expect(mockHandleClick()).toBe('Search'); 
     });
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<BrowseSearchDisplay  data={ mockProductCategories }/>).toJSON();
+        const tree = renderer.create(<BrowseSearchDisplay  data={ mockProductCategories } handlers={mockHandlers()}/>).toJSON();
         expect(tree).toMatchSnapshot();  
     });
 }); // end component

@@ -17,7 +17,6 @@ function mockHandlers() {
 }
 
 describe('<LoginDisplay /> component tests', () => { 
-    // beforeEach(() => render(<LoginDisplay handleClick={mockHandleClick} handleLogin={mockHandleLogin} handleRegister={mockHandleRegister} />));
     beforeEach(() => render(<LoginDisplay handlers={mockHandlers()} />));
 
     it('renders the display component', () => {

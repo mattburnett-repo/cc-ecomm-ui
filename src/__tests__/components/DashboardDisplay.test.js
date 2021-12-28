@@ -27,6 +27,9 @@ describe('<DashboardDisplay /> component tests', () => {
     it('should render carts', () => {
         screen.getByRole('presentation', {name: /carts/i});
     });
+    it('should render products listing', () => {
+        screen.getByRole('presentation', {name: /^products$/i});
+    })
 
     it('renders a snapshot', () => {
         const tree = renderer.create(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>).toJSON();

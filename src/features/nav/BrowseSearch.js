@@ -4,24 +4,29 @@ import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
 import { selectProductCategories } from "../productCategory/productCategorySlice";
+import { getProducts, getProductsByCategory } from "../products/productsSlice";
 
 export default function BrowseSearch () {
     CheckLoginStatus()
 
-    function handleChange(){
-        // should dispatch getProduct/category/:category_id
-        //      we probably need a new slice / route / etc 
-        //      can we query the store on category_id?
-        //          something like useSelector(selectProducts(category_id = asdf))
-        //          we already pulled all of the data...
-        alert('handleChange')
+    // TODO: need to figure out how to get dispatch() to work from here
+    function handleChange(e){
+        let categoryId = e.target.value
+
+        // eslint-disable-next-line
+        if(categoryId == 0) {
+            alert('browseSearch select all products. \nneed to figure out how to get dispatch() to work from here')
+        } else {
+            alert('browseSearch select products for category: ' + categoryId + '. \nneed to figure out how to get dispatch() to work from here')
+        }
     }
-    function handleSearch(){
-        alert('handleSearch')
+
+    function handleSearch(e){
+        e.preventDefault()
+        // let searchTerms = e.target.value
+        alert('handleSearch for search term/s ' + e.target.searchTerms.value + '. \nneed to figure out how to get dispatch() to work from here')
     }
-    
-    // TODO: create handlers function to pass into display component
-    
+        
     function handlers() {
         return {
             handleChange: handleChange,

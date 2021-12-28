@@ -5,7 +5,6 @@ export default function ProductDetailDisplay (props) {
     return (
         <div>
             <h3>ProductDetailDisplay</h3>
-            <h4>you want one!!! add to cart for better happiments!</h4>
             <img aria-label="product-image" src={image_url} alt={name}/>
             <label htmlFor="name">Name:</label>
             <div id="name" role="presentation" aria-label="name">{name}</div>
