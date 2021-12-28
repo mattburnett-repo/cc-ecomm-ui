@@ -1,5 +1,3 @@
-import { castImmutable } from "@reduxjs/toolkit/node_modules/immer"
-
 export default function CartDetailDisplay (props) {
     const { data } = props
     const { handleCheckout } = props.handlers

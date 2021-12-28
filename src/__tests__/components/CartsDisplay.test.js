@@ -9,7 +9,7 @@ import store from '../../store'
 
 import CartsDisplay from '../../components/carts/CartsDisplay';
 
-import { mockCartData } from '../../utils/mockData'
+import { mockCartsData } from '../../utils/mockData'
 const mockHandleCartClick = jest.fn()
 
 function mockHandlers () {
@@ -19,7 +19,7 @@ function mockHandlers () {
 }
 
 describe('<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> component tests', () => {
-    beforeEach(() => render(<Provider store={store}><CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/></Provider>));
+    beforeEach(() => render(<Provider store={store}><CartsDisplay cartsData={mockCartsData} handlers={mockHandlers()}/></Provider>));
 
     it('should render a component', () => {
         screen.getAllByRole('presentation', {name: /^carts$/i});
@@ -44,7 +44,7 @@ describe('<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> com
     })
 
     it('creates a snapshot', () => {
-      const tree = renderer.create(<Provider store={store}><CartsDisplay cartsData={mockCartData} handlers={mockHandlers()} /></Provider>).toJSON();
+      const tree = renderer.create(<Provider store={store}><CartsDisplay cartsData={mockCartsData} handlers={mockHandlers()} /></Provider>).toJSON();
       expect(tree).toMatchSnapshot();  
     });
 }); // end component

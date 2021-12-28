@@ -10,15 +10,19 @@ export default function CartDetail ( props ) {
 
     CheckLoginStatus()
 
-    // function handlers() {
-    //     return {
+    function handleCheckout() {
+        alert('handleAddToCart')
+    }
 
-    //     }
-    // }
+    function handlers() {
+        return {
+            handleCheckout: handleCheckout
+        }
+    }
 
     const carts = useSelector(selectCarts)
     // eslint-disable-next-line
     const cartById = carts.filter(item => item.id == cartId) 
 
-    return <CartDetailDisplay data={cartById} />
+    return <CartDetailDisplay data={cartById} handlers={handlers()}/>
 }
