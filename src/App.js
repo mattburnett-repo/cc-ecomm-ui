@@ -5,6 +5,7 @@ import './App.css';
 import Login from './features/auth/login';
 import Register from './features/auth/register'
 import Dashboard from './features/dashboard/dashboard';
+import OrderDetail from './features/cart/cartDetail'
 
 // TODO: ReactStrap npm i bootstrap reactstrap
 //        import 'bootstrap/dist/css/bootstrap.min.css'
@@ -21,6 +22,7 @@ function App() {
           <Route path='/login' exact><Login /></Route>
           <Route path='/register' exact><Register /></Route>
           <Route path='/dashboard' exact><Dashboard /> </Route>
+          <Route path='/order-detail' exact><OrderDetail /> </Route>
         </Switch>
       </div>
     </Router>

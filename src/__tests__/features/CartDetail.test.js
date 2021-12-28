@@ -6,10 +6,10 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import store from '../../store'
 
-import Cart from '../../features/cart/cart';
+import CartDetail from '../../features/cart/cartDetail';
 
-describe('<Cart /> feature tests', () => {
-    // beforeEach(() => render(<Provider store={store}><Cart /></Provider>));
+describe('<CartDetail /> feature tests', () => {
+    // beforeEach(() => render(<Provider store={store}><CartDetail  /></Provider>));
 
     test.todo('should be a feature test');
 
