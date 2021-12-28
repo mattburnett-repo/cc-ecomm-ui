@@ -1,5 +1,5 @@
 export default function ProductDetailDisplay (props) {
-    const { name, description, price, image_url } = props.data
+    const { name, description, price, image_url } = props.data[0]
     const { handleAddToCart } = props
 
     console.log('ProductDetailDisplay props ', props)

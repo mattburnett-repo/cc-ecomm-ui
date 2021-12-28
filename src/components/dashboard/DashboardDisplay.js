@@ -10,11 +10,10 @@ export default function DashboardDisplay () {
         <div>
             <NavBar calledFrom="dashboard" />
             <BrowseSearch />
-            <ProductDetail productId="18"/> 
+            <ProductDetail productId="31"/> 
             <Orders />
             <Carts />
             <ProductsListing />
-            
         </div>
     )
 }
