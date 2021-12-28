@@ -10,20 +10,41 @@ import store from '../../store'
 import CartsDisplay from '../../components/carts/CartsDisplay';
 
 import { mockCartData } from '../../utils/mockData'
+const mockHandleCartClick = jest.fn()
 
-describe('<CartsDisplay cartsData={mockCartData} /> component tests', () => {
-    beforeEach(() => render(<Provider store={store}><CartsDisplay cartsData={mockCartData} /></Provider>));
+function mockHandlers () {
+    return {
+        handleCartClick: mockHandleCartClick
+    }
+}
 
-    it('should render carts', () => {
+describe('<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> component tests', () => {
+    beforeEach(() => render(<Provider store={store}><CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/></Provider>));
+
+    it('should render a component', () => {
         screen.getAllByRole('presentation', {name: /^carts$/i});
     });
-    it('should render a cart record', () => {
-        const theVals = screen.getAllByRole('presentation', {name: /^cart$/i});
+
+    it('should render a cart records from mock data', () => {
+        const theVals = screen.getAllByRole('presentation', {name: /^carts$/i});
 
         expect(theVals).toHaveLength(1)
     });
+    it('should render the cart data as a button to cart detail', () => {
+        const theVals = screen.getAllByRole('button', { name: /^go-to-cart$/i })
+
+        expect(theVals).toHaveLength(1)
+    })
+    it('should click the cart button', () => {
+        mockHandleCartClick.mockImplementation((e) => {e.preventDefault()});
+        const theVal = screen.getByRole('button', { name: /^go-to-cart$/i })
+        fireEvent.click(theVal);
+
+        expect(mockHandleCartClick.mock.calls.length).toBe(1);
+    })
+
     it('creates a snapshot', () => {
-      const tree = renderer.create(<Provider store={store}><CartsDisplay cartsData={mockCartData} /></Provider>).toJSON();
+      const tree = renderer.create(<Provider store={store}><CartsDisplay cartsData={mockCartData} handlers={mockHandlers()} /></Provider>).toJSON();
       expect(tree).toMatchSnapshot();  
     });
 }); // end component

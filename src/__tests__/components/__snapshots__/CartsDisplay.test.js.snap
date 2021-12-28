@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CartsDisplay cartsData={mockCartData} /> component tests creates a snapshot 1`] = `
+exports[`<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> component tests creates a snapshot 1`] = `
 <div
   aria-label="carts"
   role="presentation"
@@ -9,13 +9,27 @@ exports[`<CartsDisplay cartsData={mockCartData} /> component tests creates a sna
     CartsDisplay
   </h2>
   <div
-    aria-label="cart"
+    aria-label="cart-item"
     role="presentation"
   >
-    cart_id: 
-    1
-    user_id: 
-    1
+    <form
+      method="post"
+      onSubmit={[MockFunction]}
+    >
+      <input
+        name="cart_id"
+        type="hidden"
+        value={1}
+      />
+      cart_id: 
+      1
+      user_id: 
+      1
+      <input
+        aria-label="go-to-cart"
+        type="submit"
+      />
+    </form>
   </div>
 </div>
 `;
