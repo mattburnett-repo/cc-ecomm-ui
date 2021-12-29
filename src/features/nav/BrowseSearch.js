@@ -10,6 +10,8 @@ import { getProducts, getProductsByCategory } from "../products/productsSlice";
 export default function BrowseSearch () {
     CheckLoginStatus()
 
+    const productCategories = useSelector(selectProductCategories)
+
     // TODO: need to figure out how to get dispatch() to work from here
     function handleChange(e){
         let categoryId = e.target.value
@@ -34,8 +36,6 @@ export default function BrowseSearch () {
             handleSearch: handleSearch,
         }
     }
-
-    const productCategories = useSelector(selectProductCategories)
-
+    
     return <BrowseSearchDisplay  data={ productCategories } handlers={handlers()}/>
 }
