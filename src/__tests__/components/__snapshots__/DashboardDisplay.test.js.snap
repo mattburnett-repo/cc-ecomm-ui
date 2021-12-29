@@ -87,6 +87,9 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     <h2>
       OrdersDisplay
     </h2>
+    <h5>
+      No orders to show
+    </h5>
   </div>
   <div
     aria-label="carts"
@@ -98,6 +101,9 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     <h4>
       Saved Carts
     </h4>
+    <h5>
+      No saved carts to show
+    </h5>
   </div>
   <div>
     <div

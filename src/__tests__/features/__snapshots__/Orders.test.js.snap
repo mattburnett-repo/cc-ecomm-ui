@@ -10,6 +10,9 @@ Array [
     <h2>
       OrdersDisplay
     </h2>
+    <h5>
+      No orders to show
+    </h5>
   </div>,
 ]
 `;
