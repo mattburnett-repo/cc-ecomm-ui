@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ProductsListingDisplay from "../../components/products/ProductsListingDisplay";
 
-import { handleImageClick } from "../../utils/handlers";
 
 import { selectProducts } from '../products/productsSlice'
 
-import { handleAddToCart } from "../../utils/handlers";
+import { handleImageClick, handleAddToCart } from "../../utils/handlers";
 
 export default function ProductsListing () {
     CheckLoginStatus()
