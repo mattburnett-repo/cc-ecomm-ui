@@ -28,6 +28,12 @@ Project Kanban: https://www.codecademy.com/paths/full-stack-engineer-career-path
 Datasource / API: https://e-commerce-rest-api-v2.herokuapp.com/
 * API source code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
   
+To install after downloading / cloning this repo, 
+  * run
+    * npm install
+  * then
+    * npm start
+  
 ---
 
 ## Testing
@@ -44,10 +50,11 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Passport Authentication Library
   * Local Strategy
   * Google OAuth Strategy
+  * JWT Strategy
 * JSON Web Token authorization
 *  E-Commerce REST API (built as previous project)
-  * Production: https://e-commerce-rest-api-v2.herokuapp.com/
-  * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
+     * Production: https://e-commerce-rest-api-v2.herokuapp.com/
+     * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
   
 ---
 
