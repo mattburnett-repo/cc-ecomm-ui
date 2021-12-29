@@ -58,7 +58,8 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_01"
-          onClick={[Function]}
+          id={1}
+          onClick={[MockFunction]}
           src="https://pixabay.com/images/id-71282/"
         />
       </div>
@@ -73,6 +74,23 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         1.00
       </div>
+      <label
+        htmlFor={1}
+      >
+        Quantity:
+      </label>
+      <input
+        aria-label="quantity"
+        id={1}
+        placeholder="Enter product quantity"
+      />
+      <button
+        aria-label="add-to-cart"
+        id={1}
+        onClick={[MockFunction]}
+      >
+        Add To Cart
+      </button>
     </div>
     <div
       aria-label="product"
@@ -123,7 +141,8 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_02"
-          onClick={[Function]}
+          id={2}
+          onClick={[MockFunction]}
           src="http://www.image.com/item/2"
         />
       </div>
@@ -138,6 +157,23 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         2.00
       </div>
+      <label
+        htmlFor={2}
+      >
+        Quantity:
+      </label>
+      <input
+        aria-label="quantity"
+        id={2}
+        placeholder="Enter product quantity"
+      />
+      <button
+        aria-label="add-to-cart"
+        id={2}
+        onClick={[MockFunction]}
+      >
+        Add To Cart
+      </button>
     </div>
     <div
       aria-label="product"
@@ -188,7 +224,8 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_03"
-          onClick={[Function]}
+          id={3}
+          onClick={[MockFunction]}
           src="http://www.image.com/item/3"
         />
       </div>
@@ -203,6 +240,23 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         3.00
       </div>
+      <label
+        htmlFor={3}
+      >
+        Quantity:
+      </label>
+      <input
+        aria-label="quantity"
+        id={3}
+        placeholder="Enter product quantity"
+      />
+      <button
+        aria-label="add-to-cart"
+        id={3}
+        onClick={[MockFunction]}
+      >
+        Add To Cart
+      </button>
     </div>
     <div
       aria-label="product"
@@ -253,7 +307,8 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         <img
           alt="product_name_04"
-          onClick={[Function]}
+          id={4}
+          onClick={[MockFunction]}
           src="http://www.image.com/item/4"
         />
       </div>
@@ -268,6 +323,23 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         4.00
       </div>
+      <label
+        htmlFor={4}
+      >
+        Quantity:
+      </label>
+      <input
+        aria-label="quantity"
+        id={4}
+        placeholder="Enter product quantity"
+      />
+      <button
+        aria-label="add-to-cart"
+        id={4}
+        onClick={[MockFunction]}
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
 </div>

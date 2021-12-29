@@ -12,10 +12,12 @@ import ProductsListingDisplay from '../../components/products/ProductsListingDis
 import { mockProducts } from '../../utils/mockData'
 
 const mockHandleImageClick = jest.fn()
+const mockHandleAddToCart = jest.fn()
 
 function handlers() {
     return {
-        handleImageClick: mockHandleImageClick
+        handleImageClick: mockHandleImageClick,
+        handleAddToCart: mockHandleAddToCart
     }
 }
 
@@ -50,9 +52,20 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
         fireEvent.click(theVals[0])
 
     })
-    it('should render product prices', () => { 
+
+    it('should render product price', () => { 
         let theVal = screen.getAllByRole('presentation', {name: /product-price/i});
         expect(theVal).toHaveLength(4);
+    });
+    it('should display a quantity input', () => {
+        let theVals = screen.getAllByRole('textbox', {name: /quantity/i});
+        expect(theVals).toHaveLength(4);
+    });
+    // TODO: add mockHandleAddToCart test/s
+    it('should display an add-to-cart button', () => {
+        let theVals = screen.getAllByRole('button', {name: /add-to-cart/i});
+
+        expect(theVals).toHaveLength(4)
     });
 
     it('creates a snapshot', () => {

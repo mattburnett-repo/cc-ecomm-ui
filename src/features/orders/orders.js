@@ -22,6 +22,7 @@ export default function Orders () {
 
     const ordersData = useSelector(selectOrders)
     
+    // TODO: order detail is not in the spec / wireframes, but it makes sense to have it as a feature
     return <OrdersDisplay ordersData={ordersData} handlers={handlers()}/>
     
 }

@@ -1,4 +1,3 @@
-// this is broken. trying to get selectors / promises / dispatch working
 
 import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
@@ -18,6 +17,10 @@ export default function ProductDetail ( props ) {
     function handleAddToCart(){
         alert('handleAddToCart')
     }
+
+    // TODO: you can also do it this way, using Redux ->
+    //      const theProducts = useSelector(selectProducts)
+    //      theProducts.filter(item => item.id == productId)
 
     async function fetchProduct(productId) {
         const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
@@ -42,6 +45,7 @@ export default function ProductDetail ( props ) {
     
     useEffect(() => {
         fetchProduct(productId)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId])
     
     return <ProductDetailDisplay data={productData} handleAddToCart={ handleAddToCart }/>

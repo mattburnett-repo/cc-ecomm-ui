@@ -2,6 +2,8 @@ export default function OrdersDisplay ( props ) {
     const { ordersData } = props;
     const { handleOrderClick } = props.handlers
     
+    // TODO: order detail is not in the spec / wireframes, but it makes sense to have it as a feature
+    
     return (
         <div role="presentation" aria-label="orders">
             <h2>OrdersDisplay</h2>
@@ -13,7 +15,7 @@ export default function OrdersDisplay ( props ) {
                         user_id: {item.order.user_id} 
                         order_date: {item.order.order_date} 
                         total_price: {item.order.total_price.sum}
-                        <input type="submit" aria-label="go-to-order" />
+                        <input type="submit" aria-label="go-to-order" /> 
                       </form>
                 </div>
             ))}     

@@ -23,7 +23,7 @@ function App() {
           <Route path='/login' exact><Login /></Route>
           <Route path='/register' exact><Register /></Route>
           <Route path='/dashboard' exact><Dashboard /> </Route>
-          <Route path="/product-detail" exact><ProductDetail /></Route>
+          <Route path="/product-detail" exact><ProductDetail /></Route> 
           <Route path='/cart-detail' exact><CartDetail /> </Route>
         </Switch>
       </div>

@@ -1,6 +1,6 @@
 // 20211217: Wireframe https://wireframe.cc/7nTPt0
 
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
 import { Provider } from 'react-redux';
@@ -37,7 +37,10 @@ describe('<ProductDetailDisplay /> component tests', () => {
     });
     // TODO: add mockHandleAddToCart test/s
     it('should display an add-to-cart button', () => {
-        screen.getByRole('button', {name: /add-to-cart/i});
+        let theVal = screen.getByRole('button', {name: /add-to-cart/i});
+        fireEvent.click(theVal)
+
+        expect(theVal).toHaveTextContent('Add To Cart')
     });
 
     it('renders a snapshot', () => {

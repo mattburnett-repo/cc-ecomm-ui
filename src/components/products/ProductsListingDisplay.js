@@ -1,6 +1,6 @@
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
-    const { handleImageClick } = props.handlers
+    const { handleImageClick, handleAddToCart } = props.handlers
 
     return (
         <div>
@@ -16,18 +16,14 @@ export default function ProductListingDisplay ( props ) {
                         <label htmlFor='product-description'>Product Description:</label>
                         <div role='presentation' aria-label='product-description'>{item.description}</div>
                         <label htmlFor='product-image-url'>Image:</label>
-
-                        {/* // TODO: make each product clickable, with click going to ProductDetail  */}
                         <div role="img" id="product-image-url" aria-label='product-image-url'> 
-                            {/* <a href="/product-detail"> */}
-                                {/* <img src={item.image_url} alt={item.name} /> */}
-                                {/* <img src={item.image_url} alt={item.name} onClick={handleImageClick}/> */}
-                                <img src={item.image_url} alt={item.name} onClick={() => alert('this should use handleImageClick instead of this text')} />
-                            {/* </a> */}
+                            <img src={item.image_url} alt={item.name} id={item.id} onClick={handleImageClick}/>
                         </div>
-
                         <label htmlFor='product-price'>Product Price:</label>
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
+                        <label htmlFor={item.id}>Quantity:</label>
+                        <input id={item.id} aria-label='quantity' key={item.id} placeholder="Enter product quantity" />
+                        <button aria-label="add-to-cart" id={item.id} onClick={handleAddToCart}>Add To Cart</button>
                     </div>
                 ))}     
             </div>

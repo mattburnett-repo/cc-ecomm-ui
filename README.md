@@ -63,3 +63,6 @@ Tests are located in two folders under the src/\__tests\__ folder
 ---
 
 ### Future work / TODO
+* Implement admin functionality
+  * Manage users / orders / carts
+  * Manage product listings
