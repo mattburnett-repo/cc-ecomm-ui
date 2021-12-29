@@ -81,7 +81,7 @@ export const getSavedCartsByUserId = createAsyncThunk (
 const options = {
     name: 'carts',
     initialState: {
-        currentCart: { user_id: 'FIXME: needs to initialize with user_id'}, // FIXME: needs to initialize with user_id
+        currentCart: { user_id: 'FIXME: needs to initialize with user_id', isActive: false, cart_items: []}, // FIXME: needs to initialize with user_id
         savedCarts: [],
         isLoading: false,
         hasError: false,

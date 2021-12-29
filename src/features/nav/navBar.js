@@ -4,27 +4,27 @@ import { localAuthLogout, selectUserData } from '../../features/auth/authSlice';
 
 import NavBarDisplay from '../../components/nav/NavBarDisplay'
 
+import { handleHomeClick, handleShowCartClick, handleCheckoutClick, handleCancelClick } from '../../utils/handlers'
+
 export default function NavBar ( props ) {
     // const { calledFrom } = props;
     const dispatch = useDispatch()
     const user = useSelector(selectUserData)
 
     let headerMessage = ''
-
-    function handleHomeClick() {
-        console.log('handleHomeClick')
-    }
-    function handleShowCartClick() {
-        console.log('handleShowCartClick')
-    }
-    function handleCheckoutClick() {
-        console.log('handleCheckoutClick')
-    }
-    function handleCancelClick() {
-        console.log('handleCanceClick')
-    }
+  
     function handleLogoutClick() {
         dispatch(localAuthLogout())
+    }
+
+    function handlers() {
+        return {
+            handleHomeClick: handleHomeClick,
+            handleShowCartClick: handleShowCartClick,
+            handleCheckoutClick: handleCheckoutClick,
+            handleCancelClick: handleCancelClick,
+            handleLogoutClick: handleLogoutClick
+        }
     }
 
     switch(props.calledFrom) {
@@ -59,12 +59,8 @@ export default function NavBar ( props ) {
     return (
         <NavBarDisplay 
                 calledFrom={props.calledFrom} 
-                headerMessage={headerMessage} 
-                handleHomeClick={handleHomeClick}
-                handleShowCartClick={handleShowCartClick}
-                handleCheckoutClick={handleCheckoutClick}
-                handleCancelClick={handleCancelClick}
-                handleLogoutClick={handleLogoutClick}
+                headerMessage={headerMessage}
+                handlers={handlers()}
             />
     )
 }

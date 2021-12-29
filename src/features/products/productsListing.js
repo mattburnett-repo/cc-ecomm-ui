@@ -3,18 +3,14 @@ import { useSelector } from "react-redux";
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ProductsListingDisplay from "../../components/products/ProductsListingDisplay";
 
+import { handleImageClick } from "../../utils/handlers";
+
 import { selectProducts } from '../products/productsSlice'
+
+import { handleAddToCart } from "../../utils/handlers";
 
 export default function ProductsListing () {
     CheckLoginStatus()
-
-    function handleImageClick (e) {
-        alert('handleImageClick ' + e.target.id)
-        // redirect to product-detail with e.target.id as productId
-    }
-    function handleAddToCart(e){
-        alert('handleAddToCart ' + e.target.id)
-    }
 
     function handlers() {
         return {
@@ -22,10 +18,7 @@ export default function ProductsListing () {
             handleAddToCart: handleAddToCart
         }
     }
-    
-    // const productsData = useSelector(selectProducts) // loaded from dispatch in dashboard.js
 
-    // return <ProductsListingDisplay data={ productsData } handlers={handlers()}/>
+    // product state data loaded from dispatch in dashboard.js
     return <ProductsListingDisplay data={ useSelector(selectProducts) } handlers={handlers()}/>
-
 }

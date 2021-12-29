@@ -22,7 +22,7 @@ export default function ProductListingDisplay ( props ) {
                         <label htmlFor='product-price'>Product Price:</label>
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
                         <label htmlFor={item.id}>Quantity:</label>
-                        <input id={item.id} aria-label='quantity' key={item.id} placeholder="Enter product quantity" />
+                        <input id={item.id} name="quantity" aria-label='quantity' key={item.id} placeholder="Enter product quantity" />
                         <button aria-label="add-to-cart" id={item.id} onClick={handleAddToCart}>Add To Cart</button>
                     </div>
                 ))}     

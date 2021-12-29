@@ -4,22 +4,16 @@ import { selectOrders } from './ordersSlice';
 import CheckLoginStatus from '../../utils/CheckLoginStatus';
 import OrdersDisplay from '../../components/orders/OrdersDisplay';
 
+import { handleOrderClick } from '../../utils/handlers';
+
 export default function Orders () {
     CheckLoginStatus()
 
-    function handleOrderClick(e) {
-        e.preventDefault()
-
-        let order_id = e.target.order_id.value
-        alert('go to order detail component ' + order_id)
-    }
-    
     function handlers() {
         return {
             handleOrderClick: handleOrderClick,
         }
     }
-
 
     const ordersData = useSelector(selectOrders)
 

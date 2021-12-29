@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import { selectJwtToken } from '../auth/authSlice';
 
+import { handleAddToCart } from '../../utils/handlers';
+
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
@@ -13,10 +15,6 @@ export default function ProductDetail ( props ) {
     let authToken = useSelector(selectJwtToken)
 
     CheckLoginStatus()
-
-    function handleAddToCart(){
-        alert('handleAddToCart')
-    }
 
     // TODO: you can also do it this way, using Redux ->
     //      const theProducts = useSelector(selectProducts)

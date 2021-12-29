@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
+import { handleSearch } from "../../utils/handlers";
+
 import { selectProductCategories } from "../productCategory/productCategorySlice";
 // eslint-disable-next-line 
 import { getProducts, getProductsByCategory } from "../products/productsSlice";
@@ -24,11 +26,7 @@ export default function BrowseSearch () {
         }
     }
 
-    function handleSearch(e){
-        e.preventDefault()
-        // let searchTerms = e.target.value
-        alert('handleSearch for search term/s ' + e.target.searchTerms.value + '. \nneed to figure out how to get dispatch() to work from here')
-    }
+
         
     function handlers() {
         return {

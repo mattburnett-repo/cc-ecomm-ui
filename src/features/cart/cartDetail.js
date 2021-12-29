@@ -5,15 +5,13 @@ import CartDetailDisplay from '../../components/cart/CartDetailDisplay'
 
 import { selectSavedCarts } from '../carts/cartsSlice'
 
+import { handleCheckout } from "../../utils/handlers";
+
 export default function CartDetail ( props ) {
     let { cartId } = props
 
     CheckLoginStatus()
-
-    function handleCheckout() {
-        alert('handleAddToCart')
-    }
-
+    
     function handlers() {
         return {
             handleCheckout: handleCheckout
