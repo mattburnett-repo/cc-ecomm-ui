@@ -95,6 +95,9 @@ exports[`<Dashboard /> feature tests creates a snapshot 1`] = `
     <h2>
       CartsDisplay
     </h2>
+    <h4>
+      Saved Carts
+    </h4>
   </div>
   <div>
     <div

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import CartDetailDisplay from '../../components/cart/CartDetailDisplay'
 
-import { selectCarts } from '../carts/cartsSlice'
+import { selectSavedCarts } from '../carts/cartsSlice'
 
 export default function CartDetail ( props ) {
     let { cartId } = props
@@ -20,7 +20,7 @@ export default function CartDetail ( props ) {
         }
     }
 
-    const carts = useSelector(selectCarts)
+    const carts = useSelector(selectSavedCarts)
     // eslint-disable-next-line
     const cartById = carts.filter(item => item.id == cartId) 
 

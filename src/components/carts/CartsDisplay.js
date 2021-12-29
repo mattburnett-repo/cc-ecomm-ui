@@ -1,13 +1,15 @@
 // TODO: cart should have its own state, to manage changes in line-item status like quanity / deletion
 
 export default function CartsDisplay ( props )  { // TODO: cartData should come from state / redux
-    const { cartsData } = props;
+    // eslint-disable-next-line 
+    const { currentCart, savedCarts } = props.cartsData;
     const { handleCartClick } = props.handlers
 
     return (
         <div role="presentation" aria-label="carts">
             <h2>CartsDisplay</h2>
-            {cartsData.map((item, index) => (
+            <h4>Saved Carts</h4>
+            {savedCarts.map((item, index) => (
                 <div role="presentation" aria-label="cart-item" key={index}>
                     <form onSubmit={handleCartClick} method="post">
                         <input type="hidden" name="cart_id" value={item.cart.cart_id} />

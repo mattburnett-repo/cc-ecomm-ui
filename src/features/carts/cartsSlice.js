@@ -5,8 +5,8 @@ import { selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-export const getCarts = createAsyncThunk (
-    'orders/getCarts',
+export const getSavedCarts = createAsyncThunk (
+    'orders/getSavedCarts',
     async () => {
         // const { user_id } = props;     
         let theApiUrl = API_BASE_URL + '/api/v1/cart'
@@ -55,30 +55,34 @@ export const getCarts = createAsyncThunk (
 const options = {
     name: 'carts',
     initialState: {
-        carts: [],
+        currentCart: [],
+        savedCarts: [],
         isLoading: false,
         hasError: false,
         errorMsg: '',
     },   
     reducers: {     
-        getCartsTestOutput: (state, action) => {       
-            console.log('get carts testOutput');
+        getSavedCartsTestOutput: (state, action) => {       
+            console.log('get saved carts testOutput');
         },
+        getCurrentCart: (state, action) => {
+            console.log('get current cart test output')
+        }
     },
     extraReducers: (builder) => {
         builder
-            .addCase(getCarts.pending, (state) => {
+            .addCase(getSavedCarts.pending, (state) => {
                 state.isLoading = true;
                 state.hasError = false;
                 state.errorMsg = '';
             })
-            .addCase(getCarts.fulfilled, (state, action) => {
-                state.carts = action.payload;
+            .addCase(getSavedCarts.fulfilled, (state, action) => {
+                state.savedCarts = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
                 state.errorMsg = '';
             })
-            .addCase(getCarts.rejected, (state, action) => {
+            .addCase(getSavedCarts.rejected, (state, action) => {
                 state.isLoading = false;
                 state.hasError = true;
                 state.errorMsg = action.error; 
@@ -86,8 +90,11 @@ const options = {
     } // end extraReducers
 } // end options
 
-export const selectCarts = state => state.carts.carts;
+export const selectCurrentCart = state => state.carts.currentCart;
+export const selectSavedCarts = state => state.carts.savedCarts;
 
 export const cartsSlice = createSlice(options);
+
+export const { getCurrentCart } = cartsSlice.actions
 
 export default cartsSlice.reducer;

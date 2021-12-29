@@ -4,6 +4,7 @@ import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
 import { selectProductCategories } from "../productCategory/productCategorySlice";
+// eslint-disable-next-line 
 import { getProducts, getProductsByCategory } from "../products/productsSlice";
 
 export default function BrowseSearch () {

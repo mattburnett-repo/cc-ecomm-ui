@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectCarts } from './cartsSlice'
+import { selectSavedCarts, selectCurrentCart } from './cartsSlice'
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import CartsDisplay from "../../components/carts/CartsDisplay";
@@ -20,7 +20,15 @@ export default function Carts () {
         }
     }
 
-    const cartsData = useSelector(selectCarts)
+    const currentCart = useSelector(selectCurrentCart)
+    const savedCarts = useSelector(selectSavedCarts)
 
-    return <CartsDisplay cartsData={ cartsData } handlers={handlers()}/>
+    function allCartData () {
+        return {
+            currentCart: currentCart,
+            savedCarts: savedCarts
+        }
+    }
+
+    return <CartsDisplay cartsData={ allCartData() } handlers={handlers()}/>
 }

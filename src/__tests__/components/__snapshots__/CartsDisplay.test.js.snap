@@ -8,6 +8,9 @@ exports[`<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> comp
   <h2>
     CartsDisplay
   </h2>
+  <h4>
+    Saved Carts
+  </h4>
   <div
     aria-label="cart-item"
     role="presentation"
