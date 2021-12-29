@@ -17,19 +17,19 @@ describe('<ProductDetailDisplay /> component tests', () => {
 
     it('should display a product image', () => {
         screen.getByRole('img', {name: /product-image/i});
-        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg');
+        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg');
     });
     it('should display a name', () => {
         screen.getByRole('presentation', {name: /name/i});
-        expect(screen.getByRole('presentation', {name: /name/i})).toHaveTextContent('product_name_02');
+        expect(screen.getByRole('presentation', {name: /name/i})).toHaveTextContent('glowing cube');
     });
     it('should display a description', () => {
         screen.getByRole('presentation', {name: /description/i});
-        expect(screen.getByRole('presentation', {name: /description/i})).toHaveTextContent('product_desc_02');
+        expect(screen.getByRole('presentation', {name: /description/i})).toHaveTextContent('prod desc 02');
     });
     it('should display a price', () => {
         screen.getByRole('presentation', {name: /price/i});
-        expect(screen.getByRole('presentation', {name: /price/i})).toHaveTextContent('2.00');
+        expect(screen.getByRole('presentation', {name: /price/i})).toHaveTextContent('1.00');
     });
     it('should display a quantity input', () => {
         screen.getByRole('textbox', {name: /quantity/i});

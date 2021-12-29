@@ -166,16 +166,14 @@ module.exports = {
             "description": "Tech"
         }
       ],
-    mockProduct:[
-        {
-          "id": 2,
-          "category_id": 2,
-          "name": "product_name_02",
-          "description": "product_desc_02",
-          "image_url": "https://cdn.pixabay.com/photo/2015/03/27/13/16/maine-coon-694730_1280.jpg",
-          "price": "2.00"
-        },      
-      ],
+    mockProduct:{
+        "id": 10,
+        "category_id": 2,
+        "name": "glowing cube",
+        "description": "prod desc 02",
+        "image_url": "https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg",
+        "price": "1.00"
+     },
     mockProducts: [
         {
             "id": 1,
