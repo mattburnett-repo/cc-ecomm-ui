@@ -44,6 +44,43 @@ export const getOrders = createAsyncThunk (
     }
 ) // end getOrders
 
+export const getOrdersByUserId = createAsyncThunk (
+    'orders/getOrdersByUserId',
+    async ( user_id ) => {
+        let theApiUrl = API_BASE_URL + '/api/v1/order/user/' + user_id
+        let authToken = useSelector(selectJwtToken)
+
+        // FIXME: needs to test if server is available and handle when it's down
+        //          test for response ERR_CONNECTION_REFUSED
+        try { 
+            const response = await fetch(
+                theApiUrl,
+                {
+                    method: 'GET',
+                        headers: {
+                            'Accept': "*/*",
+                            'Content-Type': "application/json",
+                            'Authorization': `Bearer ${authToken}`,
+                        },
+                        credentials: 'include',
+                }
+            )
+
+            let data = await response.json();
+
+            if (response.status === 200) {
+                return data
+            } else if (response.status === 401) {
+                console.log('getOrdersByUserId get request auth fail.')
+                // return thunkAPI.rejectWithValue(data)
+            }
+        } catch (e) {
+            console.log("Error: ", e.response.data)
+            // return thunkAPI.rejectWithValue(e.response.data)
+        }
+    }
+) // end getOrdersByUserId
+
 const options = {
     name: 'orders',
     initialState: {
@@ -71,6 +108,23 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(getOrders.rejected, (state, action) => {
+                state.isLoading = false;
+                state.hasError = true;
+                state.errorMsg = action.error; 
+            })  
+
+            .addCase(getOrdersByUserId.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(getOrdersByUserId.fulfilled, (state, action) => {
+                state.orders = action.payload;
+                state.isLoading = false;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(getOrdersByUserId.rejected, (state, action) => {
                 state.isLoading = false;
                 state.hasError = true;
                 state.errorMsg = action.error; 

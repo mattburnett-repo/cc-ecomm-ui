@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
 
-import { getOrders } from '../orders/ordersSlice'
-// import { getSavedCarts, getCurrentCart } from '../carts/cartsSlice'
-import { getSavedCarts } from '../carts/cartsSlice'
+import { useDispatch, useSelector } from 'react-redux';
+
+import { selectUserData } from '../auth/authSlice'
+import { getOrdersByUserId } from '../orders/ordersSlice'
+import { getSavedCartsByUserId } from '../carts/cartsSlice'
 import { getProductCategories } from '../productCategory/productCategorySlice'
 import { getProducts } from '../products/productsSlice'
 
@@ -14,22 +14,19 @@ export default function Dashboard () {
     CheckLoginStatus()
 
     const dispatch = useDispatch()
+    const userData = useSelector(selectUserData)
+    const user_id = userData.user_id
 
     // FIXME: is this function calling the dispatches twice?
-    //         there are two calls to each fetch...
+    //         it looks like there are two calls to each fetch...
     function loadData() {
         dispatch(getProductCategories());
-        dispatch(getOrders()); 
+        dispatch(getOrdersByUserId(user_id));       // FIXME: asdf.id = 4. there are no order records for this account yet
         // dispatch(getCurrentCart());
-        dispatch(getSavedCarts());
+        dispatch(getSavedCartsByUserId(user_id));   // FIXME: asdf.id = 4. there are no cart records for this account yet
         dispatch(getProducts());
     };
+    loadData();
     
-
-    useEffect(() => {
-        loadData();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
     return <DashboardDisplay />
 }
