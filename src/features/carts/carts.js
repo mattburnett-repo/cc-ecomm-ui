@@ -7,7 +7,7 @@ import CartsDisplay from "../../components/carts/CartsDisplay";
 export default function Carts () {
     CheckLoginStatus()
     
-    function handleCartClick(e) {
+    function handleGoToCartClick(e) {
         e.preventDefault()
 
         let cart_id = e.target.cart_id.value
@@ -16,7 +16,7 @@ export default function Carts () {
     
     function handlers() {
         return {
-            handleCartClick: handleCartClick,
+            handleGoToCartClick: handleGoToCartClick,
         }
     }
 

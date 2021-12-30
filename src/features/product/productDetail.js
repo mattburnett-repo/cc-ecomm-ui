@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux";
 import { selectJwtToken } from '../auth/authSlice';
 
-import { handleAddToCart } from '../../utils/handlers';
-
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
@@ -14,12 +12,6 @@ export default function ProductDetail ( props ) {
     let productId = parseInt(props.match.params.id, 10)
     
     let authToken = useSelector(selectJwtToken)
-
-    function handlers() {
-        return {
-            handleAddToCart: handleAddToCart
-        }
-    }
 
     CheckLoginStatus()
 
@@ -53,5 +45,5 @@ export default function ProductDetail ( props ) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId])
     
-    return <ProductDetailDisplay data={productData} handlers={ handlers() }/>
+    return <ProductDetailDisplay data={productData} />
 }

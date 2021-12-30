@@ -10,14 +10,8 @@ import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
 import { mockProduct } from '../../utils/mockData'
 
-function mockHandlers() {
-    return {
-        handleAddToCart: jest.fn()
-    }
-}
-
 describe('<ProductDetailDisplay /> component tests', () => {
-    beforeEach(() => render(<ProductDetailDisplay data={mockProduct} handlers={ mockHandlers() }/>));
+    beforeEach(() => render(<Provider store={store}><ProductDetailDisplay data={mockProduct} /></Provider>));
 
     it('should render two Go Back buttons', () => {
         let theVals = screen.getAllByRole('button', { name: /product-detail-go-back-button/i})
@@ -52,7 +46,7 @@ describe('<ProductDetailDisplay /> component tests', () => {
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<Provider store={store}><ProductDetailDisplay data={mockProduct} handlers={ mockHandlers() } /></Provider>).toJSON();
+        const tree = renderer.create(<Provider store={store}><ProductDetailDisplay data={mockProduct} /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();
     });
 }) // end component

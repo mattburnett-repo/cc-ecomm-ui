@@ -5,18 +5,9 @@ import ProductsListingDisplay from "../../components/products/ProductsListingDis
 
 import { selectProducts } from '../products/productsSlice'
 
-import { handleGoToProductDetailClick, handleAddToCart } from "../../utils/handlers";
-
 export default function ProductsListing () {
     CheckLoginStatus()
 
-    function handlers() {
-        return {
-            handleGoToProductDetailClick: handleGoToProductDetailClick,
-            handleAddToCart: handleAddToCart
-        }
-    }
-
     // product state data loaded from dispatch in dashboard.js. get it with selector
-    return <ProductsListingDisplay data={ useSelector(selectProducts) } handlers={handlers()}/>
+    return <ProductsListingDisplay data={ useSelector(selectProducts) } />
 }

@@ -87,8 +87,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       />
       <button
         aria-label="add-to-cart"
-        id={1}
-        onClick={[MockFunction]}
+        onClick={[Function]}
       >
         Add To Cart
       </button>
@@ -171,8 +170,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       />
       <button
         aria-label="add-to-cart"
-        id={2}
-        onClick={[MockFunction]}
+        onClick={[Function]}
       >
         Add To Cart
       </button>
@@ -255,8 +253,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       />
       <button
         aria-label="add-to-cart"
-        id={3}
-        onClick={[MockFunction]}
+        onClick={[Function]}
       >
         Add To Cart
       </button>
@@ -339,8 +336,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       />
       <button
         aria-label="add-to-cart"
-        id={4}
-        onClick={[MockFunction]}
+        onClick={[Function]}
       >
         Add To Cart
       </button>

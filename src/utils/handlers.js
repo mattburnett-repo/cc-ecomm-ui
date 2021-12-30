@@ -1,12 +1,5 @@
 
-
 // handler function declarations
-
-// function handleAddToCart(e){ 
-//     alert('handleAddToCart inside utils product_id: ' + e.target.id + ' quantity: ' + e.quantity)
-//     // {() => dispatch(addItemToCurrentCart(id))}
-//     // can't useDispatch here.
-// } 
 
 function handleCheckout(e){ 
     alert('handleCheckout inside utils ')

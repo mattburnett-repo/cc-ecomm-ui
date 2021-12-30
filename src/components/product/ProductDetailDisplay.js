@@ -5,7 +5,6 @@ import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 
 export default function ProductDetailDisplay (props) {
     const { id, name, description, price, image_url } = props.data
-    // const { handleAddToCart } = props.handlers
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -28,7 +27,7 @@ export default function ProductDetailDisplay (props) {
             <label htmlFor="quantity">Quantity:</label>
             <input id="quantity" aria-label='quantity' placeholder="Enter product quantity" />
 
-            {/* <button aria-label="add-to-cart" onClick={handleAddToCart}>Add To Cart</button> */}
+            {/* FIXME: this dispatch should be passed as a handler... */}
             <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(id))}>Add To Cart</button>
 
             <div aria-label="product-detail-go-back">

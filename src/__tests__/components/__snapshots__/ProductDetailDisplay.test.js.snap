@@ -81,7 +81,7 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   />
   <button
     aria-label="add-to-cart"
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     Add To Cart
   </button>

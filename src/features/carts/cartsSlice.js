@@ -5,11 +5,11 @@ import { selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-export const getSavedCarts = createAsyncThunk ( // FIXME: should be getSavedCartsByUserId
+export const getSavedCarts = createAsyncThunk ( 
     'orders/getSavedCarts',
     async () => {
         // const { user_id } = props;     
-        let theApiUrl = API_BASE_URL + '/api/v1/cart' // FIXME: should be /api/v1/cart/user/:user_id
+        let theApiUrl = API_BASE_URL + '/api/v1/cart' 
         let authToken = useSelector(selectJwtToken)
 
         // FIXME: needs to test if server is available and handle when it's down
@@ -94,8 +94,6 @@ const options = {
         getCurrentCartTestOutput: (state, action) => {
             console.log('get current cart test output')
         },
-        // currentCartActionTypes imported upstairs
-        // actionTypes.ADD_TO_CART: (state, action) => {
         addItemToCurrentCart: (state, action) => {
             console.log('inside of addItemToCurrentCart reducer, id: ' + action.payload.id)
             // get the product's data from store
@@ -111,7 +109,6 @@ const options = {
             //                 : [...state.currentCart, {...item, quantity: 1}]
             //         }
         },
-        // actionTypes.REMOVE_FROM_CART
         removeItemFromCurrentCart: (state, action) => {
             console.log('removeItemFromCurrentCart, id: ' + action.payload.id)
 
@@ -121,7 +118,6 @@ const options = {
             //     currentCart: state.currentCart.filter(item => item.id !== action.payload.id)
             // }
         },
-        // actionTypes.CHANGE_ITEM_QUANTITY
         changeCurrentCartItemQuantity: (state, action) => {
             console.log('changeItemQuantity, id: ' + action.payload.id + ' quantity: ' + action.payload.quantity)
 
@@ -135,7 +131,6 @@ const options = {
             //         )
             // }
         },
-        // actionTypes.LOAD_CURRENT_ITEM
         // loadItem: (state, action) {
         //     return {
         //         ...state,

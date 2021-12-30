@@ -17,7 +17,6 @@ exports[`<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> comp
   >
     <form
       method="post"
-      onSubmit={[MockFunction]}
     >
       <input
         name="cart_id"

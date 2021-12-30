@@ -50,7 +50,6 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
     it('should click the image as a link', () => {
         let theVals = screen.getAllByRole('img', /product-image-url/i)
         fireEvent.click(theVals[0])
-
     })
 
     it('should render product price', () => { 
@@ -67,6 +66,10 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
 
         expect(theVals).toHaveLength(4)
     });
+    it('should click an add-to-cart button', () => {
+        let theVals = screen.getAllByRole('button', {name: /add-to-cart/i});
+        fireEvent.click(theVals[0])
+    })
 
     it('creates a snapshot', () => {
         const tree = renderer.create(<Provider store={store}><ProductsListingDisplay data={mockProducts}  handlers={handlers()} /></ Provider>).toJSON();

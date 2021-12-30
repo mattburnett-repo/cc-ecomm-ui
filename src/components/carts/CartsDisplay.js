@@ -3,7 +3,7 @@
 export default function CartsDisplay ( props )  { // TODO: cartData should come from state / redux
     // eslint-disable-next-line 
     const { currentCart, savedCarts } = props.cartsData;
-    const { handleCartClick } = props.handlers
+    const { handleGoToCartClick } = props.handlers // TODO: replace handleGoTo... with a router redirect 
 
     return (
         <div role="presentation" aria-label="carts">
@@ -12,7 +12,8 @@ export default function CartsDisplay ( props )  { // TODO: cartData should come 
             {(savedCarts.length > 0) ? (
                 savedCarts.map((item, index) => (
                     <div role="presentation" aria-label="cart-item" key={index}>
-                        <form onSubmit={handleCartClick} method="post">
+                        {/*  TODO: replace handleGoTo... with a router redirect */}
+                        <form onSubmit={handleGoToCartClick} method="post"> 
                             <input type="hidden" name="cart_id" value={item.cart.cart_id} />
                             cart_id: {item.cart.cart_id}  
                             user_id: {item.cart.user_id}
