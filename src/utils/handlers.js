@@ -1,9 +1,12 @@
 
+
 // handler function declarations
 
-function handleAddToCart(e){ 
-    alert('handleAddToCart inside utils product_id: ' + e.target.id + ' quantity: ' + e.quantity)
-} 
+// function handleAddToCart(e){ 
+//     alert('handleAddToCart inside utils product_id: ' + e.target.id + ' quantity: ' + e.quantity)
+//     // {() => dispatch(addItemToCurrentCart(id))}
+//     // can't useDispatch here.
+// } 
 
 function handleCheckout(e){ 
     alert('handleCheckout inside utils ')
@@ -41,7 +44,7 @@ module.exports = {
     handleShowCartClick: handleShowCartClick,
     handleCheckoutClick: handleCheckoutClick,
     handleCancelClick: handleCancelClick,
-    handleAddToCart: handleAddToCart,
+    // handleAddToCart: handleAddToCart,
     handleCheckout: handleCheckout,
     handleSearch: handleSearch,
     handleOrderClick: handleOrderClick

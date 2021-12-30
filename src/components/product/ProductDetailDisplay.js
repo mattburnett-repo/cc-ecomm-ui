@@ -1,10 +1,14 @@
 import { useHistory } from "react-router-dom"
+import { useDispatch } from 'react-redux'
+
+import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 
 export default function ProductDetailDisplay (props) {
     const { id, name, description, price, image_url } = props.data
-    const { handleAddToCart } = props.handlers
+    // const { handleAddToCart } = props.handlers
 
     const history = useHistory()
+    const dispatch = useDispatch()
 
     return (
         <div>
@@ -23,7 +27,10 @@ export default function ProductDetailDisplay (props) {
             <div id="price" role="presentation" aria-label="price">{price}</div>
             <label htmlFor="quantity">Quantity:</label>
             <input id="quantity" aria-label='quantity' placeholder="Enter product quantity" />
-            <button aria-label="add-to-cart" onClick={handleAddToCart}>Add To Cart</button>
+
+            {/* <button aria-label="add-to-cart" onClick={handleAddToCart}>Add To Cart</button> */}
+            <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(id))}>Add To Cart</button>
+
             <div aria-label="product-detail-go-back">
                 <button aria-label="product-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
             </div>

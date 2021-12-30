@@ -91,9 +91,57 @@ const options = {
         getSavedCartsTestOutput: (state, action) => {       
             console.log('get saved carts testOutput');
         },
-        getCurrentCart: (state, action) => {
+        getCurrentCartTestOutput: (state, action) => {
             console.log('get current cart test output')
-        }
+        },
+        // currentCartActionTypes imported upstairs
+        // actionTypes.ADD_TO_CART: (state, action) => {
+        addItemToCurrentCart: (state, action) => {
+            console.log('inside of addItemToCurrentCart reducer, id: ' + action.payload.id)
+            // get the product's data from store
+            // const item = state.products.find(prod => prod.id === action.payload.id)
+            // // check if item is already in the cart
+            // const isInCart = state.currentCart.find(prod => prod.id === action.payload.id ? true : false)
+            
+            // return { ...state, 
+            //             currentCart: isInCart ? state.currentCart.map(
+            //                 item => item.id === action.payload.id ? 
+            //                     {...item, quantity: item.quantity +1} 
+            //                     : item)
+            //                 : [...state.currentCart, {...item, quantity: 1}]
+            //         }
+        },
+        // actionTypes.REMOVE_FROM_CART
+        removeItemFromCurrentCart: (state, action) => {
+            console.log('removeItemFromCurrentCart, id: ' + action.payload.id)
+
+            // return (...state, action.payload
+            // return {
+            //     ...state,
+            //     currentCart: state.currentCart.filter(item => item.id !== action.payload.id)
+            // }
+        },
+        // actionTypes.CHANGE_ITEM_QUANTITY
+        changeCurrentCartItemQuantity: (state, action) => {
+            console.log('changeItemQuantity, id: ' + action.payload.id + ' quantity: ' + action.payload.quantity)
+
+            // return (...state, action.payload
+            // return {
+            //     ...state,
+            //     currentCart: state.currentCart.map(
+            //         item => item.id === action.payload.id ?
+            //             {...item, quantity: action.payload.quantity}
+            //             : item
+            //         )
+            // }
+        },
+        // actionTypes.LOAD_CURRENT_ITEM
+        // loadItem: (state, action) {
+        //     return {
+        //         ...state,
+        //         currentItem: action.payload
+        //     }
+        // }
     },
     extraReducers: (builder) => {
         builder
@@ -138,6 +186,7 @@ export const selectSavedCarts = state => state.carts.savedCarts;
 
 export const cartsSlice = createSlice(options);
 
-export const { getCurrentCart } = cartsSlice.actions
+export const { getSavedCartsTestOutput, getCurrentCartTestOutput } = cartsSlice.actions
+export const { addItemToCurrentCart, removeItemFromCurrentCart, changeItemQuantity } = cartsSlice.actions
 
 export default cartsSlice.reducer;
