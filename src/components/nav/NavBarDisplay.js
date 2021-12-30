@@ -1,10 +1,10 @@
 export default function NavBarDisplay (props) {
     const { handleHomeClick, handleShowCartClick,handleCheckoutClick, handleCancelClick, handleLogoutClick } = props.handlers
+    const { currentCart } = props
 
     return (
         <div role="presentation" aria-label="nav-bar">
             <div role="presentation" aria-label="header-message">{props.calledFrom} {props.headerMessage}</div>
-  
             {(props.calledFrom !== 'dashboard') ? (
                 <>
                     <button aria-label="home" onClick={handleHomeClick}>Home</button>
@@ -19,6 +19,11 @@ export default function NavBarDisplay (props) {
             ) : (<></>)}
 
             <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>
+
+            {/* FIXME: need a better way to keep track of cart_items count. this is an inadequate stub */}
+            <div role="presentation" aria-label="current-cart-display"> 
+                Current Cart: {currentCart}
+            </div>
         </div>
     )
 }

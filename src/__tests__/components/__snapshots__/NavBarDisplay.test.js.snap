@@ -29,5 +29,12 @@ exports[`<NavBarDisplay /> component tests renders a snapshot 1`] = `
   >
     Log Out
   </button>
+  <div
+    aria-label="current-cart-display"
+    role="presentation"
+  >
+    Current Cart: 
+    0
+  </div>
 </div>
 `;
