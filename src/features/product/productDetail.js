@@ -10,8 +10,9 @@ import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
 export default function ProductDetail ( props ) {
     const [productData, setProductData] = useState('')
-    let { productId } = props
 
+    let productId = parseInt(props.match.params.id, 10)
+    
     let authToken = useSelector(selectJwtToken)
 
     CheckLoginStatus()

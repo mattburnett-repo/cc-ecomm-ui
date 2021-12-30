@@ -14,16 +14,18 @@ export default function Dashboard () {
     CheckLoginStatus()
 
     const dispatch = useDispatch()
+    // eslint-disable-next-line no-unused-vars
     const userData = useSelector(selectUserData)
-    const user_id = userData.user_id
+    // const user_id = userData.user_id // FIXME: asdf.id = 4. there are no order records for account asdf yet
+    const user_id = 1
 
     // FIXME: is this function calling the dispatches twice?
     //         it looks like there are two calls to each fetch...
     function loadData() {
         dispatch(getProductCategories());
-        dispatch(getOrdersByUserId(user_id));       // FIXME: asdf.id = 4. there are no order records for this account yet
+        dispatch(getOrdersByUserId(user_id));       
         // dispatch(getCurrentCart());
-        dispatch(getSavedCartsByUserId(user_id));   // FIXME: asdf.id = 4. there are no cart records for this account yet
+        dispatch(getSavedCartsByUserId(user_id)); 
         dispatch(getProducts());
     };
     loadData();

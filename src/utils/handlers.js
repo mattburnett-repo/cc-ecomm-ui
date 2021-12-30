@@ -1,7 +1,7 @@
 
 // handler function declarations
-function handleImageClick (e) {
-    alert('handleImageClick ' + e.target.id)
+function handleGoToProductDetailClick (e) {
+    alert('handleGoToProductDetailClick / useHistory / history.push(//product-detail) ' + e.target.id)
     // redirect to product-detail with e.target.id as productId
 }
 
@@ -45,7 +45,7 @@ module.exports = {
     handleShowCartClick: handleShowCartClick,
     handleCheckoutClick: handleCheckoutClick,
     handleCancelClick: handleCancelClick,
-    handleImageClick: handleImageClick,
+    handleGoToProductDetailClick: handleGoToProductDetailClick,
     handleAddToCart: handleAddToCart,
     handleCheckout: handleCheckout,
     handleSearch: handleSearch,

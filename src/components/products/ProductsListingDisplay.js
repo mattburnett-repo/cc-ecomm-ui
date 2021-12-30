@@ -1,6 +1,10 @@
+
+import { useHistory } from 'react-router-dom'
+
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
-    const { handleImageClick, handleAddToCart } = props.handlers
+    const { handleGoToProductDetailClick, handleAddToCart } = props.handlers
+    const history = useHistory()
 
     return (
         <div>
@@ -16,9 +20,12 @@ export default function ProductListingDisplay ( props ) {
                         <label htmlFor='product-description'>Product Description:</label>
                         <div role='presentation' aria-label='product-description'>{item.description}</div>
                         <label htmlFor='product-image-url'>Image:</label>
+
                         <div role="img" id="product-image-url" aria-label='product-image-url'> 
-                            <img src={item.image_url} alt={item.name} id={item.id} onClick={handleImageClick}/>
+                            {/* <img src={item.image_url} alt={item.name} id={item.id} onClick={handleGoToProductDetailClick}/> */}
+                            <img src={item.image_url} alt={item.name} id={item.id} onClick={() => history.push('/product-detail/' + item.id)}/>
                         </div>
+
                         <label htmlFor='product-price'>Product Price:</label>
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
                         <label htmlFor={item.id}>Quantity:</label>

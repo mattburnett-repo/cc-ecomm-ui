@@ -15,13 +15,17 @@ const mockHandleAddToCart = jest.fn()
 describe('<ProductDetailDisplay /> component tests', () => {
     beforeEach(() => render(<ProductDetailDisplay data={mockProduct} handleAddToCart={ mockHandleAddToCart }/>));
 
-    it('should display a product image', () => {
-        screen.getByRole('img', {name: /product-image/i});
-        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg');
-    });
+    it('should render a Go Back button', () => {
+        let theVals = screen.getAllByRole('button', { name: /product-detail-go-back-button/i})
+        expect(theVals).toHaveLength(2)
+    })
     it('should display a name', () => {
         screen.getByRole('presentation', {name: /name/i});
         expect(screen.getByRole('presentation', {name: /name/i})).toHaveTextContent('glowing cube');
+    });
+    it('should display a product image', () => {
+        screen.getByRole('img', {name: /product-image/i});
+        expect(screen.getByRole('img', {name: /product-image/i})).toHaveAttribute('src', 'https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg');
     });
     it('should display a description', () => {
         screen.getByRole('presentation', {name: /description/i});

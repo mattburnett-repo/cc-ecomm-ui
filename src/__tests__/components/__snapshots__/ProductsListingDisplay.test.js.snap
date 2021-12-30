@@ -59,7 +59,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         <img
           alt="product_name_01"
           id={1}
-          onClick={[MockFunction]}
+          onClick={[Function]}
           src="https://pixabay.com/images/id-71282/"
         />
       </div>
@@ -143,7 +143,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         <img
           alt="product_name_02"
           id={2}
-          onClick={[MockFunction]}
+          onClick={[Function]}
           src="http://www.image.com/item/2"
         />
       </div>
@@ -227,7 +227,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         <img
           alt="product_name_03"
           id={3}
-          onClick={[MockFunction]}
+          onClick={[Function]}
           src="http://www.image.com/item/3"
         />
       </div>
@@ -311,7 +311,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         <img
           alt="product_name_04"
           id={4}
-          onClick={[MockFunction]}
+          onClick={[Function]}
           src="http://www.image.com/item/4"
         />
       </div>

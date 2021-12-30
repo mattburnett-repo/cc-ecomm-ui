@@ -19,12 +19,21 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route path='/' exact><Login /></Route>
+          {/* <Route path='/' exact><Login /></Route>
           <Route path='/login' exact><Login /></Route>
           <Route path='/register' exact><Register /></Route>
           <Route path='/dashboard' exact><Dashboard /> </Route>
-          <Route path="/product-detail" exact><ProductDetail /></Route> 
-          <Route path='/cart-detail' exact><CartDetail /> </Route>
+          <Route path="/product-detail/:id" exact><ProductDetail /></Route> 
+          <Route path='/cart-detail' exact><CartDetail /> </Route> */}
+
+          {/* ... component={ () => <Component someProp= {propVal}} /> */}
+          <Route path='/' exact component={Login} />
+          <Route path='/login' exact component={Login} />
+          <Route path='/register' exact component={Register} />
+          <Route path='/dashboard' exact component={Dashboard} />
+          <Route path="/product-detail/:id" exact component={ProductDetail} />
+          {/* <Route path="/product-detail/:id" exact component={ () => <ProductDetail productId={id} />} /> */}
+          <Route path='/cart-detail' exact component={CartDetail} />
         </Switch>
       </div>
     </Router>

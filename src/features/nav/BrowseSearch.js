@@ -26,8 +26,6 @@ export default function BrowseSearch () {
         }
     }
 
-
-        
     function handlers() {
         return {
             handleChange: handleChange,

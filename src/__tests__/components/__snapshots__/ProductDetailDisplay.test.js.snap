@@ -5,6 +5,16 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   <h3>
     ProductDetailDisplay
   </h3>
+  <div
+    aria-label="product-detail-go-back"
+  >
+    <button
+      aria-label="product-detail-go-back-button"
+      onClick={[Function]}
+    >
+      Go Back
+    </button>
+  </div>
   <img
     alt="glowing cube"
     aria-label="product-image"
@@ -73,5 +83,15 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   >
     Add To Cart
   </button>
+  <div
+    aria-label="product-detail-go-back"
+  >
+    <button
+      aria-label="product-detail-go-back-button"
+      onClick={[Function]}
+    >
+      Go Back
+    </button>
+  </div>
 </div>
 `;
