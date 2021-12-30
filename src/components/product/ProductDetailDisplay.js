@@ -2,13 +2,13 @@ import { useHistory } from "react-router-dom"
 
 export default function ProductDetailDisplay (props) {
     const { id, name, description, price, image_url } = props.data
-    const { handleAddToCart } = props
+    const { handleAddToCart } = props.handlers
 
     const history = useHistory()
 
     return (
         <div>
-            <h3>ProductDetailDisplay</h3>
+            <h3>ProductDetailDisplay: {name}</h3>
             <div aria-label="product-detail-go-back">
                 <button aria-label="product-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
             </div>

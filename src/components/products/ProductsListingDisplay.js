@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
-    const { handleGoToProductDetailClick, handleAddToCart } = props.handlers
+    const { handleAddToCart } = props.handlers
     const history = useHistory()
 
     return (

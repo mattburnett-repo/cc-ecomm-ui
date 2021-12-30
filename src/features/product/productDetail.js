@@ -15,6 +15,12 @@ export default function ProductDetail ( props ) {
     
     let authToken = useSelector(selectJwtToken)
 
+    function handlers() {
+        return {
+            handleAddToCart: handleAddToCart
+        }
+    }
+
     CheckLoginStatus()
 
     // TODO: you can also do it this way, using Redux ->
@@ -47,5 +53,5 @@ export default function ProductDetail ( props ) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId])
     
-    return <ProductDetailDisplay data={productData} handleAddToCart={ handleAddToCart }/>
+    return <ProductDetailDisplay data={productData} handlers={ handlers() }/>
 }

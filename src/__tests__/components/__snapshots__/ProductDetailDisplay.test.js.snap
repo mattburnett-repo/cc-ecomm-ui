@@ -3,7 +3,8 @@
 exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
 <div>
   <h3>
-    ProductDetailDisplay
+    ProductDetailDisplay: 
+    glowing cube
   </h3>
   <div
     aria-label="product-detail-go-back"
@@ -80,6 +81,7 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   />
   <button
     aria-label="add-to-cart"
+    onClick={[MockFunction]}
   >
     Add To Cart
   </button>

@@ -1,9 +1,5 @@
 
 // handler function declarations
-function handleGoToProductDetailClick (e) {
-    alert('handleGoToProductDetailClick / useHistory / history.push(//product-detail) ' + e.target.id)
-    // redirect to product-detail with e.target.id as productId
-}
 
 function handleAddToCart(e){ 
     alert('handleAddToCart inside utils product_id: ' + e.target.id + ' quantity: ' + e.quantity)
@@ -45,7 +41,6 @@ module.exports = {
     handleShowCartClick: handleShowCartClick,
     handleCheckoutClick: handleCheckoutClick,
     handleCancelClick: handleCancelClick,
-    handleGoToProductDetailClick: handleGoToProductDetailClick,
     handleAddToCart: handleAddToCart,
     handleCheckout: handleCheckout,
     handleSearch: handleSearch,
