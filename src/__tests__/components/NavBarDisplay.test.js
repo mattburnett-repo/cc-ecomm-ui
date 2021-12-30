@@ -9,9 +9,9 @@ import store from '../../store'
 import NavBarDisplay from '../../components/nav/NavBarDisplay';
 
 // FIXME: need a better way to keep track of cart_items count. this is an inadequate stub
-function mockCurrentCart() { 
-    return 0 // we just want to mock the length of the (empty) cart_items array
-}
+// function mockCurrentCart() { 
+//     return 0 // we just want to mock the length of the (empty) cart_items array
+// }
 
 function mockHandlers() {
     return {
@@ -25,42 +25,42 @@ function mockHandlers() {
 
 describe('<NavBarDisplay /> component tests', () => {
     it('should display a header message', () => { // TODO: check other components that have header messages, and refactor to here
-        render(<NavBarDisplay calledFrom="" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="" handlers={mockHandlers()} />);
         screen.getByRole('presentation', {name: /header-message/i});
         // TODO: test conditional header messages in feature tests
     });
-    it('should render CurrentCart info', () => {
-        render(<NavBarDisplay calledFrom="" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
-        screen.getByRole('presentation', { name: /current-cart-display/i})
-    })
+    // it('should render CurrentCart info', () => {
+    //     render(<NavBarDisplay calledFrom="" handlers={mockHandlers()} />);
+    //     screen.getByRole('presentation', { name: /current-cart-display/i})
+    // })
     it('should display a logout button', () => {
-        render(<NavBarDisplay calledFrom="" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="" handlers={mockHandlers()} />);
         screen.getByRole('button', {name: /logout/i});
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<NavBarDisplay currentCart={mockCurrentCart()} handlers={mockHandlers()}  />).toJSON();
+        const tree = renderer.create(<NavBarDisplay handlers={mockHandlers()}  />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 
     it('renders a home button if user is not on dashboard', () => {
-        render(<NavBarDisplay calledFrom="login" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="login" handlers={mockHandlers()} />);
         screen.getByRole('button', { name: /home/i});
     });
     it('renders a show cart button if user is not on dashboard', () => {
-        render(<NavBarDisplay calledFrom="login" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="login" handlers={mockHandlers()} />);
         screen.getByRole('button', { name: /show-cart/i});
     });
     it('renders a checkout button if user is on the cart page', () => {
-        render(<NavBarDisplay calledFrom="cart" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="cart" handlers={mockHandlers()} />);
         screen.getByRole('button', { name: /show-cart/i});
     });
     it('renders a cancel button if user is on the shipping info page', () => {
-        render(<NavBarDisplay calledFrom="shippingInfo" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="shippingInfo" handlers={mockHandlers()} />);
         screen.getByRole('button', { name: /cancel/i});
     });
     it('renders a cancel button if user is on the payment info page', () => {
-        render(<NavBarDisplay calledFrom="paymentInfo" currentCart={mockCurrentCart()} handlers={mockHandlers()} />);
+        render(<NavBarDisplay calledFrom="paymentInfo" handlers={mockHandlers()} />);
         screen.getByRole('button', { name: /cancel/i});
     });
 }); // end conditional component
@@ -68,7 +68,7 @@ describe('<NavBarDisplay /> component tests', () => {
 describe('<NavBarDisplay /> unit / functional tests', () => {
     it('renders and clicks a home button if user is not on dashboard', () => {
         render(<Provider store={store}>
-                    <NavBarDisplay calledFrom="login" currentCart={mockCurrentCart()} handlers={mockHandlers()} />
+                    <NavBarDisplay calledFrom="login" handlers={mockHandlers()} />
                 </ Provider>);
 
         const theVal = screen.getByRole('button', { name: /home/i});
@@ -77,7 +77,7 @@ describe('<NavBarDisplay /> unit / functional tests', () => {
 
     it('renders and clicks a show cart button if user is not on dashboard', () => {
         render(<Provider store={store}>
-                    <NavBarDisplay calledFrom="login" currentCart={mockCurrentCart()} handlers={mockHandlers()} />
+                    <NavBarDisplay calledFrom="login" handlers={mockHandlers()} />
                 </Provider>);
 
         const theVal = screen.getByRole('button', { name: /show-cart/i});
@@ -86,7 +86,7 @@ describe('<NavBarDisplay /> unit / functional tests', () => {
 
     it('renders and clicks a checkout button if user is on the cart page', () => {
         render(<Provider store={store}>
-                    <NavBarDisplay calledFrom="cart" currentCart={mockCurrentCart()} handlers={mockHandlers()} />
+                    <NavBarDisplay calledFrom="cart"  handlers={mockHandlers()} />
                 </Provider>);
 
         const theVal = screen.getByRole('button', { name: /checkout/i});
@@ -95,7 +95,7 @@ describe('<NavBarDisplay /> unit / functional tests', () => {
 
     it('renders and clicks a cancel button if user is on the shipping info page', () => {
         render(<Provider store={store}>
-                    <NavBarDisplay calledFrom="shippingInfo" currentCart={mockCurrentCart()} handlers={mockHandlers()} />
+                    <NavBarDisplay calledFrom="shippingInfo" handlers={mockHandlers()} />
                 </Provider>);
 
         const theVal = screen.getByRole('button', { name: /cancel/i});
@@ -103,7 +103,7 @@ describe('<NavBarDisplay /> unit / functional tests', () => {
     });
     it('renders and clicks a cancel button if user is on the payment info page', () => {
         render(<Provider store={store}>
-                    <NavBarDisplay calledFrom="paymentInfo" currentCart={mockCurrentCart()} handlers={mockHandlers()} />
+                    <NavBarDisplay calledFrom="paymentInfo" handlers={mockHandlers()} />
                 </Provider>);
 
         const theVal = screen.getByRole('button', { name: /cancel/i});
@@ -111,7 +111,7 @@ describe('<NavBarDisplay /> unit / functional tests', () => {
     });
     it('renders and clicks a logout button', () => {
         render(<Provider store={store}>
-                    <NavBarDisplay calledFrom="dashboard" currentCart={mockCurrentCart()} handlers={mockHandlers()} />
+                    <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
                 </Provider>);
 
         const theVal = screen.getByRole('button', { name: /logout/i});

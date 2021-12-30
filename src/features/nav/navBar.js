@@ -1,17 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { localAuthLogout, selectUserData } from '../../features/auth/authSlice';
-import { selectCurrentCart } from '../carts/cartsSlice';
+// import { selectCurrentCart } from '../carts/cartsSlice';
 
 import NavBarDisplay from '../../components/nav/NavBarDisplay'
 
 import { handleHomeClick, handleShowCartClick, handleCheckoutClick, handleCancelClick } from '../../utils/handlers'
 
 export default function NavBar ( props ) {
-    const { calledFrom } = props.calledFrom;
+    const { calledFrom } = props;
     const dispatch = useDispatch()
     const user = useSelector(selectUserData)
-    const currentCart = useSelector(selectCurrentCart)
+    // const currentCart = useSelector(selectCurrentCart)
 
     let headerMessage = ''
   
@@ -62,7 +62,7 @@ export default function NavBar ( props ) {
         <NavBarDisplay 
                 calledFrom={calledFrom} 
                 headerMessage={headerMessage}
-                currentCart={currentCart}
+                // currentCart={currentCart}
                 handlers={handlers()}
             />
     )
