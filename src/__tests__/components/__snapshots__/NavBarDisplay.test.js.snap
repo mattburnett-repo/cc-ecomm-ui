@@ -11,6 +11,13 @@ exports[`<NavBarDisplay /> component tests renders a snapshot 1`] = `
   >
      
   </div>
+  <div
+    aria-label="header-current-cart-item-count"
+    role="presentation"
+  >
+    You have 
+     items in your current cart
+  </div>
   <button
     aria-label="home"
     onClick={[MockFunction]}

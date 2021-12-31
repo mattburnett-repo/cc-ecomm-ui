@@ -78,6 +78,8 @@ export const getSavedCartsByUserId = createAsyncThunk (
     }
 ) // end getSavedCartsByUserId
 
+// TODO: need async saveCurrentCart
+
 const options = {
     name: 'carts',
     initialState: {
@@ -96,25 +98,21 @@ const options = {
         },
         // https://www.youtube.com/watch?v=MNs_7avLIJ4
         addItemToCurrentCart: (state, action) => {
+            const productData = action.payload.data
             // check if item is already in the cart
-            console.log('state.currentCart: ', current(state.currentCart))
-
-            const isInCart = state.currentCart.some(item => item.id === action.payload.data.id ? true : false)
-
-            console.log('isInCart: ', isInCart)
+            const isInCart = state.currentCart.some(item => item.id === productData.id ? true : false)
 
             return { ...state, 
                         currentCart: isInCart ? state.currentCart.map(
-                            item => item.id === action.payload.data.id ? 
+                            item => item.id === productData.id ? 
                                 {...item, quantity: item.quantity +1} 
                                 : item)
-                            : [...state.currentCart, {...action.payload.data, quantity: 1}]
+                            : [...state.currentCart, {...productData, quantity: 1}]
                     }
         },
         removeItemFromCurrentCart: (state, action) => {
             console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload.id)
 
-            // return (...state, action.payload
             // return {
             //     ...state,
             //     currentCart: state.currentCart.filter(item => item.id !== action.payload.id)
@@ -123,7 +121,6 @@ const options = {
         changeCurrentCartItemQuantity: (state, action) => {
             console.log('inside of changeItemQuantity reducer, id: ' + action.payload.id + ' quantity: ' + action.payload.quantity)
 
-            // return (...state, action.payload
             // return {
             //     ...state,
             //     currentCart: state.currentCart.map(

@@ -1,10 +1,11 @@
 export default function NavBarDisplay (props) {
     const { handleHomeClick, handleShowCartClick,handleCheckoutClick, handleCancelClick, handleLogoutClick } = props.handlers
-    // const { currentCart } = props
+    const { calledFrom, headerMessage, currentCartCount } = props
 
     return (
         <div role="presentation" aria-label="nav-bar">
-            <div role="presentation" aria-label="header-message">{props.calledFrom} {props.headerMessage}</div>
+            <div role="presentation" aria-label="header-message">{calledFrom} {headerMessage}</div>
+            <div role="presentation" aria-label="header-current-cart-item-count">You have {currentCartCount} items in your current cart</div>
             {(props.calledFrom !== 'dashboard') ? (
                 <>
                     <button aria-label="home" onClick={handleHomeClick}>Home</button>

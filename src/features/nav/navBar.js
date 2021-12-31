@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { localAuthLogout, selectUserData } from '../../features/auth/authSlice';
-// import { selectCurrentCart } from '../carts/cartsSlice';
+import { selectCurrentCart } from '../carts/cartsSlice';
 
 import NavBarDisplay from '../../components/nav/NavBarDisplay'
 
@@ -11,7 +11,8 @@ export default function NavBar ( props ) {
     const { calledFrom } = props;
     const dispatch = useDispatch()
     const user = useSelector(selectUserData)
-    // const currentCart = useSelector(selectCurrentCart)
+    const currentCart = useSelector(selectCurrentCart)
+    let currentCartCount = currentCart.length
 
     let headerMessage = ''
   
@@ -62,7 +63,7 @@ export default function NavBar ( props ) {
         <NavBarDisplay 
                 calledFrom={calledFrom} 
                 headerMessage={headerMessage}
-                // currentCart={currentCart}
+                currentCartCount={currentCartCount}
                 handlers={handlers()}
             />
     )
