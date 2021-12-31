@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk, current }  from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 import { useSelector } from 'react-redux';
 import { selectJwtToken } from '../auth/authSlice';
@@ -111,7 +111,7 @@ const options = {
                     }
         },
         removeItemFromCurrentCart: (state, action) => {
-            console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload.id)
+            console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload.data.id)
 
             // return {
             //     ...state,
@@ -119,7 +119,7 @@ const options = {
             // }
         },
         changeCurrentCartItemQuantity: (state, action) => {
-            console.log('inside of changeItemQuantity reducer, id: ' + action.payload.id + ' quantity: ' + action.payload.quantity)
+            console.log('inside of changeItemQuantity reducer, id: ' + action.payload.data.id + ' quantity: ' + action.payload.data.quantity)
 
             // return {
             //     ...state,

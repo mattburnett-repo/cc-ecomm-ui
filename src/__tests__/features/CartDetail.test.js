@@ -1,12 +1,12 @@
 
-import { render, screen, fireEvent } from '@testing-library/react';
-import renderer from 'react-test-renderer';
-// import userEvent from '@testing-library/user-event';
+// import { render, screen, fireEvent } from '@testing-library/react';
+// import renderer from 'react-test-renderer';
+// // import userEvent from '@testing-library/user-event';
 
-import { Provider } from 'react-redux';
-import store from '../../store'
+// import { Provider } from 'react-redux';
+// import store from '../../store'
 
-import CartDetail from '../../features/cart/cartDetail';
+// import CartDetail from '../../features/cart/cartDetail';
 
 describe('<CartDetail /> feature tests', () => {
     // beforeEach(() => render(<Provider store={store}><CartDetail  /></Provider>));
