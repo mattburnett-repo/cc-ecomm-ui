@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, current }  from '@reduxjs/toolkit';
 
 import { useSelector } from 'react-redux';
 import { selectJwtToken } from '../auth/authSlice';
@@ -81,7 +81,7 @@ export const getSavedCartsByUserId = createAsyncThunk (
 const options = {
     name: 'carts',
     initialState: {
-        currentCart: { user_id: 'FIXME: needs to initialize with user_id', isActive: false, cart_items: []}, // FIXME: needs to initialize with user_id
+        currentCart: [],
         savedCarts: [],
         isLoading: false,
         hasError: false,
@@ -89,28 +89,30 @@ const options = {
     },   
     reducers: {     
         getSavedCartsTestOutput: (state, action) => {       
-            console.log('get saved carts testOutput');
+            console.log('getSavedCartsTestOutput');
         },
         getCurrentCartTestOutput: (state, action) => {
-            console.log('get current cart test output')
+            console.log('getCurrentCartTestOutput')
         },
+        // https://www.youtube.com/watch?v=MNs_7avLIJ4
         addItemToCurrentCart: (state, action) => {
-            console.log('inside of addItemToCurrentCart reducer, id: ' + action.payload.id)
-            // get the product's data from store
-            // const item = state.products.find(prod => prod.id === action.payload.id)
-            // // check if item is already in the cart
-            // const isInCart = state.currentCart.find(prod => prod.id === action.payload.id ? true : false)
-            
-            // return { ...state, 
-            //             currentCart: isInCart ? state.currentCart.map(
-            //                 item => item.id === action.payload.id ? 
-            //                     {...item, quantity: item.quantity +1} 
-            //                     : item)
-            //                 : [...state.currentCart, {...item, quantity: 1}]
-            //         }
+            // check if item is already in the cart
+            console.log('state.currentCart: ', current(state.currentCart))
+
+            const isInCart = state.currentCart.some(item => item.id === action.payload.data.id ? true : false)
+
+            console.log('isInCart: ', isInCart)
+
+            return { ...state, 
+                        currentCart: isInCart ? state.currentCart.map(
+                            item => item.id === action.payload.data.id ? 
+                                {...item, quantity: item.quantity +1} 
+                                : item)
+                            : [...state.currentCart, {...action.payload.data, quantity: 1}]
+                    }
         },
         removeItemFromCurrentCart: (state, action) => {
-            console.log('removeItemFromCurrentCart, id: ' + action.payload.id)
+            console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload.id)
 
             // return (...state, action.payload
             // return {
@@ -119,7 +121,7 @@ const options = {
             // }
         },
         changeCurrentCartItemQuantity: (state, action) => {
-            console.log('changeItemQuantity, id: ' + action.payload.id + ' quantity: ' + action.payload.quantity)
+            console.log('inside of changeItemQuantity reducer, id: ' + action.payload.id + ' quantity: ' + action.payload.quantity)
 
             // return (...state, action.payload
             // return {
@@ -131,12 +133,14 @@ const options = {
             //         )
             // }
         },
-        // loadItem: (state, action) {
+        loadItem: (state, action) => {
+            console.log('inside of loadItem reducer')
+
         //     return {
         //         ...state,
         //         currentItem: action.payload
         //     }
-        // }
+        }
     },
     extraReducers: (builder) => {
         builder

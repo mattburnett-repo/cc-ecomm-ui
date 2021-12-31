@@ -1,9 +1,11 @@
 
-export const addItemToCurrentCart = (itemId) => {
+// https://www.youtube.com/watch?v=MNs_7avLIJ4
+
+export const addItemToCurrentCart = (itemData) => {
     return {
         type: "carts/addItemToCurrentCart",
         payload: {
-            id: itemId
+            data: itemData
         }
     }
 }

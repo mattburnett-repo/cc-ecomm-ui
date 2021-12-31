@@ -28,7 +28,7 @@ export default function ProductDetailDisplay (props) {
             <input id="quantity" aria-label='quantity' placeholder="Enter product quantity" />
 
             {/* FIXME: this dispatch should be passed as a handler... */}
-            <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(id))}>Add To Cart</button>
+            <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(props.data))}>Add To Cart</button>
 
             <div aria-label="product-detail-go-back">
                 <button aria-label="product-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>

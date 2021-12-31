@@ -119,7 +119,6 @@ export const getProductById = createAsyncThunk (
 const options = {
     name: 'products',
     initialState: {
-        product: [],
         products: [],
         isLoading: false,
         hasError: false,

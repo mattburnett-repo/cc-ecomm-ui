@@ -37,7 +37,7 @@ export default function ProductListingDisplay ( props ) {
                         <input id={item.id} name="quantity" aria-label='quantity' key={item.id} placeholder="Enter product quantity" />
 
                         {/* FIXME: this dispatch should be passed as a handler... */}
-                        <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item.id))}>Add To Cart</button>
+                        <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
                         {/* <button aria-label="add-to-cart" id={item.id} onClick={handleAddToCart}>Add To Cart</button> */}
                     </div>
                 ))}     

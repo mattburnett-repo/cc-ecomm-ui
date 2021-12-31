@@ -44,7 +44,7 @@ Tests are located in two folders under the src/\__tests\__ folder
 ## Technologies used
 * Wireframe.cc online wireframing tool
 * React 16
-* Redux
+* Redux / Redux Toolkit
 * React Router
 * React Testing Library
 * Passport Authentication Library
@@ -52,7 +52,7 @@ Tests are located in two folders under the src/\__tests\__ folder
   * Google OAuth Strategy
   * JWT Strategy
 * JSON Web Token authorization
-*  E-Commerce REST API (built as previous project)
+*  E-Commerce REST API (built as separate project)
      * Production: https://e-commerce-rest-api-v2.herokuapp.com/
      * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
   
