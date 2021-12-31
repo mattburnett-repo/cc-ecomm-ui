@@ -4,9 +4,11 @@ import { useDispatch } from 'react-redux'
 
 import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 
+import ItemQuantity from '../../widgets/ItemQuantity'
+
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
-    // const { handleAddToCart } = props.handlers
+    // const { handleQuantityChange } = props.handlers
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -33,8 +35,10 @@ export default function ProductListingDisplay ( props ) {
 
                         <label htmlFor='product-price'>Product Price:</label>
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
-                        <label htmlFor={item.id}>Quantity:</label>
-                        <input id={item.id} name="quantity" aria-label='quantity' key={item.id} placeholder="Enter product quantity" />
+
+                        <div role="presentation" aria-label='product-item-quantity'>
+                            <ItemQuantity />
+                        </div>
 
                         {/* FIXME: this dispatch should be passed as a handler... */}
                         <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>

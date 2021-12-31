@@ -69,16 +69,75 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
   >
     1.00
   </div>
-  <label
-    htmlFor="quantity"
+  <div
+    aria-label="product-item-quantity"
+    role="presentation"
   >
-    Quantity:
-  </label>
-  <input
-    aria-label="quantity"
-    id="quantity"
-    placeholder="Enter product quantity"
-  />
+    <label
+      htmlFor="item-quantity-selector"
+    >
+      Quantity:
+    </label>
+    <select
+      aria-label="item-quantity-selector"
+      defaultValue="0"
+      id="item-quantity-selector"
+      name="itemQuantity"
+      onChange={[Function]}
+      role="presentation"
+    >
+      <option
+        value="1"
+      >
+        1
+      </option>
+      <option
+        value="2"
+      >
+        2
+      </option>
+      <option
+        value="3"
+      >
+        3
+      </option>
+      <option
+        value="4"
+      >
+        4
+      </option>
+      <option
+        value="5"
+      >
+        5
+      </option>
+      <option
+        value="6"
+      >
+        6
+      </option>
+      <option
+        value="7"
+      >
+        7
+      </option>
+      <option
+        value="8"
+      >
+        8
+      </option>
+      <option
+        value="9"
+      >
+        9
+      </option>
+      <option
+        value="10"
+      >
+        10
+      </option>
+    </select>
+  </div>
   <button
     aria-label="add-to-cart"
     onClick={[Function]}

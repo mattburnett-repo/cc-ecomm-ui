@@ -30,13 +30,76 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       role="presentation"
     >
       <img
-        aria-label="product-image"
+        aria-label="cart-item-image"
       />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
       >
-        Quantity: 
+        <label
+          htmlFor="item-quantity-selector"
+        >
+          Quantity:
+        </label>
+        <select
+          aria-label="item-quantity-selector"
+          defaultValue="0"
+          id="item-quantity-selector"
+          name="itemQuantity"
+          onChange={[Function]}
+          role="presentation"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+          <option
+            value="10"
+          >
+            10
+          </option>
+        </select>
       </div>
       <div
         aria-label="cart-item-name"
@@ -62,13 +125,76 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       role="presentation"
     >
       <img
-        aria-label="product-image"
+        aria-label="cart-item-image"
       />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
       >
-        Quantity: 
+        <label
+          htmlFor="item-quantity-selector"
+        >
+          Quantity:
+        </label>
+        <select
+          aria-label="item-quantity-selector"
+          defaultValue="0"
+          id="item-quantity-selector"
+          name="itemQuantity"
+          onChange={[Function]}
+          role="presentation"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+          <option
+            value="10"
+          >
+            10
+          </option>
+        </select>
       </div>
       <div
         aria-label="cart-item-name"
@@ -94,13 +220,76 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       role="presentation"
     >
       <img
-        aria-label="product-image"
+        aria-label="cart-item-image"
       />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
       >
-        Quantity: 
+        <label
+          htmlFor="item-quantity-selector"
+        >
+          Quantity:
+        </label>
+        <select
+          aria-label="item-quantity-selector"
+          defaultValue="0"
+          id="item-quantity-selector"
+          name="itemQuantity"
+          onChange={[Function]}
+          role="presentation"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+          <option
+            value="10"
+          >
+            10
+          </option>
+        </select>
       </div>
       <div
         aria-label="cart-item-name"
@@ -126,13 +315,76 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       role="presentation"
     >
       <img
-        aria-label="product-image"
+        aria-label="cart-item-image"
       />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
       >
-        Quantity: 
+        <label
+          htmlFor="item-quantity-selector"
+        >
+          Quantity:
+        </label>
+        <select
+          aria-label="item-quantity-selector"
+          defaultValue="0"
+          id="item-quantity-selector"
+          name="itemQuantity"
+          onChange={[Function]}
+          role="presentation"
+        >
+          <option
+            value="1"
+          >
+            1
+          </option>
+          <option
+            value="2"
+          >
+            2
+          </option>
+          <option
+            value="3"
+          >
+            3
+          </option>
+          <option
+            value="4"
+          >
+            4
+          </option>
+          <option
+            value="5"
+          >
+            5
+          </option>
+          <option
+            value="6"
+          >
+            6
+          </option>
+          <option
+            value="7"
+          >
+            7
+          </option>
+          <option
+            value="8"
+          >
+            8
+          </option>
+          <option
+            value="9"
+          >
+            9
+          </option>
+          <option
+            value="10"
+          >
+            10
+          </option>
+        </select>
       </div>
       <div
         aria-label="cart-item-name"

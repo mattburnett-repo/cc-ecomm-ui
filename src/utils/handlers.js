@@ -5,6 +5,10 @@ function handleCheckout(e){
     alert('handleCheckout inside utils ')
 } 
 
+function handleQuantityChange(e){ 
+    alert('handleQuantityChange inside utils ')
+} 
+
 function handleSearch(e){
     e.preventDefault()
     // let searchTerms = e.target.value
@@ -37,6 +41,7 @@ module.exports = {
     handleShowCartClick: handleShowCartClick,
     handleCheckoutClick: handleCheckoutClick,
     handleCancelClick: handleCancelClick,
+    handleQuantityChange: handleQuantityChange,
     // handleAddToCart: handleAddToCart,
     handleCheckout: handleCheckout,
     handleSearch: handleSearch,

@@ -16,9 +16,11 @@ exports[`<NavBar /> feature tests renders a snapshot 1`] = `
     aria-label="header-current-cart-item-count"
     role="presentation"
   >
-    You have 
-    0
-     items in your current cart
+    <div>
+      You have 
+      0
+       items in your current cart
+    </div>
   </div>
   <button
     aria-label="home"

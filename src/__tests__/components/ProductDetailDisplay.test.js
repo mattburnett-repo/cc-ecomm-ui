@@ -33,10 +33,30 @@ describe('<ProductDetailDisplay /> component tests', () => {
         screen.getByRole('presentation', {name: /price/i});
         expect(screen.getByRole('presentation', {name: /price/i})).toHaveTextContent('1.00');
     });
-    it('should display a quantity input', () => {
-        screen.getByRole('textbox', {name: /quantity/i});
-        expect(screen.getByRole('textbox', {name: /quantity/i})).toHaveTextContent('');
+    
+    it('should display a product item quantity element', () => {
+        let theVal = screen.getAllByRole('presentation', { name: /product-item-quantity/i})
+        expect(theVal).toHaveLength(1)
     });
+    it('should select a value from an item-quantity-selector element', () => {
+        window.alert = () => {}; // https://stackoverflow.com/questions/55088482/jest-not-implemented-window-alert
+        
+        let theVals = screen.getByRole('presentation', {name: /item-quantity-selector/i});
+
+        fireEvent.change(theVals, { target: { value: 7 } })
+        let options = theVals;
+        expect(options[0].selected).toBeFalsy();
+        expect(options[1].selected).toBeFalsy();
+        expect(options[2].selected).toBeFalsy();
+        expect(options[3].selected).toBeFalsy();
+        expect(options[4].selected).toBeFalsy();
+        expect(options[5].selected).toBeFalsy();
+        expect(options[6].selected).toBeTruthy();
+        expect(options[7].selected).toBeFalsy();
+        expect(options[8].selected).toBeFalsy();
+        expect(options[9].selected).toBeFalsy();
+    });
+
     // TODO: add mockHandleAddToCart test/s
     it('should display an add-to-cart button', () => {
         let theVal = screen.getByRole('button', {name: /add-to-cart/i});
