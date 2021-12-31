@@ -29,21 +29,26 @@ describe('<CartDetailDisplay /> component tests', () => {
 
         let theVal = screen.getAllByRole('presentation', { name: /^cart-item$/i})
         expect(theVal).toHaveLength(4)
-
-        theVal = screen.getAllByRole('presentation', { name: /cart-item-quantity/i})
+    })
+    it('should render item quantity elements', () => {
+        let theVal = screen.getAllByRole('presentation', { name: /cart-item-quantity/i})
         expect(theVal).toHaveLength(4)
-        
-        theVal = screen.getAllByRole('img', { name: /cart-item-image/i})
+    })
+    it('should render item images', () => {
+        let theVal = screen.getAllByRole('img', { name: /cart-item-image/i})
         expect(theVal).toHaveLength(4)
-
-        theVal = screen.getAllByRole('presentation', { name: /cart-item-name/i})
-        expect(theVal).toHaveLength(4)
-        
-        theVal = screen.getAllByRole('presentation', { name: /cart-item-price/i})
-        expect(theVal).toHaveLength(4)
-
-        theVal = screen.getAllByRole('presentation', { name: /cart-item-total/i})
-        expect(theVal).toHaveLength(4)
+    })
+    it('should rener item names', () => {
+        let theVal = screen.getAllByRole('presentation', { name: /cart-item-name/i})
+        expect(theVal).toHaveLength(4)        
+    })
+    it('should render item prices', () => {
+        let theVal = screen.getAllByRole('presentation', { name: /cart-item-price/i})
+        expect(theVal).toHaveLength(4)       
+    })
+    it('should render item total prices', () => {
+        let theVal = screen.getAllByRole('presentation', { name: /cart-item-total/i})
+        expect(theVal).toHaveLength(4)        
     })
 
     it('should select a value from an item-quantity-selector element', () => {
@@ -71,12 +76,15 @@ describe('<CartDetailDisplay /> component tests', () => {
     //     screen.getByRole('presentation', { name: /cart-total-price/i})
     // })
 
+    it('should rencder remove-from-cart buttons', () => {
+        let theVal = screen.getAllByRole('button', { name: /remove-from-cart-button/i})
+        expect(theVal).toHaveLength(4)
+    })
     it('should render Go Back buttons', () => {
         let theVal = screen.getAllByRole('button', { name: /cart-detail-go-back-button/i})
         expect(theVal).toHaveLength(2)
     })
-
-    it('should render two checkout buttons', () => {
+    it('should render checkout buttons', () => {
         let theVal = screen.getAllByRole('button', { name: /cart-checkout-button/i})
         expect(theVal).toHaveLength(2)
     })

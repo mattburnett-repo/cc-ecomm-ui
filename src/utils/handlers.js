@@ -1,15 +1,19 @@
 
 // handler function declarations
 
-function handleCheckout(e){ 
+function handleRemoveFromCart(e) {
+    alert('handleRemoveFromCart inside utils')
+}
+
+function handleCheckout(e) { 
     alert('handleCheckout inside utils ')
 } 
 
-function handleQuantityChange(e){ 
+function handleQuantityChange(e) { 
     alert('handleQuantityChange inside utils ')
 } 
 
-function handleSearch(e){
+function handleSearch(e) {
     e.preventDefault()
     // let searchTerms = e.target.value
     alert('handleSearch for search term/s ' + e.target.searchTerms.value + '. \nneed to figure out how to get dispatch() to work from here')
@@ -35,8 +39,8 @@ function handleCancelClick() {
     console.log('handleCanceClick')
 }
 
-
 module.exports = {
+    handleRemoveFromCart: handleRemoveFromCart,
     handleHomeClick: handleHomeClick,
     handleShowCartClick: handleShowCartClick,
     handleCheckoutClick: handleCheckoutClick,

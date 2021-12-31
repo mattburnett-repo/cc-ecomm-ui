@@ -119,6 +119,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       >
         Item total: 
       </div>
+      <button
+        aria-label="remove-from-cart-button"
+      >
+        Remove From Cart
+      </button>
     </div>
     <div
       aria-label="cart-item"
@@ -214,6 +219,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       >
         Item total: 
       </div>
+      <button
+        aria-label="remove-from-cart-button"
+      >
+        Remove From Cart
+      </button>
     </div>
     <div
       aria-label="cart-item"
@@ -309,6 +319,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       >
         Item total: 
       </div>
+      <button
+        aria-label="remove-from-cart-button"
+      >
+        Remove From Cart
+      </button>
     </div>
     <div
       aria-label="cart-item"
@@ -404,6 +419,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       >
         Item total: 
       </div>
+      <button
+        aria-label="remove-from-cart-button"
+      >
+        Remove From Cart
+      </button>
     </div>
   </div>
   <button

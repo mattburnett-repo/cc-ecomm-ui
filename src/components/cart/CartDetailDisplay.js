@@ -9,7 +9,7 @@ import ItemQuantity from '../../widgets/ItemQuantity'
 
 export default function CartDetailDisplay (props) {
     const { data } = props
-    const { handleCheckout } = props.handlers
+    const { handleRemoveFromCart, handleCheckout } = props.handlers
 
     const history = useHistory()
 
@@ -44,6 +44,7 @@ export default function CartDetailDisplay (props) {
                         <div role="presentation" aria-label="cart-item-total">
                             Item total: {item.line_item_total_price}
                         </div>
+                        <button aria-label="remove-from-cart-button" onClick={handleRemoveFromCart} >Remove From Cart</button>
                     </div>
                 ))} 
             </div>
