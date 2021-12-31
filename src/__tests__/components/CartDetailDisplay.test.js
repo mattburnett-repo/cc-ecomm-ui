@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 
 import CartDetailDisplay from '../../components/cart/CartDetailDisplay';
 
-import { mockCartData } from '../../utils/mockData'
+import { mockCurrentCartData } from '../../utils/mockData'
 
 
 // TODO: this weird data 'mount point' problem worries me...
@@ -21,7 +21,7 @@ function mockHandlers() {
 }
 
 describe('<CartDetailDisplay /> component tests', () => {
-    beforeEach(() => render(<CartDetailDisplay data={mockCartData} handlers={mockHandlers()} />));
+    beforeEach(() => render(<CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} />));
     // test.todo('it should not take so long...')
     it('should render a cart detail display component', () => {
         screen.getByRole('presentation', { name: /cart-detail-display/i})
@@ -36,6 +36,8 @@ describe('<CartDetailDisplay /> component tests', () => {
         theVal = screen.getAllByRole('presentation', { name: /cart-item-quantity/i})
         expect(theVal).toHaveLength(4)
         
+        theVal = screen.getAllByRole('img', { name: /product-image/i})
+        expect(theVal).toHaveLength(4)
         theVal = screen.getAllByRole('presentation', { name: /cart-item-name/i})
         expect(theVal).toHaveLength(4)
         
@@ -46,16 +48,23 @@ describe('<CartDetailDisplay /> component tests', () => {
         expect(theVal).toHaveLength(4)
     })
 
-    it('should render a cart total price', () => {
-        screen.getByRole('presentation', { name: /cart-total-price/i})
+    test.todo('should render a cart total price')
+    // it('should render a cart total price', () => {
+    //     screen.getByRole('presentation', { name: /cart-total-price/i})
+    // })
+
+    it('should render Go Back buttons', () => {
+        let theVal = screen.getAllByRole('button', { name: /cart-detail-go-back-button/i})
+        expect(theVal).toHaveLength(2)
     })
 
-    it('should render a checkout button', () => {
-        screen.getByRole('button', { name: /cart-checkout-button/i})
+    it('should render two checkout buttons', () => {
+        let theVal = screen.getAllByRole('button', { name: /cart-checkout-button/i})
+        expect(theVal).toHaveLength(2)
     })
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<CartDetailDisplay data={mockCartData} handlers={mockHandlers()} />).toJSON();
+        const tree = renderer.create(<CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} />).toJSON();
         expect(tree).toMatchSnapshot();
     });
 })

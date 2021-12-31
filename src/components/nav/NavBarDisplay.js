@@ -5,7 +5,13 @@ export default function NavBarDisplay (props) {
     return (
         <div role="presentation" aria-label="nav-bar">
             <div role="presentation" aria-label="header-message">{calledFrom} {headerMessage}</div>
-            <div role="presentation" aria-label="header-current-cart-item-count">You have {currentCartCount} items in your current cart</div>
+            <div role="presentation" aria-label="header-current-cart-item-count">
+                {(currentCartCount === 0) ?
+                      (<div>You have {currentCartCount} items in your current cart</div>)
+                    : ( <a href="/cart-detail"  aria-label="go-to-current-cart-link">You have {currentCartCount} items in your current cart</a>)
+                }
+               
+            </div>
             {(props.calledFrom !== 'dashboard') ? (
                 <>
                     <button aria-label="home" onClick={handleHomeClick}>Home</button>

@@ -6,12 +6,21 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
   role="presentation"
 >
   <h4>
-    Cart Detail Display
+    Cart Detail Display: 
+    4
+     item/s
   </h4>
-  <h3>
-    cart_id: 
-     user_id: 
-  </h3>
+  <button
+    aria-label="cart-detail-go-back-button"
+    onClick={[Function]}
+  >
+    Go Back
+  </button>
+  <button
+    aria-label="cart-checkout-button"
+  >
+    Checkout
+  </button>
   <div
     aria-label="cart-items"
     role="presentation"
@@ -20,6 +29,9 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       aria-label="cart-item"
       role="presentation"
     >
+      <img
+        aria-label="product-image"
+      />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -49,6 +61,9 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       aria-label="cart-item"
       role="presentation"
     >
+      <img
+        aria-label="product-image"
+      />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -78,6 +93,9 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       aria-label="cart-item"
       role="presentation"
     >
+      <img
+        aria-label="product-image"
+      />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -107,6 +125,9 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       aria-label="cart-item"
       role="presentation"
     >
+      <img
+        aria-label="product-image"
+      />
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -133,13 +154,12 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </div>
     </div>
   </div>
-  <div
-    aria-label="cart-total-price"
-    role="presentation"
+  <button
+    aria-label="cart-detail-go-back-button"
+    onClick={[Function]}
   >
-    Cart total: 
-    30
-  </div>
+    Go Back
+  </button>
   <button
     aria-label="cart-checkout-button"
   >
