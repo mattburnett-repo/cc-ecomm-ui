@@ -111,12 +111,12 @@ const options = {
                     }
         },
         removeItemFromCurrentCart: (state, action) => {
-            console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload.data.id)
+            console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload)
 
-            // return {
-            //     ...state,
-            //     currentCart: state.currentCart.filter(item => item.id !== action.payload.id)
-            // }
+            return {
+                ...state,
+                currentCart: state.currentCart.filter(item => item.id !== action.payload)
+            }
         },
         changeCurrentCartItemQuantity: (state, action) => {
             console.log('inside of changeItemQuantity reducer, id: ' + action.payload.data.id + ' quantity: ' + action.payload.data.quantity)

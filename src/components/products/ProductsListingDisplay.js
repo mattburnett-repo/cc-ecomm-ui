@@ -5,10 +5,10 @@ import { useDispatch } from 'react-redux'
 import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 
 import ItemQuantity from '../../widgets/ItemQuantity'
+// import AddToCurrentCartButton from '../../widgets/AddToCurrentCartButton'
 
 export default function ProductListingDisplay ( props ) {
     const { data } = props;
-    // const { handleQuantityChange } = props.handlers
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -17,7 +17,6 @@ export default function ProductListingDisplay ( props ) {
         <div>
             <div role="presentation" aria-label="products">
                 <h2>ProductsListingDisplay</h2>
-                {/* Object.keys(posts).map(key => <Post key={key} body={posts[key]} />)  */}
                 {data.map((item, index) => (
                     <div role="presentation" aria-label='product' key={index}>
                         <label htmlFor='product-id'>Product ID:</label>
@@ -29,7 +28,6 @@ export default function ProductListingDisplay ( props ) {
                         <label htmlFor='product-image-url'>Image:</label>
 
                         <div role="img" id="product-image-url" aria-label='product-image-url'> 
-                            {/* <img src={item.image_url} alt={item.name} id={item.id} onClick={handleGoToProductDetailClick}/> */}
                             <img src={item.image_url} alt={item.name} id={item.id} onClick={() => history.push('/product-detail/' + item.id)}/>
                         </div>
 
@@ -40,8 +38,10 @@ export default function ProductListingDisplay ( props ) {
                             <ItemQuantity />
                         </div>
 
-                        {/* FIXME: this dispatch should be passed as a handler... */}
                         <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
+
+                        {/* FIXME: this should work, but fails in reducer */}
+                        {/* <AddToCurrentCartButton item={item} /> */}
                         {/* <button aria-label="add-to-cart" id={item.id} onClick={handleAddToCart}>Add To Cart</button> */}
                     </div>
                 ))}     

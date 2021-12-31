@@ -5,7 +5,7 @@ import CartDetailDisplay from '../../components/cart/CartDetailDisplay'
 
 import { selectCurrentCart } from '../carts/cartsSlice'
 
-import { handleRemoveFromCart, handleCheckout } from "../../utils/handlers";
+import { handleCheckout } from "../../utils/handlers";
 
 // TODO: this should only look at current cart
 //      if user wants to look at a saved cart, saved cart should be moved to current cart before
@@ -16,7 +16,6 @@ export default function CartDetail () {
     
     function handlers() {
         return {
-            handleRemoveFromCart: handleRemoveFromCart,
             handleCheckout: handleCheckout
         }
     }

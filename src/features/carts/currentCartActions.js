@@ -10,11 +10,11 @@ export const addItemToCurrentCart = (itemData) => {
     }
 }
 
-export const removeFromCart = (itemId) => {
+export const removeItemFromCurrentCart = (itemId) => {
     return {
         type: "carts/removeItemFromCurrentCart",
         payload: {
-            id: itemId
+            id: itemId // TODO: reducer doesn't see action.payload.id, but rather only action.payload. ???
         }
     }
 }

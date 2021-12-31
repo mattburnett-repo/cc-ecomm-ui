@@ -1,7 +1,10 @@
 
 import { useHistory } from "react-router-dom"
+import { useDispatch } from 'react-redux'
 
 import ItemQuantity from '../../widgets/ItemQuantity'
+
+import { removeItemFromCurrentCart } from "../../features/carts/cartsSlice"
 
 // TODO: this should only look at current cart
 //      if user wants to look at a saved cart, it should be moved to current cart before
@@ -9,13 +12,12 @@ import ItemQuantity from '../../widgets/ItemQuantity'
 
 export default function CartDetailDisplay (props) {
     const { data } = props
-    const { handleRemoveFromCart, handleCheckout } = props.handlers
+    const { handleCheckout } = props.handlers
 
     const history = useHistory()
+    const dispatch = useDispatch()
 
     const itemCount = data.length
-
-    // const cartData = data.cart // TODO: this weird data 'mount point' problem worries me...
 
     return (
         <div role="presentation" aria-label="cart-detail-display">
@@ -29,6 +31,7 @@ export default function CartDetailDisplay (props) {
                 {/* {cartData.cart_items.map((item, index) => ( */}
                     {data.map((item, index) => (
                     <div role="presentation" aria-label="cart-item" key={index}>
+                        id: {item.id} asdf
                         <img aria-label="cart-item-image" src={item.image_url} alt={item.name}/>
 
                         <div role="presentation" aria-label='cart-item-quantity'>
@@ -44,7 +47,8 @@ export default function CartDetailDisplay (props) {
                         <div role="presentation" aria-label="cart-item-total">
                             Item total: {item.line_item_total_price}
                         </div>
-                        <button aria-label="remove-from-cart-button" onClick={handleRemoveFromCart} >Remove From Cart</button>
+                        {/* <button aria-label="remove-from-cart-button" onClick={handleRemoveFromCart} >Remove From Cart</button> */}
+                        <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove From Cart</button>
                     </div>
                 ))} 
             </div>
