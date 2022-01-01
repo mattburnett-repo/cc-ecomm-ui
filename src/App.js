@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
@@ -5,8 +6,12 @@ import './App.css';
 import Login from './features/auth/login';
 import Register from './features/auth/register'
 import Dashboard from './features/dashboard/dashboard';
+// products listing
 import ProductDetail from './features/product/productDetail'
 import CartDetail from './features/cart/cartDetail'
+// shipping
+// payment
+// order confirmation
 
 // TODO: ReactStrap npm i bootstrap reactstrap
 //        import 'bootstrap/dist/css/bootstrap.min.css'
@@ -25,8 +30,12 @@ function App() {
           <Route path='/login' exact component={Login} />
           <Route path='/register' exact component={Register} />
           <Route path='/dashboard' exact component={Dashboard} />
+          {/* products listing */}
           <Route path="/product-detail/:id" exact component={ProductDetail} />
           <Route path='/cart-detail' exact component={CartDetail} />
+          {/* shipping */}
+          {/* payment */}
+          {/* confirmation */}
         </Switch>
       </div>
     </Router>

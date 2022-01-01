@@ -2,7 +2,7 @@
 
 export default function ShippingInfo () {
     return (
-        <div>
+        <div role="presentation" aria-label="shipping-info">
             <div>
                 <label htmlFor="first-name">First Name:</label>
                 <input id='first-name' aria-label="first-name"/>
