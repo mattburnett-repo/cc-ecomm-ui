@@ -12,7 +12,19 @@ function handleGoToPaymentInfo(e) {
 
 function handleSaveShippingInfo(e) { 
     e.preventDefault()
-    alert('handle save shipping info inside utils ')
+
+    const shippingInfo = {
+        firstName: e.target.firstName.value,
+        lastName: e.target.lastName.value,
+        address1: e.target.address1.value,
+        address2: e.target.address2.value,
+        city: e.target.city.value,
+        stateProvince: e.target.stateProvince.value,
+        postalCode: e.target.postalCode.value,
+        country: e.target.country.value
+    }
+    console.log('handleSaveShippingInfo asdf', shippingInfo)
+    // alert('handle save shipping info inside utils ')
 } 
 
 function handleQuantityChange(e, itemId) { 

@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 import { useSelector } from 'react-redux';
+import { selectUserData } from '../auth/authSlice'
 import { selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
@@ -11,6 +12,9 @@ export const saveAddress = createAsyncThunk(
         const { firstName, lastName, address1, address2, city, stateProvince, postalCode, country } = props;     
         let theApiUrl = API_BASE_URL + '/api/v1/address'
         let authToken = useSelector(selectJwtToken)
+
+        const user = useSelector(selectUserData)
+        const userId = user.id
 
         // FIXME: needs to test if server is available and handle when it's down
         //          test for response net::ERR_CONNECTION_REFUSED
@@ -25,6 +29,7 @@ export const saveAddress = createAsyncThunk(
                         'Authorization': `Bearer ${authToken}`,
                     },
                     body: JSON.stringify({
+                        userId: userId,
                         firstName: firstName, 
                         lastName: lastName, 
                         address1: address1, 
@@ -262,8 +267,8 @@ const options = {
     } // end extra reducers
 } // end options
 
-export const selectSavedAddresses = state => state.savedAddresses;
-export const selectCurrentAddress = state => state.currentAddress;
+export const selectSavedAddresses = state => state.addresses.savedAddresses;
+export const selectCurrentAddress = state => state.addresses.currentAddress;
 
 export const addressesSlice = createSlice(options);
 

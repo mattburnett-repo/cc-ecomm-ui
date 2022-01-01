@@ -1,15 +1,24 @@
 
-// import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux'
+// import { saveAddress } from '../../features/addresses/addressesSlice'
 
 // TODO: should have PropTypes in this, and other, didsplay component/s
+// import PropTypes from 'prop-types';
 
 export default function ShippingInfoDisplay (props) {
     const { handleSaveShippingInfo, handleGoToPaymentInfo } = props.handlers
-   
+    const { savedAddresses } = props
+
     return (
         <div role="presentation" aria-label="shipping-info">
             <h3>Shipping Info</h3>
-            <form onSubmit={handleSaveShippingInfo} method="post">
+            <form onSubmit={handleSaveShippingInfo} method="post">            
+                {(savedAddresses.length > 0) ?
+                    (<div role='presentation' aria-label="saved-addresses-display">
+                        You have {savedAddresses.length} saved addresses
+                    </div>)
+                    : <></>
+                }
                 <div>
                     <label htmlFor="first-name">First Name:</label>
                     <input id='first-name' name="firstName" aria-label="first-name"/>
@@ -43,7 +52,7 @@ export default function ShippingInfoDisplay (props) {
                     <input id='country' name="country" aria-label="country"/>
                 </div>
 
-                <button aria-label="save-shipping-info">Save Shipping Info</button>
+                <button type="sumbit" aria-label="save-shipping-info">Save Shipping Info</button>
             </form>
             {/* if ave successful, display this button */}
             <button aria-label="go-to-payment-info" onClick={handleGoToPaymentInfo}>Go To Payment Info</button>
