@@ -5,8 +5,14 @@ function handleSaveCart(e) {
     alert('handleSaveCart inside utils ')
 } 
 
-function handleCheckout(e) { 
-    alert('handleCheckout inside utils ')
+function handleGoToPaymentInfo(e) { 
+    alert('handleGoToPaymentInfo inside utils ')
+} 
+
+
+function handleSaveShippingInfo(e) { 
+    e.preventDefault()
+    alert('handle save shipping info inside utils ')
 } 
 
 function handleQuantityChange(e, itemId) { 
@@ -46,7 +52,8 @@ module.exports = {
     handleCheckoutClick: handleCheckoutClick,
     handleCancelClick: handleCancelClick,
     handleQuantityChange: handleQuantityChange,
-    handleCheckout: handleCheckout,
+    handleSaveShippingInfo: handleSaveShippingInfo,
+    handleGoToPaymentInfo: handleGoToPaymentInfo,
     handleSearch: handleSearch,
     handleOrderClick: handleOrderClick
 } // end module.exports

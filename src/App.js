@@ -9,7 +9,7 @@ import Dashboard from './features/dashboard/dashboard';
 // products listing
 import ProductDetail from './features/product/productDetail'
 import CartDetail from './features/cart/cartDetail'
-// shipping
+import ShippingInfo from './features/shipping/shippingInfo';
 // payment
 // order confirmation
 
@@ -33,7 +33,7 @@ function App() {
           {/* products listing */}
           <Route path="/product-detail/:id" exact component={ProductDetail} />
           <Route path='/cart-detail' exact component={CartDetail} />
-          {/* shipping */}
+          <Route path='/shipping-info' exact component={ShippingInfo} />
           {/* payment */}
           {/* confirmation */}
         </Switch>

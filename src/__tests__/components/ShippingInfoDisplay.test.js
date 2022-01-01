@@ -4,10 +4,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import ShippingInfo from '../../components/shipping/ShippingInfo';
+import ShippingInfoDisplay from '../../components/shipping/ShippingInfoDisplay';
 
 describe('<ShippingInfo /> component tests', () => {
-    beforeEach(() => render(<ShippingInfo />));
+    beforeEach(() => render(<ShippingInfoDisplay />));
 
     it('should render', () => {
         screen.getByRole('presentation', {name: /shipping-info/i});
@@ -60,13 +60,18 @@ describe('<ShippingInfo /> component tests', () => {
         
         expect(theElement).toHaveValue('country');
     });
+
+    it('should render and click a save-shipping-info button', () => {
+        const theVal = screen.getByRole('button', {name: /save-shipping-info/i});
+        fireEvent.click(theVal);
+    });
     it('should render and click a go-to-payment-info button', () => {
         const theVal = screen.getByRole('button', {name: /go-to-payment-info/i});
         fireEvent.click(theVal);
     });
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<ShippingInfo />).toJSON();
+        const tree = renderer.create(<ShippingInfoDisplay />).toJSON();
         expect(tree).toMatchSnapshot();  
     });
 });

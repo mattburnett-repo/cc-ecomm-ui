@@ -2,6 +2,7 @@
 import { useHistory } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 
+
 import ItemQuantity from '../../widgets/ItemQuantity'
 
 import { removeItemFromCurrentCart } from "../../features/carts/cartsSlice"
@@ -12,7 +13,7 @@ import { removeItemFromCurrentCart } from "../../features/carts/cartsSlice"
 
 export default function CartDetailDisplay (props) {
     const { data } = props
-    const { handleSaveCart, handleCheckout } = props.handlers
+    const { handleSaveCart } = props.handlers
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -24,7 +25,7 @@ export default function CartDetailDisplay (props) {
             <h4>Cart Detail Display: {itemCount} item/s</h4>
 
             <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-            <button aria-label="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
+            <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>
 
             <div role="presentation" aria-label="cart-items">
                 {data.map((item, index) => (
@@ -56,7 +57,7 @@ export default function CartDetailDisplay (props) {
 
             <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
             <button aria-label="cart-save-button" onClick={handleSaveCart}>Save Cart</button>
-            <button aria-label="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
+            <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>
         </div>
     )
 }
