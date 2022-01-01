@@ -127,6 +127,7 @@ const options = {
                     )
             }
         },
+        // TODO: this might be useful to moved a savaed cart into current cart
         loadItem: (state, action) => {
             console.log('inside of loadItem reducer')
 

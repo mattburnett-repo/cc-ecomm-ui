@@ -1,6 +1,8 @@
 
 // https://www.youtube.com/watch?v=MNs_7avLIJ4
 
+// FIXME: doesn't add quantity, when user selects quantity other than 1
+//      this happens in ProductsListingDisplay during add to cart
 export const addItemToCurrentCart = (itemData) => {
     return {
         type: "carts/addItemToCurrentCart",

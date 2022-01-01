@@ -1,9 +1,9 @@
 
 // handler function declarations
 
-// function handleRemoveFromCart(e) {
-//     alert('handleRemoveFromCart inside utils')
-// }
+function handleSaveCart(e) { 
+    alert('handleSaveCart inside utils ')
+} 
 
 function handleCheckout(e) { 
     alert('handleCheckout inside utils ')
@@ -40,13 +40,12 @@ function handleCancelClick() {
 }
 
 module.exports = {
-    // handleRemoveFromCart: handleRemoveFromCart,
+    handleSaveCart: handleSaveCart,
     handleHomeClick: handleHomeClick,
     handleShowCartClick: handleShowCartClick,
     handleCheckoutClick: handleCheckoutClick,
     handleCancelClick: handleCancelClick,
     handleQuantityChange: handleQuantityChange,
-    // handleAddToCart: handleAddToCart,
     handleCheckout: handleCheckout,
     handleSearch: handleSearch,
     handleOrderClick: handleOrderClick

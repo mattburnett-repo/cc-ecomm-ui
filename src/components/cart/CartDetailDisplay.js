@@ -12,7 +12,7 @@ import { removeItemFromCurrentCart } from "../../features/carts/cartsSlice"
 
 export default function CartDetailDisplay (props) {
     const { data } = props
-    const { handleCheckout } = props.handlers
+    const { handleSaveCart, handleCheckout } = props.handlers
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -22,18 +22,17 @@ export default function CartDetailDisplay (props) {
     return (
         <div role="presentation" aria-label="cart-detail-display">
             <h4>Cart Detail Display: {itemCount} item/s</h4>
-            {/* <h3>cart_id: {data.cart_id} user_id: {data.user_id}</h3> */}
-            {/* <div aria-label="cart-detail-go-back"> */}
-                <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-                <button aria-label="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
-            {/* </div> */}
+
+            <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
+            <button aria-label="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
+
             <div role="presentation" aria-label="cart-items">
                 {data.map((item, index) => (
                     <div role="presentation" aria-label="cart-item" key={index}>
                         <img aria-label="cart-item-image" src={item.image_url} alt={item.name}/>
 
                         <div role="presentation" aria-label='cart-item-quantity'>
-                        <ItemQuantity itemId={item.id}/>
+                            <ItemQuantity itemId={item.id}/>
                         </div>
 
                         <div role="presentation" aria-label="cart-item-name">
@@ -50,14 +49,15 @@ export default function CartDetailDisplay (props) {
                     </div>
                 ))} 
             </div>
-            {/* <div role="presentation" aria-label="cart-total-price">
-                 Cart total: {data.cart_total_price.sum}
-             </div> */}
-            {/* <div aria-label="cart-detail-go-back"> */}
-                <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-            {/* </div> */}
+            <div role="presentation" aria-label="cart-total-price">
+                Cart total: FIXME (try something with useState())
+                {/* Cart total: {data.cart_total_price.sum} */}
+             </div>
 
+            <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
+            <button aria-label="cart-save-button" onClick={handleSaveCart}>Save Cart</button>
             <button aria-label="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
         </div>
     )
 }
+

@@ -38,6 +38,7 @@ export default function ProductListingDisplay ( props ) {
                             <ItemQuantity itemId={item.id}/>
                         </div>
 
+                        {/* FIXME: pass in quantity if user selects greater than 1 */}
                         <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
 
                         {/* FIXME: this should work, but fails in reducer */}

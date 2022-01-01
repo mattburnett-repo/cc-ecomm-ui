@@ -80,7 +80,7 @@ exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
     </label>
     <select
       aria-label="item-quantity-selector"
-      defaultValue="0"
+      defaultValue={0}
       id="item-quantity-selector"
       name="itemQuantity"
       onChange={[Function]}

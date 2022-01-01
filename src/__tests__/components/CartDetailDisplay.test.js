@@ -92,6 +92,11 @@ describe('<CartDetailDisplay /> component tests', () => {
         expect(theVal).toHaveLength(2)
     })
 
+    it('should render a save button', () => {
+        let theVal = screen.getAllByRole('button', { name: /cart-save-button/i})
+        expect(theVal).toHaveLength(1)
+    })
+
     it('renders a snapshot', () => {
         const tree = renderer.create(<Provider store={store}><CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();

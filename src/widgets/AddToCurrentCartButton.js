@@ -9,7 +9,6 @@ export default function AddToCurrentCartButton ( item ) {
 
     console.log('cart button item', item)
 
-    return <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
+    return <button aria-label="add-to-cart-button" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
 }
     
- 

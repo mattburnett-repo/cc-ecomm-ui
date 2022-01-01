@@ -1,21 +1,29 @@
 
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { selectCurrentCart } from '../features/carts/cartsSlice';
 
 import { changeCurrentCartItemQuantity } from '../features/carts/currentCartActions' 
 
-// TODO: pass the whole item from state in. then we can select correct option value for current quantity
-
 export default function ItemQuantity (props) {
-    const theArray = [1,2,3,4,5,6,7,8,9,10]; // FIXME there has to be a cleaner way to do this
     const itemId = props.itemId
+    const theArray = [1,2,3,4,5,6,7,8,9,10]; // FIXME there has to be a cleaner way to do this
+    
     const dispatch = useDispatch()
 
-    // FIXME: connect item quantity to options so that quanity in store selects option
+    const currentCartItems = useSelector(selectCurrentCart)
+    const theItem = currentCartItems.find(item => item.id === props.itemId)
+    
+    let theSelectedOption = 0
+    if(theItem) {
+        theSelectedOption = theItem.quantity
+    } 
+
     return (
         <>
             <label htmlFor="item-quantity-selector">Quantity:</label>
             <select role="presentation" id="item-quantity-selector" name="itemQuantity" aria-label="item-quantity-selector" 
-                    defaultValue="0" onChange={(e) => dispatch(changeCurrentCartItemQuantity(itemId, parseInt(e.target.value)))}>
+                    defaultValue={theSelectedOption} onChange={(e) => dispatch(changeCurrentCartItemQuantity(itemId, parseInt(e.target.value)))}>
                 {theArray.map(i => (
                     <option key={i} value={i}>{i}</option>
                 ))}

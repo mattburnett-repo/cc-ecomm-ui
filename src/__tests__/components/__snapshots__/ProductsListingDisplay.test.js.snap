@@ -85,7 +85,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={1}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -226,7 +226,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -367,7 +367,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -508,7 +508,7 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}

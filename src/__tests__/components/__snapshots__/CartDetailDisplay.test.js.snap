@@ -43,7 +43,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -144,7 +144,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -245,7 +245,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -346,7 +346,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </label>
         <select
           aria-label="item-quantity-selector"
-          defaultValue="0"
+          defaultValue={0}
           id="item-quantity-selector"
           name="itemQuantity"
           onChange={[Function]}
@@ -430,11 +430,22 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </button>
     </div>
   </div>
+  <div
+    aria-label="cart-total-price"
+    role="presentation"
+  >
+    Cart total: FIXME (try something with useState())
+  </div>
   <button
     aria-label="cart-detail-go-back-button"
     onClick={[Function]}
   >
     Go Back
+  </button>
+  <button
+    aria-label="cart-save-button"
+  >
+    Save Cart
   </button>
   <button
     aria-label="cart-checkout-button"
