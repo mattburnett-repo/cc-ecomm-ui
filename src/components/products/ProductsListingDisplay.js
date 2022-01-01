@@ -35,7 +35,7 @@ export default function ProductListingDisplay ( props ) {
                         <div role='presentation' aria-label='product-price'>{item.price}</div>
 
                         <div role="presentation" aria-label='product-item-quantity'>
-                            <ItemQuantity />
+                            <ItemQuantity itemId={item.id}/>
                         </div>
 
                         <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>

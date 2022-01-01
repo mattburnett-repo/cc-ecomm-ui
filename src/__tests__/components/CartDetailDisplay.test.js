@@ -3,6 +3,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 
+import { Provider } from 'react-redux'
+import store from '../../store'
+
 import CartDetailDisplay from '../../components/cart/CartDetailDisplay';
 
 import { mockCurrentCartData } from '../../utils/mockData'
@@ -18,7 +21,7 @@ function mockHandlers() {
 }
 
 describe('<CartDetailDisplay /> component tests', () => {
-    beforeEach(() => render(<CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} />));
+    beforeEach(() => render(<Provider store={store}><CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} /></Provider>));
     // test.todo('it should not take so long...')
     it('should render a cart detail display component', () => {
         screen.getByRole('presentation', { name: /cart-detail-display/i})
@@ -90,7 +93,7 @@ describe('<CartDetailDisplay /> component tests', () => {
     })
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} />).toJSON();
+        const tree = renderer.create(<Provider store={store}><CartDetailDisplay data={mockCurrentCartData} handlers={mockHandlers()} /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();
     });
 })

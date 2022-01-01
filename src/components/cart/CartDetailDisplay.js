@@ -28,14 +28,12 @@ export default function CartDetailDisplay (props) {
                 <button aria-label="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
             {/* </div> */}
             <div role="presentation" aria-label="cart-items">
-                {/* {cartData.cart_items.map((item, index) => ( */}
-                    {data.map((item, index) => (
+                {data.map((item, index) => (
                     <div role="presentation" aria-label="cart-item" key={index}>
-                        id: {item.id} asdf
                         <img aria-label="cart-item-image" src={item.image_url} alt={item.name}/>
 
                         <div role="presentation" aria-label='cart-item-quantity'>
-                            <ItemQuantity />
+                        <ItemQuantity itemId={item.id}/>
                         </div>
 
                         <div role="presentation" aria-label="cart-item-name">
@@ -47,7 +45,7 @@ export default function CartDetailDisplay (props) {
                         <div role="presentation" aria-label="cart-item-total">
                             Item total: {item.line_item_total_price}
                         </div>
-                        {/* <button aria-label="remove-from-cart-button" onClick={handleRemoveFromCart} >Remove From Cart</button> */}
+
                         <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove From Cart</button>
                     </div>
                 ))} 

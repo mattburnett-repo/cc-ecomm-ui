@@ -2,10 +2,13 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 // import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux'
+import store from '../../store'
+
 import ItemQuantity  from '../../widgets/ItemQuantity';
 
 describe('<ItemQuantity /> feature tests', () => {
-    beforeEach(() => render(<ItemQuantity />));
+    beforeEach(() => render(<Provider store={store}><ItemQuantity /></Provider>));
 
     it('should render an item-quantity-selector element', () => {
         screen.getByRole('presentation', { name: /item-quantity-selector/i})
@@ -29,7 +32,7 @@ describe('<ItemQuantity /> feature tests', () => {
     })
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<ItemQuantity /> ).toJSON();
+        const tree = renderer.create(<Provider store={store}><ItemQuantity /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     })
 }); // end feature

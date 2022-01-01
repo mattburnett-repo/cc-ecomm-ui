@@ -111,24 +111,21 @@ const options = {
                     }
         },
         removeItemFromCurrentCart: (state, action) => {
-            console.log('inside of removeItemFromCurrentCart reducer, id: ' + action.payload)
-
+            // TODO: reducer doesn't see action.payload.id, but rather only action.payload. ???
             return {
                 ...state,
                 currentCart: state.currentCart.filter(item => item.id !== action.payload)
             }
         },
         changeCurrentCartItemQuantity: (state, action) => {
-            console.log('inside of changeItemQuantity reducer, id: ' + action.payload.data.id + ' quantity: ' + action.payload.data.quantity)
-
-            // return {
-            //     ...state,
-            //     currentCart: state.currentCart.map(
-            //         item => item.id === action.payload.id ?
-            //             {...item, quantity: action.payload.quantity}
-            //             : item
-            //         )
-            // }
+            return {
+                ...state,
+                currentCart: state.currentCart.map(
+                    item => item.id === action.payload.id ?
+                        {...item, quantity: action.payload.quantity}
+                        : item
+                    )
+            }
         },
         loadItem: (state, action) => {
             console.log('inside of loadItem reducer')

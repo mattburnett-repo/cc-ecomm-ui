@@ -9,8 +9,8 @@ function handleCheckout(e) {
     alert('handleCheckout inside utils ')
 } 
 
-function handleQuantityChange(e) { 
-    alert('handleQuantityChange inside utils ')
+function handleQuantityChange(e, itemId) { 
+    alert('handleQuantityChange inside utils ' + e.target.value + ' id: ' + itemId)
 } 
 
 function handleSearch(e) {

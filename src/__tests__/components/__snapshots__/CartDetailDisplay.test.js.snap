@@ -50,52 +50,52 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
           role="presentation"
         >
           <option
-            value="1"
+            value={1}
           >
             1
           </option>
           <option
-            value="2"
+            value={2}
           >
             2
           </option>
           <option
-            value="3"
+            value={3}
           >
             3
           </option>
           <option
-            value="4"
+            value={4}
           >
             4
           </option>
           <option
-            value="5"
+            value={5}
           >
             5
           </option>
           <option
-            value="6"
+            value={6}
           >
             6
           </option>
           <option
-            value="7"
+            value={7}
           >
             7
           </option>
           <option
-            value="8"
+            value={8}
           >
             8
           </option>
           <option
-            value="9"
+            value={9}
           >
             9
           </option>
           <option
-            value="10"
+            value={10}
           >
             10
           </option>
@@ -121,6 +121,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </div>
       <button
         aria-label="remove-from-cart-button"
+        onClick={[Function]}
       >
         Remove From Cart
       </button>
@@ -150,52 +151,52 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
           role="presentation"
         >
           <option
-            value="1"
+            value={1}
           >
             1
           </option>
           <option
-            value="2"
+            value={2}
           >
             2
           </option>
           <option
-            value="3"
+            value={3}
           >
             3
           </option>
           <option
-            value="4"
+            value={4}
           >
             4
           </option>
           <option
-            value="5"
+            value={5}
           >
             5
           </option>
           <option
-            value="6"
+            value={6}
           >
             6
           </option>
           <option
-            value="7"
+            value={7}
           >
             7
           </option>
           <option
-            value="8"
+            value={8}
           >
             8
           </option>
           <option
-            value="9"
+            value={9}
           >
             9
           </option>
           <option
-            value="10"
+            value={10}
           >
             10
           </option>
@@ -221,6 +222,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </div>
       <button
         aria-label="remove-from-cart-button"
+        onClick={[Function]}
       >
         Remove From Cart
       </button>
@@ -250,52 +252,52 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
           role="presentation"
         >
           <option
-            value="1"
+            value={1}
           >
             1
           </option>
           <option
-            value="2"
+            value={2}
           >
             2
           </option>
           <option
-            value="3"
+            value={3}
           >
             3
           </option>
           <option
-            value="4"
+            value={4}
           >
             4
           </option>
           <option
-            value="5"
+            value={5}
           >
             5
           </option>
           <option
-            value="6"
+            value={6}
           >
             6
           </option>
           <option
-            value="7"
+            value={7}
           >
             7
           </option>
           <option
-            value="8"
+            value={8}
           >
             8
           </option>
           <option
-            value="9"
+            value={9}
           >
             9
           </option>
           <option
-            value="10"
+            value={10}
           >
             10
           </option>
@@ -321,6 +323,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </div>
       <button
         aria-label="remove-from-cart-button"
+        onClick={[Function]}
       >
         Remove From Cart
       </button>
@@ -350,52 +353,52 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
           role="presentation"
         >
           <option
-            value="1"
+            value={1}
           >
             1
           </option>
           <option
-            value="2"
+            value={2}
           >
             2
           </option>
           <option
-            value="3"
+            value={3}
           >
             3
           </option>
           <option
-            value="4"
+            value={4}
           >
             4
           </option>
           <option
-            value="5"
+            value={5}
           >
             5
           </option>
           <option
-            value="6"
+            value={6}
           >
             6
           </option>
           <option
-            value="7"
+            value={7}
           >
             7
           </option>
           <option
-            value="8"
+            value={8}
           >
             8
           </option>
           <option
-            value="9"
+            value={9}
           >
             9
           </option>
           <option
-            value="10"
+            value={10}
           >
             10
           </option>
@@ -421,6 +424,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </div>
       <button
         aria-label="remove-from-cart-button"
+        onClick={[Function]}
       >
         Remove From Cart
       </button>

@@ -15,6 +15,7 @@ export default function BrowseSearch () {
     const productCategories = useSelector(selectProductCategories)
 
     // TODO: need to figure out how to get dispatch() to work from here
+    // TODO: move this to handlers file
     function handleChange(e){
         let categoryId = e.target.value
 
