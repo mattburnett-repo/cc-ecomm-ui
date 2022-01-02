@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 
 import ItemQuantity from '../../widgets/ItemQuantity'
-// import AddToCurrentCartButton from '../../widgets/AddToCurrentCartButton'
+// import AddToCurrentCartButton from '../../widgets/AddToCurrentCartButton' // TODO: add this, instead of cartAction, once this button component works
 
 export default function ProductListingDisplay ( props ) {
     const { data } = props;

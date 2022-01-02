@@ -84,7 +84,7 @@ export const getOrdersByUserId = createAsyncThunk (
 const options = {
     name: 'orders',
     initialState: {
-        orders: [],
+        orders: [],     // TODO: should have currentOrder and savedOrders...
         isLoading: false,
         hasError: false,
         errorMsg: '',

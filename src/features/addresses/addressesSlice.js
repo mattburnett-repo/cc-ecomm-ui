@@ -1,28 +1,32 @@
+
+
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 import { useSelector } from 'react-redux';
-import { selectUserData } from '../auth/authSlice'
-import { selectJwtToken } from '../auth/authSlice';
+import { selectUserData, selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-export const saveAddress = createAsyncThunk(
+export const saveAddress = createAsyncThunk (
     'addresses/saveAddress',
-    async ( props, thunkAPI ) => {
-        const { firstName, lastName, address1, address2, city, stateProvince, postalCode, country } = props;     
+    // async ( props, thunkAPI ) => {
+        async ( props, { getState } ) => {
+        const { firstName, lastName, address1, address2, city, stateProvince, postalCode, country } = props; 
         let theApiUrl = API_BASE_URL + '/api/v1/address'
-        let authToken = useSelector(selectJwtToken)
 
-        const user = useSelector(selectUserData)
-        const userId = user.id
+        const authToken = selectJwtToken(getState());
+
+        const user = selectUserData(getState())
+        const userId = user.user_id
 
         // FIXME: needs to test if server is available and handle when it's down
-        //          test for response net::ERR_CONNECTION_REFUSED
+        //         test for response net::ERR_CONNECTION_REFUSED
         try {
             const response = await fetch(
                 theApiUrl,
                 {
                     method: 'POST',
+                    credentials: 'include',
                     headers: {
                         'Accept': "*/*",
                         'Content-Type': "application/json",
@@ -44,28 +48,32 @@ export const saveAddress = createAsyncThunk(
 
             let data = await response.json()
 
+            console.log('saveAddress, ', data)
+
             if(response.status === 401) {
                 console.log('addressesSlice / saveAddress auth fail')
                 // TODO: implement flash message to UI
-                return thunkAPI.rejectWithValue(data)
+                // return thunkAPI.rejectWithValue(data)
             } else if (response.status === 200) {
-                const { id, user_name, email } = data.user;
-                const { token } = data;
-                // localStorage.setItem("token", data.token)
+                // const { id, user_name, email } = data.user;
+                // const { token } = data;
+                // // localStorage.setItem("token", data.token)
 
-                return {user_id: id, username: user_name, email: email, jwtAuthToken: token};
+                console.log('addressSlice 200 asdf ', data)
+
+                return data;
             } else {
-                // console.log('response.status ' + response.status + ' authSlice fetch un successful')
+                console.log('response.status ' + response.status + ' addressesSlice fetch un successful')
                 // return {message: 'login un successful', isAuthorized: false} 
 
-                return thunkAPI.rejectWithValue(data)
+                // return thunkAPI.rejectWithValue(data)
             }
         } catch(e) {
             // TODO: catch / handle net::ERR_CONNECTION_REFUSED. e -> 'Type Error: Failed to fetch'
             //      send some sort of message back to the UI. right now a failed login just sits there, mutely
             console.log("Error in addressesSlice saveAddress: ", e) 
             console.log("Probably because the API server is down / not started.") 
-            return thunkAPI.rejectWithValue(e.response.data)
+            // return thunkAPI.rejectWithValue(e.response.data)
         }
     } // end async
 ) // end saveAddress
@@ -132,7 +140,7 @@ export const getAddressById = createAsyncThunk(
             let data = await response.json();
 
             if (response.status === 200) {
-                return data
+                return data[0]
             } else if (response.status === 401) {
                 console.log('getAddressesById get request auth fail.')
                 // return thunkAPI.rejectWithValue(data)
@@ -169,7 +177,8 @@ export const getAddressesByUserId = createAsyncThunk(
             let data = await response.json();
 
             if (response.status === 200) {
-                return data
+                console.log('getAddressesByUserId 200 ', data[0])
+                return {data}
             } else if (response.status === 401) {
                 console.log('getAddressesByUserId get request auth fail.')
                 // return thunkAPI.rejectWithValue(data)
@@ -193,6 +202,11 @@ const options = {
     reducers: {
         getAddressesTestOutput: (state, action) => {
             console.log('getAddresses test output')
+        },
+        setCurrentAddress: (state, action) => {
+            console.log('setCurrentAddress reducer ', action.payload.data)
+
+            return {...state, currentAddress: action.payload.data}
         }
     },
     extraReducers: (builder) => {
@@ -267,9 +281,12 @@ const options = {
     } // end extra reducers
 } // end options
 
+
 export const selectSavedAddresses = state => state.addresses.savedAddresses;
 export const selectCurrentAddress = state => state.addresses.currentAddress;
 
 export const addressesSlice = createSlice(options);
+export const { getAddressesTestOutput } = addressesSlice.actions
+export const { setCurrentAddress } = addressesSlice.actions
 
 export default addressesSlice.reducer;

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUserData } from '../auth/authSlice'
 import { getOrdersByUserId } from '../orders/ordersSlice'
 import { getSavedCartsByUserId } from '../carts/cartsSlice'
+import { getAddressesByUserId } from '../addresses/addressesSlice'
 import { getProductCategories } from '../productCategory/productCategorySlice'
 import { getProducts } from '../products/productsSlice'
 
@@ -24,8 +25,8 @@ export default function Dashboard () {
     function loadData() {
         dispatch(getProductCategories());
         dispatch(getOrdersByUserId(user_id));       
-        // dispatch(getCurrentCart());
         dispatch(getSavedCartsByUserId(user_id)); 
+        dispatch(getAddressesByUserId(user_id))
         dispatch(getProducts());
     };
     loadData();

@@ -1,3 +1,5 @@
+
+
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 import { useSelector } from 'react-redux';
@@ -6,7 +8,7 @@ import { selectJwtToken } from '../auth/authSlice';
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const getSavedCarts = createAsyncThunk ( 
-    'orders/getSavedCarts',
+    'carts/getSavedCarts',
     async () => {
         // const { user_id } = props;     
         let theApiUrl = API_BASE_URL + '/api/v1/cart' 
@@ -19,12 +21,12 @@ export const getSavedCarts = createAsyncThunk (
                 theApiUrl,
                 {
                     method: 'GET',
-                        headers: {
-                            'Accept': "*/*",
-                            'Content-Type': "application/json",
-                            'Authorization': `Bearer ${authToken}`,
-                        },
-                        credentials: 'include',
+                    headers: {
+                        'Accept': "*/*",
+                        'Content-Type': "application/json",
+                        'Authorization': `Bearer ${authToken}`,
+                    },
+                    credentials: 'include',
                 }
             )
 
@@ -43,7 +45,7 @@ export const getSavedCarts = createAsyncThunk (
 ) // end getSavedCarts
 
 export const getSavedCartsByUserId = createAsyncThunk (
-    'orders/getSavedCartsByUserId',
+    'carts/getSavedCartsByUserId',
     async ( user_id ) => {
         let theApiUrl = API_BASE_URL + '/api/v1/cart/user/' + user_id 
         let authToken = useSelector(selectJwtToken)
