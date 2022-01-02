@@ -5,6 +5,7 @@ import renderer from 'react-test-renderer';
 
 import { Provider } from 'react-redux'
 import store from '../../store'
+import { MemoryRouter as Router } from 'react-router-dom';
 
 import NavBarDisplay from '../../components/nav/NavBarDisplay';
 
@@ -25,66 +26,66 @@ function mockHandlers() {
 
 describe('<NavBarDisplay /> component tests', () => {
     it('should display a header message', () => { // TODO: check other components that have header messages, and refactor to here
-        render(<NavBarDisplay calledFrom="" handlers={mockHandlers()} />);
+        render(<Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router>);
         screen.getByRole('presentation', {name: /header-message/i});
         // TODO: test conditional header messages in feature tests
     });
     it('should render Current Cart item count', () => {
-        render(<NavBarDisplay calledFrom="" handlers={mockHandlers()} />);
+        render(<Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router>);
         screen.getByRole('presentation', { name: /header-current-cart-item-count/i})
     })
     it('renders and clicks a logout button', () => {
-        render(<Provider store={store}>
+        render(<Provider store={store}><Router>
                     <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
-                </Provider>);
+                </Router></Provider>);
 
         const theVal = screen.getByRole('button', { name: /logout/i});
         fireEvent.click(theVal);
     });
 
     it('renders and clicks a home button if user is not on dashboard', () => {
-        render(<Provider store={store}>
+        render(<Provider store={store}><Router>
                     <NavBarDisplay calledFrom="login" handlers={mockHandlers()} />
-                </ Provider>);
+                </Router></ Provider>);
 
         const theVal = screen.getByRole('button', { name: /home/i});
         fireEvent.click(theVal);
     });
     it('renders and clicks a show cart button if user is not on dashboard', () => {
-        render(<Provider store={store}>
+        render(<Provider store={store}><Router>
                     <NavBarDisplay calledFrom="login" handlers={mockHandlers()} />
-                </Provider>);
+                </Router></Provider>);
 
         const theVal = screen.getByRole('button', { name: /show-cart/i});
         fireEvent.click(theVal);
     });
     it('renders and clicks a checkout button if user is on the cart page', () => {
-        render(<Provider store={store}>
+        render(<Provider store={store}><Router>
                     <NavBarDisplay calledFrom="cart"  handlers={mockHandlers()} />
-                </Provider>);
+                </Router></Provider>);
 
         const theVal = screen.getByRole('button', { name: /checkout/i});
         fireEvent.click(theVal);
     });
     it('renders and clicks a cancel button if user is on the shipping info page', () => {
-        render(<Provider store={store}>
+        render(<Provider store={store}><Router>
                     <NavBarDisplay calledFrom="shippingInfo" handlers={mockHandlers()} />
-                </Provider>);
+                </Router></Provider>);
 
         const theVal = screen.getByRole('button', { name: /cancel/i});
         fireEvent.click(theVal);
     });
     it('renders and clicks a cancel button if user is on the payment info page', () => {
-        render(<Provider store={store}>
+        render(<Provider store={store}><Router>
                     <NavBarDisplay calledFrom="paymentInfo" handlers={mockHandlers()} />
-                </Provider>);
+                </Router></Provider>);
 
         const theVal = screen.getByRole('button', { name: /cancel/i});
         fireEvent.click(theVal);
     });
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<NavBarDisplay handlers={mockHandlers()}  />).toJSON();
+        const tree = renderer.create(<Router><NavBarDisplay handlers={mockHandlers()}  /></Router>).toJSON();
         expect(tree).toMatchSnapshot();
     });
 }); // end component

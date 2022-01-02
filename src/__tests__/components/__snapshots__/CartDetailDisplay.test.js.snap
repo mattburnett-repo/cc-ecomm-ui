@@ -18,6 +18,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
   </button>
   <button
     aria-label="cart-checkout-button"
+    onClick={[Function]}
   >
     Checkout
   </button>
@@ -449,6 +450,7 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
   </button>
   <button
     aria-label="cart-checkout-button"
+    onClick={[Function]}
   >
     Checkout
   </button>

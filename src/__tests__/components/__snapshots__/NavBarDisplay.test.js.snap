@@ -18,9 +18,10 @@ exports[`<NavBarDisplay /> component tests renders a snapshot 1`] = `
     <a
       aria-label="go-to-current-cart-link"
       href="/cart-detail"
+      onClick={[Function]}
     >
       You have 
-       items in your current cart
+       item/s in your current cart
     </a>
   </div>
   <button

@@ -23,8 +23,8 @@ import ShippingInfo from './features/shipping/shippingInfo';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
+    <div className="App">
+      <Router>  
         <Switch>
           <Route path='/' exact component={Login} />
           <Route path='/login' exact component={Login} />
@@ -36,9 +36,9 @@ function App() {
           <Route path='/shipping-info' exact component={ShippingInfo} />
           {/* payment */}
           {/* confirmation */}
-        </Switch>
-      </div>
-    </Router>
+        </Switch> 
+      </Router>
+    </div>
   );
 }
 
