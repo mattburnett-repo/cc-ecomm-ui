@@ -56,7 +56,8 @@ export default function CartDetailDisplay (props) {
              </div>
 
             <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-            <button aria-label="cart-save-button" onClick={handleSaveCart}>Save Cart</button>
+            {/* FIXME: implement save cart */}
+            <button aria-label="cart-save-button" onClick={handleSaveCart}>Save Cart</button> 
             <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>
         </div>
     )

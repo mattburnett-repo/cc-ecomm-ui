@@ -12,6 +12,7 @@ export default function ShippingInfoDisplay (props) {
             <form onSubmit={handleSaveShippingInfo} method="post">            
                 {(savedAddresses.length > 0) ?
                     (<div role='presentation' aria-label="saved-addresses-display">
+                        {/* TODO: this should be a dropdown, and should auto-fill the address fields after onChange event */}
                         You have {savedAddresses.length} saved address/es
                     </div>)
                     : <></>

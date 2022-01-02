@@ -84,7 +84,8 @@ export const getOrdersByUserId = createAsyncThunk (
 const options = {
     name: 'orders',
     initialState: {
-        orders: [],     // TODO: should have currentOrder and savedOrders...
+        currentOrder: [],
+        savedOrders: [],     
         isLoading: false,
         hasError: false,
         errorMsg: '',
@@ -102,7 +103,7 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(getOrders.fulfilled, (state, action) => {
-                state.orders = action.payload;
+                state.savedOrders = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
                 state.errorMsg = '';
@@ -119,7 +120,7 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(getOrdersByUserId.fulfilled, (state, action) => {
-                state.orders = action.payload;
+                state.savedOrders = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
                 state.errorMsg = '';
@@ -132,7 +133,8 @@ const options = {
     } // end extraReducers
 } // end options
 
-export const selectOrders = state => state.orders.orders;
+export const selectCurrentOrder = state => state.orders.currentOrder;
+export const selectSavedOrders = state => state.orders.savedOrders;
 
 export const ordersSlice = createSlice(options);
 
