@@ -1,10 +1,15 @@
 
+
+import { useHistory } from 'react-router-dom'
+
 // TODO: should have PropTypes in this, and other, didsplay component/s
 // import PropTypes from 'prop-types';
 
 export default function ShippingInfoDisplay (props) {
-    const { handleSaveShippingInfo, handleGoToPaymentInfo } = props.handlers
+    const { handleSaveShippingInfo } = props.handlers
     const { savedAddresses } = props
+
+    const history = useHistory()
     
     return (
         <div role="presentation" aria-label="shipping-info">
@@ -52,8 +57,9 @@ export default function ShippingInfoDisplay (props) {
 
                 <button type="submit" aria-label="save-shipping-info">Save Shipping Info</button>
             </form>
-            {/* if ave successful, display this button */}
-            <button aria-label="go-to-payment-info" onClick={handleGoToPaymentInfo}>Go To Payment Info</button>
+            {/* TODO: if save successful, display this button */}
+            {/* <button aria-label="go-to-payment-info" onClick={handleGoToPaymentInfo}>Go To Payment Info</button> */}
+            <button aria-label="go-to-payment-info" onClick={() => history.push('/payment-info')}>Go To Payment Info</button>
         </div>
     )
 }

@@ -7,8 +7,6 @@ import { setCurrentAddress } from '../addresses/currentAddressActions'
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ShippingInfoDisplay from "../../components/shipping/ShippingInfoDisplay";
 
-import { handleGoToPaymentInfo } from '../../utils/handlers'
-
 export default function ShippingInfo () {
     CheckLoginStatus()
 
@@ -39,8 +37,7 @@ export default function ShippingInfo () {
 
     function handlers() {
         return {
-            handleSaveShippingInfo: handleSaveShippingInfo,
-            handleGoToPaymentInfo: handleGoToPaymentInfo,            
+            handleSaveShippingInfo: handleSaveShippingInfo       
         }
     }
 

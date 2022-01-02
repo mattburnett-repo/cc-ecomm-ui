@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
+<div
+  aria-label="payment-info"
+  role="presentation"
+>
+  <h3>
+    Payment Info
+  </h3>
+  <form
+    method="post"
+    onSubmit={[MockFunction]}
+  >
+    <div>
+      <label
+        htmlFor="name-on-card"
+      >
+        Name on Card:
+      </label>
+      <input
+        aria-label="name-on-card"
+        id="name-on-card"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="card-number"
+      >
+        Card Number:
+      </label>
+      <input
+        aria-label="card-number"
+        id="card-number"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="expiration-date"
+      >
+        Exp. Date:
+      </label>
+      <input
+        aria-label="expiration-date"
+        id="xpiration-date"
+      />
+    </div>
+    <button
+      aria-label="finish-order"
+      type="submit"
+    >
+      Finish Order
+    </button>
+  </form>
+</div>
+`;

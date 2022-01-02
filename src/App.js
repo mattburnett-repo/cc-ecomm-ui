@@ -10,7 +10,7 @@ import Dashboard from './features/dashboard/dashboard';
 import ProductDetail from './features/product/productDetail'
 import CartDetail from './features/cart/cartDetail'
 import ShippingInfo from './features/shipping/shippingInfo';
-// payment
+import PaymentInfo from './features/payments/paymentInfo';
 // order confirmation
 
 // TODO: ReactStrap npm i bootstrap reactstrap
@@ -34,7 +34,7 @@ function App() {
           <Route path="/product-detail/:id" exact component={ProductDetail} />
           <Route path='/cart-detail' exact component={CartDetail} />
           <Route path='/shipping-info' exact component={ShippingInfo} />
-          {/* payment */}
+          <Route path='/payment-info' exact component={PaymentInfo} />
           {/* confirmation */}
         </Switch> 
       </Router>

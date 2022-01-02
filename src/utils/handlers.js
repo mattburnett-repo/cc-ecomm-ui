@@ -5,9 +5,9 @@ function handleSaveCart(e) {
     alert('handleSaveCart inside utils ')
 } 
 
-function handleGoToPaymentInfo(e) { 
-    alert('handleGoToPaymentInfo inside utils ')
-} 
+// function handleGoToPaymentInfo(e) { 
+//     alert('handleGoToPaymentInfo inside utils ')
+// } 
 
 
 function handleSaveShippingInfo(e) { 
@@ -65,7 +65,7 @@ module.exports = {
     handleCancelClick: handleCancelClick,
     handleQuantityChange: handleQuantityChange,
     handleSaveShippingInfo: handleSaveShippingInfo,
-    handleGoToPaymentInfo: handleGoToPaymentInfo,
+    // handleGoToPaymentInfo: handleGoToPaymentInfo,
     handleSearch: handleSearch,
     handleOrderClick: handleOrderClick
 } // end module.exports
