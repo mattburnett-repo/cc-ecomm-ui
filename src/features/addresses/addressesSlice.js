@@ -55,11 +55,6 @@ export const saveAddress = createAsyncThunk (
                 // TODO: implement flash message to UI
                 // return thunkAPI.rejectWithValue(data)
             } else if (response.status === 200) {
-                // const { id, user_name, email } = data.user;
-                // const { token } = data;
-                // // localStorage.setItem("token", data.token)
-
-                console.log('addressSlice 200 asdf ', data)
 
                 return data;
             } else {
@@ -204,9 +199,8 @@ const options = {
             console.log('getAddresses test output')
         },
         setCurrentAddress: (state, action) => {
-            console.log('setCurrentAddress reducer ', action.payload.data)
 
-            return {...state, currentAddress: action.payload.data}
+            return {...state, currentAddress: action.payload}
         }
     },
     extraReducers: (builder) => {
