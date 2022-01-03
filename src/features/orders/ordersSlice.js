@@ -94,6 +94,7 @@ const options = {
         getOrdersTestOutput: (state, action) => {       
             console.log('get orders testOutput');
         },
+        // currentOrder reducers go here
     },
     extraReducers: (builder) => {
         builder
