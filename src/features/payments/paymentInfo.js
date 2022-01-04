@@ -1,5 +1,6 @@
 
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { setCurrentPayment } from './currentPaymentActions'
 import { selectPaymentTypes } from '../../features/payments/paymentsSlice'
@@ -8,6 +9,7 @@ import PaymentInfoDisplay from '../../components/payments/PaymentInfoDisplay'
 
 export default function PaymentInfo() {
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const paymentTypes = useSelector(selectPaymentTypes)
 
@@ -25,6 +27,8 @@ export default function PaymentInfo() {
         /* eslint-enable */
         
         dispatch(setCurrentPayment( { userId, cartId, nameOnCard, paymentTypeId, cardNumber, expDate } ))
+
+        history.push('/process-order')
     }
 
     function handlers() {

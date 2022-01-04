@@ -50,27 +50,27 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
         role="presentation"
       >
         <option
-          value={0}
+          value={1}
         >
           PayPal
         </option>
         <option
-          value={1}
+          value={2}
         >
           MasterCard
         </option>
         <option
-          value={2}
+          value={3}
         >
           Visa
         </option>
         <option
-          value={3}
+          value={4}
         >
           Amex
         </option>
         <option
-          value={4}
+          value={5}
         >
           EC Karte
         </option>

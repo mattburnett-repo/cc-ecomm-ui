@@ -1,12 +1,6 @@
 
-import { useSelector } from 'react-redux'
-
 import CartSummary from '../../widgets/CartSummary'
 import ShippingInfoSummary from '../../widgets/ShippingInfoSummary'
-
-
-
-// import PaymentTypesDropdown from "../../widgets/PaymentTypesDropdown"
 
 export default function PaymentInfoDisplay (props) {
     const { handleFinishOrder } = props.handlers
@@ -25,7 +19,7 @@ export default function PaymentInfoDisplay (props) {
                     <select role="presentation" id='payment-types-selector' aria-label='payment-types-selector' 
                         name="paymentTypes" defaultValue="0">
                             {paymentTypes.map((i, index) => (
-                                <option key={index} value={index}>{i.description}</option>
+                                <option key={i.id} value={i.id}>{i.description}</option>
                             ))}
                     </select>
                 </div>

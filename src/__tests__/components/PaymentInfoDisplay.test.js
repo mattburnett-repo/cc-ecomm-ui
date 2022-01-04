@@ -60,8 +60,8 @@ describe('<PaymentInfo /> component tests', () => {
         fireEvent.change(screen.getByRole('presentation', {name: /payment-types-selector/i}), { target: { value: 2 } })
         let options = screen.getByRole('presentation', {name: /payment-types-selector/i});
         expect(options[0].selected).toBeFalsy();
-        expect(options[1].selected).toBeFalsy();
-        expect(options[2].selected).toBeTruthy();
+        expect(options[1].selected).toBeTruthy();
+        expect(options[2].selected).toBeFalsy();
         expect(options[3].selected).toBeFalsy();
         expect(options[4].selected).toBeFalsy();
     });
