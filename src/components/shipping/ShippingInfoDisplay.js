@@ -1,23 +1,19 @@
 
-
-import { useHistory } from 'react-router-dom'
-
 import CartSummary from '../../widgets/CartSummary'
 
 // TODO: should have PropTypes in this, and other, didsplay component/s
 // import PropTypes from 'prop-types';
 
 export default function ShippingInfoDisplay (props) {
-    const { handleSaveShippingInfo } = props.handlers
-    const { savedAddresses, currentCart } = props
+    const { handleGoToPaymentInfo } = props.handlers
+    const { savedAddresses } = props
 
-    const history = useHistory()
-    
     return (
         <div role="presentation" aria-label="shipping-info">
             <h3>Shipping Info</h3>
             <CartSummary />
-            <form onSubmit={handleSaveShippingInfo} method="post">            
+            {/* <form onSubmit={handleSaveShippingInfo} method="post"> */}
+            <form onSubmit={handleGoToPaymentInfo} method="post">  
                 {(savedAddresses.length > 0) ?
                     (<div role='presentation' aria-label="saved-addresses-display">
                         {/* TODO: this should be a dropdown, and should auto-fill the address fields after onChange event */}
@@ -58,11 +54,11 @@ export default function ShippingInfoDisplay (props) {
                     <input id='country' name="country" aria-label="country"/>
                 </div>
 
-                <button type="submit" aria-label="save-shipping-info">Save Shipping Info For Later Use</button>
+                {/* TODO: good idea here, but not in wireframe. Come back and work on it later */}
+                {/* <button type="submit" aria-label="save-shipping-info">Save Shipping Info For Later Use</button> */}
+                
+                <button type="submit" aria-label="go-to-payment-info">Go To Payment Info</button>
             </form>
-            {/* TODO: if save successful, display this button */}
-            {/* <button aria-label="go-to-payment-info" onClick={handleGoToPaymentInfo}>Go To Payment Info</button> */}
-            <button aria-label="go-to-payment-info" onClick={() => history.push('/payment-info')}>Go To Payment Info</button>
         </div>
     )
 }

@@ -4,6 +4,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux'
+import store from '../../store'
+
 import ShippingInfoDisplay from '../../components/shipping/ShippingInfoDisplay';
 
 const mockSavedAddreses = []
@@ -16,7 +19,7 @@ function handlers() {
 }
 
 describe('<ShippingInfo /> component tests', () => {
-    beforeEach(() => render(<ShippingInfoDisplay savedAddresses={mockSavedAddreses} handlers={handlers()} />));
+    beforeEach(() => render(<Provider store={store}><ShippingInfoDisplay savedAddresses={mockSavedAddreses} handlers={handlers()} /></Provider>));
 
     it('should render', () => {
         screen.getByRole('presentation', {name: /shipping-info/i});
@@ -70,18 +73,18 @@ describe('<ShippingInfo /> component tests', () => {
         expect(theElement).toHaveValue('country');
     });
 
-    it('should render and click a save-shipping-info button', () => {
-        const theVal = screen.getByRole('button', {name: /save-shipping-info/i});
-        fireEvent.submit(theVal);
-    });
+    // it('should render and click a save-shipping-info button', () => {
+    //     const theVal = screen.getByRole('button', {name: /save-shipping-info/i});
+    //     fireEvent.submit(theVal);
+    // });
     it('should render and click a go-to-payment-info button', () => {
         const theVal = screen.getByRole('button', {name: /go-to-payment-info/i});
         fireEvent.submit(theVal);
     });
 
-    // it('creates a snapshot', () => {
-    //     const tree = renderer.create(<ShippingInfoDisplay savedAddresses={mockSavedAddreses} handlers={handlers()} />).toJSON();
-    //     expect(tree).toMatchSnapshot();  
-    // });
+    it('creates a snapshot', () => {
+        const tree = renderer.create(<Provider store={store}><ShippingInfoDisplay savedAddresses={mockSavedAddreses} handlers={handlers()} /></Provider>).toJSON();
+        expect(tree).toMatchSnapshot();  
+    });
 });
 

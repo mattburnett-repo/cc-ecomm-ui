@@ -8,19 +8,74 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
   <h3>
     Payment Info
   </h3>
-  <h4>
-    TODO: Show cart / order data here (item count and total amount)
-  </h4>
-  <h4>
-    TODO: Show shipping info data here
-  </h4>
-  <h4>
-    TODO: Show dropdown for payment type
-  </h4>
+  <div
+    aria-label="cart-summary-info"
+    role="presentation"
+  >
+    Cart / Order has 
+    0
+     items, total price: FIXME
+  </div>
+  <div
+    aria-label="shipping-summary-info"
+    role="presentation"
+  >
+    Order will ship to 
+     
+    ,
+     
+    ,
+     
+    ,
+     
+  </div>
   <form
     method="post"
     onSubmit={[MockFunction]}
   >
+    <div
+      aria-label="payment-types"
+      role="presentation"
+    >
+      <label
+        htmlFor="payment-types-selector"
+      >
+        Payment Types:
+      </label>
+      <select
+        aria-label="payment-types-selector"
+        defaultValue="0"
+        id="payment-types-selector"
+        name="paymentTypes"
+        role="presentation"
+      >
+        <option
+          value={0}
+        >
+          PayPal
+        </option>
+        <option
+          value={1}
+        >
+          MasterCard
+        </option>
+        <option
+          value={2}
+        >
+          Visa
+        </option>
+        <option
+          value={3}
+        >
+          Amex
+        </option>
+        <option
+          value={4}
+        >
+          EC Karte
+        </option>
+      </select>
+    </div>
     <div>
       <label
         htmlFor="name-on-card"
@@ -53,22 +108,16 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
       </label>
       <input
         aria-label="expiration-date"
-        id="xpiration-date"
+        id="expiration-date"
         name="expDate"
       />
     </div>
     <button
-      aria-label="save-payment-info"
+      aria-label="finish-order"
       type="submit"
     >
-      Save Payment Info For Later Use
+      Finish Order
     </button>
   </form>
-  <button
-    aria-label="finish-order"
-    type="submit"
-  >
-    Finish Order
-  </button>
 </div>
 `;

@@ -4,9 +4,35 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+import { Provider } from 'react-redux'
+import store from '../../store'
+
 import PaymentInfoDisplay from '../../components/payments/PaymentInfoDisplay';
 
 const mockFunction = jest.fn()
+
+const mockPaymentTypes = [
+    {
+        "id": 1,
+        "description": "PayPal"
+    },
+    {
+        "id": 2,
+        "description": "MasterCard"
+    },
+    {
+        "id": 3,
+        "description": "Visa"
+    },
+    {
+        "id": 4,
+        "description": "Amex"
+    },
+    {
+        "id": 5,
+        "description": "EC Karte"
+    }
+]
 
 function handlers() {
     return {
@@ -15,7 +41,7 @@ function handlers() {
 }
 
 describe('<PaymentInfo /> component tests', () => {
-    beforeEach(() => render(<PaymentInfoDisplay handlers={handlers()} />));
+    beforeEach(() => render(<Provider store={store}><PaymentInfoDisplay paymentTypes={mockPaymentTypes} handlers={handlers()} /></Provider>));
 
     it('should render', () => {
         screen.getByRole('presentation', { name: /payment-info/i})
@@ -34,12 +60,11 @@ describe('<PaymentInfo /> component tests', () => {
         fireEvent.change(screen.getByRole('presentation', {name: /payment-types-selector/i}), { target: { value: 2 } })
         let options = screen.getByRole('presentation', {name: /payment-types-selector/i});
         expect(options[0].selected).toBeFalsy();
-        expect(options[1].selected).toBeTruthy();
-        expect(options[2].selected).toBeFalsy();
+        expect(options[1].selected).toBeFalsy();
+        expect(options[2].selected).toBeTruthy();
         expect(options[3].selected).toBeFalsy();
         expect(options[4].selected).toBeFalsy();
     });
-
 
     it('should display and accept a name on card', () => {
         const theElement = screen.getByRole('textbox', {name: /name-on-card/i});
@@ -60,17 +85,17 @@ describe('<PaymentInfo /> component tests', () => {
         expect(theElement).toHaveValue('01/2022');
     });
 
-    it('should display and click a save payment info button', () => {
-        let theVal = screen.getByRole('button', {name: /save-payment-info/i});
-        fireEvent.submit(theVal);
-    })
+    // it('should display and click a save payment info button', () => {
+    //     let theVal = screen.getByRole('button', {name: /save-payment-info/i});
+    //     fireEvent.submit(theVal);
+    // })
     it('should display and click a finish order button', () => {
         let theVal = screen.getByRole('button', {name: /finish-order/i});
         fireEvent.submit(theVal);
     });
 
     it('creates a snapshot', () => {
-        const tree = renderer.create(<PaymentInfoDisplay handlers={handlers()} />).toJSON();
+        const tree = renderer.create(<Provider store={store}><PaymentInfoDisplay paymentTypes={mockPaymentTypes} handlers={handlers()} /></Provider>).toJSON();
         expect(tree).toMatchSnapshot();  
     });
 }); // end component

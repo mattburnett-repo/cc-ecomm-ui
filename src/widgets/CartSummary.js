@@ -7,8 +7,8 @@ export default function CartSummary() {
     const currentCart = useSelector(selectCurrentCart)
 
     return (
-        <h4>
+        <div role='presentation' aria-label='cart-summary-info'>
             Cart / Order has {currentCart.length} items, total price: FIXME
-        </h4>
+        </div>
     )
 }
