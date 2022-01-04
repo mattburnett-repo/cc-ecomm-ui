@@ -14,6 +14,7 @@ export default function ShippingInfoDisplay (props) {
     return (
         <div role="presentation" aria-label="shipping-info">
             <h3>Shipping Info</h3>
+            <h4>TODO: Show cart / order data here (item count and total amount)</h4>
             <form onSubmit={handleSaveShippingInfo} method="post">            
                 {(savedAddresses.length > 0) ?
                     (<div role='presentation' aria-label="saved-addresses-display">
@@ -55,7 +56,7 @@ export default function ShippingInfoDisplay (props) {
                     <input id='country' name="country" aria-label="country"/>
                 </div>
 
-                <button type="submit" aria-label="save-shipping-info">Save Shipping Info</button>
+                <button type="submit" aria-label="save-shipping-info">Save Shipping Info For Later Use</button>
             </form>
             {/* TODO: if save successful, display this button */}
             {/* <button aria-label="go-to-payment-info" onClick={handleGoToPaymentInfo}>Go To Payment Info</button> */}

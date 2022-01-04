@@ -1,15 +1,14 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
-import { useSelector } from 'react-redux';
 import { selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const getProducts = createAsyncThunk (
     'products/getProducts',
-    async () => {  
+    async ( props, thunkAPI ) => {  
         let theApiUrl = API_BASE_URL + '/api/v1/product'
-        let authToken = useSelector(selectJwtToken)
+        let authToken = selectJwtToken(thunkAPI.getState())
 
         try { 
             const response = await fetch(
@@ -43,9 +42,9 @@ export const getProducts = createAsyncThunk (
 
 export const getProductsByCategory = createAsyncThunk (
     'products/getProductsByCategory',
-    async (categoryId) => {  
+    async (categoryId, thunkAPI) => {  
         let theApiUrl = API_BASE_URL + `/api/v1/product/category/${categoryId}`
-        let authToken = useSelector(selectJwtToken)
+        let authToken = selectJwtToken(thunkAPI.getState())
 
         try { 
             const response = await fetch(
@@ -79,9 +78,9 @@ export const getProductsByCategory = createAsyncThunk (
 
 export const getProductById = createAsyncThunk (
     'products/getProductById',
-    async (product_id) => {  
+    async (product_id, thunkAPI) => {  
         let theApiUrl = API_BASE_URL + `/api/v1/product/${product_id}`
-        let authToken = useSelector(selectJwtToken)
+        let authToken = selectJwtToken(thunkAPI.getState())
 
         console.log('getProductById', product_id)
 

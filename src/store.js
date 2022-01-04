@@ -6,6 +6,7 @@ import productsReducer from './features/products/productsSlice'
 import ordersReducer from './features/orders/ordersSlice'
 import cartsReducer from './features/carts/cartsSlice'
 import addressesReducer from './features/addresses/addressesSlice'
+import paymentsReducer from './features/payments/paymentsSlice'
 
 function rootReducer() {
     return {
@@ -16,6 +17,7 @@ function rootReducer() {
             carts: cartsReducer,
             products: productsReducer,
             addresses: addressesReducer,
+            payments: paymentsReducer,
         }    
     }
 }

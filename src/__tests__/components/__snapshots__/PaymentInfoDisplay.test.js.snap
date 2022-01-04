@@ -8,6 +8,15 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
   <h3>
     Payment Info
   </h3>
+  <h4>
+    TODO: Show cart / order data here (item count and total amount)
+  </h4>
+  <h4>
+    TODO: Show shipping info data here
+  </h4>
+  <h4>
+    TODO: Show dropdown for payment type
+  </h4>
   <form
     method="post"
     onSubmit={[MockFunction]}
@@ -21,6 +30,7 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
       <input
         aria-label="name-on-card"
         id="name-on-card"
+        name="nameOnCard"
       />
     </div>
     <div>
@@ -32,6 +42,7 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
       <input
         aria-label="card-number"
         id="card-number"
+        name="cardNumber"
       />
     </div>
     <div>
@@ -43,14 +54,21 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
       <input
         aria-label="expiration-date"
         id="xpiration-date"
+        name="expDate"
       />
     </div>
     <button
-      aria-label="finish-order"
+      aria-label="save-payment-info"
       type="submit"
     >
-      Finish Order
+      Save Payment Info For Later Use
     </button>
   </form>
+  <button
+    aria-label="finish-order"
+    type="submit"
+  >
+    Finish Order
+  </button>
 </div>
 `;

@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
-import { useSelector } from 'react-redux';
 import { selectJwtToken } from '../auth/authSlice';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
@@ -8,10 +7,10 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const getOrders = createAsyncThunk (
     'orders/getOrders',
-    async () => {
+    async ( props, thunkAPI ) => {
         // const { user_id } = props;     
         let theApiUrl = API_BASE_URL + '/api/v1/order'
-        let authToken = useSelector(selectJwtToken)
+        let authToken = selectJwtToken(thunkAPI.getState())
 
         // FIXME: needs to test if server is available and handle when it's down
         //          test for response ERR_CONNECTION_REFUSED
@@ -46,9 +45,9 @@ export const getOrders = createAsyncThunk (
 
 export const getOrdersByUserId = createAsyncThunk (
     'orders/getOrdersByUserId',
-    async ( user_id ) => {
+    async ( user_id, thunkAPI ) => {
         let theApiUrl = API_BASE_URL + '/api/v1/order/user/' + user_id
-        let authToken = useSelector(selectJwtToken)
+        let authToken = selectJwtToken(thunkAPI.getState())
 
         // FIXME: needs to test if server is available and handle when it's down
         //          test for response ERR_CONNECTION_REFUSED

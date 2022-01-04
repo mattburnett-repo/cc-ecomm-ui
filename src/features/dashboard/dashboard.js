@@ -5,6 +5,7 @@ import { selectUserData } from '../auth/authSlice'
 import { getOrdersByUserId } from '../orders/ordersSlice'
 import { getSavedCartsByUserId } from '../carts/cartsSlice'
 import { getAddressesByUserId } from '../addresses/addressesSlice'
+import { getPaymentsByUserId, getPaymentTypes } from '../payments/paymentsSlice';
 import { getProductCategories } from '../productCategory/productCategorySlice'
 import { getProducts } from '../products/productsSlice'
 
@@ -23,11 +24,13 @@ export default function Dashboard () {
     // FIXME: is this function calling the dispatches twice?
     //         it looks like there are two calls to each fetch...
     function loadData() {
-        dispatch(getProductCategories());
-        dispatch(getOrdersByUserId(user_id));       
-        dispatch(getSavedCartsByUserId(user_id)); 
+        dispatch(getProductCategories())
+        dispatch(getOrdersByUserId(user_id))    
+        dispatch(getSavedCartsByUserId(user_id))
         dispatch(getAddressesByUserId(user_id))
-        dispatch(getProducts());
+        dispatch(getPaymentsByUserId(user_id))
+        dispatch(getPaymentTypes())
+        dispatch(getProducts())
     };
     loadData();
     

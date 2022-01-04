@@ -20,6 +20,26 @@ describe('<PaymentInfo /> component tests', () => {
     it('should render', () => {
         screen.getByRole('presentation', { name: /payment-info/i})
     })
+    it('should render cart / order summary', () => {
+        screen.getByRole('presentation', { name: /cart-summary-info/i} )
+    })
+    it('should render shipping summary', () => {
+        screen.getByRole('presentation', { name: /shipping-summary-info/i} )
+    })
+
+    it('should render a payment types selector', () => {
+        screen.getByRole('presentation', { name: /^payment-types$/i })
+    })
+    it('should select a payment type', () => {
+        fireEvent.change(screen.getByRole('presentation', {name: /payment-types-selector/i}), { target: { value: 2 } })
+        let options = screen.getByRole('presentation', {name: /payment-types-selector/i});
+        expect(options[0].selected).toBeFalsy();
+        expect(options[1].selected).toBeTruthy();
+        expect(options[2].selected).toBeFalsy();
+        expect(options[3].selected).toBeFalsy();
+        expect(options[4].selected).toBeFalsy();
+    });
+
 
     it('should display and accept a name on card', () => {
         const theElement = screen.getByRole('textbox', {name: /name-on-card/i});
@@ -39,6 +59,11 @@ describe('<PaymentInfo /> component tests', () => {
         
         expect(theElement).toHaveValue('01/2022');
     });
+
+    it('should display and click a save payment info button', () => {
+        let theVal = screen.getByRole('button', {name: /save-payment-info/i});
+        fireEvent.submit(theVal);
+    })
     it('should display and click a finish order button', () => {
         let theVal = screen.getByRole('button', {name: /finish-order/i});
         fireEvent.submit(theVal);
