@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
+    "@stripe/react-stripe-js": "^1.4.1",
+    "@stripe/stripe-js": "^1.17.1",
     "prop-types": "^15.8.0",
     "react": "^16",
     "react-dom": "^16",
