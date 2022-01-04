@@ -1,5 +1,8 @@
 
 
+import CartSummary from '../../widgets/CartSummary'
+import ShippingInfoSummary from '../../widgets/ShippingInfoSummary'
+
 import PaymentTypesDropdown from "../../widgets/PaymentTypesDropdown"
 
 export default function PaymentInfoDisplay (props) {
@@ -8,8 +11,8 @@ export default function PaymentInfoDisplay (props) {
     return (
         <div role="presentation" aria-label="payment-info">
             <h3>Payment Info</h3>
-            <h4>TODO: Show cart / order data here (item count and total amount)</h4>
-            <h4>TODO: Show shipping info data here</h4>
+            <CartSummary />
+            <ShippingInfoSummary />
 
             <PaymentTypesDropdown />
             

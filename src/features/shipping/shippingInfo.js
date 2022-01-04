@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectSavedAddresses, saveAddress } from "../addresses/addressesSlice";
 import { setCurrentAddress } from '../addresses/currentAddressActions'
 
+import { selectCurrentCart } from "../carts/cartsSlice";
+
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import ShippingInfoDisplay from "../../components/shipping/ShippingInfoDisplay";
 
@@ -15,9 +17,9 @@ export default function ShippingInfo () {
     let savedAddresses = []
     const theVal = useSelector(selectSavedAddresses)
 
-    if(theVal) {
-        savedAddresses = theVal
-    }
+    if(theVal) { savedAddresses = theVal }
+
+    const currentCart = useSelector(selectCurrentCart)
 
     function handleSaveShippingInfo(e) {
         e.preventDefault();
@@ -41,5 +43,5 @@ export default function ShippingInfo () {
         }
     }
 
-    return <ShippingInfoDisplay savedAddresses={savedAddresses} handlers={handlers()} />
+    return <ShippingInfoDisplay currentCart={currentCart} savedAddresses={savedAddresses} handlers={handlers()} />
 }

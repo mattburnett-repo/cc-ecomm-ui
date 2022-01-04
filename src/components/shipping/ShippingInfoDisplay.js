@@ -2,19 +2,21 @@
 
 import { useHistory } from 'react-router-dom'
 
+import CartSummary from '../../widgets/CartSummary'
+
 // TODO: should have PropTypes in this, and other, didsplay component/s
 // import PropTypes from 'prop-types';
 
 export default function ShippingInfoDisplay (props) {
     const { handleSaveShippingInfo } = props.handlers
-    const { savedAddresses } = props
+    const { savedAddresses, currentCart } = props
 
     const history = useHistory()
     
     return (
         <div role="presentation" aria-label="shipping-info">
             <h3>Shipping Info</h3>
-            <h4>TODO: Show cart / order data here (item count and total amount)</h4>
+            <CartSummary />
             <form onSubmit={handleSaveShippingInfo} method="post">            
                 {(savedAddresses.length > 0) ?
                     (<div role='presentation' aria-label="saved-addresses-display">

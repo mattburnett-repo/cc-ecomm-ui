@@ -105,7 +105,6 @@ export const getPaymentsByUserId = createAsyncThunk (
 export const getPaymentTypes = createAsyncThunk (
     'payments/getPaymentTypes',
     async ( props, thunkAPI) => {
-        console.log('inside getPaymentTypes')
         let theApiUrl = API_BASE_URL + '/api/v1/payment-type'
         const authToken = selectJwtToken(thunkAPI.getState()); 
         
@@ -126,11 +125,11 @@ export const getPaymentTypes = createAsyncThunk (
             let data = await response.json();
 
             if (response.status === 200) {
-                console.log('getPaymentTypes 200 ', data[0])
+                // console.log('getPaymentTypes 200 ', data[0])
                 return {data}
             } else if (response.status === 401) {
                 console.log('getPaymentTypes get request auth fail.')
-                // return thunkAPI.rejectWithValue(data)
+                return thunkAPI.rejectWithValue(data)
             }
         } catch(e) {
             console.log("Error: ", e.response.data)
@@ -200,7 +199,6 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(getPaymentTypes.fulfilled, (state, action) => {
-                console.log('getPaymentTypes payload ', action.payload)
                 state.paymentTypes = action.payload;
                 state.isLoading = false;
                 state.hasError = false;

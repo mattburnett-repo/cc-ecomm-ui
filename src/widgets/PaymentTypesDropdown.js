@@ -14,8 +14,8 @@ export default function PaymentTypesDropdown() {
             <select role="presentation" id='payment-types-selector' aria-label='payment-types-selector' 
                 name="paymentTypes" defaultValue="0">
 
-                {paymentTypes.map(i => (
-                    <option key={i} value={i}>{i.description}</option>
+                {paymentTypes.map((i, index) => (
+                    <option key={index} value={i}>{i.description}</option>
                 ))}
 
             </select>
