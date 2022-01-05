@@ -35,7 +35,7 @@ const PaymentInfoDisplay = ( props ) => {
                     'Authorization': `Bearer ${authToken}`},
                 body: JSON.stringify({
                     // amount: selectedProduct.price.toString().replace('.', ''),
-                    amount: 1234,
+                    amount: 1234, // FIXME: use real data
                     source: token.id,
                     receipt_email: 'customer@example.com'  // FIXME: get from user data object   
                 }),
