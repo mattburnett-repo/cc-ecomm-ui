@@ -33,18 +33,23 @@ const PaymentInfoDisplay = ( props ) => {
                 headers: { 
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${authToken}`},
-                credentials: 'include',
-                body: {
+                body: JSON.stringify({
                     // amount: selectedProduct.price.toString().replace('.', ''),
                     amount: 1234,
                     source: token.id,
-                    receipt_email: 'customer@example.com'     
-                }                
+                    receipt_email: 'customer@example.com'  // FIXME: get from user data object   
+                }),
+                credentials: 'include'           
             }
-            const order = await fetch(theUrl, requestOptions)
-            const data = await order.json();       
+            const response = await fetch(theUrl, requestOptions)
+            const data = await response.json();       
             
-            console.log('end paymentInfo / handleFinishOrder / fetchStripe / data: ', data)
+            if(response.status === 200) {
+                console.log('PaymentInfoDisplay 200', data)
+            } else {
+                console.log('PaymentInfoDisplay ', response.status)
+                console.log('end PaymentInfoDisplay / handleFinishOrder / fetchStripe / data: ', response)
+            } // end if
         }
 
         fetchStripe();
