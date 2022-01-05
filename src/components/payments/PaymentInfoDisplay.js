@@ -1,44 +1,79 @@
 
+import {
+  CardNumberElement,
+  CardExpiryElement,
+  CardCVCElement,
+  injectStripe
+} from 'react-stripe-elements'
+
+import { useSelector } from 'react-redux'
+import { selectJwtToken } from '../../features/auth/authSlice';
+
 import CartSummary from '../../widgets/CartSummary'
 import ShippingInfoSummary from '../../widgets/ShippingInfoSummary'
 
-export default function PaymentInfoDisplay (props) {
-    const { handleFinishOrder } = props.handlers
-    const { paymentTypes } = props
+// https://stackoverflow.com/questions/70589309/react-stripe-injectstripe-hoc-stripe-createtoken-is-not-a-function
+
+const PaymentInfoDisplay = ( props ) => {
+    const authToken = useSelector(selectJwtToken)
+    const { stripe } = props
+
+    const handleFinishOrder = async (event) => {
+        event.preventDefault()
+    
+        const { token } = await stripe.createToken()
+
+        async function fetchStripe() {
+            const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+            const apiEndpoint = '/api/v1/payment/stripe/charge'
+            const theUrl = API_BASE_URL + apiEndpoint
+
+            const requestOptions = {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`},
+                credentials: 'include',
+                body: {
+                    // amount: selectedProduct.price.toString().replace('.', ''),
+                    amount: 1234,
+                    source: token.id,
+                    receipt_email: 'customer@example.com'     
+                }                
+            }
+            const order = await fetch(theUrl, requestOptions)
+            const data = await order.json();       
+            
+            console.log('end paymentInfo / handleFinishOrder / fetchStripe / data: ', data)
+        }
+
+        fetchStripe();
+    }
 
     return (
-        <div role="presentation" aria-label="payment-info">
-            <h3>Payment Info</h3>
+        <div role="presentation" aria-label='payment-info'>
             <CartSummary />
             <ShippingInfoSummary />
-        
-            <form onSubmit={handleFinishOrder} method="post">
-                {/* FIXME: this crashes the tests <PaymentTypesDropdown /> */}
-                <div role="presentation" aria-label='payment-types'>
-                    <label htmlFor='payment-types-selector'>Payment Types:</label>
-                    <select role="presentation" id='payment-types-selector' aria-label='payment-types-selector' 
-                        name="paymentTypes" defaultValue="0">
-                            {paymentTypes.map((i, index) => (
-                                <option key={i.id} value={i.id}>{i.description}</option>
-                            ))}
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="name-on-card">Name on Card:</label>
-                    <input id="name-on-card" name="nameOnCard" aria-label="name-on-card" />
-                </div>
-                <div>
-                    <label htmlFor="card-number">Card Number:</label>
-                    <input id="card-number" name="cardNumber" aria-label="card-number" />
-                </div>
-                <div>
-                    <label htmlFor="expiration-date">Exp. Date:</label>
-                    <input id="expiration-date" name="expDate" aria-label="expiration-date" />
-                </div>
-                {/* TODO: this is a good idea, but it isn't in the wireframe/spec. Come back to it later */}
-                {/* <button type="submit" aria-label="save-payment-info">Save Payment Info For Later Use</button> */}
-                <button type="submit" aria-label="finish-order">Finish Order</button>
+            <form onSubmit={handleFinishOrder}>
+            <label>
+                Card details
+                <CardNumberElement />
+            </label>
+            <label>
+                Expiration date
+                <CardExpiryElement />
+            </label>
+            <label>
+                CVC
+                <CardCVCElement />
+            </label>
+            <button type="submit" className="order-button">
+                Pay
+            </button>
             </form>
         </div>
     )
-}
+} // PaymentInfoDisplay
+
+export default injectStripe(PaymentInfoDisplay)
+

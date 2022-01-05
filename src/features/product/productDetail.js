@@ -24,7 +24,7 @@ export default function ProductDetail ( props ) {
         const apiEndpoint = `/api/v1/product/${productId}`
         const theUrl = API_BASE_URL + apiEndpoint
 
-        console.log('theUrl ', theUrl )
+        // console.log('theUrl ', theUrl )
 
         const requestOptions = {
             method: 'GET',

@@ -84,6 +84,18 @@ describe('<PaymentInfo /> component tests', () => {
         
         expect(theElement).toHaveValue('01/2022');
     });
+    it('should display and accept a cvc number', () => {
+        const theElement = screen.getByRole('textbox', {name: /cvc-number/i});
+        userEvent.type(theElement, '1234');
+        
+        expect(theElement).toHaveValue('1234');
+    });
+    it('should display and accept a postal code', () => {
+        const theElement = screen.getByRole('textbox', {name: /postal-code/i});
+        userEvent.type(theElement, 'BR 549');
+        
+        expect(theElement).toHaveValue('BR 549');
+    });
 
     // it('should display and click a save payment info button', () => {
     //     let theVal = screen.getByRole('button', {name: /save-payment-info/i});

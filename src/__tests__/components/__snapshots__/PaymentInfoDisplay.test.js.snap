@@ -112,6 +112,30 @@ exports[`<PaymentInfo /> component tests creates a snapshot 1`] = `
         name="expDate"
       />
     </div>
+    <div>
+      <label
+        htmlFor="cvc-number"
+      >
+        CVC:
+      </label>
+      <input
+        aria-label="cvc-number"
+        id="cvc-number"
+        name="cvcNumber"
+      />
+    </div>
+    <div>
+      <label
+        htmlFor="postal-code"
+      >
+        CVC:
+      </label>
+      <input
+        aria-label="postal-code"
+        id="postal-code"
+        name="postalCode"
+      />
+    </div>
     <button
       aria-label="finish-order"
       type="submit"
