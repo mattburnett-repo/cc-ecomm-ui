@@ -23,6 +23,7 @@ const PaymentInfoDisplay = ( props ) => {
     
         const { token } = await stripe.createToken()
 
+        // TODO: needs a spinner while processing
         async function fetchStripe() {
             const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
             const apiEndpoint = '/api/v1/payment/stripe/charge'
@@ -41,19 +42,34 @@ const PaymentInfoDisplay = ( props ) => {
                 }),
                 credentials: 'include'           
             }
+
+            // TODO: display spinner until fulfilled
             const response = await fetch(theUrl, requestOptions)
             const data = await response.json();       
             
             if(response.status === 200) {
-                console.log('PaymentInfoDisplay 200', data)
+                saveOrderData(data)
             } else {
                 console.log('PaymentInfoDisplay ', response.status)
-                console.log('end PaymentInfoDisplay / handleFinishOrder / fetchStripe / data: ', response)
+                console.log('end PaymentInfoDisplay / handleFinishOrder / fetchStripe / data: ', data)
+                // display error page / message
             } // end if
         }
 
-        fetchStripe();
+        function saveOrderData(data) {
+            console.log('saveOrderData then redirect to OrderConfirmation. Payment info: ', data)
+            alert('saveOrderData then redirect to OrderConfirmation')
+        }
+
+        // displaySpinner()
+        // try {
+            fetchStripe();
+        //     saveOrderData(data)
+        // } catch (e) {
+
+        // }
     }
+
 
     return (
         <div role="presentation" aria-label='payment-info'>
