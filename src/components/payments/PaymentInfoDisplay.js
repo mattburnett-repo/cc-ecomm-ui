@@ -6,11 +6,14 @@ import {
   injectStripe
 } from 'react-stripe-elements'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 import { selectJwtToken } from '../../features/auth/authSlice';
 
 import CartSummary from '../../widgets/CartSummary'
 import ShippingInfoSummary from '../../widgets/ShippingInfoSummary'
+
+import { setCurrentPayment } from '../../features/payments/currentPaymentActions'
 
 // https://stackoverflow.com/questions/70589309/react-stripe-injectstripe-hoc-stripe-createtoken-is-not-a-function
 
@@ -18,7 +21,10 @@ const PaymentInfoDisplay = ( props ) => {
     const authToken = useSelector(selectJwtToken)
     const { stripe } = props
 
-    const handleFinishOrder = async (event) => {
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    const handleProcessPayment = async (event) => {
         event.preventDefault()
     
         const { token } = await stripe.createToken()
@@ -43,39 +49,28 @@ const PaymentInfoDisplay = ( props ) => {
                 credentials: 'include'           
             }
 
-            // TODO: display spinner until fulfilled
+            // TODO: display spinner until fetch promise resolves
             const response = await fetch(theUrl, requestOptions)
             const data = await response.json();       
             
             if(response.status === 200) {
-                saveOrderData(data)
+                dispatch(setCurrentPayment(data))
+                history.push('/process-order')
             } else {
                 console.log('PaymentInfoDisplay ', response.status)
-                console.log('end PaymentInfoDisplay / handleFinishOrder / fetchStripe / data: ', data)
+                console.log('end PaymentInfoDisplay / handleProcessPayment / fetchStripe / data: ', data)
                 // display error page / message
             } // end if
         }
 
-        function saveOrderData(data) {
-            console.log('saveOrderData then redirect to OrderConfirmation. Payment info: ', data)
-            alert('saveOrderData then redirect to OrderConfirmation')
-        }
-
-        // displaySpinner()
-        // try {
-            fetchStripe();
-        //     saveOrderData(data)
-        // } catch (e) {
-
-        // }
+        fetchStripe();
     }
-
 
     return (
         <div role="presentation" aria-label='payment-info'>
             <CartSummary />
             <ShippingInfoSummary />
-            <form onSubmit={handleFinishOrder}>
+            <form onSubmit={handleProcessPayment}>
             <label>
                 Card details
                 <CardNumberElement />
