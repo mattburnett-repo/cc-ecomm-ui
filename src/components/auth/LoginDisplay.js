@@ -7,7 +7,6 @@ export default function LoginDisplay ( props ) {
 
     const message = useContext(LoginMessageContext)
 
-    // TODO: enable message / flash message when there are login errors
     return (
         <div role="presentation" aria-label="login-display">
             <div role="presentation" aria-label="oauth">

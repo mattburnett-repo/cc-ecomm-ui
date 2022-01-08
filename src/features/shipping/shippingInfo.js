@@ -2,10 +2,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 
-import { selectUserData } from "../auth/authSlice";
-import { setCurrentOrder } from "../orders/currentOrderActions";
-import { selectCurrentCart } from "../carts/cartsSlice";
-
 import { selectSavedAddresses, saveAddress } from "../addresses/addressesSlice";
 import { setCurrentAddress } from '../addresses/currentAddressActions'
 

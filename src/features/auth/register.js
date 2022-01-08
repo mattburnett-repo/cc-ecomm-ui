@@ -9,10 +9,6 @@ export default function Register() {
     const [message, setMessage] = useState('')
 
     function handleClick() {
-        // redirect to appropriate auth component, zB
-        // <p class="lead mt-4">
-        //     No Account? <a href="/register">Register</a>
-        // </p>
         alert('handle click')
     }
     async function handleRegister(e) { // doing this with Redux is really messy and complicated. let's just send a fetch from here and get registration over with.
@@ -35,15 +31,11 @@ export default function Register() {
 
         const response = await fetch(theUrl, requestOptions);
         const resStatus = response.status
-        const data = await response.json();
+        // const data = await response.json();
 
-        // TODO: handle 200 / 400 statuses and render messages to user in display component
         if(resStatus === 400) {
             setMessage('This user already exists, \nbut you can try a different one.\nOr login using the link.')
         }
-        
-        // console.log('response status ', resStatus)
-        // console.log('data ', data)
     }
     
     function handlers() {

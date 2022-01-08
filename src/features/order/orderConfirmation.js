@@ -14,10 +14,7 @@ export default function OrderConfirmation () {
     const currentPayment = useSelector(selectCurrentPayment)
     const currentAddress = useSelector(selectCurrentAddress)    
 
-    // console.log('OrderConfirmation: currentOrder ', currentOrder)
-    // console.log('OrderConfirmation: currentPayment ', currentPayment)
-    // console.log('OrderConfirmation: currentAddress ', currentAddress)
-
+    // eslint-disable-next-line 
     if(isLoading || currentOrder.length == 0) {
         return <h4> loading </h4>
     } else {   

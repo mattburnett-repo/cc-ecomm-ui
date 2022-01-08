@@ -32,6 +32,7 @@ export default function ProcessOrder() {
     // FIXME: clear out data after everything is completed, so we can't reload the page and place another order
     useEffect(() => {
         dispatch(saveOrderData({orderData}))
+            // eslint-disable-next-line 
     }, [])
 
     if(isLoading) {

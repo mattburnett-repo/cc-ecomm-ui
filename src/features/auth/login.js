@@ -12,17 +12,12 @@ export const LoginMessageContext = createContext()
 export default function Login () {
     const [message, setMessage] = useState('')
 
-    const isAuthorized = useSelector(selectIsAuthenticated); // FIXME: make sure this connects to redux
+    const isAuthorized = useSelector(selectIsAuthenticated); // FIXME: make sure this is correctly from redux
 
     const dispatch = useDispatch();
 
-
     // TODO: xx-auth and login button should also dispatch actions to redux
     function handleClick() {
-        // redirect to appropriate auth component, zB
-        // <p class="lead mt-4">
-        //     No Account? <a href="/register">Register</a>
-        // </p>
         alert('handle click')
     }
     async function handleLogin(e) {
@@ -31,11 +26,9 @@ export default function Login () {
         let username = e.target.username.value
         let password = e.target.password.value
 
-        // TODO: handle 400 / 401 statuses and render messages to user in display component
-        //      get response from API server, setMessageState, and useContext() to update LoginDisplay
         try {
             let msg = await dispatch(localAuthLogin({username, password}));
-            // console.log('msg.meta.requestStatus ', msg.meta.requestStatus)
+
             if(msg.meta.requestStatus === 'rejected') {
                 setMessage('This user can\'t log in. \nYou can try again, or create a new login \nby clicking the \'Register\' link')
             } else {
@@ -62,5 +55,4 @@ export default function Login () {
     } else {
         return <Dashboard />
     }
-    
 }

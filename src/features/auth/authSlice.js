@@ -30,7 +30,6 @@ export const localAuthLogin = createAsyncThunk (
 
             if(response.status === 401) {
                 console.log('authSlice auth fail')
-                // TODO: implement flash message to UI
                 return thunkAPI.rejectWithValue(data)
             } else if (response.status === 200) {
                 const { id, user_name, email } = data.user;

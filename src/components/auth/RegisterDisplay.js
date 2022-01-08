@@ -2,7 +2,6 @@
 import { useContext } from 'react'
 import { RegisterMessageContext } from "../../features/auth/register";
 
-
 export default function Register( props ) {
     const { handleClick, handleRegister } = props.handlers
     const message = useContext(RegisterMessageContext)
