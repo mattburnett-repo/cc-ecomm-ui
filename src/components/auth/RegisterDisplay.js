@@ -1,5 +1,11 @@
+
+import { useContext } from 'react'
+import { RegisterMessageContext } from "../../features/auth/register";
+
+
 export default function Register( props ) {
     const { handleClick, handleRegister } = props.handlers
+    const message = useContext(RegisterMessageContext)
 
     return (
         <div role="presentation" aria-label="register-display">
@@ -9,6 +15,7 @@ export default function Register( props ) {
                 <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>   
             </div>
             <div role="presentation" aria-label="register-display-form">
+                {(message && <div role="presentation" aria-label='register-error-message'>{message}</div>)}
                 <form onSubmit={handleRegister} method="post">
                     <div>
                         <label htmlFor="username">Username:</label>

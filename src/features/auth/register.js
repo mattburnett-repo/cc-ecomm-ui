@@ -1,8 +1,12 @@
+
+import { useState, createContext } from 'react'
+
 import RegisterDisplay from '../../components/auth/RegisterDisplay'
 
+export const RegisterMessageContext = createContext()
+
 export default function Register() {
-    // use some state here?
-    //      const [isRegistered, setIsRegistered] = useState(false)
+    const [message, setMessage] = useState('')
 
     function handleClick() {
         // redirect to appropriate auth component, zB
@@ -34,8 +38,12 @@ export default function Register() {
         const data = await response.json();
 
         // TODO: handle 200 / 400 statuses and render messages to user in display component
-        console.log('response status ', resStatus)
-        console.log('data ', data)
+        if(resStatus === 400) {
+            setMessage('This user already exists, \nbut you can try a different one.\nOr login using the link.')
+        }
+        
+        // console.log('response status ', resStatus)
+        // console.log('data ', data)
     }
     
     function handlers() {
@@ -45,5 +53,9 @@ export default function Register() {
         }
     }
 
-    return <RegisterDisplay handlers={handlers()}/>
+    return (
+        <RegisterMessageContext.Provider value={message}>
+            <RegisterDisplay handlers={handlers()}/>            
+        </RegisterMessageContext.Provider>
+    )
 }

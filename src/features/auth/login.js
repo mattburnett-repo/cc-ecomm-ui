@@ -1,3 +1,5 @@
+
+import { useState, createContext } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { localAuthLogin, selectIsAuthenticated } from './authSlice';
@@ -5,10 +7,15 @@ import { localAuthLogin, selectIsAuthenticated } from './authSlice';
 import LoginDisplay from "../../components/auth/LoginDisplay";
 import Dashboard from '../../features/dashboard/dashboard'
 
+export const LoginMessageContext = createContext()
+
 export default function Login () {
-    const isAuthorized = useSelector(selectIsAuthenticated); // FIXME: make sure this connects to Passport.isAuthenticated() / req.body thing.
+    const [message, setMessage] = useState('')
+
+    const isAuthorized = useSelector(selectIsAuthenticated); // FIXME: make sure this connects to redux
 
     const dispatch = useDispatch();
+
 
     // TODO: xx-auth and login button should also dispatch actions to redux
     function handleClick() {
@@ -18,16 +25,26 @@ export default function Login () {
         // </p>
         alert('handle click')
     }
-    function handleLogin(e) {
+    async function handleLogin(e) {
         e.preventDefault();
 
         let username = e.target.username.value
         let password = e.target.password.value
 
         // TODO: handle 400 / 401 statuses and render messages to user in display component
-        dispatch(localAuthLogin({username, password}));
-    }
-
+        //      get response from API server, setMessageState, and useContext() to update LoginDisplay
+        try {
+            let msg = await dispatch(localAuthLogin({username, password}));
+            // console.log('msg.meta.requestStatus ', msg.meta.requestStatus)
+            if(msg.meta.requestStatus === 'rejected') {
+                setMessage('This user can\'t log in. \nYou can try again, or create a new login \nby clicking the \'Register\' link')
+            } else {
+                setMessage('')
+            }
+        } catch(e) {
+            console.log('login.js error: ', e)
+        }
+    } // end handleLogin
 
     function handlers() {
         return {
@@ -37,7 +54,11 @@ export default function Login () {
     }
     
     if(!isAuthorized) {
-        return <LoginDisplay handlers={handlers()} />
+        return (
+            <LoginMessageContext.Provider value={message}>
+                <LoginDisplay handlers={handlers()} /> 
+            </LoginMessageContext.Provider>          
+        )
     } else {
         return <Dashboard />
     }

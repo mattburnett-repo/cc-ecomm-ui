@@ -1,7 +1,11 @@
 
+import { useContext } from 'react'
+import { LoginMessageContext } from "../../features/auth/login";
 
 export default function LoginDisplay ( props ) {
     const { handleClick, handleLogin } = props.handlers;
+
+    const message = useContext(LoginMessageContext)
 
     // TODO: enable message / flash message when there are login errors
     return (
@@ -12,6 +16,7 @@ export default function LoginDisplay ( props ) {
                 <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>   
             </div>
             <div role="presentation" aria-label="login-display-form">
+                {(message && <div role="presentation" aria-label='login-error-message'>{message}</div>)}
                 <form onSubmit={handleLogin} method="post">
                     <div>
                         <label htmlFor="username">Username:</label>
