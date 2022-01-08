@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
+// import { selectJwtToken } from '../auth/authSlice';
+
 export const localAuthLogin = createAsyncThunk (
     'auth/localAuthLogin',
     async ( props, thunkAPI ) => {
@@ -29,7 +31,6 @@ export const localAuthLogin = createAsyncThunk (
             let data = await response.json()
 
             if(response.status === 401) {
-                console.log('authSlice auth fail')
                 return thunkAPI.rejectWithValue(data)
             } else if (response.status === 200) {
                 const { id, user_name, email } = data.user;
@@ -57,9 +58,9 @@ export const localAuthLogin = createAsyncThunk (
 // FIXME: other slices should be cleared out when logout successful
 export const localAuthLogout = createAsyncThunk (
     'auth/localAuthLogout',
-    async ( ) => {
-        console.log('localAuthLogout')
-        let theApiUrl = API_BASE_URL + '/auth/logout'
+    async ( props, thunkAPI ) => {
+        let theApiUrl = API_BASE_URL + '/api/v1/auth/logout'
+
         try { 
             const response = await fetch(
                 theApiUrl,
@@ -72,9 +73,10 @@ export const localAuthLogout = createAsyncThunk (
                 }
             )
 
-            if (response.status === 200) {         
+            // eslint-disable-next-line 
+            if (response.status == 200) {         
                 // TODO: needs to clear out other slices (orders, carts, etc)   
-                return {userData: '', isAuthorized: false}  
+                return {userData: '', isAuthenticated: false}  
             } else {
             //   return thunkAPI.rejectWithValue(data)
                 console.log('response.status ' + response.status + ' authSlice fetch un successful')

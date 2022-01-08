@@ -22,6 +22,10 @@ import OrderConfirmation from './features/order/orderConfirmation'
 
 //  path='...' exact component={ () => <Component someProp= {propVal}} />
 
+// TODO: find a way to persist data
+//    zB https://dev.to/dawnind/persist-redux-state-with-redux-persist-3k0d
+//       https://edvins.io/how-to-use-redux-persist-with-redux-toolkit
+
 function App() {
   return (
     <div className="App">

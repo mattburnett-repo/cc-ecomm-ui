@@ -44,7 +44,14 @@ Tests are located in two folders under the src/\__tests\__ folder
 ## Technologies used
 * Wireframe.cc online wireframing tool
 * React 16
-* Redux / Redux Toolkit
+* React Hooks
+  * useEffect
+  * useState
+  * useContext
+  * useHistory
+  * useSelector
+  * useDispatch
+* Redux / Redux Toolkit / Redux Persist
 * React Router
 * React Testing Library
 * Passport Authentication Library
@@ -55,7 +62,7 @@ Tests are located in two folders under the src/\__tests\__ folder
 *  E-Commerce REST API (built as separate project)
      * Production: https://e-commerce-rest-api-v2.herokuapp.com/
      * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
-  
+* Stripe payment API integration
 ---
 
 ## Features
@@ -65,11 +72,12 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Users can browse / search product categories
 * Users can add / read / update / delete cart items
 * Users can add shipping and payment information
-* Users can make a simulated payment to complete an order
+* Users can make a simulated payment via Stripe to complete an order
 
 ---
 
 ### Future work / TODO
-* Implement admin functionality
+* Everything can always be better
+* Implement admin functionality to
   * Manage users / orders / carts
   * Manage product listings

@@ -1,3 +1,4 @@
+
 import { useDispatch, useSelector } from 'react-redux';
 
 import { localAuthLogout, selectUserData } from '../../features/auth/authSlice';
@@ -18,7 +19,7 @@ export default function NavBar ( props ) {
   
     function handleLogoutClick() {
         dispatch(localAuthLogout())
-    }
+    } 
 
     function handlers() {
         return {

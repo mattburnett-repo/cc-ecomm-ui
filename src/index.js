@@ -1,6 +1,11 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
+// https://edvins.io/how-to-use-redux-persist-with-redux-toolkit
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
 
 import './index.css';
 
@@ -9,10 +14,14 @@ import store from './store.js'
 
 import reportWebVitals from './reportWebVitals';
 
+let persistor = persistStore(store);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <App />  
+      </PersistGate>
     </ Provider>
   </React.StrictMode>,
   document.getElementById('root')
