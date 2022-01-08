@@ -12,7 +12,7 @@ import CartDetail from './features/cart/cartDetail'
 import ShippingInfo from './features/shipping/shippingInfo';
 import PaymentInfo from './features/payments/paymentInfo';
 import ProcessOrder from './features/order/processOrder';
-// order confirmation
+import OrderConfirmation from './features/order/orderConfirmation'
 
 // TODO: ReactStrap npm i bootstrap reactstrap
 //        import 'bootstrap/dist/css/bootstrap.min.css'
@@ -37,7 +37,7 @@ function App() {
           <Route path='/shipping-info' exact component={ShippingInfo} />
           <Route path='/payment-info' exact component={PaymentInfo} />
           <Route path='/process-order' exact component={ProcessOrder} />
-          {/* confirmation */}
+          <Route path='/order-confirmation' exact component={OrderConfirmation} />
         </Switch> 
       </Router>
     </div>

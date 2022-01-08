@@ -108,15 +108,14 @@ export const saveOrderData = createAsyncThunk (
             let data = await response.json();
 
             if (response.status === 200) {
-                console.log('saveOrderData 200 ', data)
-                // return data
+                return {data}
             } else if (response.status === 401) {
                 console.log('saveOrderData get request auth fail.')
-                // return thunkAPI.rejectWithValue(data)
+                return thunkAPI.rejectWithValue(data)
             }
         } catch(e) {
             console.log("Error in saveOrderData: ", e.response.data)
-            // return thunkAPI.rejectWithValue(e.response.data)          
+            return thunkAPI.rejectWithValue(e.response.data)          
         }
     }
 ) // end saveOrder
@@ -197,7 +196,7 @@ const options = {
     } // end extraReducers
 } // end options
 
-export const selectIsLoading = state => state.isLoading;
+export const selectIsLoading = state => state.orders.isLoading;
 export const selectCurrentOrder = state => state.orders.currentOrder;
 export const selectSavedOrders = state => state.orders.savedOrders;
 

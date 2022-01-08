@@ -8,18 +8,16 @@ import { selectCurrentAddress } from '../addresses/addressesSlice';
 import { selectCurrentPayment } from '../payments/paymentsSlice';
 import { saveOrderData, selectIsLoading } from '../orders/ordersSlice';
 
-import { setCurrentOrder } from '../orders/currentOrderActions';
-
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
-import OrderConfirmationDisplay from "../../components/order/OrderConfirmationDisplay";
+import OrderConfirmation from './orderConfirmation';
 
-import LoadingMessage from '../../components/loading/LoadingMessage';
-import { mockOrderConfirmationData } from '../../utils/mockData';
+// import LoadingMessage from '../../components/loading/LoadingMessage';
 
 export default function ProcessOrder() {
     CheckLoginStatus()
 
     const dispatch = useDispatch()
+
     const user = useSelector(selectUserData)
     const isLoading = useSelector(selectIsLoading)
 
@@ -31,18 +29,16 @@ export default function ProcessOrder() {
         paymentInfo: useSelector(selectCurrentPayment)
     }
 
-    // dispatch(setCurrentOrder(orderData))
-
+    // FIXME: clear out data after everything is completed, so we can't reload the page and place another order
     useEffect(() => {
         dispatch(saveOrderData({orderData}))
     }, [])
-    
-    // get the isLoading from saveOrderData, display spinner until resolved, then show OrderConfirmationDisplay
 
     if(isLoading) {
         // FIXME:
-        return <LoadingMessage type="spinner" />
-    } else {
-        return <OrderConfirmationDisplay data={ mockOrderConfirmationData } />        
+        // return <LoadingMessage type="spinner" />
+        return <h4>loading</h4>
+    } else {  
+        return <OrderConfirmation />
     }
 }

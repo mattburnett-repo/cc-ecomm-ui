@@ -49,13 +49,17 @@ const PaymentInfoDisplay = ( props ) => {
                 credentials: 'include'           
             }
 
+            function goToProcessOrder() {
+                history.push('/process-order')
+            }
+
             // TODO: display spinner until fetch promise resolves
             const response = await fetch(theUrl, requestOptions)
             const data = await response.json();       
             
             if(response.status === 200) {
-                dispatch(setCurrentPayment(data))
-                history.push('/process-order')
+                await dispatch(setCurrentPayment(data)) 
+                goToProcessOrder()            
             } else {
                 console.log('PaymentInfoDisplay ', response.status)
                 console.log('end PaymentInfoDisplay / handleProcessPayment / fetchStripe / data: ', data)
