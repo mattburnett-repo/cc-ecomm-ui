@@ -18,11 +18,11 @@ export default function Dashboard () {
     const dispatch = useDispatch()
     // eslint-disable-next-line no-unused-vars
     const userData = useSelector(selectUserData)
-    const user_id = userData.user_id // FIXME: asdf.id = 4. there are no order records for account asdf yet
-    // const user_id = 1
+    const user_id = userData.user_id 
 
     // FIXME: is this function calling the dispatches twice?
     //         it looks like there are two calls to each fetch...
+    // make async and await dispatches
     function loadData() {
         dispatch(getProductCategories())
         dispatch(getOrdersByUserId(user_id))    

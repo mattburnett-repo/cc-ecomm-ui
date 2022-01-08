@@ -1,18 +1,20 @@
+
 import { useSelector } from 'react-redux'
-import { selectIsAuthenticated} from '../features/auth/authSlice'
-// eslint-disable-next-line
-import { Redirect } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+
+import { selectIsAuthenticated } from '../features/auth/authSlice'
 
 export default function CheckLoginStatus () {
     // eslint-disable-next-line
     const isLoggedIn = useSelector(selectIsAuthenticated);
-    
-    // FIXME: enable this after development. it doesn't really do anything right now
+
+    const history = useHistory()
+
     if(!isLoggedIn) {
-        return <Redirect to='/login' />
+        history.push('/login')
+
+        return false
     } else {
         return true;
     }
-
-    // return true;
 }        

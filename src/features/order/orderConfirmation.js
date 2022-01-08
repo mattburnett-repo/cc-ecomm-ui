@@ -5,10 +5,13 @@ import { selectCurrentOrder, selectIsLoading } from '../orders/ordersSlice'
 import { selectCurrentPayment } from '../payments/paymentsSlice'
 import { selectCurrentAddress } from "../addresses/addressesSlice"
 
+import CheckLoginStatus from "../../utils/CheckLoginStatus";
+
 import OrderConfirmationDisplay from '../../components/order/OrderConfirmationDisplay'
 
 export default function OrderConfirmation () {
-
+    CheckLoginStatus()
+    
     const isLoading = useSelector(selectIsLoading)
     const currentOrder = useSelector(selectCurrentOrder)
     const currentPayment = useSelector(selectCurrentPayment)
