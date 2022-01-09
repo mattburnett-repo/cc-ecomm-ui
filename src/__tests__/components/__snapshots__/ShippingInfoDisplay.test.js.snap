@@ -14,7 +14,7 @@ exports[`<ShippingInfo /> component tests creates a snapshot 1`] = `
   >
     Cart / Order has 
     0
-     items, total price: FIXME
+     items, total price: 
   </div>
   <form
     method="post"

@@ -31,6 +31,13 @@ export const changeCurrentCartItemQuantity = (itemId, value) => {
     }
 }
 
+export const setCurrentCartTotalPrice = (value) => {
+    return {
+        type: 'carts/setCurrentCartTotalPrice',
+        payload: value
+    }
+}
+
 export const loadItem = (item) => {
     return {
         type: "carts/loadItem",

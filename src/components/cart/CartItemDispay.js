@@ -20,12 +20,11 @@ export default function CartItemDisplay(props) {
     return (
         // <div role="presentation" aria-label="cart-item" key={index}>
         <div role="presentation" aria-label="cart-item" key={item.id}>
-            <div>image goes here</div>
-
-            <div role="presentation" aria-label='cart-item-quantity'>
-                <ItemQuantity itemId={item.id}/>
+            <label htmlFor='cart-item-image'>Image:</label>
+            <div role="img" id="cart-item-image" aria-label='cart-item-image'> 
+                oversized image goes here
+                {/* <img src={item.image_url} alt={item.name} id={item.id} /> */}
             </div>
-
             <div role="presentation" aria-label="cart-item-name">
                 Name: {item.name}
             </div>
@@ -35,6 +34,11 @@ export default function CartItemDisplay(props) {
             <div role="presentation" aria-label="cart-item-price">
                 Price: {item.price}
             </div>
+
+            <div role="presentation" aria-label='cart-item-quantity'>
+                <ItemQuantity itemId={item.id}/>
+            </div>
+            
             <div role="presentation" aria-label="cart-item-total">
                 Item total: {cartItemTotal} 
             </div>

@@ -4,6 +4,8 @@ import { createSlice, createAsyncThunk }  from '@reduxjs/toolkit';
 
 import { selectJwtToken } from '../auth/authSlice';
 
+import { formatAsCurrency } from '../../utils/functions';
+
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const getSavedCarts = createAsyncThunk ( 
@@ -106,9 +108,9 @@ const options = {
             return { ...state, 
                         currentCart: isInCart ? state.currentCart.map(
                             item => item.id === productData.id ? 
-                                {...item, quantity: item.quantity +1} 
+                                {...item, quantity: item.quantity +1, item_total_price: formatAsCurrency.format(productData.price * (item.quantity + 1))} 
                                 : item)
-                            : [...state.currentCart, {...productData, quantity: 1}]
+                            : [...state.currentCart, {...productData, quantity: 1, item_total_price: formatAsCurrency.format(productData.price)}]
                     }
         },
         removeItemFromCurrentCart: (state, action) => {
@@ -123,12 +125,16 @@ const options = {
                 ...state,
                 currentCart: state.currentCart.map(
                     item => item.id === action.payload.id ?
-                        {...item, quantity: action.payload.quantity}
+                        {...item, quantity: action.payload.quantity, item_total_price: formatAsCurrency.format(item.price * action.payload.quantity)}
                         : item
                     )
             }
         },
-        // TODO: this might be useful to moved a savaed cart into current cart
+        setCurrentCartTotalPrice: (state, action) => {
+            return {...state, currentCart_total_price: formatAsCurrency.format(action.payload)} // FIXME: this should be in the current cart part, not in carts
+        },
+
+        // TODO: this might be useful to moved a saved cart into current cart
         loadItem: (state, action) => {
             console.log('inside of loadItem reducer')
 
@@ -183,6 +189,7 @@ const options = {
 } // end options
 
 export const selectCurrentCart = state => state.carts.currentCart;
+export const selectCurrentCartTotalPrice = state => state.carts.currentCart_total_price;
 export const selectSavedCarts = state => state.carts.savedCarts;
 
 export const cartsSlice = createSlice(options);

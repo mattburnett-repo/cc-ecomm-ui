@@ -1,7 +1,10 @@
 
-// import { useState, useEffect } from 'react'
-
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from "react-router-dom"
+
+import { setCurrentCartTotalPrice } from '../../features/carts/currentCartActions'
+import { selectCurrentCart } from '../../features/carts/cartsSlice'
 
 import CartItemDisplay from "./CartItemDispay"
 
@@ -10,14 +13,26 @@ import CartItemDisplay from "./CartItemDispay"
 //          coming here
 
 export default function CartDetailDisplay (props) {
-    // const [ cartTotalPrice, setCartTotalPrice ] = useState(0) get this from context
-
     const { data } = props
     const { handleSaveCart } = props.handlers
+
+    const currentCart = useSelector(selectCurrentCart)
+    const dispatch = useDispatch()
+
+    const [cartTotalPrice, setCartTotalPrice] = useState(0.00)
 
     const history = useHistory()
 
     const itemCount = data.length
+
+    useEffect(() => {
+        let cart_total = 0.00
+        currentCart.forEach(item => {cart_total += item.item_total_price})
+
+        setCartTotalPrice(cart_total)                   // UI state
+        dispatch(setCurrentCartTotalPrice(cart_total))  // redux state
+    // eslint-disable-next-line
+    }, [currentCart])
 
     return (
         <div role="presentation" aria-label="cart-detail-display">
@@ -36,8 +51,7 @@ export default function CartDetailDisplay (props) {
             </div>
             <br /><br />
             <div role="presentation" aria-label="cart-total-price">
-                Cart total: FIXME (try something with useState())
-                {/* Cart total: {data.cart_total_price.sum} */}
+                Cart total: {cartTotalPrice}
              </div>
 
             <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>

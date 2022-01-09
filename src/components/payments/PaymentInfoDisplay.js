@@ -13,13 +13,19 @@ import { selectJwtToken } from '../../features/auth/authSlice';
 import CartSummary from '../../widgets/CartSummary'
 import ShippingInfoSummary from '../../widgets/ShippingInfoSummary'
 
+import { selectCurrentCartTotalPrice } from '../../features/carts/cartsSlice';
+import { selectUserData } from '../../features/auth/authSlice';
+
 import { setCurrentPayment } from '../../features/payments/currentPaymentActions'
 
 // https://stackoverflow.com/questions/70589309/react-stripe-injectstripe-hoc-stripe-createtoken-is-not-a-function
 
 const PaymentInfoDisplay = ( props ) => {
-    const authToken = useSelector(selectJwtToken)
     const { stripe } = props
+
+    const authToken = useSelector(selectJwtToken)
+    const currentCartTotalPrice = useSelector(selectCurrentCartTotalPrice)
+    const userData = useSelector(selectUserData)
 
     const dispatch = useDispatch()
     const history = useHistory()
@@ -42,9 +48,9 @@ const PaymentInfoDisplay = ( props ) => {
                     'Authorization': `Bearer ${authToken}`},
                 body: JSON.stringify({
                     // amount: selectedProduct.price.toString().replace('.', ''),
-                    amount: 1234, // FIXME: use real data
+                    amount: currentCartTotalPrice.toString().replace('.', ''), 
                     source: token.id,
-                    receipt_email: 'customer@example.com'  // FIXME: get from user data object   
+                    receipt_email: userData.email 
                 }),
                 credentials: 'include'           
             }

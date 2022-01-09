@@ -26,13 +26,42 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
     aria-label="cart-items"
     role="presentation"
   >
+    <br />
+    <br />
     <div
       aria-label="cart-item"
       role="presentation"
     >
-      <img
+      <label
+        htmlFor="cart-item-image"
+      >
+        Image:
+      </label>
+      <div
         aria-label="cart-item-image"
-      />
+        id="cart-item-image"
+        role="img"
+      >
+        oversized image goes here
+      </div>
+      <div
+        aria-label="cart-item-name"
+        role="presentation"
+      >
+        Name: 
+      </div>
+      <div
+        aria-label="cart-item-description"
+        role="presentation"
+      >
+        Description: 
+      </div>
+      <div
+        aria-label="cart-item-price"
+        role="presentation"
+      >
+        Price: 
+      </div>
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -103,22 +132,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </select>
       </div>
       <div
-        aria-label="cart-item-name"
-        role="presentation"
-      >
-        Description: 
-      </div>
-      <div
-        aria-label="cart-item-price"
-        role="presentation"
-      >
-        Price: 
-      </div>
-      <div
         aria-label="cart-item-total"
         role="presentation"
       >
         Item total: 
+        0
       </div>
       <button
         aria-label="remove-from-cart-button"
@@ -127,13 +145,42 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         Remove From Cart
       </button>
     </div>
+    <br />
+    <br />
     <div
       aria-label="cart-item"
       role="presentation"
     >
-      <img
+      <label
+        htmlFor="cart-item-image"
+      >
+        Image:
+      </label>
+      <div
         aria-label="cart-item-image"
-      />
+        id="cart-item-image"
+        role="img"
+      >
+        oversized image goes here
+      </div>
+      <div
+        aria-label="cart-item-name"
+        role="presentation"
+      >
+        Name: 
+      </div>
+      <div
+        aria-label="cart-item-description"
+        role="presentation"
+      >
+        Description: 
+      </div>
+      <div
+        aria-label="cart-item-price"
+        role="presentation"
+      >
+        Price: 
+      </div>
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -204,22 +251,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </select>
       </div>
       <div
-        aria-label="cart-item-name"
-        role="presentation"
-      >
-        Description: 
-      </div>
-      <div
-        aria-label="cart-item-price"
-        role="presentation"
-      >
-        Price: 
-      </div>
-      <div
         aria-label="cart-item-total"
         role="presentation"
       >
         Item total: 
+        0
       </div>
       <button
         aria-label="remove-from-cart-button"
@@ -228,13 +264,42 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         Remove From Cart
       </button>
     </div>
+    <br />
+    <br />
     <div
       aria-label="cart-item"
       role="presentation"
     >
-      <img
+      <label
+        htmlFor="cart-item-image"
+      >
+        Image:
+      </label>
+      <div
         aria-label="cart-item-image"
-      />
+        id="cart-item-image"
+        role="img"
+      >
+        oversized image goes here
+      </div>
+      <div
+        aria-label="cart-item-name"
+        role="presentation"
+      >
+        Name: 
+      </div>
+      <div
+        aria-label="cart-item-description"
+        role="presentation"
+      >
+        Description: 
+      </div>
+      <div
+        aria-label="cart-item-price"
+        role="presentation"
+      >
+        Price: 
+      </div>
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -305,22 +370,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </select>
       </div>
       <div
-        aria-label="cart-item-name"
-        role="presentation"
-      >
-        Description: 
-      </div>
-      <div
-        aria-label="cart-item-price"
-        role="presentation"
-      >
-        Price: 
-      </div>
-      <div
         aria-label="cart-item-total"
         role="presentation"
       >
         Item total: 
+        0
       </div>
       <button
         aria-label="remove-from-cart-button"
@@ -329,13 +383,42 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         Remove From Cart
       </button>
     </div>
+    <br />
+    <br />
     <div
       aria-label="cart-item"
       role="presentation"
     >
-      <img
+      <label
+        htmlFor="cart-item-image"
+      >
+        Image:
+      </label>
+      <div
         aria-label="cart-item-image"
-      />
+        id="cart-item-image"
+        role="img"
+      >
+        oversized image goes here
+      </div>
+      <div
+        aria-label="cart-item-name"
+        role="presentation"
+      >
+        Name: 
+      </div>
+      <div
+        aria-label="cart-item-description"
+        role="presentation"
+      >
+        Description: 
+      </div>
+      <div
+        aria-label="cart-item-price"
+        role="presentation"
+      >
+        Price: 
+      </div>
       <div
         aria-label="cart-item-quantity"
         role="presentation"
@@ -406,22 +489,11 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
         </select>
       </div>
       <div
-        aria-label="cart-item-name"
-        role="presentation"
-      >
-        Description: 
-      </div>
-      <div
-        aria-label="cart-item-price"
-        role="presentation"
-      >
-        Price: 
-      </div>
-      <div
         aria-label="cart-item-total"
         role="presentation"
       >
         Item total: 
+        0
       </div>
       <button
         aria-label="remove-from-cart-button"
@@ -431,11 +503,14 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
       </button>
     </div>
   </div>
+  <br />
+  <br />
   <div
     aria-label="cart-total-price"
     role="presentation"
   >
-    Cart total: FIXME (try something with useState())
+    Cart total: 
+    0
   </div>
   <button
     aria-label="cart-detail-go-back-button"

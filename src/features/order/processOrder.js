@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 
 import { selectUserData } from '../auth/authSlice';
-import { selectCurrentCart } from '../carts/cartsSlice';
+import { selectCurrentCart, selectCurrentCartTotalPrice } from '../carts/cartsSlice';
 import { selectCurrentAddress } from '../addresses/addressesSlice';
 import { selectCurrentPayment } from '../payments/paymentsSlice';
 import { saveOrderData } from '../orders/ordersSlice';
@@ -24,6 +24,7 @@ export default function ProcessOrder() {
     const orderData = {
         user_id: user.user_id,
         cartInfo: useSelector(selectCurrentCart),
+        totalPrice: useSelector(selectCurrentCartTotalPrice),
         shippingInfo: useSelector(selectCurrentAddress),
         paymentInfo: useSelector(selectCurrentPayment)
     }

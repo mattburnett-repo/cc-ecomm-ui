@@ -14,6 +14,23 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       role="presentation"
     >
       <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_01"
+          id={1}
+          onClick={[Function]}
+          src="https://pixabay.com/images/id-71282/"
+        />
+      </div>
+      <label
         htmlFor="product-id"
       >
         Product ID:
@@ -45,23 +62,6 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         role="presentation"
       >
         product_desc_01
-      </div>
-      <label
-        htmlFor="product-image-url"
-      >
-        Image:
-      </label>
-      <div
-        aria-label="product-image-url"
-        id="product-image-url"
-        role="img"
-      >
-        <img
-          alt="product_name_01"
-          id={1}
-          onClick={[Function]}
-          src="https://pixabay.com/images/id-71282/"
-        />
       </div>
       <label
         htmlFor="product-price"
@@ -149,11 +149,30 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         Add To Cart
       </button>
+      <br />
+      <br />
     </div>
     <div
       aria-label="product"
       role="presentation"
     >
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_02"
+          id={2}
+          onClick={[Function]}
+          src="http://www.image.com/item/2"
+        />
+      </div>
       <label
         htmlFor="product-id"
       >
@@ -186,23 +205,6 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         role="presentation"
       >
         product_desc_02
-      </div>
-      <label
-        htmlFor="product-image-url"
-      >
-        Image:
-      </label>
-      <div
-        aria-label="product-image-url"
-        id="product-image-url"
-        role="img"
-      >
-        <img
-          alt="product_name_02"
-          id={2}
-          onClick={[Function]}
-          src="http://www.image.com/item/2"
-        />
       </div>
       <label
         htmlFor="product-price"
@@ -290,11 +292,30 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         Add To Cart
       </button>
+      <br />
+      <br />
     </div>
     <div
       aria-label="product"
       role="presentation"
     >
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_03"
+          id={3}
+          onClick={[Function]}
+          src="http://www.image.com/item/3"
+        />
+      </div>
       <label
         htmlFor="product-id"
       >
@@ -327,23 +348,6 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         role="presentation"
       >
         product_desc_03
-      </div>
-      <label
-        htmlFor="product-image-url"
-      >
-        Image:
-      </label>
-      <div
-        aria-label="product-image-url"
-        id="product-image-url"
-        role="img"
-      >
-        <img
-          alt="product_name_03"
-          id={3}
-          onClick={[Function]}
-          src="http://www.image.com/item/3"
-        />
       </div>
       <label
         htmlFor="product-price"
@@ -431,11 +435,30 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         Add To Cart
       </button>
+      <br />
+      <br />
     </div>
     <div
       aria-label="product"
       role="presentation"
     >
+      <label
+        htmlFor="product-image-url"
+      >
+        Image:
+      </label>
+      <div
+        aria-label="product-image-url"
+        id="product-image-url"
+        role="img"
+      >
+        <img
+          alt="product_name_04"
+          id={4}
+          onClick={[Function]}
+          src="http://www.image.com/item/4"
+        />
+      </div>
       <label
         htmlFor="product-id"
       >
@@ -468,23 +491,6 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
         role="presentation"
       >
         product_desc_04
-      </div>
-      <label
-        htmlFor="product-image-url"
-      >
-        Image:
-      </label>
-      <div
-        aria-label="product-image-url"
-        id="product-image-url"
-        role="img"
-      >
-        <img
-          alt="product_name_04"
-          id={4}
-          onClick={[Function]}
-          src="http://www.image.com/item/4"
-        />
       </div>
       <label
         htmlFor="product-price"
@@ -572,6 +578,8 @@ exports[`<ProductsListingDisplay data={mockData} /> component tests creates a sn
       >
         Add To Cart
       </button>
+      <br />
+      <br />
     </div>
   </div>
 </div>
