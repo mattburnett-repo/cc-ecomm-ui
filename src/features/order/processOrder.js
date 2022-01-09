@@ -1,28 +1,24 @@
 
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { selectUserData } from '../auth/authSlice';
 import { selectCurrentCart } from '../carts/cartsSlice';
 import { selectCurrentAddress } from '../addresses/addressesSlice';
 import { selectCurrentPayment } from '../payments/paymentsSlice';
-import { saveOrderData, selectIsLoading } from '../orders/ordersSlice';
-
-import { clearCurrentCart } from '../carts/currentCartActions';
-import { clearCurrentOrder } from '../orders/currentOrderActions';
+import { saveOrderData } from '../orders/ordersSlice';
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
-import OrderConfirmation from './orderConfirmation';
-
-// import LoadingMessage from '../../components/loading/LoadingMessage';
 
 export default function ProcessOrder() {
     CheckLoginStatus()
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const user = useSelector(selectUserData)
-    const isLoading = useSelector(selectIsLoading)
+    // const isLoading = useSelector(selectIsLoading)
 
     // FIXME: also needs cart total amount
     const orderData = {
@@ -32,19 +28,11 @@ export default function ProcessOrder() {
         paymentInfo: useSelector(selectCurrentPayment)
     }
 
-    // FIXME: clear out data after everything is completed, so we can't reload the page and place another order
     useEffect(() => {
         dispatch(saveOrderData({orderData}))
-        dispatch(clearCurrentCart())
-        dispatch(clearCurrentOrder())
+        history.push('/order-confirmation')
         // eslint-disable-next-line 
     }, [])
 
-    if(isLoading) {
-        // FIXME:
-        // return <LoadingMessage type="spinner" />
-        return <h4>loading</h4>
-    } else {  
-        return <OrderConfirmation />
-    }
+    return null // no render, so return null
 }

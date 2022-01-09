@@ -2,19 +2,27 @@
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
+import { clearCurrentCart } from '../../features/carts/currentCartActions';
+import { clearCurrentOrder } from '../../features/orders/currentOrderActions';
+
 import { localAuthLogout } from '../../features/auth/authSlice'
 
 export default function OrderConfirmationDisplay ( props ) {
     const { currentOrder, currentPayment, currentAddress } = props
    
-    // console.log('OrderConfirmationDisplay: currentOrder ', currentOrder)
-    // console.log('OrderConfirmationDisplay: currentPayment ', currentPayment)
-    // console.log('OrderConfirmationDisplay: currentAddress ', currentAddress)
-
     const history = useHistory()
     const dispatch = useDispatch()
 
+    function clearCurrent() {
+        dispatch(clearCurrentCart())
+        dispatch(clearCurrentOrder()) 
+    }
+    function handleHomeClick() {
+        clearCurrent()
+        history.push('/')
+    }
     function handleLogoutClick() {
+        clearCurrent()
         dispatch(localAuthLogout())
         history.push('/')
     }
@@ -42,7 +50,7 @@ export default function OrderConfirmationDisplay ( props ) {
                     {currentAddress.postalCode} {currentAddress.country}
                 </div>
             </div>
-            <button aria-label="home" onClick={() => history.push('/')}>Home</button>
+            <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
             <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
         </div>
     )

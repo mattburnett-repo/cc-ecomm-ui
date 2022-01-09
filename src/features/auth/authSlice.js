@@ -128,7 +128,8 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(localAuthLogout.fulfilled, (state, action) => {
-                state.userData = action.payload.userData;
+                // state.userData = action.payload.userData;
+                state.userData = '';
                 state.isLoading = false;
                 state.hasError = false;
                 state.isAuthenticated = false;

@@ -112,6 +112,8 @@ export const saveOrderData = createAsyncThunk (
             } else if (response.status === 401) {
                 console.log('saveOrderData get request auth fail.')
                 return thunkAPI.rejectWithValue(data)
+            } else {
+                console.log('unknown error is ordersSlice / saveOrderData')
             }
         } catch(e) {
             console.log("Error in saveOrderData: ", e.response.data)
@@ -138,7 +140,6 @@ const options = {
             return {...state, currentOrder: action.payload}
         },
         clearCurrentOrder: (state, action) => {
-            console.log('clear current order')
             return {...state, currentOrder: action.payload}
         }
     },
@@ -184,7 +185,7 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(saveOrderData.fulfilled, (state, action) => {
-                // state.currentOrder = action.payload
+                state.currentOrder = action.payload
                 state.savedOrders = action.payload;
                 state.isLoading = false;
                 state.hasError = false;
@@ -199,6 +200,7 @@ const options = {
 } // end options
 
 export const selectIsLoading = state => state.orders.isLoading;
+// export const selectIsLoading = state => state.isLoading;
 export const selectCurrentOrder = state => state.orders.currentOrder;
 export const selectSavedOrders = state => state.orders.savedOrders;
 

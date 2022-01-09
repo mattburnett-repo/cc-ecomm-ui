@@ -18,7 +18,8 @@ export default function OrderConfirmation () {
     const currentAddress = useSelector(selectCurrentAddress)    
 
     // eslint-disable-next-line 
-    if(isLoading || currentOrder.length == 0) {
+    // if(isLoading || currentOrder.length == 0) {
+    if(isLoading) {
         return <h4> loading </h4>
     } else {   
         return <OrderConfirmationDisplay currentOrder={ currentOrder } currentPayment={currentPayment} currentAddress={currentAddress} /> 

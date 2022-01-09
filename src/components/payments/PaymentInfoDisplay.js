@@ -65,7 +65,7 @@ const PaymentInfoDisplay = ( props ) => {
                 console.log('end PaymentInfoDisplay / handleProcessPayment / fetchStripe / data: ', data)
                 // display error page / message
             } // end if
-        }
+        } // end fetchStripe
 
         fetchStripe();
     }
