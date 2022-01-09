@@ -6,3 +6,10 @@ export const setCurrentOrder = (orderData) => {
         payload: orderData
     }
 }
+
+export const clearCurrentOrder = () => {
+    return {
+        type: 'orders/clearCurrentOrder',
+        payload: []
+    }
+}

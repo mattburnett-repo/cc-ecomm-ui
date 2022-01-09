@@ -37,3 +37,10 @@ export const loadItem = (item) => {
         payload: item
     }
 }
+
+export const clearCurrentCart = () => {
+    return {
+        type: 'carts/clearCurrentCart',
+        payload: []
+    }
+}

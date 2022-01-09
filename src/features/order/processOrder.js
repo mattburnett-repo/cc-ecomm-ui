@@ -8,6 +8,9 @@ import { selectCurrentAddress } from '../addresses/addressesSlice';
 import { selectCurrentPayment } from '../payments/paymentsSlice';
 import { saveOrderData, selectIsLoading } from '../orders/ordersSlice';
 
+import { clearCurrentCart } from '../carts/currentCartActions';
+import { clearCurrentOrder } from '../orders/currentOrderActions';
+
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import OrderConfirmation from './orderConfirmation';
 
@@ -30,10 +33,11 @@ export default function ProcessOrder() {
     }
 
     // FIXME: clear out data after everything is completed, so we can't reload the page and place another order
-    // FIXME: clear out current cart also
     useEffect(() => {
         dispatch(saveOrderData({orderData}))
-            // eslint-disable-next-line 
+        dispatch(clearCurrentCart())
+        dispatch(clearCurrentOrder())
+        // eslint-disable-next-line 
     }, [])
 
     if(isLoading) {

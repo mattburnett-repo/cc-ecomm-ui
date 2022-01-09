@@ -135,8 +135,10 @@ const options = {
         },
         // currentOrder reducers go here
         setCurrentOrder: (state, action) => {
-            // console.log('setCurrentOrder ', action.payload)
-
+            return {...state, currentOrder: action.payload}
+        },
+        clearCurrentOrder: (state, action) => {
+            console.log('clear current order')
             return {...state, currentOrder: action.payload}
         }
     },

@@ -136,6 +136,12 @@ const options = {
         //         ...state,
         //         currentItem: action.payload
         //     }
+        },
+        clearCurrentCart: (state, action) => {
+            return {
+                ...state,
+                currentCart: action.payload
+            }
         }
     },
     extraReducers: (builder) => {
