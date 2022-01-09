@@ -57,7 +57,6 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Passport Authentication Library
   * Local Strategy
   * Google OAuth Strategy
-  * JWT Strategy
 * JSON Web Token authorization
 *  E-Commerce REST API (built as separate project)
      * Production: https://e-commerce-rest-api-v2.herokuapp.com/

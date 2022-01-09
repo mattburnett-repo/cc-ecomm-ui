@@ -22,15 +22,17 @@ export default function Dashboard () {
 
     // FIXME: is this function calling the dispatches twice?
     //         it looks like there are two calls to each fetch...
-    // make async and await dispatches
-    function loadData() {
-        dispatch(getProductCategories())
-        dispatch(getOrdersByUserId(user_id))    
-        dispatch(getSavedCartsByUserId(user_id))
-        dispatch(getAddressesByUserId(user_id))
-        dispatch(getPaymentsByUserId(user_id))
-        dispatch(getPaymentTypes())
-        dispatch(getProducts())
+    async function loadData() {
+        // let msg = ''
+        // msg = await dispatch(getProductCategories())
+        // console.log('dashboard msg ', msg.meta.requestStatus)
+        await dispatch(getProductCategories())
+        await dispatch(getOrdersByUserId(user_id))    
+        await dispatch(getSavedCartsByUserId(user_id))
+        await dispatch(getAddressesByUserId(user_id))
+        await  dispatch(getPaymentsByUserId(user_id))
+        await dispatch(getPaymentTypes())
+        await dispatch(getProducts())
     };
     loadData();
     

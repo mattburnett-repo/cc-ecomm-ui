@@ -32,10 +32,11 @@ export const getProductCategories = createAsyncThunk (
                 return data
             } else if (response.status === 401) {
                 console.log('productCategories get request auth fail.')
+                return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
             console.log("Error: ", e.response.data)
-            // return thunkAPI.rejectWithValue(e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 ) // end getProductCategories
