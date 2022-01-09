@@ -519,11 +519,6 @@ exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
     Go Back
   </button>
   <button
-    aria-label="cart-save-button"
-  >
-    Save Cart
-  </button>
-  <button
     aria-label="cart-checkout-button"
     onClick={[Function]}
   >

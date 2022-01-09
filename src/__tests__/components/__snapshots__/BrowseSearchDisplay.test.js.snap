@@ -66,6 +66,7 @@ exports[`<BrowseSearchDisplay /> component tests creates a snapshot 1`] = `
         <input
           aria-label="search-terms"
           id="searchTerms"
+          name="searchTerms"
           placeholder="Enter search terms"
         />
       </div>
