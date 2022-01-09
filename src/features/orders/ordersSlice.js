@@ -184,7 +184,7 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(saveOrderData.fulfilled, (state, action) => {
-                state.currentOrder = action.payload
+                // state.currentOrder = action.payload
                 state.savedOrders = action.payload;
                 state.isLoading = false;
                 state.hasError = false;

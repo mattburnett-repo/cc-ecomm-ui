@@ -33,6 +33,9 @@ export default function Register() {
         const resStatus = response.status
         // const data = await response.json();
 
+        if(resStatus === 200) {
+            setMessage('Registration successful. Click the \'Login\' link to log in.')
+        }
         if(resStatus === 400) {
             setMessage('This user already exists, \nbut you can try a different one.\nOr login using the link.')
         }
