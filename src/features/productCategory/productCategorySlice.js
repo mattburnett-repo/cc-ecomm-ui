@@ -42,8 +42,9 @@ export const getProductCategories = createAsyncThunk (
 ) // end getProductCategories
 
 const options = {
-    name: 'product-category',
+    name: 'productCategories',
     initialState: {
+        currentCategory: 0,
         categories: [],
         isLoading: false,
         hasError: false,
@@ -53,6 +54,9 @@ const options = {
         getProductCategoriesTestOutput: (state, action) => {       
             console.log('get product categories testOutput');
         },
+        setCurrentProductCategory: (state, action) => {
+            return {...state, currentCategory: action.payload}
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -76,6 +80,7 @@ const options = {
 } // end options
 
 export const selectProductCategories = state => state.productCategories.categories;
+export const selectCurrentProductCategory = state => state.productCategories.currentCategory
 
 export const productCategorySlice = createSlice(options);
 

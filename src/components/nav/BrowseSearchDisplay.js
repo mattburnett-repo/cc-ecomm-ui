@@ -2,8 +2,6 @@ export default function BrowseSearchDisplay (props) {
     const { handleChange, handleSearch } = props.handlers;
     const { data } = props
 
-    // TODO: handleChange should dispatch a call to products, with the category id
-
     // TODO: search should dispatch a look through all products for the search term/s
 
     return (
@@ -21,7 +19,7 @@ export default function BrowseSearchDisplay (props) {
                 <form onSubmit={handleSearch} method="post">
                     <div>
                         <label htmlFor="searchTerms">Search: </label>
-                        <input id="searchTerms" aria-label="search-terms" placeholder="Enter search terms"></input>
+                        <input name="searchTerms" id="searchTerms" aria-label="search-terms" placeholder="Enter search terms"></input>
                     </div>
                     <div>
                         {/* <button aria-label="search-button" onClick={handleSearch}>Search</button> */}

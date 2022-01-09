@@ -15,12 +15,12 @@ export const getProducts = createAsyncThunk (
                 theApiUrl,
                 {
                     method: 'GET',
-                        headers: {
-                            'Accept': "*/*",
-                            'Content-Type': "application/json",
-                            'Authorization': `Bearer ${authToken}`,
-                        },
-                        credentials: 'include',
+                    headers: {
+                        'Accept': "*/*",
+                        'Content-Type': "application/json",
+                        'Authorization': `Bearer ${authToken}`,
+                    },
+                    credentials: 'include',
                 }
             )
 
@@ -31,11 +31,11 @@ export const getProducts = createAsyncThunk (
                 return data
             } else if (response.status === 401) {
                 console.log('getProducts get request auth fail.')
-                // return thunkAPI.rejectWithValue(data)
+                return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
             console.log("Error: ", e.response.data)
-            // return thunkAPI.rejectWithValue(e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 ) // end getProductsListing
@@ -67,11 +67,11 @@ export const getProductsByCategory = createAsyncThunk (
                 return data
             } else if (response.status === 401) {
                 console.log('getProductsByCategory get request auth fail.')
-                // return thunkAPI.rejectWithValue(data)
+                return thunkAPI.rejectWithValue(data)
             }
         } catch (e) {
             console.log("Error: ", e.response.data)
-            // return thunkAPI.rejectWithValue(e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
         }
     }
 ) // end getProductsByCategory
@@ -82,7 +82,7 @@ export const getProductById = createAsyncThunk (
         let theApiUrl = API_BASE_URL + `/api/v1/product/${product_id}`
         let authToken = selectJwtToken(thunkAPI.getState())
 
-        console.log('getProductById', product_id)
+        // console.log('getProductById', product_id)
 
         try { 
             const response = await fetch(
@@ -114,6 +114,49 @@ export const getProductById = createAsyncThunk (
         }
     }
 ) // end getProductById
+
+// search products
+export const searchProducts = createAsyncThunk (
+    'products/searchProducts',
+    async(props, thunkAPI) => {
+        let theApiUrl = API_BASE_URL + `/api/v1/product/search`
+        let authToken = selectJwtToken(thunkAPI.getState())
+
+        const { searchTerm } = props
+
+        try {
+            const response = await fetch(
+                theApiUrl,
+                {
+                    method: 'POST',
+                    headers:{
+                        'Accept': "*/*",
+                        'Content-Type': "application/json",
+                        'Authorization': `Bearer ${authToken}`,                        
+                    },
+                    body: JSON.stringify({
+                        searchTerm: searchTerm
+                    }),
+                    credentials: 'include'
+                }
+            )
+            
+            let data = response.json()
+
+            if (response.status === 200) {
+                // console.log('getProducts 200', data)
+                return data
+            } else if (response.status === 401) {
+                console.log('searchProducts get request auth fail.')
+                return thunkAPI.rejectWithValue(data)
+            }
+        } catch (e) {
+            console.log("Error: ", e.response.data)
+            return thunkAPI.rejectWithValue(e.response.data)
+        }
+    } // end async
+)   // end searchProducts
+
 
 const options = {
     name: 'products',
@@ -176,6 +219,23 @@ const options = {
                 state.errorMsg = '';
             })
             .addCase(getProductsByCategory.rejected, (state, action) => {
+                state.isLoading = false;
+                state.hasError = true;
+                state.errorMsg = action.error; 
+            })
+
+            .addCase(searchProducts.pending, (state) => {
+                state.isLoading = true;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(searchProducts.fulfilled, (state, action) => {
+                state.products = action.payload;
+                state.isLoading = false;
+                state.hasError = false;
+                state.errorMsg = '';
+            })
+            .addCase(searchProducts.rejected, (state, action) => {
                 state.isLoading = false;
                 state.hasError = true;
                 state.errorMsg = action.error; 

@@ -1,30 +1,31 @@
+
 import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux'
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 import BrowseSearchDisplay from '../../components/nav/BrowseSearchDisplay';
 
-import { handleSearch } from "../../utils/handlers";
+import { setCurrentProductCategory } from "../productCategory/productCategoryActions";
+import { selectProductCategories } from '../productCategory/productCategorySlice'
 
-import { selectProductCategories } from "../productCategory/productCategorySlice";
-// eslint-disable-next-line 
-import { getProducts, getProductsByCategory } from "../products/productsSlice";
+import { searchProducts } from '../products/productsSlice'
 
 export default function BrowseSearch () {
     CheckLoginStatus()
 
     const productCategories = useSelector(selectProductCategories)
 
-    // TODO: need to figure out how to get dispatch() to work from here
-    // TODO: move this to handlers file
-    function handleChange(e){
-        let categoryId = e.target.value
+    const dispatch = useDispatch()
 
-        // eslint-disable-next-line
-        if(categoryId == 0) {
-            alert('browseSearch select all products. \nneed to figure out how to get dispatch() to work from here')
-        } else {
-            alert('browseSearch select products for category: ' + categoryId + '. \nneed to figure out how to get dispatch() to work from here')
-        }
+    async function handleChange(e){
+        await dispatch(setCurrentProductCategory(e.target.value))
+    }
+
+    async function handleSearch(e) {
+        e.preventDefault()
+
+        let searchTerm = e.target.searchTerms.value
+        await dispatch(searchProducts({searchTerm}))
     }
 
     function handlers() {
