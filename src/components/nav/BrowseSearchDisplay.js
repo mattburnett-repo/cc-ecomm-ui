@@ -2,8 +2,6 @@ export default function BrowseSearchDisplay (props) {
     const { handleChange, handleSearch } = props.handlers;
     const { data } = props
 
-    // TODO: search should dispatch a look through all products for the search term/s
-
     return (
         <div role="presentation" aria-label="browse-search">
             <div role="presentation" aria-label="browse">
@@ -19,10 +17,9 @@ export default function BrowseSearchDisplay (props) {
                 <form onSubmit={handleSearch} method="post">
                     <div>
                         <label htmlFor="searchTerms">Search: </label>
-                        <input name="searchTerms" id="searchTerms" aria-label="search-terms" placeholder="Enter search terms"></input>
+                        <input name="searchTerms" id="searchTerms" aria-label="search-terms" placeholder="Enter search term"></input>
                     </div>
                     <div>
-                        {/* <button aria-label="search-button" onClick={handleSearch}>Search</button> */}
                         <button type="submit" aria-label="search-button">Search</button>
                     </div>
                 </form>

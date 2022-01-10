@@ -5,13 +5,16 @@ import { LoginMessageContext } from "../../features/auth/login";
 export default function LoginDisplay ( props ) {
     const { handleClick, handleLogin } = props.handlers;
 
+    const theApiUrl = process.env.REACT_APP_API_BASE_URL
+    const theGoogleUrl = `${theApiUrl}/api/v1/auth/google`
+
     const message = useContext(LoginMessageContext)
 
     return (
         <div role="presentation" aria-label="login-display">
             <div role="presentation" aria-label="oauth">
                 {/* FIXME: resolve href / onClick */}
-                <div><a href="/auth/google" aria-label="google-auth" onClick={handleClick}>Log in with Google</a></div>
+                <div><a href={theGoogleUrl} aria-label="google-auth">Log in with Google</a></div>
                 <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>   
             </div>
             <div role="presentation" aria-label="login-display-form">

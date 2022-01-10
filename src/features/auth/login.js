@@ -35,7 +35,7 @@ export default function Login () {
                 setMessage('')
             }
         } catch(e) {
-            console.log('login.js error: ', e)
+            console.log('login error: ', e)
         }
     } // end handleLogin
 
