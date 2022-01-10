@@ -13,9 +13,8 @@ export default function LoginDisplay ( props ) {
     return (
         <div role="presentation" aria-label="login-display">
             <div role="presentation" aria-label="oauth">
-                {/* FIXME: resolve href / onClick */}
                 <div><a href={theGoogleUrl} aria-label="google-auth">Log in with Google</a></div>
-                <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>   
+                {/* <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>    */}
             </div>
             <div role="presentation" aria-label="login-display-form">
                 {(message && <div role="presentation" aria-label='login-error-message'>{message}</div>)}
