@@ -10,7 +10,7 @@ export default function OrdersDisplay ( props ) {
     return (
         <StyledOrdersDisplay>
             <div role="presentation" aria-label="orders">
-                <h2>OrdersDisplay</h2>
+                <h2>Order History</h2>
                 {(ordersData.length > 0 ) ? (
                     ordersData.map((item, index) => (
                         <div role="presentation" aria-label="order-item" key={index}>

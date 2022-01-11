@@ -1,7 +1,6 @@
 import NavBar from '../../features/nav/navBar';
 import BrowseSearch from '../../features/nav/BrowseSearch';
-import Orders from '../../features/orders/orders'
-import Carts from '../../features/carts/carts'
+import OrdersAndCartsHistoryDisplay from './OrdersAndCartsHistoryDisplay'
 import ProductsListing from '../../features/products/productsListing'
 
 export default function DashboardDisplay () {
@@ -10,8 +9,7 @@ export default function DashboardDisplay () {
         <div>
             <NavBar calledFrom="dashboard" />
             <BrowseSearch />
-            <Orders />
-            <Carts />
+            <OrdersAndCartsHistoryDisplay />
             <ProductsListing />
         </div>
     )

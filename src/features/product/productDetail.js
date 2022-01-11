@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { selectJwtToken } from '../auth/authSlice';
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
-import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
+import ProductDetailDisplay from '../../components/product/ProducDisplay'
 
 export default function ProductDetail ( props ) {
     const [productData, setProductData] = useState('')

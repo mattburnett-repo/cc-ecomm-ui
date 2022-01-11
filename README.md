@@ -53,6 +53,7 @@ Tests are located in two folders under the src/\__tests\__ folder
   * useDispatch
 * Redux / Redux Toolkit / Redux Persist
 * React Router
+* React Styled Components
 * React Testing Library
 * Passport Authentication Library
   * Local Strategy

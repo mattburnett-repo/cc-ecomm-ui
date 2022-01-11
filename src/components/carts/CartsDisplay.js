@@ -9,8 +9,7 @@ export default function CartsDisplay ( props )  {
     return (
         <StyledCartsDisplay>
             <div role="presentation" aria-label="carts">
-                <h2>CartsDisplay</h2>
-                <h4>Saved Carts</h4>
+                <h2>Cart History</h2>
                 {(savedCarts.length > 0) ? (
                     savedCarts.map((item, index) => (
                         <div role="presentation" aria-label="cart-item" key={index}>

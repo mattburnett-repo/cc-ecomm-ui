@@ -2,6 +2,9 @@
 const theme = {
     colors: {
       header: '#ebfbff',
+      body: '#fff',
+      footer: '#003333',
+
       auth: '#ccc',
       navBar: '#eee',
       browseSearch: '#bbb',
@@ -14,9 +17,7 @@ const theme = {
       shippingInfoDisplay: '#bbb',
       paymentInfoDisplay: '#ccc',
       orderConfirmationDisplay: '#aaa',
-      
-      body: '#fff',
-      footer: '#003333'
+      ordersAndCartHistoryDisplay: '#ddd'
     }
   }
 
