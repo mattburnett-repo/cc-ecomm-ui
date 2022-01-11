@@ -7,6 +7,8 @@ import { clearCurrentOrder } from '../../features/orders/currentOrderActions';
 
 import { localAuthLogout } from '../../features/auth/authSlice'
 
+import { StyledOrderConfirmationDisplay } from '../styles/OrderConfirmationDisplay.styled';
+
 export default function OrderConfirmationDisplay ( props ) {
     const { currentOrder, currentPayment, currentAddress } = props
    
@@ -28,7 +30,7 @@ export default function OrderConfirmationDisplay ( props ) {
     }
 
     return (
-        <div>
+        <StyledOrderConfirmationDisplay>
             <div role="presentation" aria-label="confirmation-info">
                 <h5>order confirmaton display</h5>
                 <div role="presentation" aria-label="order-number">
@@ -52,6 +54,6 @@ export default function OrderConfirmationDisplay ( props ) {
             </div>
             <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
             <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
-        </div>
+        </StyledOrderConfirmationDisplay>
     )
 }

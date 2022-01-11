@@ -4,38 +4,42 @@ import { useDispatch } from 'react-redux'
 import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 import ItemQuantity from '../../widgets/ItemQuantity'
 
+import { StyledProductDetailDisplay } from "../styles/ProductDetail.styled"
+
 export default function ProductDetailDisplay (props) {
-    const { id, name, description, price, image_url } = props.data
+    const { item } = props
 
     const history = useHistory()
     const dispatch = useDispatch()
 
     return (
-        <div>
-            <h3>ProductDetailDisplay: {name}</h3>
-            <div aria-label="product-detail-go-back">
-                <button aria-label="product-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-            </div>
-            <img aria-label="product-image" src={image_url} alt={name}/>
-            <label htmlFor="name">Name:</label>
-            <div id="name" role="presentation" aria-label="name">{name}</div>
-            <label htmlFor="product-id">ID:</label>
-            <div id="product-id" role="presentation" aria-label="product-id">{id}</div>
-            <label htmlFor="description">Description:</label>
-            <div id="description" role="presentation" aria-label="description">{description}</div>
-            <label htmlFor="price">Price:</label>
-            <div id="price" role="presentation" aria-label="price">{price}</div>
+        <StyledProductDetailDisplay>
+            <h3>{item.name}</h3>
+            <div role="presentation" aria-label='product' key={item.id}>
+                <div role="img" id="product-image-url" aria-label='product-image-url'> 
+                    <img src={item.image_url} alt={item.name} id={item.id} onClick={() => history.push('/product-detail/' + item.id)}/>
+                </div>
 
-            <div role="presentation" aria-label='product-item-quantity'>
-                <ItemQuantity />
-            </div>
+                <label htmlFor='product-id'>Product ID:</label>
+                <div role='presentation' aria-label='product-id'>{item.id}</div>
+                <label htmlFor='product-name'>Product Name:</label>
+                <div role='presentation' aria-label='product-name'>{item.name}</div>
+                <label htmlFor='product-description'>Product Description:</label>
+                <div role='presentation' aria-label='product-description'>{item.description}</div>
 
-            {/* FIXME: this dispatch should be passed as a handler... */}
-            <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(props.data))}>Add To Cart</button>
+                <label htmlFor='product-price'>Product Price:</label>
+                <div role='presentation' aria-label='product-price'>{item.price}</div>
 
-            <div aria-label="product-detail-go-back">
-                <button aria-label="product-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
+                <div role="presentation" aria-label='product-item-quantity'>
+                    <ItemQuantity itemId={item.id}/>
+                </div>
+
+                {/* FIXME: pass in quantity if user selects greater than 1 */}
+                <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
+                {/* <div aria-label="product-detail-go-back">
+                    <button aria-label="product-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
+                </div> */}
             </div>
-        </div>
+        </StyledProductDetailDisplay>
     )
 }

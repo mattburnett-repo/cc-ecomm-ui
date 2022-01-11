@@ -18,6 +18,8 @@ import { selectUserData } from '../../features/auth/authSlice';
 
 import { setCurrentPayment } from '../../features/payments/currentPaymentActions'
 
+import { StyledPaymentInfoDisplay } from '../styles/PaymentInfoDisplay.styled';
+
 // https://stackoverflow.com/questions/70589309/react-stripe-injectstripe-hoc-stripe-createtoken-is-not-a-function
 
 const PaymentInfoDisplay = ( props ) => {
@@ -77,27 +79,29 @@ const PaymentInfoDisplay = ( props ) => {
     }
 
     return (
-        <div role="presentation" aria-label='payment-info'>
-            <CartSummary />
-            <ShippingInfoSummary />
-            <form onSubmit={handleProcessPayment}>
-            <label>
-                Card details
-                <CardNumberElement />
-            </label>
-            <label>
-                Expiration date
-                <CardExpiryElement />
-            </label>
-            <label>
-                CVC
-                <CardCVCElement />
-            </label>
-            <button type="submit" className="order-button">
-                Pay
-            </button>
-            </form>
-        </div>
+        <StyledPaymentInfoDisplay>
+            <div role="presentation" aria-label='payment-info'>
+                <CartSummary />
+                <ShippingInfoSummary />
+                <form onSubmit={handleProcessPayment}>
+                <label>
+                    Card details
+                    <CardNumberElement />
+                </label>
+                <label>
+                    Expiration date
+                    <CardExpiryElement />
+                </label>
+                <label>
+                    CVC
+                    <CardCVCElement />
+                </label>
+                <button type="submit" className="order-button">
+                    Pay
+                </button>
+                </form>
+            </div>
+        </StyledPaymentInfoDisplay>
     )
 } // PaymentInfoDisplay
 
