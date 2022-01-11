@@ -53,7 +53,6 @@ export default function CartDetailDisplay (props) {
             <StyledCartDetailDisplay>
                 <footer>
                     <div role="presentation" aria-label="cart-total-price">
-                        {/* Cart total: {formatAsCurrency.format(cartTotalPrice)} */}
                         Cart total: {cartTotalPrice}
                     </div>
                     <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>

@@ -18,7 +18,7 @@ export default function ProductDisplay (props) {
 
     return (
         <StyledProductDisplay>
-            <div role="presentation" aria-label='product' key={item.id}>
+            {/* <div role="presentation" aria-label='product' key={item.id}> */}
                 <div role="img" id="product-image-url" aria-label='product-image-url'> 
                     <img src={item.image_url} alt={item.name} id={item.id} onClick={() => history.push('/product-detail/' + item.id)}/>
                     {/* <img src={item.image_url} alt={item.name} id={item.id} /> */}
@@ -26,16 +26,16 @@ export default function ProductDisplay (props) {
 
                 <h3 role='presentation' aria-label='product-name'>{item.name}</h3>
 
-                <div role="presentation" aria-label='product-order-controls'>
+                <div id="product-order-controls" role="presentation" aria-label='product-order-controls'>
                     <label htmlFor='product-price'>Price:</label>
                     <div role='presentation' aria-label='product-price'>{item.price}</div>
 
                     <div role="presentation" aria-label='product-item-quantity'>
                         <ItemQuantity itemId={item.id}/>
-                    </div>
+                    </div> &nbsp;&nbsp;
                     <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
                 </div>
-            </div>
+            {/* </div> */}
         </StyledProductDisplay>
     )
 }

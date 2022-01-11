@@ -20,6 +20,13 @@ const GlobalStyles = createGlobalStyle`
     img {
         max-width: 100%;
     }
+    button {
+        width: 6rem;
+        height: 2rem;
+        background-color: lightgreen;
+        border-radius: 10px;
+        margin: 0 3px;
+    }
     
 `
 export default GlobalStyles

@@ -81,27 +81,35 @@ const PaymentInfoDisplay = ( props ) => {
     return (
         <StyledPaymentInfoDisplay>
             <div role="presentation" aria-label='payment-info'>
+                <h3>Payment Info</h3>
                 <CartSummary />
                 <ShippingInfoSummary />
+            </div>
+        
+            <br/>
+            <div>
                 <form onSubmit={handleProcessPayment}>
-                <label>
-                    Card details
-                    <CardNumberElement />
-                </label>
-                <label>
-                    Expiration date
-                    <CardExpiryElement />
-                </label>
-                <label>
-                    CVC
-                    <CardCVCElement />
-                </label>
-                <button type="submit" className="order-button">
-                    Pay
-                </button>
+                    <div id="card-details">
+                        <label>Card Number (use 4242 4242 4242 4242)</label>
+                        <CardNumberElement />
+                    </div>
+                    <div id="expiration-date">
+                        <label>Expiration Date (use 424)</label>
+                        <CardExpiryElement />               
+                    </div>
+                    <div id="cvd">
+                        <label>CVC (use 424)</label>
+                        <CardCVCElement />                     
+                    </div>
+
+                    <br/>
+                    <button type="submit" className="order-button">
+                        Pay
+                    </button>
                 </form>
             </div>
         </StyledPaymentInfoDisplay>
+
     )
 } // PaymentInfoDisplay
 

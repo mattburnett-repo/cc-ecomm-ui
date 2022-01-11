@@ -18,6 +18,7 @@ export default function ProductListingDisplay ( props ) {
             </header>
             <div {...getCollapseProps()}>
                 <StyledProductsListingDisplay>
+
                     <br />
                     {/* <div role="presentation" aria-label="products"> */}
                         {data.map((item) => (

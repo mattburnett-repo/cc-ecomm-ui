@@ -7,7 +7,7 @@ export default function BrowseSearchDisplay (props) {
 
     return (
         <StyledBrowseSearch>
-            <div role="presentation" aria-label="browse-search">
+            {/* <div role="presentation" aria-label="browse-search"> */}
                 <div role="presentation" aria-label="browse">
                     <label htmlFor="product-categories">Product Categories: </label>
                     <select role="presentation" id="product-categories" name="productCategories" aria-label="product-categories" defaultValue="0" onChange={handleChange}>
@@ -21,14 +21,14 @@ export default function BrowseSearchDisplay (props) {
                     <form onSubmit={handleSearch} method="post">
                         <div>
                             <label htmlFor="searchTerms">Search: </label>
-                            <input name="searchTerms" id="searchTerms" aria-label="search-terms" placeholder="Enter search term"></input>
-                        </div>
-                        <div>
+                            <input name="searchTerms" id="searchTerms" aria-label="search-terms" placeholder="Search Products"></input>
+                        {/* </div>
+                        <div> */}
                             <button type="submit" aria-label="search-button">Search</button>
                         </div>
                     </form>
                 </div>
-            </div>
+            {/* </div> */}
         </StyledBrowseSearch>
     )           
 }

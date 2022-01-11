@@ -2,8 +2,10 @@
 import styled from 'styled-components'
 
 export const StyledAuth = styled.div`
-    width: 500px;
-    max-width: 50%;
+    width: 350px;
+    height: 365px;
+    text-align: center;
+    
     background-color: ${({ theme }) => theme.colors.auth};
     margin: 0 auto;
     padding: 40px 40px;

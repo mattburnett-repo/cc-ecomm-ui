@@ -2,6 +2,11 @@
 import styled from 'styled-components'
 
 export const StyledNavBar = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-between;
+
     max-width: 100%;
     background-color: ${({ theme }) => theme.colors.navBar};
     margin: 0 auto;

@@ -7,6 +7,7 @@ import { clearCurrentOrder } from '../../features/orders/currentOrderActions';
 
 import { localAuthLogout } from '../../features/auth/authSlice'
 
+import { formatDate } from '../../utils/functions'
 import { StyledOrderConfirmationDisplay } from '../styles/OrderConfirmationDisplay.styled';
 
 export default function OrderConfirmationDisplay ( props ) {
@@ -32,28 +33,34 @@ export default function OrderConfirmationDisplay ( props ) {
     return (
         <StyledOrderConfirmationDisplay>
             <div role="presentation" aria-label="confirmation-info">
-                <h5>order confirmaton display</h5>
-                <div role="presentation" aria-label="order-number">
-                    The order number is {currentOrder.data[0].id}
+                <h3>Order Confirmaton</h3>
+                <div id="order-details">
+                    <div role="presentation" aria-label="order-amount-date">
+                        Your order for $ {currentOrder.data[0].total_price} has been placed on {currentOrder.data[0].order_date}
+                    </div>
+                    <div role="presentation" aria-label="order-number">
+                        The order number is {currentOrder.data[0].id}
+                    </div>
+                    
+                    <div role="presentation" aria-label="order-payment-transaction-id">
+                        Stripe transaction id is {currentPayment.charge.id}
+                    </div>
+                    <div role="presentation" aria-label="order-payment-receipt-url">
+                        Stripe receipt is at <a href={currentPayment.charge.receipt_url} rel="noreferrer" target="_blank">this link</a>
+                    </div>
+                    <div role="presentation" aria-label="order-delivery">
+                        Order will ship to {currentAddress.firstName} {currentAddress.lastName}, 
+                        <br/>
+                        {currentAddress.address1} {currentAddress.address1},
+                        <br/>
+                        {currentAddress.city} {currentAddress.stateProvince},
+                        {currentAddress.postalCode} {currentAddress.country}
+                    </div>
                 </div>
-                <div role="presentation" aria-label="order-amount-date">
-                    Your order for $ {currentOrder.data[0].total_price} has been placed on {currentOrder.data[0].order_date}
-                </div>
-                <div role="presentation" aria-label="order-payment-transaction-id">
-                    Stripe transaction id is {currentPayment.charge.id}
-                </div>
-                <div role="presentation" aria-label="order-payment-receipt-url">
-                    Stripe receipt is at <a href={currentPayment.charge.receipt_url} rel="noreferrer" target="_blank">this link</a>
-                </div>
-                <div role="presentation" aria-label="order-delivery">
-                    Order will ship to {currentAddress.firstName} {currentAddress.lastName}, 
-                    {currentAddress.address1} {currentAddress.address1},
-                    {currentAddress.city} {currentAddress.stateProvince},
-                    {currentAddress.postalCode} {currentAddress.country}
-                </div>
+                <br /><br />
+                <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
+                <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
             </div>
-            <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
-            <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
-        </StyledOrderConfirmationDisplay>
+       </StyledOrderConfirmationDisplay>
     )
 }

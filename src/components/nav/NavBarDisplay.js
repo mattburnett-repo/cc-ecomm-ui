@@ -9,8 +9,9 @@ export default function NavBarDisplay (props) {
 
     return (
         <StyledNavBar>
-            <div role="presentation" aria-label="nav-bar">
-                <div role="presentation" aria-label="header-message">{calledFrom} {headerMessage}</div>
+            <div role="presentation" aria-label='nav-bar-placeholder' />
+            <div role="presentation" aria-label="nav-bar-message">
+                <div role="presentation" aria-label="header-message">{headerMessage}</div>
                 <div role="presentation" aria-label="header-current-cart-item-count">
                     {(currentCartCount === 0) ?
                         (<div>You have {currentCartCount} items in your current cart</div>)
@@ -18,6 +19,8 @@ export default function NavBarDisplay (props) {
                     }
                 
                 </div>
+            </div>
+            <div role="presentation" aria-label="nav-bar-buttons">
                 {(props.calledFrom !== 'dashboard') ? (
                     <>
                         <button aria-label="home" onClick={handleHomeClick}>Home</button>
@@ -32,12 +35,6 @@ export default function NavBarDisplay (props) {
                 ) : (<></>)}
 
                 <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>
-
-                {/* FIXME: need a better way to keep track of cart_items count. this is an inadequate stub */}
-                {/* TODO: make cart display clickable, redirect to cart detail display */}
-                {/* <div role="presentation" aria-label="current-cart-display"> 
-                    Current Cart: {currentCart}
-                </div> */}
             </div>
         </StyledNavBar>
     )
