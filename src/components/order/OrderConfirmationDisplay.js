@@ -61,6 +61,6 @@ export default function OrderConfirmationDisplay ( props ) {
                 <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
                 <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
             </div>
-       </StyledOrderConfirmationDisplay>
+        </StyledOrderConfirmationDisplay>
     )
 }
