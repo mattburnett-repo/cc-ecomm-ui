@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom"
 import { setCurrentCartTotalPrice } from '../../features/carts/currentCartActions'
 import { selectCurrentCart } from '../../features/carts/cartsSlice'
 
+import { formatAsCurrency } from '../../utils/functions'
 import CartItemDisplay from "./CartItemDisplay"
 import { StyledCartDetailDisplay } from '../styles/CartDetailDisplay.styled'
 
@@ -24,39 +25,42 @@ export default function CartDetailDisplay (props) {
 
     const history = useHistory()
 
-    const itemCount = data.length
-
     useEffect(() => {
-        let cart_total = 0.00
-        currentCart.forEach(item => {cart_total += item.item_total_price})
+        let the_prices = []
+        currentCart.forEach(item => the_prices.push(parseFloat(item.item_total_price)))
+        const reducer = (previousValue, currentValue) => previousValue + currentValue;
+        let cart_total = the_prices.reduce(reducer, 0.00)
 
-        setCartTotalPrice(cart_total)                   // UI state
-        dispatch(setCurrentCartTotalPrice(cart_total))  // redux state
+        setCartTotalPrice(formatAsCurrency.format(cart_total))                   // UI state
+        dispatch(setCurrentCartTotalPrice(formatAsCurrency.format(cart_total)))  // redux state
     // eslint-disable-next-line
     }, [currentCart])
 
     return (
         <>
-            <header>
-                <h4>Cart Detail Display: {itemCount} item/s</h4>
-                <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-                <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>                  
-            </header>
             <StyledCartDetailDisplay>
+                <header>
+                    <h4>Cart Detail Display: {data.length} item/s</h4>
+                    <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
+                    <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>                  
+                </header>    
+            </ StyledCartDetailDisplay>
                 <div role="presentation" aria-label="cart-items">
                     {data.map((item, index) => (
                         <CartItemDisplay item={item} />
                     ))} 
                 </div>
+            <StyledCartDetailDisplay>
+                <footer>
+                    <div role="presentation" aria-label="cart-total-price">
+                        {/* Cart total: {formatAsCurrency.format(cartTotalPrice)} */}
+                        Cart total: {cartTotalPrice}
+                    </div>
+                    <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
+                    <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>
+                    {/* TODO: try this -> <Button component={Link} to="/" variant="outlined" type="button">Back to home</Button> */}
+                </footer>
             </StyledCartDetailDisplay>
-            <footer>
-                <div role="presentation" aria-label="cart-total-price">
-                    Cart total: {cartTotalPrice}
-                </div>
-                <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-                <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>
-                {/* TODO: try this -> <Button component={Link} to="/" variant="outlined" type="button">Back to home</Button> */}
-            </footer>
         </>
     )
 }

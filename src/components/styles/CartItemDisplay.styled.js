@@ -7,9 +7,9 @@ export const StyledCartItemDisplay = styled.div`
     align-items: top;
     justify-content: space-around;
 
-    max-width: 100%;
+    width: 80%;
     background-color: ${({ theme }) => theme.colors.cartItemDisplay};
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 40px 40px;
 
     border: 1px solid black;

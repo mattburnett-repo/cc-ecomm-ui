@@ -13,8 +13,6 @@ import { StyledProductDetailDisplay } from '../styles/ProductDetailDisplay.style
 export default function ProductDetailDisplay ( props ) {
     const { item } = props
 
-    console.log('ProductDetailDisplay item ', item)
-
     const history = useHistory()
     const dispatch = useDispatch()
 

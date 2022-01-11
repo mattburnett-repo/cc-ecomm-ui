@@ -6,6 +6,7 @@ import ItemQuantity from '../../widgets/ItemQuantity'
 
 import { removeItemFromCurrentCart } from "../../features/carts/cartsSlice"
 
+import { formatAsCurrency } from '../../utils/functions'
 import { StyledCartItemDisplay } from '../styles/CartItemDisplay.styled'
 
 export default function CartItemDisplay(props) {
@@ -15,14 +16,14 @@ export default function CartItemDisplay(props) {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setCartItemTotal(item.quantity * item.price)
+        setCartItemTotal(formatAsCurrency.format(item.quantity * item.price))
     // eslint-disable-next-line
     }, [item.quantity])
 
     return (
         <>
-            {/* <div role="presentation" aria-label="cart-item" key={index}> */}
             <StyledCartItemDisplay>
+                <div role="presentation" aria-label="cart-item" key={item.id} />
                 <div role="presentation" aria-label='cart-item-image'>
                     <div role="img" id="cart-item-image" aria-label='cart-item-image'> 
                         <img src={item.image_url} alt={item.name} id={item.id} />

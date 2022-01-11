@@ -44,8 +44,6 @@ export default function ProductDetail ( props ) {
         fetchProduct(productId)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId])
-
-    console.log('productDetail productData ', productData)
     
     return <ProductDetailDisplay item={productData} />
 }
