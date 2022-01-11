@@ -1,19 +1,26 @@
 
+// https://blog.logrocket.com/create-collapsible-react-components-react-collapsed/
+import useCollapse from 'react-collapsed';
+
 import Orders from '../../features/orders/orders'
 import Carts from '../../features/carts/carts'
 
-import { StyledOrderAndCartsHistorynDisplay } from '../styles/OrdersAndCartsHistoryDisplay.styled'
+import { StyledOrderAndCartsHistoryDisplay } from '../styles/OrdersAndCartsHistoryDisplay.styled'
 
 export default function OrdersAndCartsHistoryDisplay () {
+    const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
+
     return (
         <>
-            <header>
-                <h2>Order and Cart History</h2>            
+            <header  {...getToggleProps()}>
+                <h2>Click to {isExpanded ? 'Hide' : 'Show'} Order and Cart History </h2>            
             </header>
-            <StyledOrderAndCartsHistorynDisplay>
-                <Orders />
-                <Carts />
-            </StyledOrderAndCartsHistorynDisplay>
+            <div {...getCollapseProps()}>
+                <StyledOrderAndCartsHistoryDisplay>
+                    <Orders />
+                    <Carts />
+                </StyledOrderAndCartsHistoryDisplay>
+            </div>
         </>
     )
 }

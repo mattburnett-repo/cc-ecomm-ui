@@ -1,27 +1,30 @@
 
+// USE THIS COMPONENT TO DISPLAY PRODUCTS IN PRODUCTS LISTING DISPLAY 
+//      use ProductDetailDisplay to break out and show info about one product
+
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { addItemToCurrentCart } from "../../features/carts/currentCartActions"
 import ItemQuantity from '../../widgets/ItemQuantity'
 
-import { StyledProductDetailDisplay } from "../styles/ProductDetail.styled"
+import { StyledProductDisplay } from "../styles/ProductDisplay.styled"
 
 export default function ProductDisplay (props) {
     const { item } = props
 
     const dispatch = useDispatch()
+    const history = useHistory()
 
     return (
-        <StyledProductDetailDisplay>
-            <h3>{item.name}</h3>
+        <StyledProductDisplay>
             <div role="presentation" aria-label='product' key={item.id}>
                 <div role="img" id="product-image-url" aria-label='product-image-url'> 
-                    {/* <img src={item.image_url} alt={item.name} id={item.id} onClick={() => history.push('/product-detail/' + item.id)}/> */}
-                    <img src={item.image_url} alt={item.name} id={item.id} />
+                    <img src={item.image_url} alt={item.name} id={item.id} onClick={() => history.push('/product-detail/' + item.id)}/>
+                    {/* <img src={item.image_url} alt={item.name} id={item.id} /> */}
                 </div>
 
-                <label htmlFor='product-description'>Description:</label>
-                <div role='presentation' aria-label='product-description'>{item.description}</div>
+                <h3 role='presentation' aria-label='product-name'>{item.name}</h3>
 
                 <div role="presentation" aria-label='product-order-controls'>
                     <label htmlFor='product-price'>Price:</label>
@@ -33,6 +36,6 @@ export default function ProductDisplay (props) {
                     <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
                 </div>
             </div>
-        </StyledProductDetailDisplay>
+        </StyledProductDisplay>
     )
 }

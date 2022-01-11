@@ -20,33 +20,33 @@ export default function CartItemDisplay(props) {
     }, [item.quantity])
 
     return (
-        // <div role="presentation" aria-label="cart-item" key={index}>
-        <StyledCartItemDisplay>
-            <div role="presentation" aria-label="cart-item" key={item.id}>
-                <label htmlFor='cart-item-image'>Image:</label>
-                <div role="img" id="cart-item-image" aria-label='cart-item-image'> 
-                    <img src={item.image_url} alt={item.name} id={item.id} />
+        <>
+            {/* <div role="presentation" aria-label="cart-item" key={index}> */}
+            <StyledCartItemDisplay>
+                <div role="presentation" aria-label='cart-item-image'>
+                    <div role="img" id="cart-item-image" aria-label='cart-item-image'> 
+                        <img src={item.image_url} alt={item.name} id={item.id} />
+                    </div>                    
                 </div>
-                <div role="presentation" aria-label="cart-item-name">
-                    Name: {item.name}
-                </div>
-                <div role="presentation" aria-label="cart-item-description">
-                    Description: {item.description}
-                </div>
-                <div role="presentation" aria-label="cart-item-price">
-                    Price: {item.price}
-                </div>
+                <div role="presentation" aria-label="cart-item-info">
+                   <div role="presentation" aria-label="cart-item-name">
+                        Name: {item.name}
+                    </div>
+                    <div role="presentation" aria-label="cart-item-price">
+                        Price: {item.price}
+                    </div>
 
-                <div role="presentation" aria-label='cart-item-quantity'>
-                    <ItemQuantity itemId={item.id}/>
-                </div>
-                
-                <div role="presentation" aria-label="cart-item-total">
-                    Item total: {cartItemTotal} 
-                </div>
+                    <div role="presentation" aria-label='cart-item-quantity'>
+                        <ItemQuantity itemId={item.id}/>
+                    </div>
+                    
+                    <div role="presentation" aria-label="cart-item-total">
+                        Item total: {cartItemTotal} 
+                    </div>
 
-                <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove From Cart</button>
-            </div>
-        </StyledCartItemDisplay>
+                    <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove From Cart</button>
+                </div>
+            </StyledCartItemDisplay>
+        </>
     )
 }

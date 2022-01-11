@@ -2,7 +2,12 @@
 import styled from 'styled-components'
 
 export const StyledProductDetailDisplay = styled.div`
-    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: space-around;
+
+    width: 80%;
     background-color: ${({ theme }) => theme.colors.productDetailDisplay};
     margin: 10px auto;
     padding: 40px 40px;
@@ -11,7 +16,7 @@ export const StyledProductDetailDisplay = styled.div`
     border-radius: 10px;
 
     img {
-        height: 150px;
-        width: 400px;
+        height: 200px;
+        width: auto;
     }
 `

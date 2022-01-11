@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { selectJwtToken } from '../auth/authSlice';
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
-import ProductDetailDisplay from '../../components/product/ProducDisplay'
+import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
 export default function ProductDetail ( props ) {
     const [productData, setProductData] = useState('')
@@ -44,6 +44,8 @@ export default function ProductDetail ( props ) {
         fetchProduct(productId)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId])
+
+    console.log('productDetail productData ', productData)
     
-    return <ProductDetailDisplay data={productData} />
+    return <ProductDetailDisplay item={productData} />
 }

@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 
-export const StyledOrderAndCartsHistorynDisplay = styled.div`
+export const StyledOrderAndCartsHistoryDisplay = styled.div`
     display: flex;
     flex-direction: row;
     align-items: top;
