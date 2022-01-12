@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from "react-router-dom"
 
 import { setCurrentCartTotalPrice } from '../../features/carts/currentCartActions'
 import { selectCurrentCart } from '../../features/carts/cartsSlice'
@@ -17,17 +16,15 @@ import { StyledCartDetailDisplay } from '../styles/CartDetailDisplay.styled'
 
 export default function CartDetailDisplay (props) {
     const { data } = props
-    // const { handleSaveCart } = props.handlers
 
     const currentCart = useSelector(selectCurrentCart)
     const dispatch = useDispatch()
 
     const [cartTotalPrice, setCartTotalPrice] = useState(0.00)
 
-    const history = useHistory()
-
     useEffect(() => {
         let the_prices = []
+
         currentCart.forEach(item => the_prices.push(parseFloat(item.item_total_price)))
         const reducer = (previousValue, currentValue) => previousValue + currentValue;
         let cart_total = the_prices.reduce(reducer, 0.00)
@@ -45,7 +42,6 @@ export default function CartDetailDisplay (props) {
                         <CartItemDisplay item={item} />
                     ))} 
                 </div>
-            {/* <StyledCartDetailDisplay> */}
                 <div role="presentation" id="cart-total-price" aria-label="cart-total-price">
                     Cart total: {cartTotalPrice}
                     <br /><br />

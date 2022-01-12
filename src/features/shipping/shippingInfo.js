@@ -1,8 +1,8 @@
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 
-import { selectSavedAddresses, saveAddress } from "../addresses/addressesSlice";
+import { saveAddress } from "../addresses/addressesSlice";
 import { setCurrentAddress } from '../addresses/currentAddressActions'
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
@@ -13,11 +13,6 @@ export default function ShippingInfo () {
 
     const dispatch = useDispatch()
     const history = useHistory()
-
-    let savedAddresses = []
-    const theVal = useSelector(selectSavedAddresses)
-
-    if(theVal) { savedAddresses = theVal }
 
     function handleSaveShippingInfo(e) {
         e.preventDefault();
@@ -59,5 +54,5 @@ export default function ShippingInfo () {
         }
     }
 
-    return <ShippingInfoDisplay savedAddresses={savedAddresses} handlers={handlers()} />
+    return <ShippingInfoDisplay handlers={handlers()} />
 }

@@ -8,9 +8,6 @@ export const RegisterMessageContext = createContext()
 export default function Register() {
     const [message, setMessage] = useState('')
 
-    function handleClick() {
-        alert('handle click')
-    }
     async function handleRegister(e) { // doing this with Redux is really messy and complicated. let's just send a fetch from here and get registration over with.
         e.preventDefault();
     
@@ -43,7 +40,6 @@ export default function Register() {
     
     function handlers() {
         return {
-            handleClick: handleClick,
             handleRegister: handleRegister,
         }
     }

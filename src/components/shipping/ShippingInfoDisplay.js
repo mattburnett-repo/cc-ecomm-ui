@@ -9,14 +9,12 @@ import { StyledShippingInfoDisplay } from '../styles/ShippingInfoDisplay.styled'
 
 export default function ShippingInfoDisplay (props) {
     const { handleGoToPaymentInfo } = props.handlers
-    const { savedAddresses } = props
 
     return (
         <>
             <NavBar calledFrom="shippingInfo" />
         
             <StyledShippingInfoDisplay>
-                {/* <div role="presentation" aria-label="shipping-info"> */}
                 <h3>Shipping Info</h3>
                 <CartSummary />
                 

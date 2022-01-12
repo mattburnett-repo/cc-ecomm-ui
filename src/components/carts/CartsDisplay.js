@@ -3,8 +3,7 @@ import { StyledCartsDisplay } from "../styles/CartsDisplay.styled";
 
 export default function CartsDisplay ( props )  { 
     // eslint-disable-next-line 
-    const { currentCart, savedCarts } = props.cartsData;
-    const { handleGoToCartClick } = props.handlers // TODO: replace handleGoTo... with a router redirect 
+    const { currentCart, savedCarts } = props.cartsData
 
     return (
         <StyledCartsDisplay>
@@ -13,12 +12,8 @@ export default function CartsDisplay ( props )  {
                 {(savedCarts.length > 0) ? (
                     savedCarts.map((item, index) => (
                         <div role="presentation" aria-label="cart-item" key={index}>
-                            {/* <form onSubmit={handleGoToCartClick} method="post">  */}
-                                {/* <input type="hidden" name="cart_id" value={item.cart.cart_id} /> */}
-                                Cart ID: {item.cart.cart_id} &nbsp;&nbsp;
-                                Cart Date: TBD
-                                {/* <input type="submit" aria-label="go-to-cart" /> */}
-                            {/* </form> */}
+                            Cart ID: {item.cart.cart_id} &nbsp;&nbsp;
+                            Cart Date: TBD
                         </div>
                     )
                 )) : (<h5>No saved carts to show</h5>)}

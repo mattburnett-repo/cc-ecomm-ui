@@ -16,10 +16,6 @@ export default function Login () {
 
     const dispatch = useDispatch();
 
-    // TODO: xx-auth and login button should also dispatch actions to redux
-    function handleClick() {
-        alert('handle click')
-    }
     async function handleLogin(e) {
         e.preventDefault();
 
@@ -41,7 +37,6 @@ export default function Login () {
 
     function handlers() {
         return {
-            handleClick: handleClick,
             handleLogin: handleLogin,
         }
     }

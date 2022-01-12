@@ -7,19 +7,6 @@ import CartsDisplay from "../../components/carts/CartsDisplay";
 export default function Carts () {
     CheckLoginStatus()
     
-    function handleGoToCartClick(e) {
-        e.preventDefault()
-
-        let cart_id = e.target.cart_id.value
-        alert('go to cart detail component ' + cart_id)
-    }
-    
-    function handlers() {
-        return {
-            handleGoToCartClick: handleGoToCartClick,
-        }
-    }
-
     const currentCart = useSelector(selectCurrentCart)
     const savedCarts = useSelector(selectSavedCarts)
 
@@ -30,5 +17,5 @@ export default function Carts () {
         }
     }
 
-    return <CartsDisplay cartsData={ allCartData() } handlers={handlers()}/>
+    return <CartsDisplay cartsData={ allCartData() }/>
 }

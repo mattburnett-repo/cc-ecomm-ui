@@ -1,6 +1,6 @@
 
 import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 
 import { clearCurrentCart } from '../features/carts/currentCartActions';
 import { clearCurrentOrder } from '../features/orders/currentOrderActions';
@@ -9,7 +9,7 @@ import { clearCurrentShippingInfo } from '../features/shipping/currentShippingAc
 import { localAuthLogout } from '../features/auth/authSlice'
 
 export default function LogoutButton() {
-    const history = useHistory()
+    // const history = useHistory()
     const dispatch = useDispatch()
 
     function handleLogoutClick() {
@@ -24,3 +24,4 @@ export default function LogoutButton() {
         <button aria-label="logout-button" onClick={handleLogoutClick}>Log Out</button>
     )
 }
+
