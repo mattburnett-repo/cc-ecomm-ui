@@ -31,5 +31,8 @@ export const StyledShippingInfoDisplay = styled.div`
     button {
         width: 200px;
         margin: 0 0 20px 0;
+
+        background-color: ${({ theme }) => theme.colors.info};
+        color: ${({ theme }) => theme.colors.complimentary};
     }
 `

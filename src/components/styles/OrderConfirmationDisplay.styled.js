@@ -8,9 +8,9 @@ export const StyledOrderConfirmationDisplay = styled.div`
     align-items: top;
     justify-content: space-between;
 
-    width: 550px;
-    height: 500px;
-    text-align: center;
+    width: 750px;
+    height: 400px;
+    text-align: left;
 
     background-color: ${({ theme }) => theme.colors.light};
     margin: 20px auto;
@@ -26,5 +26,16 @@ export const StyledOrderConfirmationDisplay = styled.div`
 
         margin: 20px auto;
         padding: 20px 10px;
+    }
+
+    button {
+        width: 200px;
+        margin: 20px;
+        background-color: ${({ theme }) => theme.colors.info};
+        color: ${({ theme }) => theme.colors.complimentary};
+    }
+
+    #order-confirmation-nav-buttons {
+        text-align: center;
     }
 `

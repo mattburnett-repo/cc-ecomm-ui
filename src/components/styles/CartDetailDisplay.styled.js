@@ -16,4 +16,10 @@ overflow: auto;
         margin: 0 0 0 1550px;
     }
 
+    button {
+        width: 200px;
+        background-color: ${({ theme }) => theme.colors.info};
+        color: ${({ theme }) => theme.colors.complimentary};
+    }
+
 `

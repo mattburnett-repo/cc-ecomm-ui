@@ -17,4 +17,12 @@ export const StyledNavBar = styled.div`
 
     border: 1px solid black;
     border-radius: 10px;
+
+    button {
+        color: ${({ theme }) => theme.colors.black};
+    }
+
+    #header-message {
+        font-size: 3rem;
+    }
 `

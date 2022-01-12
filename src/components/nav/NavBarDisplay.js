@@ -16,7 +16,7 @@ export default function NavBarDisplay (props) {
         <StyledNavBar>
             <div role="presentation" aria-label='nav-bar-placeholder' />
             <div role="presentation" aria-label="nav-bar-message">
-                <div role="presentation" aria-label="header-message">{headerMessage}</div>
+                <div role="presentation" id="header-message" aria-label="header-message">{headerMessage}</div>
                 {(calledFrom === 'dashboard') ? (
                     <>
                         <div role="presentation" aria-label="header-current-cart-item-count">

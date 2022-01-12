@@ -54,16 +54,16 @@ export default function OrderConfirmationDisplay ( props ) {
                         </div>
                         <div role="presentation" aria-label="order-delivery">
                             Order will ship to {currentAddress.firstName} {currentAddress.lastName}, 
-                            <br/>
-                            {currentAddress.address1} {currentAddress.address1},
-                            <br/>
-                            {currentAddress.city} {currentAddress.stateProvince},
-                            {currentAddress.postalCode} {currentAddress.country}
+                                                {currentAddress.address1} {currentAddress.address1},
+                                                {currentAddress.city} {currentAddress.stateProvince},
+                                                {currentAddress.postalCode} {currentAddress.country}
                         </div>
                     </div>
-                    <br /><br />
-                    <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
-                    <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
+                    <br />
+                    <div role="presentation" id="order-confirmation-nav-buttons" aria-label='order-confirmation-nav-buttons'>
+                        <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
+                        <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>                        
+                    </div>
                     {/* <LogoutButton /> */}
                 </div>
             </StyledOrderConfirmationDisplay>

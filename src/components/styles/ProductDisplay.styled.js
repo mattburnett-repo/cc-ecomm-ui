@@ -29,7 +29,7 @@ export const StyledProductDisplay = styled.div`
         position: relative;
         background-color: ${({ theme }) => theme.colors.info};
         border: none;
-        color: ${({ theme }) => theme.colors.black};
+        color: ${({ theme }) => theme.colors.complimentary};
         text-align: center;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;

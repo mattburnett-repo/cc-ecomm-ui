@@ -22,5 +22,7 @@ export const StyledCartItemDisplay = styled.div`
 
     button {
         width: 200px;
+        background-color: ${({ theme }) => theme.colors.info};
+        color: ${({ theme }) => theme.colors.complimentary};
     }
 `
