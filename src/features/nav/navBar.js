@@ -9,7 +9,7 @@ import NavBarDisplay from '../../components/nav/NavBarDisplay'
 import { handleHomeClick, handleShowCartClick, handleCheckoutClick, handleCancelClick } from '../../utils/handlers'
 
 export default function NavBar ( props ) {
-    const { calledFrom } = props;
+    const { calledFrom, productName } = props;
     const dispatch = useDispatch()
     const user = useSelector(selectUserData)
     const currentCart = useSelector(selectCurrentCart)
@@ -39,7 +39,7 @@ export default function NavBar ( props ) {
             headerMessage = '(Category) Products'
             break;
         case 'productDetail':
-            headerMessage = '(Product Name) Details'
+            headerMessage = `${productName} Details`
             break
         case 'cart':
             headerMessage = 'Cart Details'
@@ -48,10 +48,10 @@ export default function NavBar ( props ) {
             headerMessage = 'Order Details'
             break;
         case 'shippingInfo':
-            headerMessage = 'Order Checkout / Shipping Info'
+            headerMessage = 'Order Checkout'
             break;
         case 'paymentInfo':
-            headerMessage = 'Order Checkout / Payment Info'
+            headerMessage = 'Order Checkout'
             break;
         case 'orderConfirmation':
             headerMessage = 'Order Confirmation'

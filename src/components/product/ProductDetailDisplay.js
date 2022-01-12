@@ -1,5 +1,5 @@
 
-import { useHistory } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import ItemQuantity from '../../widgets/ItemQuantity'
@@ -13,15 +13,11 @@ import { StyledProductDetailDisplay } from '../styles/ProductDetailDisplay.style
 export default function ProductDetailDisplay ( props ) {
     const { item } = props
 
-    const history = useHistory()
+    // const history = useHistory()
     const dispatch = useDispatch()
 
     return (
-        <>
-            <header>
-            <h4>Product Detail Display</h4>
-            </header>
-        
+        <>        
             <StyledProductDetailDisplay>
                 <div id="productImage" role="presentation" aria-label="product-image">
                     <div role="presentation" aria-label='product' key={item.id}></div>
@@ -43,8 +39,8 @@ export default function ProductDetailDisplay ( props ) {
                             <ItemQuantity itemId={item.id}/>
                         </div>
                         <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
-                        <button aria-label="add-to-cart" onClick={() => history.push('/cart-detail')}>Go To Cart</button>
-                        <button aria-label="go-back-button" onClick={() => history.goBack()}>Go Back</button>
+                        {/* <button aria-label="add-to-cart" onClick={() => history.push('/cart-detail')}>Go To Cart</button>
+                        <button aria-label="go-back-button" onClick={() => history.goBack()}>Go Back</button> */}
                     </div>              
                 </div>
             </StyledProductDetailDisplay>

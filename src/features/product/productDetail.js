@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectJwtToken } from '../auth/authSlice';
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
+import NavBar from '../../features/nav/navBar';
 import ProductDetailDisplay from '../../components/product/ProductDetailDisplay'
 
 export default function ProductDetail ( props ) {
@@ -45,5 +46,10 @@ export default function ProductDetail ( props ) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [productId])
     
-    return <ProductDetailDisplay item={productData} />
+    return (
+        <>
+            <NavBar calledFrom="productDetail" productName={productData.name} />
+            <ProductDetailDisplay item={productData} />
+        </>
+    )
 }

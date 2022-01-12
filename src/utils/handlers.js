@@ -45,16 +45,16 @@ function handleOrderClick(e) {
 }
 
 function handleHomeClick() {
-    console.log('handleHomeClick')
+    alert('handleHomeClick inside utils ')
 }
 function handleShowCartClick() {
-    console.log('handleShowCartClick')
+    alert('handleShowCartClick ')
 }
 function handleCheckoutClick() {
-    console.log('handleCheckoutClick')
+    alert('handleCheckoutClick ')
 }
 function handleCancelClick() {
-    console.log('handleCanceClick')
+    alert('handleCanceClick ')
 }
 
 module.exports = {

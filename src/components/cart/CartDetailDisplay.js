@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom"
 import { setCurrentCartTotalPrice } from '../../features/carts/currentCartActions'
 import { selectCurrentCart } from '../../features/carts/cartsSlice'
 
+import GoToCheckoutButton from '../../widgets/GoToCheckoutButton'
 import { formatAsCurrency } from '../../utils/functions'
 import CartItemDisplay from "./CartItemDisplay"
 import { StyledCartDetailDisplay } from '../styles/CartDetailDisplay.styled'
@@ -38,26 +39,24 @@ export default function CartDetailDisplay (props) {
 
     return (
         <>
-            <StyledCartDetailDisplay>
+            {/* <StyledCartDetailDisplay>
                 <header>
                     <h4>Cart Detail Display: {data.length} item/s</h4>
                     <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
                     <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>                  
                 </header>    
-            </ StyledCartDetailDisplay>
-                <div role="presentation" aria-label="cart-items">
-                    {data.map((item, index) => (
-                        <CartItemDisplay item={item} />
-                    ))} 
-                </div>
+            </ StyledCartDetailDisplay> */}
+            <div role="presentation" aria-label="cart-items">
+                {data.map((item, index) => (
+                    <CartItemDisplay item={item} />
+                ))} 
+            </div>
             <StyledCartDetailDisplay>
                 <footer>
                     <div role="presentation" aria-label="cart-total-price">
                         Cart total: {cartTotalPrice}
                     </div>
-                    <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-                    <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>
-                    {/* TODO: try this -> <Button component={Link} to="/" variant="outlined" type="button">Back to home</Button> */}
+                    <GoToCheckoutButton />
                 </footer>
             </StyledCartDetailDisplay>
         </>

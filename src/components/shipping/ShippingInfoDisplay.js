@@ -1,5 +1,6 @@
 
 import CartSummary from '../../widgets/CartSummary'
+import NavBar from '../../features/nav/navBar'
 
 // TODO: should have PropTypes in this, and other, didsplay component/s
 // import PropTypes from 'prop-types';
@@ -11,6 +12,9 @@ export default function ShippingInfoDisplay (props) {
     const { savedAddresses } = props
 
     return (
+        <>
+            <NavBar calledFrom="shippingInfo" />
+        
             <StyledShippingInfoDisplay>
                 {/* <div role="presentation" aria-label="shipping-info"> */}
                 <h3>Shipping Info</h3>
@@ -54,7 +58,8 @@ export default function ShippingInfoDisplay (props) {
                         <button type="submit" aria-label="go-to-payment-info">Go To Payment Info</button>
                     </form> 
                 </div>
-        </StyledShippingInfoDisplay>
+            </StyledShippingInfoDisplay>
+        </>
     )
 }
 

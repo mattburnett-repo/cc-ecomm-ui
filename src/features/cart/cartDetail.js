@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
+
+import NavBar from '../nav/navBar'
 import CartDetailDisplay from '../../components/cart/CartDetailDisplay'
 
 import { selectCurrentCart } from '../carts/cartsSlice'
@@ -26,5 +28,10 @@ export default function CartDetail () {
     // const cartById = carts.filter(item => item.id == cartId) 
 
     // FIXME: implement handleSaveCart
-    return <CartDetailDisplay data={cart} handlers={handlers()}/>
+    return (
+        <>
+            <NavBar calledFrom="cart" />
+            <CartDetailDisplay data={cart} handlers={handlers()}/>
+        </>
+    )
 }

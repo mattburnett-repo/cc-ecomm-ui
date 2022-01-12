@@ -7,6 +7,7 @@ import { selectCurrentAddress } from "../addresses/addressesSlice"
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
 
+import NavBar from '../../features/nav/navBar'
 import OrderConfirmationDisplay from '../../components/order/OrderConfirmationDisplay'
 
 export default function OrderConfirmation () {
@@ -22,6 +23,11 @@ export default function OrderConfirmation () {
     if(isLoading) {
         return <h4> loading </h4>
     } else {   
-        return <OrderConfirmationDisplay currentOrder={ currentOrder } currentPayment={currentPayment} currentAddress={currentAddress} /> 
+        return (
+            <>
+                <NavBar calledFrom="orderConfirmation" />
+                <OrderConfirmationDisplay currentOrder={ currentOrder } currentPayment={currentPayment} currentAddress={currentAddress} /> 
+            </>
+        )
     }
 }

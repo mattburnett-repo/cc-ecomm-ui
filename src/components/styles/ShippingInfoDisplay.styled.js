@@ -23,4 +23,8 @@ export const StyledShippingInfoDisplay = styled.div`
         display: flex;
         justify-content: space-between
     }
+
+    input {
+        border: 1px solid ${({ theme }) => theme.colors.info};;
+    }
 `

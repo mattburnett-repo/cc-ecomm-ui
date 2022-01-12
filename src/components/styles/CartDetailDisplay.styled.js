@@ -5,8 +5,12 @@ export const StyledCartDetailDisplay = styled.div`
     background-color: ${({ theme }) => theme.colors.cartDetailDisplay};
     text-align: right;
 
-    width: 100%
-    padding: 10px 0;
+    width: 30%
+    padding: 50px 50px;
+    margin: 0 auto;
+
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
+    border-radius: 5px;
 
     header {
         text-align: right;

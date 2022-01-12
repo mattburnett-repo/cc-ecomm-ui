@@ -34,7 +34,6 @@ export default function OrderConfirmationDisplay ( props ) {
         return (
             <StyledOrderConfirmationDisplay>
                 <div role="presentation" aria-label="confirmation-info">
-                    <h3>Order Confirmaton</h3>
                     <div id="order-details">
                         <div role="presentation" aria-label="order-amount-date">
                             Your order for $ {currentOrder.data[0].total_price} has been placed on {currentOrder.data[0].order_date}
