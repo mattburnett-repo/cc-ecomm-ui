@@ -16,7 +16,8 @@ export default function LoginDisplay ( props ) {
         <StyledAuth>
             {/* <div role="presentation" aria-label="login-display"> */}
                 <div role="presentation" aria-label="oauth">
-                    <div><a href={theGoogleUrl} aria-label="google-auth">Log in with Google</a></div>
+                    {/* <div><a href={theGoogleUrl} aria-label="google-auth">Log in with Google</a></div> */}
+                    <button onClick={theGoogleUrl} aria-label="google-auth">Log in with Google</button>
                     {/* <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>    */}
                     
                 </div>

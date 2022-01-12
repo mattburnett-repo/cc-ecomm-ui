@@ -6,4 +6,7 @@ export const Container = styled.div`
     max-width: 100%;
     padding: 0 20px;
     margin: 10px auto;
+
+    border: 1px solid ${({ theme }) => theme.colors.secondary};
+    border-radius: 5px;
 `

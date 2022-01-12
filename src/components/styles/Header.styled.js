@@ -2,10 +2,10 @@
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
-    background-color: ${({ theme }) => theme.colors.header};
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.secondary};
     padding: 40px 0;
 
-    h1 {
-        color: darkgreen;
-    }
+    text-align: center;
+    border: ${({ theme }) => theme.borders.primary};
 `

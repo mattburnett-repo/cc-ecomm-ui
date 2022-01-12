@@ -20,15 +20,15 @@ export default function ShippingInfoDisplay (props) {
                     <form onSubmit={handleGoToPaymentInfo} method="post">  
                         <div id="first-name">
                             <label htmlFor="first-name">First Name:</label>
-                            <input id='first-name' name="firstName" aria-label="first-name"/>
+                            <input id='first-name' name="firstName" aria-label="first-name" required/>
                         </div>
                         <div id="last-name">
                             <label htmlFor="last-name">Last Name:</label>
-                            <input id='last-name' name="lastName" aria-label="last-name"/>
+                            <input id='last-name' name="lastName" aria-label="last-name" required/>
                         </div>
                         <div id="address-1">
                             <label htmlFor="address-1">Address 1:</label>
-                            <input id='address-1' name="address1" aria-label="address-1"/>
+                            <input id='address-1' name="address1" aria-label="address-1" required/>
                         </div>
                         <div id="address-2">
                             <label htmlFor="address-2">Address 2:</label>
@@ -36,19 +36,19 @@ export default function ShippingInfoDisplay (props) {
                         </div>
                         <div id="city">
                             <label htmlFor="city">City:</label>
-                            <input id='city' name="city" aria-label="city"/>
+                            <input id='city' name="city" aria-label="city" required/>
                         </div>
                         <div id="state-province">
                             <label htmlFor="state-province">State / Province:</label>
-                            <input id='state-province' name="stateProvince" aria-label="state-province"/>
+                            <input id='state-province' name="stateProvince" aria-label="state-province" required/>
                         </div>
                         <div id="postal-code">
                             <label htmlFor="postal-code">Postal Code:</label>
-                            <input id='postal-code' name="postalCode" aria-label="postal-code"/>
+                            <input id='postal-code' name="postalCode" aria-label="postal-code" required/>
                         </div>
                         <div id="country">
                             <label htmlFor="country">Country:</label>
-                            <input id='country' name="country" aria-label="country"/>
+                            <input id='country' name="country" aria-label="country" required/>
                         </div>
                         <br/><br/>
                         <button type="submit" aria-label="go-to-payment-info">Go To Payment Info</button>

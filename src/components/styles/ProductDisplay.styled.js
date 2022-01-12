@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const StyledProductDisplay = styled.div`
     width: 350px;
-    background-color: ${({ theme }) => theme.colors.productDisplay};
+    background-color: ${({ theme }) => theme.colors.light};
     margin: 10px auto;
     padding: 10px 10px;
 

@@ -8,7 +8,7 @@ export const StyledCartItemDisplay = styled.div`
     justify-content: space-around;
 
     width: 80%;
-    background-color: ${({ theme }) => theme.colors.cartItemDisplay};
+    background-color: ${({ theme }) => theme.colors.light};
     margin: 10px auto;
     padding: 40px 40px;
 

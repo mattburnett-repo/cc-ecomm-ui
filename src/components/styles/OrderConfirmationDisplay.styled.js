@@ -12,7 +12,7 @@ export const StyledOrderConfirmationDisplay = styled.div`
     height: 400px;
     text-align: center;
 
-    background-color: ${({ theme }) => theme.colors.orderConfirmationDisplay};
+    background-color: ${({ theme }) => theme.colors.light};
     margin: 0 auto;
     padding: 40px 40px;
 

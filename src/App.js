@@ -20,6 +20,7 @@ import ShippingInfo from './features/shipping/shippingInfo';
 import PaymentInfo from './features/payments/paymentInfo';
 import ProcessOrder from './features/order/processOrder';
 import OrderConfirmation from './features/order/orderConfirmation'
+import ErrorDisplay from './components/error/ErrorDisplay';
 
 // styled components
 //          https://www.youtube.com/watch?v=02zO0hZmwnw&t=1359s
@@ -32,32 +33,32 @@ import OrderConfirmation from './features/order/orderConfirmation'
 
 function App() {
   return (
-      <ThemeProvider theme= { theme }>
-        <GlobalStyles />
-        <Header />
+    <ThemeProvider theme= { theme }>
+      <GlobalStyles />
+      <Header />
 
-        <Container>
-          <Router>  
-            <Switch>
-              <Route path='/' exact component={Login} />
-              <Route path='/login' exact component={Login} />
-              <Route path='/register' exact component={Register} />
-              <Route path='/dashboard' exact component={Dashboard} />
-              {/* products listing */}
-              <Route path="/product-detail/:id" exact component={ProductDetail} />
-              <Route path='/cart-detail' exact component={CartDetail} />
-              <Route path='/shipping-info' exact component={ShippingInfo} />
-              <Route path='/payment-info' exact component={PaymentInfo} />
-              <Route path='/process-order' exact component={ProcessOrder} />
-              <Route path='/order-confirmation' exact component={OrderConfirmation} />
-            </Switch> 
-          </Router>
-        </Container>
-        
-        <Footer />
-      </ThemeProvider>
-      );
+      <Container>
+        <Router>  
+          <Switch>
+            <Route path='/' exact component={Login} />
+            <Route path='/login' exact component={Login} />
+            <Route path='/register' exact component={Register} />
+            <Route path='/dashboard' exact component={Dashboard} />
+            {/* products listing */}
+            <Route path="/product-detail/:id" exact component={ProductDetail} />
+            <Route path='/cart-detail' exact component={CartDetail} />
+            <Route path='/shipping-info' exact component={ShippingInfo} />
+            <Route path='/payment-info' exact component={PaymentInfo} />
+            <Route path='/process-order' exact component={ProcessOrder} />
+            <Route path='/order-confirmation' exact component={OrderConfirmation} />
+            <Route path='/error' exact component={ErrorDisplay} />
+          </Switch> 
+        </Router>
+      </Container>
+      
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
 export default App;
-

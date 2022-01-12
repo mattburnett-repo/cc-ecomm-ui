@@ -10,7 +10,7 @@ export const StyledPaymentInfoDisplay = styled.div`
     height: 400px;
     text-align: center;
 
-    background-color: ${({ theme }) => theme.colors.paymentInfoDisplay};
+    background-color: ${({ theme }) => theme.colors.light};
     margin: 0 auto;
     padding: 40px 40px;
 
@@ -26,6 +26,6 @@ export const StyledPaymentInfoDisplay = styled.div`
 
         justify-content: center;
         padding: 5px;
-        border: 1px solid pink;
+        border: 1px solid ${({ theme }) => theme.colors.info};;
     }
 `
