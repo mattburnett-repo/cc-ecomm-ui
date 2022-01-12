@@ -17,4 +17,8 @@ export const StyledBrowseSearch = styled.div`
     
     border: 1px solid black;
     border-radius: 10px;
+
+    input {
+        border: 1px solid ${({ theme }) => theme.colors.info};;
+    }
 `

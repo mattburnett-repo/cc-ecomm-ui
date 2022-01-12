@@ -6,8 +6,6 @@ import { selectCurrentCart } from '../carts/cartsSlice';
 
 import NavBarDisplay from '../../components/nav/NavBarDisplay'
 
-import { handleHomeClick, handleShowCartClick, handleCheckoutClick, handleCancelClick } from '../../utils/handlers'
-
 export default function NavBar ( props ) {
     const { calledFrom, productName } = props;
     const dispatch = useDispatch()
@@ -23,10 +21,6 @@ export default function NavBar ( props ) {
 
     function handlers() {
         return {
-            handleHomeClick: handleHomeClick,
-            handleShowCartClick: handleShowCartClick,
-            handleCheckoutClick: handleCheckoutClick,
-            handleCancelClick: handleCancelClick,
             handleLogoutClick: handleLogoutClick
         }
     }
