@@ -19,7 +19,7 @@ export default function ShippingInfoDisplay (props) {
                 {/* <div role="presentation" aria-label="shipping-info"> */}
                 <h3>Shipping Info</h3>
                 <CartSummary />
-                
+                <br /><br />
                 <div id="shipping-info" role="presentation" aria-label="shipping-info">
                     <form onSubmit={handleGoToPaymentInfo} method="post">  
                         <div id="first-name">

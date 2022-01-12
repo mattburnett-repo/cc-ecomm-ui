@@ -8,7 +8,6 @@ import GlobalStyles from './components/styles/GlobalStyles'
 
 import { Container } from './components/styles/Container.styled'
 import Header from './components/header/HeaderDisplay'
-import Footer from './components/footer/FooterDisplay'
 
 import Login from './features/auth/login';
 import Register from './features/auth/register'
@@ -35,9 +34,9 @@ function App() {
   return (
     <ThemeProvider theme= { theme }>
       <GlobalStyles />
-      <Header />
-
+    
       <Container>
+        <Header />
         <Router>  
           <Switch>
             <Route path='/' exact component={Login} />
@@ -55,8 +54,6 @@ function App() {
           </Switch> 
         </Router>
       </Container>
-      
-      <Footer />
     </ThemeProvider>
   );
 }

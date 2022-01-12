@@ -8,7 +8,7 @@ export const StyledOrderAndCartsHistoryDisplay = styled.div`
     justify-content: space-around;
     
     max-width: 100%;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.complimentary};
     margin: 0 auto;
     padding: 40px 40px;
 

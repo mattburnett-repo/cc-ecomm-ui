@@ -7,8 +7,8 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: ${({ theme }) => theme.colors.primary};
-        color: ${({ theme }) => theme.colors.secondary};
+        background: ${({ theme }) => theme.colors.complimentary};
+        color: ${({ theme }) => theme.colors.black};
         font-family: 'Poppins', sans-serif;
         font-size: 1.15em;
         margin: 0;
@@ -23,8 +23,9 @@ const GlobalStyles = createGlobalStyle`
     button {
         width: 6rem;
         height: 2rem;
-        background-color: ${({ theme }) => theme.colors.secondary};
-        color: ${({ theme }) => theme.colors.primary};
+        background-color: ${({ theme }) => theme.colors.primary};
+        color: ${({ theme }) => theme.colors.black};
+        font-weight: 700;
         border-radius: 10px;
         margin: 0 3px;
     }

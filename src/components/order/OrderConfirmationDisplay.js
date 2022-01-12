@@ -7,7 +7,9 @@ import { clearCurrentOrder } from '../../features/orders/currentOrderActions';
 
 import { localAuthLogout } from '../../features/auth/authSlice'
 
-import { formatDate } from '../../utils/functions'
+// import { formatDate } from '../../utils/functions'
+// import LogoutButton from '../../widgets/LogoutButton';
+
 import { StyledOrderConfirmationDisplay } from '../styles/OrderConfirmationDisplay.styled';
 
 export default function OrderConfirmationDisplay ( props ) {
@@ -18,12 +20,14 @@ export default function OrderConfirmationDisplay ( props ) {
 
     function clearCurrent() {
         dispatch(clearCurrentCart())
-        dispatch(clearCurrentOrder()) 
+        dispatch(clearCurrentOrder())
     }
+    
     function handleHomeClick() {
         clearCurrent()
         history.push('/')
     }
+
     function handleLogoutClick() {
         clearCurrent()
         dispatch(localAuthLogout())
@@ -60,12 +64,14 @@ export default function OrderConfirmationDisplay ( props ) {
                     <br /><br />
                     <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
                     <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>
+                    {/* <LogoutButton /> */}
                 </div>
             </StyledOrderConfirmationDisplay>
         )
     } catch (e) {
         console.log('Error in OrderConfirmationDisplay', e)
-        clearCurrent()  //
+        dispatch(clearCurrentCart())
+        dispatch(clearCurrentOrder()) 
         history.push('/error')
         return null
     }

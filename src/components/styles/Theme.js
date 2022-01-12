@@ -1,7 +1,11 @@
 
+// https://mycolor.space/?hex=%239FB6C1&sub=1 
+//    spot pallette
+
 const theme = {
     colors: {
-      primary: '#FFF',
+      primary: '#9FB6C1',
+      complimentary: '#FCFDFF',
       secondary: '#000',
       success: '#00B3CC',
       info: '#5DADEC',
@@ -9,6 +13,8 @@ const theme = {
       danger: '#F00',
       light: '#D3D3D3',
       dark: '#676767',
+      black: '#000',
+      white: '#FFF',
 
       header: '#ebfbff',
       body: '#fff',
@@ -33,7 +39,6 @@ const theme = {
     },
     borders: {
       primary: '1px solid #676767',
-      
     }
   }
 

@@ -13,8 +13,8 @@ export const StyledOrderConfirmationDisplay = styled.div`
     text-align: center;
 
     background-color: ${({ theme }) => theme.colors.light};
-    margin: 0 auto;
-    padding: 40px 40px;
+    margin: 20px auto;
+    padding: 30px 10px;
 
     border: 1px solid black;
     border-radius: 10px;
@@ -23,5 +23,8 @@ export const StyledOrderConfirmationDisplay = styled.div`
         display: flex;
         flex-direction: column;
         align-content: left;
+
+        margin: 20px auto;
+        padding: 20px 10px;
     }
 `

@@ -39,25 +39,18 @@ export default function CartDetailDisplay (props) {
 
     return (
         <>
-            {/* <StyledCartDetailDisplay>
-                <header>
-                    <h4>Cart Detail Display: {data.length} item/s</h4>
-                    <button aria-label="cart-detail-go-back-button" onClick={() => history.goBack() } >Go Back</button>
-                    <button aria-label="cart-checkout-button" onClick={() => history.push('/shipping-info')}>Checkout</button>                  
-                </header>    
-            </ StyledCartDetailDisplay> */}
-            <div role="presentation" aria-label="cart-items">
-                {data.map((item, index) => (
-                    <CartItemDisplay item={item} />
-                ))} 
-            </div>
             <StyledCartDetailDisplay>
-                <footer>
-                    <div role="presentation" aria-label="cart-total-price">
-                        Cart total: {cartTotalPrice}
-                    </div>
+                <div role="presentation" aria-label="cart-items">
+                    {data.map((item, index) => (
+                        <CartItemDisplay item={item} />
+                    ))} 
+                </div>
+            {/* <StyledCartDetailDisplay> */}
+                <div role="presentation" id="cart-total-price" aria-label="cart-total-price">
+                    Cart total: {cartTotalPrice}
+                    <br /><br />
                     <GoToCheckoutButton />
-                </footer>
+                </div>
             </StyledCartDetailDisplay>
         </>
     )

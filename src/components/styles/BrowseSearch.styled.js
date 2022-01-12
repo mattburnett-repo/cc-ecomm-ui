@@ -8,8 +8,8 @@ export const StyledBrowseSearch = styled.div`
     justify-content: space-between;
 
     max-width: 100%;
-    background-color: ${({ theme }) => theme.colors.primary};
-    margin: 0 auto;
+    background-color: ${({ theme }) => theme.colors.light};
+    margin: 20px auto;
     padding: 40px 40px;
 
     text-align: center;

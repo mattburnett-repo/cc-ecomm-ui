@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 import ShowCartButton from '../../widgets/ShowCartButton'
 import GoHomeButton from '../../widgets/GoHomeButton'
 import GoToCheckoutButton from '../../widgets/GoToCheckoutButton'
+import LogoutButton from '../../widgets/LogoutButton'
 
 import { StyledNavBar } from '../styles/NavBar.style'
 
 export default function NavBarDisplay (props) {
-    const { handleLogoutClick } = props.handlers
+    // const { handleLogoutClick } = props.handlers
     const { calledFrom, headerMessage, currentCartCount } = props
 
     return (
@@ -32,20 +33,23 @@ export default function NavBarDisplay (props) {
                     <>
                         <ShowCartButton />
                         <GoHomeButton />
-                        <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>
+                        {/* <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button> */}
+                        <LogoutButton />
                     </>
                 ) : (<></>)}
                 {(calledFrom === 'cart') ? (
                     <>
                         <GoToCheckoutButton />
                         <GoHomeButton />
-                        <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>
+                        {/* <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button> */}
+                        <LogoutButton />
                     </>
                 ) : (<></>)}
                 {(calledFrom === 'shippingInfo' || calledFrom === 'paymentInfo' || calledFrom === "dashboard") ? (
                     <>
                         <GoHomeButton />  
-                        <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>                
+                        {/* <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>  */}
+                        <LogoutButton />
                     </>
                 ) : (<></>)}
             </div>

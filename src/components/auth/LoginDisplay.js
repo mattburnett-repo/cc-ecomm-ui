@@ -17,7 +17,7 @@ export default function LoginDisplay ( props ) {
             {/* <div role="presentation" aria-label="login-display"> */}
                 <div role="presentation" aria-label="oauth">
                     {/* <div><a href={theGoogleUrl} aria-label="google-auth">Log in with Google</a></div> */}
-                    <button onClick={theGoogleUrl} aria-label="google-auth">Log in with Google</button>
+                    <button onClick={theGoogleUrl} id="google-auth-button" aria-label="google-auth">Log in with Google</button>
                     {/* <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>    */}
                     
                 </div>
@@ -25,7 +25,7 @@ export default function LoginDisplay ( props ) {
                 <div>OR</div>
                 <br/>
                 <div role="presentation" aria-label="login-display-form">
-                    {(message && <div role="presentation" aria-label='login-error-message'>{message}</div>)}
+                    {(message && <div role="presentation" id="login-error-message" aria-label='login-error-message'>{message}</div>)}
                     <form onSubmit={handleLogin} method="post">
                         <div>
                             {/* <label htmlFor="username">Username:</label> */}
