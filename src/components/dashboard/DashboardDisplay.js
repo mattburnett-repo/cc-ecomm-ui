@@ -8,8 +8,8 @@ export default function DashboardDisplay () {
     return (
         <div>
             <NavBar calledFrom="dashboard" />
-            <BrowseSearch />
             <OrdersAndCartsHistoryDisplay />
+            <BrowseSearch />
             <ProductsListing />
         </div>
     )

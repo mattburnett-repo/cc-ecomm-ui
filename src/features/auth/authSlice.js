@@ -54,8 +54,6 @@ export const localAuthLogin = createAsyncThunk (
     }
 ) // end localAuthLogin
 
-// TODO: implement better this once we get auth flow sorted out. 
-// FIXME: other slices should be cleared out when logout successful
 export const localAuthLogout = createAsyncThunk (
     'auth/localAuthLogout',
     async ( props, thunkAPI ) => {
@@ -75,12 +73,11 @@ export const localAuthLogout = createAsyncThunk (
 
             // eslint-disable-next-line 
             if (response.status == 200) {         
-                // TODO: needs to clear out other slices (orders, carts, etc)   
                 return {userData: '', isAuthenticated: false}  
             } else {
-            //   return thunkAPI.rejectWithValue(data)
                 console.log('response.status ' + response.status + ' authSlice fetch un successful')
-                return {message: 'logout un successful'} 
+                // return {message: 'logout un successful'} 
+                return thunkAPI.rejectWithValue(response)
             }
         } catch (e) {
             console.log('error in auth/localAuthLogout: ' + e);

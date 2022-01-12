@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectUserData } from '../auth/authSlice'
@@ -20,21 +21,30 @@ export default function Dashboard () {
     const userData = useSelector(selectUserData)
     const user_id = userData.user_id 
 
-    // FIXME: is this function calling the dispatches twice?
-    //         it looks like there are two calls to each fetch...
-    async function loadData() {
-        // let msg = ''
-        // msg = await dispatch(getProductCategories())
-        // console.log('dashboard msg ', msg.meta.requestStatus)
-        await dispatch(getProductCategories())
-        await dispatch(getOrdersByUserId(user_id))    
-        await dispatch(getSavedCartsByUserId(user_id))
-        await dispatch(getAddressesByUserId(user_id))
-        await  dispatch(getPaymentsByUserId(user_id))
-        await dispatch(getPaymentTypes())
-        await dispatch(getProducts())
-    };
-    loadData();
+    // async function loadData() {
+    //     // let msg = ''
+    //     // msg = await dispatch(getProductCategories())
+    //     // console.log('dashboard msg ', msg.meta.requestStatus)
+    //     await dispatch(getProductCategories())
+    //     await dispatch(getOrdersByUserId(user_id))    
+    //     await dispatch(getSavedCartsByUserId(user_id))
+    //     await dispatch(getAddressesByUserId(user_id))
+    //     await dispatch(getPaymentsByUserId(user_id))
+    //     await dispatch(getPaymentTypes())
+    //     await dispatch(getProducts())
+    // };
+    // loadData();
+
+    useEffect(() => {
+        dispatch(getProductCategories())
+        dispatch(getOrdersByUserId(user_id))    
+        dispatch(getSavedCartsByUserId(user_id))
+        dispatch(getAddressesByUserId(user_id))
+        dispatch(getPaymentsByUserId(user_id))
+        dispatch(getPaymentTypes())
+        dispatch(getProducts())
+    // eslint-disable-next-line
+    },[])
     
     return <DashboardDisplay />
 }

@@ -199,6 +199,9 @@ const options = {
         setCurrentAddress: (state, action) => {
 
             return {...state, currentAddress: action.payload}
+        },
+        clearCurrentShippingInfo: (state, action) => {
+            return { ...state, currentAddress: [] }
         }
     },
     extraReducers: (builder) => {

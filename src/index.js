@@ -15,13 +15,14 @@ import reportWebVitals from './reportWebVitals';
 let persistor = persistStore(store);
 
 ReactDOM.render(
-  <React.StrictMode>
+  // Disable StrictMode to get rid of double dispatch calls -> https://stackoverflow.com/questions/54892403/usereducer-action-dispatched-twice
+  // <React.StrictMode> // TODO: don't forget about this being comm'd out
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <App />  
       </PersistGate>
-    </ Provider>
-  </React.StrictMode>,
+    </ Provider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 

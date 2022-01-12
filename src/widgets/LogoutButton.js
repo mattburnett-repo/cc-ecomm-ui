@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 import { clearCurrentCart } from '../features/carts/currentCartActions';
 import { clearCurrentOrder } from '../features/orders/currentOrderActions';
+import { clearCurrentShippingInfo } from '../features/shipping/currentShippingActions';
+
 import { localAuthLogout } from '../features/auth/authSlice'
 
 export default function LogoutButton() {
@@ -13,8 +15,9 @@ export default function LogoutButton() {
     function handleLogoutClick() {
         dispatch(clearCurrentCart())
         dispatch(clearCurrentOrder()) 
+        dispatch(clearCurrentShippingInfo())
         dispatch(localAuthLogout())
-        history.push('/')
+        // history.push('/')
     } 
 
     return (

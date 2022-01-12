@@ -39,8 +39,6 @@ export default function ProductDetailDisplay ( props ) {
                             <ItemQuantity itemId={item.id}/>
                         </div>
                         <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
-                        {/* <button aria-label="add-to-cart" onClick={() => history.push('/cart-detail')}>Go To Cart</button>
-                        <button aria-label="go-back-button" onClick={() => history.goBack()}>Go Back</button> */}
                     </div>              
                 </div>
             </StyledProductDetailDisplay>

@@ -19,4 +19,8 @@ export const StyledCartItemDisplay = styled.div`
         height: 200px;
         width: auto;
     }
+
+    button {
+        width: 200px;
+    }
 `

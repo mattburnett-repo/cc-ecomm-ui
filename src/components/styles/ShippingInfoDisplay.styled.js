@@ -8,12 +8,12 @@ export const StyledShippingInfoDisplay = styled.div`
     justify-content: space-between;
 
     width: 450px;
-    height: 400px;
+    height: 500px;
     text-align: center;
 
     background-color: ${({ theme }) => theme.colors.light};
     margin: 20px auto;
-    padding: 10px 40px;
+    padding: 10px 10px;
 
     border: 1px solid black;
     border-radius: 10px;
@@ -30,5 +30,6 @@ export const StyledShippingInfoDisplay = styled.div`
 
     button {
         width: 200px;
+        margin: 0 0 20px 0;
     }
 `

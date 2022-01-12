@@ -22,9 +22,9 @@ export const StyledProductDetailDisplay = styled.div`
 
     button {
         position: relative;
-        background-color: ${({ theme }) => theme.colors.secondary};
+        background-color: ${({ theme }) => theme.colors.info};
         border: none;
-        color: ${({ theme }) => theme.colors.primary};
+        color: ${({ theme }) => theme.colors.black};
         text-align: center;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;

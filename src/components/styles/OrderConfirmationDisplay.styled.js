@@ -9,7 +9,7 @@ export const StyledOrderConfirmationDisplay = styled.div`
     justify-content: space-between;
 
     width: 550px;
-    height: 400px;
+    height: 500px;
     text-align: center;
 
     background-color: ${({ theme }) => theme.colors.light};

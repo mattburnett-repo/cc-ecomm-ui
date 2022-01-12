@@ -7,7 +7,7 @@ export const StyledPaymentInfoDisplay = styled.div`
     align-items: top;
 
     width: 450px;
-    height: 400px;
+    height: 450px;
     text-align: center;
 
     background-color: ${({ theme }) => theme.colors.light};
@@ -26,6 +26,9 @@ export const StyledPaymentInfoDisplay = styled.div`
 
         justify-content: center;
         padding: 5px;
-        border: 1px solid ${({ theme }) => theme.colors.info};
+    }
+
+    button {
+        width: 150px;
     }
 `
