@@ -27,8 +27,6 @@ export const StyledCartItemDisplay = styled.div`
         grid-area: cartItemInfo;
         
         width: 100%;
-  
-        // border: 1px solid ${({ theme }) => theme.colors.black};
     }
 
     #cart-item-order-controls {
@@ -38,14 +36,7 @@ export const StyledCartItemDisplay = styled.div`
         justify-content: space-around;
   
         padding: 20px;
-  
-        border: 1px solid ${({ theme }) => theme.colors.black};
       }
-
-    // img {
-    //     height: 200px;
-    //     width: auto;
-    // }
 
     button {
         width: 200px;

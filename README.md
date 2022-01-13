@@ -63,6 +63,8 @@ Tests are located in two folders under the src/\__tests\__ folder
      * Production: https://e-commerce-rest-api-v2.herokuapp.com/
      * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
 * Stripe payment API integration
+
+* Product descriptions generated with Rytr (https://rytr.me/)
 ---
 
 ## Features
@@ -78,6 +80,8 @@ Tests are located in two folders under the src/\__tests\__ folder
 
 ### Future work / TODO
 * Everything can always be better
+  * Sort out OAuth callback issue that doesn't redirect to React app server
+  * RTL tests are broken after implementing Styled Components
 * Implement admin functionality to
   * Manage users / orders / carts
   * Manage product listings

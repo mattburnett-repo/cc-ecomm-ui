@@ -26,7 +26,8 @@ export const StyledProductDetailDisplay = styled.div`
     #product-info {
       grid-area: productInfo;
       
-      width: 100%;
+      width: 90%;
+      margin: 0 0 0 50px;
 
       // border: 1px solid ${({ theme }) => theme.colors.black};
     }
@@ -39,7 +40,7 @@ export const StyledProductDetailDisplay = styled.div`
 
       margin: 20px auto;
 
-      border: 1px solid ${({ theme }) => theme.colors.black};
+      // border: 1px solid ${({ theme }) => theme.colors.black};
     }
 
     button {
