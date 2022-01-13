@@ -8,6 +8,7 @@ export default function LoginDisplay ( props ) {
     const { handleLogin } = props.handlers;
 
     const theApiUrl = process.env.REACT_APP_API_BASE_URL
+    // eslint-disable-next-line
     const theGoogleUrl = `${theApiUrl}/api/v1/auth/google`
 
     const message = useContext(LoginMessageContext)

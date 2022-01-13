@@ -9,6 +9,7 @@ export default function Register( props ) {
     const message = useContext(RegisterMessageContext)
 
     const theApiUrl = process.env.REACT_APP_API_BASE_URL
+    // eslint-disable-next-line
     const theGoogleUrl = `${theApiUrl}/api/v1/auth/google`
 
     return (
