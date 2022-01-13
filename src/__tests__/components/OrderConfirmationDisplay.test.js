@@ -11,8 +11,9 @@ import OrderConfirmationDisplay from '../../components/order/OrderConfirmationDi
 import { mockCurrentOrderData, mockCurrentPaymentData, mockCurrentAddressData } from '../../utils/mockData'
 
 describe('<OrderConfirmationDisplay data={mockData} /> component tests', () => {
+    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
 
-    test.todo('update OrderConfirmation tests to reflect updated design / data')
+    // test.todo('update OrderConfirmation tests to reflect updated design / data')
     
     // beforeEach(() => render(<Provider store={store}>
     //                             <OrderConfirmationDisplay 

@@ -13,7 +13,9 @@ import DashboardDisplay from '../../components/dashboard/DashboardDisplay';
 import { mockOrderData, mockCartData } from '../../utils/mockData'
 
 describe('<DashboardDisplay /> component tests', () => {
-    test.todo('there are test problems with the history.push call in CheckLoginStatus. Fix this someday')
+    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
+
+    // test.todo('there are test problems with the history.push call in CheckLoginStatus. Fix this someday')
     // beforeEach(() => render(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>));
 
     // it('should render a NavBar', () => {

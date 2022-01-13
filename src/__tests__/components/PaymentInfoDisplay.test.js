@@ -7,13 +7,15 @@
 // import PaymentInfoDisplay from '../../components/payments/PaymentInfoDisplay';
 
 describe('<PaymentInfo /> component tests', () => {
+    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
+
     // beforeEach(() => render(<PaymentInfoDisplay  />));
 
-    test.todo('should render')
-    test.todo('should render cart / order summary')
-    test.todo('should render shipping summary')
-    test.todo('should render Stripe Elements')
-    test.todo('should render a snapshot')
+    // test.todo('should render')
+    // test.todo('should render cart / order summary')
+    // test.todo('should render shipping summary')
+    // test.todo('should render Stripe Elements')
+    // test.todo('should render a snapshot')
 
     // it('should render', () => {
     //     screen.getByRole('presentation', { name: /payment-info/i})
