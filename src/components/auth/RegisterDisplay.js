@@ -14,14 +14,13 @@ export default function Register( props ) {
     return (
         <StyledAuth>
             <div role="presentation" aria-label="register-display">
-                <div role="presentation" aria-label="oauth">
-                    {/* FIXME: resolve href / onClick */}
-                    <button onClick={theGoogleUrl} id="google-auth-button" aria-label="google-auth">Log in with Google</button>
+                {/* <div role="presentation" aria-label="oauth"> */}
+                    {/* TODO: implement OAuth <button onClick={theGoogleUrl} id="google-auth-button" aria-label="google-auth">Log in with Google</button> */}
                     {/* <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>    */}
-                </div>
-                <br/>
-                <div>OR</div>
-                <br/>
+                {/* </div>
+                <br/>*/}
+                <div id="auth-header" role="presentation" aria-label='register-header'>Register</div>
+                <br/> 
                 <div role="presentation" aria-label="register-display-form">
                     {(message && <div role="presentation" aria-label='register-error-message'>{message}</div>)}
                     <form onSubmit={handleRegister} method="post">
@@ -47,7 +46,6 @@ export default function Register( props ) {
                         </div>
                     </form>
                 </div> 
-                <br />
                 <div role="presentation" aria-label="login">
                     <label htmlFor="login">Already have an account? </label>
                     <a href='/login' id="login" aria-label="login-link">Login</a>

@@ -22,7 +22,12 @@ export const StyledAuth = styled.div`
         background-color: ${({ theme }) => theme.colors.info};
         color:  ${({ theme }) => theme.colors.complimentary};
     }
+    
     #google-auth-button {
         width: 200px;
+    }
+
+    #auth-header {
+        font-size: 2rem;
     }
 `

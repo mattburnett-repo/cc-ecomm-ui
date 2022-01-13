@@ -2,23 +2,50 @@
 import styled from 'styled-components'
 
 export const StyledCartItemDisplay = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: top;
-    justify-content: space-around;
+    display: grid;
+    grid-template-areas: 'cartItemImage cartItemInfo cartItemInfo cartItemInfo cartItemInfo';
+    justify-content: space-between;
 
     width: 80%;
-    background-color: ${({ theme }) => theme.colors.light};
-    margin: 10px auto;
     padding: 40px 40px;
+    margin: 10px auto;
 
-    border: 1px solid black;
+    background-color: ${({ theme }) => theme.colors.light};
+    border: 1px solid ${({ theme }) => theme.colors.black};
     border-radius: 10px;
 
-    img {
+    #cart-item-image {
+        grid-area: cartItemImage;
+  
         height: 200px;
-        width: auto;
+        width: 300px;
+  
+        border: 1px solid ${({ theme }) => theme.colors.black};
     }
+
+    #cart-item-info {
+        grid-area: cartItemInfo;
+        
+        width: 100%;
+  
+        // border: 1px solid ${({ theme }) => theme.colors.black};
+    }
+
+    #cart-item-order-controls {
+        display: grid;
+        grid-template-areas: 'cartItemPrice cartItemQuantity cartItemTotal removeFromCart';
+        align-content: bottom;
+        justify-content: space-around;
+  
+        padding: 20px;
+  
+        border: 1px solid ${({ theme }) => theme.colors.black};
+      }
+
+    // img {
+    //     height: 200px;
+    //     width: auto;
+    // }
 
     button {
         width: 200px;

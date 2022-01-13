@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const StyledCartDetailDisplay = styled.div`
 
-overflow: auto;
+    overflow: auto;
 
     #cart-total-price {
         background-color: ${({ theme }) => theme.colors.light};

@@ -36,8 +36,8 @@ function App() {
       <GlobalStyles />
     
       <Container>
-        <Header />
         <Router>  
+          <Header />
           <Switch>
             <Route path='/' exact component={Login} />
             <Route path='/login' exact component={Login} />

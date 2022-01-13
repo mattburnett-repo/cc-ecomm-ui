@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 
 import CheckLoginStatus from "../../utils/CheckLoginStatus";
@@ -16,7 +16,6 @@ export default function ProductsListing () {
     const currentProductCategory = useSelector(selectCurrentProductCategory)
 
     useEffect(() => {
-        // eslint-disable-next-line
         if(currentProductCategory == 0) {
             dispatch(getProducts())
         } else {

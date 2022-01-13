@@ -42,10 +42,10 @@ export default function NavBar ( props ) {
             headerMessage = '(Category) Products'
             break;
         case 'productDetail':
-            headerMessage = `${productName} Details`
+            headerMessage = `${productName}`
             break
         case 'cart':
-            headerMessage = 'Cart Details'
+            headerMessage = 'Your Cart'
             break;
         case 'order':
             headerMessage = 'Order Details'

@@ -5,7 +5,7 @@ export const StyledNavBar = styled.div`
     display: flex;
     flex-direction: row;
     align-items: top;
-    justify-content: space-between;
+    justify-content: space-around;
 
     max-width: 100%;
     background-color: ${({ theme }) => theme.colors.light};

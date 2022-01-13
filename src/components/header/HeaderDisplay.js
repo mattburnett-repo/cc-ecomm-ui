@@ -1,12 +1,14 @@
 
 import { StyledHeader } from '../styles/Header.styled'
 
+import CartBadge from '../../widgets/CartBadge'
+
 export default function HeaderDisplay() {
     return (
         <StyledHeader>
             <img src="/ladderIcon_01.png" alt='logo'/>
             <h1>The Internet Store</h1>
-            <h1>Header</h1>
+            <CartBadge />
         </StyledHeader>
     )
 }

@@ -14,13 +14,13 @@ export default function LoginDisplay ( props ) {
 
     return (
         <StyledAuth>
-            <div role="presentation" aria-label="oauth">
-                <button onClick={theGoogleUrl} id="google-auth-button" aria-label="google-auth">Log in with Google</button>
+            {/* <div role="presentation" aria-label="oauth"> */}
+                {/* TODO: implement OAuth <button onClick={theGoogleUrl} id="google-auth-button" aria-label="google-auth">Log in with Google</button> */}
                 {/* <div><a href="/auth/github" aria-label="github-auth" onClick={handleClick}>Log in with GitHub</a></div>    */}
-            </div>
-            <br/>
-            <div>OR</div>
-            <br/>
+            {/* </div>
+            <br/>*/}
+            <div id="auth-header" role="presentation" aria-label='login-header'>Log In</div>
+            <br/> 
             <div role="presentation" aria-label="login-display-form">
                 {(message && <div role="presentation" id="login-error-message" aria-label='login-error-message'>{message}</div>)}
                 <form onSubmit={handleLogin} method="post">

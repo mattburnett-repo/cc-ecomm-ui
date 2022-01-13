@@ -12,6 +12,7 @@ export const StyledBrowseSearch = styled.div`
     margin: 20px auto;
     padding: 40px 40px;
 
+    font-size: 1.5rem;
     text-align: center;
     color: ${({ theme }) => theme.colors.secondary};
     
