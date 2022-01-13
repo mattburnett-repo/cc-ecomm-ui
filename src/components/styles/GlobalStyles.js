@@ -7,12 +7,43 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: ${({ theme }) => theme.colors.complimentary};
+        // https://www.gradient-animator.com/
+        background: linear-gradient(270deg, ${({ theme }) => theme.colors.light}, ${({ theme }) => theme.colors.dark});
+        background-size: 400% 400%;
+    
+        -webkit-animation: MainBackgroundGradientAnimation 15s ease infinite;
+        -moz-animation: MainBackgroundGradientAnimation 15s ease infinite;
+        -o-animation: MainBackgroundGradientAnimation 15s ease infinite;
+        animation: MainBackgroundGradientAnimation 17s ease infinite;
+
         color: ${({ theme }) => theme.colors.black};
         font-family: 'Poppins', sans-serif;
         font-size: 1.15em;
         margin: 0;
     }
+    
+    @-webkit-keyframes MainBackgroundGradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-moz-keyframes MainBackgroundGradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @-o-keyframes MainBackgroundGradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+    @keyframes MainBackgroundGradientAnimation {
+        0%{background-position:0% 50%}
+        50%{background-position:100% 50%}
+        100%{background-position:0% 50%}
+    }
+
+
     p {
         opacity: 0.6;
         line-height: 1.5;
