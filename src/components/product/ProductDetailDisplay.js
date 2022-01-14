@@ -23,17 +23,17 @@ export default function ProductDetailDisplay ( props ) {
                     <img id="product-image" src={item.image_url} alt={item.name} />
                 </div>
                 <div id="product-info" role="presentation" aria-label='product-info'>
-                    <label htmlFor='product-description'>Product Description:</label>
+                    <label id="product-description-header" htmlFor='product-description'>Description:</label>
                     <div id="product-description" role='presentation' aria-label='product-description'>{item.description}</div>
-
-                    <div id='product-order-controls' role="presentation" aria-label='product-order-controls'>
-                        <div id="product-price" role='presentation' aria-label='product-price'>Price: {item.price}</div>
-                        <div id='product-item-quantity' role="presentation" aria-label='product-item-quantity'>
-                            <ItemQuantity itemId={item.id}/>
-                        </div>
-                        <button id="add-to-cart-button" aria-label="add-to-cart-button" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
-                    </div>   
-                </div>                    
+                </div>    
+                <div id='product-order-controls' role="presentation" aria-label='product-order-controls'>
+                    <div id="product-price" role='presentation' aria-label='product-price'>Price: {item.price}</div>
+                    <div id='product-item-quantity' role="presentation" aria-label='product-item-quantity'>
+                        <ItemQuantity itemId={item.id}/>
+                    </div>                     
+                    <button id="add-to-cart-button" aria-label="add-to-cart-button" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
+                </div>  
+                                
             </StyledProductDetailDisplay>
         </>
     )
