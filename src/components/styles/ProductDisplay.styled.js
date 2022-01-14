@@ -10,9 +10,6 @@ export const StyledProductDisplay = styled.div`
     border: 1px solid black;
     border-radius: 10px;
 
-    label {
-      font-weight: 600;
-    }
     img {
         height: 150px;
         width: 250px;
@@ -20,21 +17,6 @@ export const StyledProductDisplay = styled.div`
         border: 1px solid lightblue;
         border-radius: 5px;
     }
-
-    // #product-order-controls {
-    //     display: grid;
-    //     grid-template-columns: repeat(3, 1fr);
-
-    //     // display: flex;
-    //     // flex-direction: row;
-    //     // align-items: top;
-    //     // justify-content: space-between;
-    // }
-
-    // #remove-from-cart-button {
-    //   background-color: ${({ theme }) => theme.colors.warning};
-    //   color: ${({ theme }) => theme.colors.black};
-    // }
 
     button {
         position: relative;

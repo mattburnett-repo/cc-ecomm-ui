@@ -41,8 +41,7 @@ export default function CartItemDisplay(props) {
                     <div id="cart-item-total" role="presentation" aria-label="cart-item-total">
                         Item total: {cartItemTotal} 
                     </div>
-                    <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove Item</button>
-                    
+                    <button id="remove-from-cart-button" aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove Item</button>
                 </div>
             </StyledCartItemDisplay>
         </>

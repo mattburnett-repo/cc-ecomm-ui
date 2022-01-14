@@ -5,11 +5,11 @@ export const StyledOrderControls = styled.div`
     #order-controls {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+    }
 
-        // display: flex;
-        // flex-direction: row;
-        // align-items: top;
-        // justify-content: space-between;
+    label {
+        font-weight: 600;
+        padding: 0px;
     }
 
     #remove-from-cart-button {
