@@ -9,6 +9,7 @@ import GoToCheckoutButton from '../../widgets/GoToCheckoutButton'
 import { formatAsCurrency } from '../../utils/functions'
 import CartItemDisplay from "./CartItemDisplay"
 import { StyledCartDetailDisplay } from '../styles/CartDetailDisplay.styled'
+import { StyledCartCheckoutDisplay } from '../styles/CartCheckoutDisplay.styled'
 
 // TODO: this should only look at current cart
 //      if user wants to look at a saved cart, it should be moved to current cart before
@@ -35,18 +36,23 @@ export default function CartDetailDisplay (props) {
     }, [currentCart])
 
     return (
-        <StyledCartDetailDisplay>
-            <div role="presentation" aria-label="cart-items">
-                {data.map((item, index) => (
-                    <CartItemDisplay item={item} />
-                ))} 
-            </div>
-            <div role="presentation" id="cart-total-price" aria-label="cart-total-price">
-                Cart total: {cartTotalPrice}
-                <br /><br />
-                <GoToCheckoutButton />
-            </div>
-        </StyledCartDetailDisplay>
+        <>
+            <StyledCartDetailDisplay>
+                <div role="presentation" aria-label="cart-items">
+                    {data.map((item, index) => (
+                        <CartItemDisplay item={item} />
+                    ))} 
+                </div>
+            </StyledCartDetailDisplay>
+            <StyledCartCheckoutDisplay>
+                <div></div>
+                <div role="presentation" id="cart-checkout-display" aria-label="cart-checkout-display">
+                    Cart total: {cartTotalPrice}
+                    <br /><br />
+                    <GoToCheckoutButton />
+                </div>
+            </StyledCartCheckoutDisplay>
+        </>
     )
 }
 
