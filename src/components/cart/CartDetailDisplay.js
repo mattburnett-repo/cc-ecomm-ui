@@ -35,20 +35,18 @@ export default function CartDetailDisplay (props) {
     }, [currentCart])
 
     return (
-        <>
-            <StyledCartDetailDisplay>
-                <div role="presentation" aria-label="cart-items">
-                    {data.map((item, index) => (
-                        <CartItemDisplay item={item} />
-                    ))} 
-                </div>
-                <div role="presentation" id="cart-total-price" aria-label="cart-total-price">
-                    Cart total: {cartTotalPrice}
-                    <br /><br />
-                    <GoToCheckoutButton />
-                </div>
-            </StyledCartDetailDisplay>
-        </>
+        <StyledCartDetailDisplay>
+            <div role="presentation" aria-label="cart-items">
+                {data.map((item, index) => (
+                    <CartItemDisplay item={item} />
+                ))} 
+            </div>
+            <div role="presentation" id="cart-total-price" aria-label="cart-total-price">
+                Cart total: {cartTotalPrice}
+                <br /><br />
+                <GoToCheckoutButton />
+            </div>
+        </StyledCartDetailDisplay>
     )
 }
 

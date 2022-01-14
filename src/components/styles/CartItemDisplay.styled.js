@@ -1,45 +1,48 @@
 
+
+// grid stuff: https://www.youtube.com/watch?v=jV8B24rSN5o&t=1298s
+
 import styled from 'styled-components'
 
 export const StyledCartItemDisplay = styled.div`
     display: grid;
-    grid-template-areas: 'cartItemImage cartItemInfo cartItemInfo cartItemInfo cartItemInfo';
-    justify-content: space-between;
+    grid-template-columns: 1fr 2fr 2fr;
 
-    width: 80%;
-    padding: 40px 40px;
+    width: 98%;
+    padding: 40px;
     margin: 10px auto;
 
     background-color: ${({ theme }) => theme.colors.light};
     border: 1px solid ${({ theme }) => theme.colors.black};
     border-radius: 10px;
 
-    #cart-item-image {
-        grid-area: cartItemImage;
-  
+    #cart-item-image {  
         height: 200px;
         width: 300px;
   
         border: 1px solid ${({ theme }) => theme.colors.black};
     }
-
     #cart-item-info {
-        grid-area: cartItemInfo;
-        
-        width: 100%;
+        display: grid
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(100px auto);
     }
-
+    #cart-item-name-header {
+        font-weight: 700;
+    }
     #cart-item-order-controls {
         display: grid;
-        grid-template-areas: 'cartItemPrice cartItemQuantity cartItemTotal removeFromCart';
-        align-content: bottom;
-        justify-content: space-around;
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-gap: 2px;
+        justify-items: end;
+        align-items: start;
   
-        padding: 20px;
+        margin: 5px 0 0 0;
       }
 
     button {
-        width: 200px;
+        width: 100px;
         background-color: ${({ theme }) => theme.colors.info};
         color: ${({ theme }) => theme.colors.complimentary};
     }

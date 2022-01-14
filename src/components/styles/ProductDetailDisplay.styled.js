@@ -9,7 +9,6 @@ export const StyledProductDetailDisplay = styled.div`
     grid-template-columns: 1fr 3fr 1fr;
 
     width: 98%;
-
     padding: 40px 40px;
     margin: 10px auto;
 
@@ -27,8 +26,6 @@ export const StyledProductDetailDisplay = styled.div`
       display: grid
       grid-template-columns: 1fr;
       grid-auto-rows: minmax(100px auto);
-
-      // border: 1px solid ${({ theme }) => theme.colors.black};
     }
     #product-description-header {
       font-weight: 700;
@@ -41,7 +38,7 @@ export const StyledProductDetailDisplay = styled.div`
       justify-items: end;
       align-items: start;
 
-      margin: 10px 0 0 0;
+      margin: 5px 0 0 0;
     }
 
     button {

@@ -2,8 +2,8 @@
 import styled from 'styled-components'
 
 export const StyledCartDetailDisplay = styled.div`
-
-    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
 
     #cart-total-price {
         background-color: ${({ theme }) => theme.colors.light};
@@ -16,10 +16,10 @@ export const StyledCartDetailDisplay = styled.div`
         margin: 0 0 0 1550px;
     }
 
-    button {
-        width: 200px;
-        background-color: ${({ theme }) => theme.colors.info};
-        color: ${({ theme }) => theme.colors.complimentary};
-    }
+    // button {
+    //     width: 200px;
+    //     background-color: ${({ theme }) => theme.colors.info};
+    //     color: ${({ theme }) => theme.colors.complimentary};
+    // }
 
 `

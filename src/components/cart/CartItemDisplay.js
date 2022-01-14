@@ -23,26 +23,24 @@ export default function CartItemDisplay(props) {
     return (
         <>
             <StyledCartItemDisplay>
-                {/* <div role="presentation" aria-label="cart-item" key={item.id} /> */}
-                {/* <div role="presentation" aria-label='cart-item-image'> */}
-                    <div role="img" id="cart-item-image" aria-label='cart-item-image'> 
-                        <img src={item.image_url} alt={item.name} id={item.id} />
-                    </div>                    
-                {/* </div> */}
-                <div role="presentation" aria-label="cart-item-info">
-                   <div role="presentation" aria-label="cart-item-name">
-                        Name: {item.name}
+                <div role="presentation" aria-label='cart-item-image'> 
+                    <img id="cart-item-image" src={item.image_url} alt={item.name} />
+                </div>                    
+                <div id="cart-item-info" role="presentation" aria-label="cart-item-info">
+                    <label id="cart-item-name-header" htmlFor='cart-item-name'>Name:</label> 
+                    <div id="cart-item-name" role="presentation" aria-label="cart-item-name">
+                        {item.name}
                     </div>
-                    <div id="cart-item-order-controls" role="presentation" aria-label='cart-item-order-controls'>
-                        <div id="cart-item-price" role="presentation" aria-label="cart-item-price">Price: {item.price}</div>
-                        <div id="cart-item-quantity" role="presentation" aria-label='cart-item-quantity'>
-                            <ItemQuantity itemId={item.id}/>
-                        </div>       
-                        <div id="cart-item-total" role="presentation" aria-label="cart-item-total">
-                            Item total: {cartItemTotal} 
-                        </div>
-                        <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove From Cart</button>
+                </div>
+                <div id="cart-item-order-controls" role="presentation" aria-label='cart-item-order-controls'>
+                    <div id="cart-item-price" role="presentation" aria-label="cart-item-price">Price: {item.price}</div>
+                    <div id="cart-item-quantity" role="presentation" aria-label='cart-item-quantity'>
+                        <ItemQuantity itemId={item.id}/>
+                    </div>       
+                    <div id="cart-item-total" role="presentation" aria-label="cart-item-total">
+                        Item total: {cartItemTotal} 
                     </div>
+                    <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove Item</button>
                 </div>
             </StyledCartItemDisplay>
         </>
