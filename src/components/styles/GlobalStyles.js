@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         // https://www.gradient-animator.com/
-        background: linear-gradient(270deg, ${({ theme }) => theme.colors.light}, ${({ theme }) => theme.colors.success});
+        background: linear-gradient(270deg, ${({ theme }) => theme.colors.white}, ${({ theme }) => theme.colors.info});
         background-size: 400% 400%;
     
         -webkit-animation: MainBackgroundGradientAnimation var(--animation-length) ease infinite;
