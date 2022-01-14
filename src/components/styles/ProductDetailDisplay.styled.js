@@ -29,18 +29,18 @@ export const StyledProductDetailDisplay = styled.div`
       width: 90%;
       margin: 0 0 0 50px;
 
-      // border: 1px solid ${({ theme }) => theme.colors.black};
+      border: 1px solid ${({ theme }) => theme.colors.black};
     }
 
     #product-order-controls {
       display: grid;
       grid-template-areas: 'productPrice productQuantity addToCart';
-      align-content: bottom;
+      align-content: end;
       justify-content: space-around;
 
       margin: 20px auto;
 
-      // border: 1px solid ${({ theme }) => theme.colors.black};
+      border: 1px solid ${({ theme }) => theme.colors.black};
     }
 
     button {

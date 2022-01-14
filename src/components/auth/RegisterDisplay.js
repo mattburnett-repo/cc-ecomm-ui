@@ -23,7 +23,7 @@ export default function Register( props ) {
                 <div id="auth-header" role="presentation" aria-label='register-header'>Register</div>
                 <br/> 
                 <div role="presentation" aria-label="register-display-form">
-                    {(message && <div role="presentation" aria-label='register-error-message'>{message}</div>)}
+                    {(message && <div id="register-error-message" role="presentation" aria-label='register-error-message'>{message}</div>)}
                     <form onSubmit={handleRegister} method="post">
                         <div>
                             {/* <label htmlFor="username">Username:</label> */}
