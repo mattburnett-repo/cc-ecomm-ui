@@ -34,6 +34,7 @@ export default function CartItemDisplay(props) {
                 </div>
                 <div id="cart-item-order-controls" role="presentation" aria-label='cart-item-order-controls'>
                     <div id="cart-item-price" role="presentation" aria-label="cart-item-price">Price: {item.price}</div>
+
                     <div id="cart-item-quantity" role="presentation" aria-label='cart-item-quantity'>
                         <ItemQuantity itemId={item.id}/>
                     </div>       
@@ -41,6 +42,7 @@ export default function CartItemDisplay(props) {
                         Item total: {cartItemTotal} 
                     </div>
                     <button aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))} >Remove Item</button>
+                    
                 </div>
             </StyledCartItemDisplay>
         </>

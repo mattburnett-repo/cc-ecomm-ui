@@ -20,8 +20,10 @@ export default function NavBarDisplay (props) {
                     <>
                         <div role="presentation" aria-label="header-current-cart-item-count">
                             {(currentCartCount === 0) ?
-                                (<div>You have {currentCartCount} items in your current cart</div>)
-                                : ( <Link to ="/cart-detail"  aria-label="go-to-current-cart-link">You have {currentCartCount} item/s in your current cart</Link>)
+                                (<div>You have no items in your current cart</div>)
+                                : ( <Link to ="/cart-detail"  aria-label="go-to-current-cart-link">
+                                    You have {currentCartCount} {(currentCartCount === 1) ? "item" : "items"} in your current cart</Link>
+                                )
                             }
                         </div>
                     </>

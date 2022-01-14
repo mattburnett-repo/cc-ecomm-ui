@@ -13,6 +13,7 @@ export const addItemToCurrentCart = (itemData) => {
 }
 
 export const removeItemFromCurrentCart = (itemId) => {
+    console.log('removeItemFromCurrentCart ', itemId)
     return {
         type: "carts/removeItemFromCurrentCart",
         payload: {

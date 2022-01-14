@@ -2,19 +2,22 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+    :root {
+        --animation-length: 45s;
+    }
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
     * {
         box-sizing: border-box;
     }
     body {
         // https://www.gradient-animator.com/
-        background: linear-gradient(270deg, ${({ theme }) => theme.colors.light}, ${({ theme }) => theme.colors.dark});
+        background: linear-gradient(270deg, ${({ theme }) => theme.colors.light}, ${({ theme }) => theme.colors.success});
         background-size: 400% 400%;
     
-        -webkit-animation: MainBackgroundGradientAnimation 15s ease infinite;
-        -moz-animation: MainBackgroundGradientAnimation 15s ease infinite;
-        -o-animation: MainBackgroundGradientAnimation 15s ease infinite;
-        animation: MainBackgroundGradientAnimation 17s ease infinite;
+        -webkit-animation: MainBackgroundGradientAnimation var(--animation-length) ease infinite;
+        -moz-animation: MainBackgroundGradientAnimation var(--animation-length) ease infinite;
+        -o-animation: MainBackgroundGradientAnimation var(--animation-length) ease infinite;
+        animation: MainBackgroundGradientAnimation var(--animation-length) ease infinite;
 
         color: ${({ theme }) => theme.colors.black};
         font-family: 'Poppins', sans-serif;

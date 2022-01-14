@@ -16,7 +16,9 @@ export default function CartBadge() {
     const currentCart = useSelector(selectCurrentCart)
 
     useEffect(() => {
-        setItemCount(currentCart.length)
+        let item_total_count = 0;   // FIXME: this is sloppy and should be handled when quanity is changed / sent to redux
+        currentCart.forEach(item => item_total_count += item.quantity)
+        setItemCount(item_total_count)
     }, [currentCart])
     
     return (

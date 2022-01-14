@@ -39,11 +39,16 @@ export const StyledCartItemDisplay = styled.div`
         align-items: start;
   
         margin: 5px 0 0 0;
-      }
+    }
+
+    #remove-from-cart-button {
+        background-color: ${({ theme }) => theme.colors.warning};
+        color: ${({ theme }) => theme.colors.black};
+    }
 
     button {
         width: 100px;
-        background-color: ${({ theme }) => theme.colors.info};
-        color: ${({ theme }) => theme.colors.complimentary};
+        background-color: ${({ theme }) => theme.colors.warning};
+        color: ${({ theme }) => theme.colors.black};
     }
 `

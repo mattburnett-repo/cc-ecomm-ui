@@ -1,4 +1,5 @@
 
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
 import { localAuthLogout, selectUserData } from '../../features/auth/authSlice';
@@ -8,11 +9,19 @@ import NavBarDisplay from '../../components/nav/NavBarDisplay'
 
 export default function NavBar ( props ) {
     const { calledFrom, productName } = props;
+    const [ currentCartCount, setCurrentCartCount] = useState(0);
+
     const dispatch = useDispatch()
 
     const user = useSelector(selectUserData)
     const currentCart = useSelector(selectCurrentCart)
-    let currentCartCount = currentCart.length
+
+    useEffect(() => {
+        let currentCartCount = 0; // FIXME: this is sloppy and should be handled when quanity is changed / sent to redux
+        currentCart.forEach(item => currentCartCount += item.quantity)
+
+        setCurrentCartCount(currentCartCount)
+    }, [currentCart])
 
     let headerMessage = ''
   

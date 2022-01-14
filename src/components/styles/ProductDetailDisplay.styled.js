@@ -41,6 +41,11 @@ export const StyledProductDetailDisplay = styled.div`
       margin: 5px 0 0 0;
     }
 
+    #remove-from-cart-button {
+      background-color: ${({ theme }) => theme.colors.warning};
+      color: ${({ theme }) => theme.colors.black};
+    }
+
     button {
         position: relative;
         background-color: ${({ theme }) => theme.colors.info};

@@ -115,6 +115,7 @@ const options = {
         },
         removeItemFromCurrentCart: (state, action) => {
             // TODO: reducer doesn't see action.payload.id, but rather only action.payload. ???
+            console.log('reducer ', action.payload)
             return {
                 ...state,
                 currentCart: state.currentCart.filter(item => item.id !== action.payload)

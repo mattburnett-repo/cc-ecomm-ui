@@ -3,7 +3,7 @@
 import useCollapse from 'react-collapsed';
 
 import BrowseSearch from '../../features/nav/BrowseSearch';
-import ProductDisplay from '../product/ProducDisplay';
+import ProductDisplay from '../product/ProductDisplay';
 
 import { StyledProductsListingDisplay } from '../styles/ProductsListing.styled'
 
