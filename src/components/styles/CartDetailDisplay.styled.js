@@ -16,10 +16,10 @@ export const StyledCartDetailDisplay = styled.div`
         margin: 0 0 0 1550px;
     }
 
-    // button {
-    //     width: 200px;
-    //     background-color: ${({ theme }) => theme.colors.info};
-    //     color: ${({ theme }) => theme.colors.complimentary};
-    // }
+    button {
+        width: 100px;
+        background-color: ${({ theme }) => theme.colors.info};
+        color: ${({ theme }) => theme.colors.complimentary};
+    }
 
 `

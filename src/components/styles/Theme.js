@@ -20,22 +20,10 @@ const theme = {
       body: '#fff',
       footer: '#003333',
 
+      navButtons: '#7FD1AE',
+
       border: '1px solid #676767',
 
-      auth: '#ccc',
-      navBar: '#eee',
-      browseSearch: '#bbb',
-      ordersDisplay: '#aaa',
-      cartsDisplay: '#999',
-      productsListingDisplay: '#888',
-      productDisplay: '#aaa',
-      productDetailDisplay: 'lightblue',
-      cartDetailDisplay: '#fff',
-      cartItemDisplay: '#ebfbff',
-      shippingInfoDisplay: '#bbb',
-      paymentInfoDisplay: '#ccc',
-      orderConfirmationDisplay: '#aaa',
-      ordersAndCartHistoryDisplay: '#ddd'
     },
     borders: {
       primary: '1px solid #676767',

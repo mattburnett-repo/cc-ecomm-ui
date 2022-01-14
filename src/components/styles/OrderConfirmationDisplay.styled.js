@@ -31,8 +31,8 @@ export const StyledOrderConfirmationDisplay = styled.div`
     button {
         width: 200px;
         margin: 20px;
-        background-color: ${({ theme }) => theme.colors.info};
-        color: ${({ theme }) => theme.colors.complimentary};
+        background-color: ${({ theme }) => theme.colors.navButtons};
+        color: ${({ theme }) => theme.colors.black};
     }
 
     #order-confirmation-nav-buttons {

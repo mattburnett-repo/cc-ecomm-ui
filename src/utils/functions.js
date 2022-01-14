@@ -5,7 +5,7 @@ const formatAsCurrency = new Intl.NumberFormat('en-US', {
     maximumFractionDigits: 2,
 });
 
-const formatDate =   new Intl.DateTimeFormat("en-US", {
+const formatDate = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
     month: "long",
     day: "2-digit"

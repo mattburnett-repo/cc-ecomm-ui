@@ -53,9 +53,9 @@ export default function OrderConfirmationDisplay ( props ) {
                             Stripe receipt is at <a href={currentPayment.charge.receipt_url} rel="noreferrer" target="_blank">this link</a>
                         </div>
                         <div role="presentation" aria-label="order-delivery">
-                            Order will ship to {currentAddress.firstName} {currentAddress.lastName}, 
-                                                {currentAddress.address1} {currentAddress.address1},
-                                                {currentAddress.city} {currentAddress.stateProvince},
+                            Order will ship to {currentAddress.firstName} {currentAddress.lastName},&nbsp;
+                                                {currentAddress.address1} {currentAddress.address1},&nbsp;
+                                                {currentAddress.city} {currentAddress.stateProvince},&nbsp;
                                                 {currentAddress.postalCode} {currentAddress.country}
                         </div>
                     </div>

@@ -7,7 +7,6 @@ export const StyledPaymentInfoDisplay = styled.div`
     align-items: top;
 
     width: 450px;
-    height: 450px;
     text-align: center;
 
     background-color: ${({ theme }) => theme.colors.light};

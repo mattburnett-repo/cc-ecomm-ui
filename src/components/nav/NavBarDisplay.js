@@ -9,12 +9,11 @@ import LogoutButton from '../../widgets/LogoutButton'
 import { StyledNavBar } from '../styles/NavBar.style'
 
 export default function NavBarDisplay (props) {
-    // const { handleLogoutClick } = props.handlers
     const { calledFrom, headerMessage, currentCartCount } = props
 
     return (
         <StyledNavBar>
-            <div role="presentation" aria-label='nav-bar-placeholder' />
+            <div></div>
             <div role="presentation" aria-label="nav-bar-message">
                 <div role="presentation" id="header-message" aria-label="header-message">{headerMessage}</div>
                 {(calledFrom === 'dashboard') ? (
@@ -33,7 +32,6 @@ export default function NavBarDisplay (props) {
                     <>
                         <ShowCartButton />
                         <GoHomeButton />
-                        {/* <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button> */}
                         <LogoutButton />
                     </>
                 ) : (<></>)}
@@ -41,14 +39,12 @@ export default function NavBarDisplay (props) {
                     <>
                         <GoToCheckoutButton />
                         <GoHomeButton />
-                        {/* <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button> */}
                         <LogoutButton />
                     </>
                 ) : (<></>)}
                 {(calledFrom === 'shippingInfo' || calledFrom === 'paymentInfo' || calledFrom === "dashboard") ? (
                     <>
                         <GoHomeButton />  
-                        {/* <button aria-label="logout" onClick={handleLogoutClick}>Log Out</button>  */}
                         <LogoutButton />
                     </>
                 ) : (<></>)}
