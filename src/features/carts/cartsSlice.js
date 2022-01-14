@@ -133,6 +133,15 @@ const options = {
         setCurrentCartTotalPrice: (state, action) => {
             return {...state, currentCart_total_price: formatAsCurrency.format(action.payload)} // FIXME: this should be in the current cart part, not in carts
         },
+        // setCurrentCartTotalItemCount: (state, action) => {
+        //     let total_item_count = 0;
+        //     return {
+        //         ...state,
+        //         currentCart_total_item_count: state.currentCart.forEach(
+        //             item => total_item_count += item.quantity
+        //         )
+        //     }
+        // },
 
         // TODO: this might be useful to moved a saved cart into current cart
         loadItem: (state, action) => {
