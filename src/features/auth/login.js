@@ -26,7 +26,7 @@ export default function Login () {
             let msg = await dispatch(localAuthLogin({username, password}));
 
             if(msg.meta.requestStatus === 'rejected') {
-                setMessage('This user can\'t log in. The username/password might be wrong, or the server might be down.')
+                setMessage('This user can\'t log in. kThe username/password might be wrong, or the server might be down.')
             } else {
                 setMessage('')
             }
