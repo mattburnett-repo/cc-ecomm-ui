@@ -9,18 +9,19 @@ import { StyledProductDetailDisplay } from '../styles/ProductDetailDisplay.style
 export default function ProductDetailDisplay ( props ) {
     const { item } = props
 
-    return (
-        <>        
-            <StyledProductDetailDisplay>
-                <div role="presentation" aria-label="product-image">
-                    <img id="product-image" src={item.image_url} alt={item.name} />
+    return (   
+        <StyledProductDetailDisplay>
+            <div className='product-detail-container' role="presentation" aria-label='product-detail-display'>
+                <div>
+                 <img className="product-image" src={item.image_url} alt={item.name} />                   
                 </div>
-                <div id="product-info" role="presentation" aria-label='product-info'>
-                    <label id="product-description-header" htmlFor='product-description'>Description:</label>
-                    <div id="product-description" role='presentation' aria-label='product-description'>{item.description}</div>
+
+                <div className="product-info" role="presentation" aria-label='product-info'>
+                    <label htmlFor='product-description'>Description:</label>
+                    <div className="product-description" role='presentation' aria-label='product-description'>{item.description}</div>
                 </div>    
                 <OrderControls item={item} />
-            </StyledProductDetailDisplay>
-        </>
+            </div>
+        </StyledProductDetailDisplay>
     )
 }

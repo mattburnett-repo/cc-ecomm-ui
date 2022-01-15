@@ -13,8 +13,10 @@ export const StyledHeader = styled.header`
     border: ${({ theme }) => theme.borders.black};
 
     img {
-        width: 100px;
-        height: 100px;
+        max-width: 7rem;
+        min-width: 7rem;
+        min-width: 5rem;
+        min-height: 5rem;
 
         border: 2px solid ${({ theme }) => theme.borders.black};
         border-radius: 10px;

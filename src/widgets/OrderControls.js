@@ -26,8 +26,7 @@ export default function OrderControls( props ) {
 
     return (
         <StyledOrderControls>
-            <div id="order-controls" role="presentation" aria-label='order-controls'>
-                
+            <div className="order-controls" role="presentation" aria-label='order-controls'>
                 <div id="item-price" role='presentation' aria-label='item-price'>
                     <label htmlFor='item-price'>Price:&nbsp;</label>
                     {item.price}
@@ -36,10 +35,10 @@ export default function OrderControls( props ) {
                 {(isInCart()) ?
                     (<div role="presentation" aria-label='item-quantity'>
                         <ItemQuantity itemId={item.id}/>
-                        <button id="remove-from-cart-button" aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))}>Remove Item</button>
+                        <button className="remove-from-cart-button" aria-label="remove-from-cart-button" onClick={() => dispatch(removeItemFromCurrentCart(item.id))}>Remove Item</button>
                     </div>)
                     : (<div role='presentation' aria-label="add-to-cart">
-                        <button aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
+                        <button className="add-to-cart-button" aria-label="add-to-cart" onClick={() => dispatch(addItemToCurrentCart(item))}>Add To Cart</button>
                        </div>
                     )
                 }

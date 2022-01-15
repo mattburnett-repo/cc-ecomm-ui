@@ -5,77 +5,52 @@
 import styled from 'styled-components'
 
 export const StyledProductDetailDisplay = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    .product-detail-container {
+        display: flex;
+        flex-direction: column;
 
-    width: 98%;
-    padding: 40px 40px;
-    margin: 10px auto;
+        margin: 1rem auto;
+        padding: 10px;
 
-    background-color: ${({ theme }) => theme.colors.light};
-    border: 1px solid ${({ theme }) => theme.colors.black};
-    border-radius: 10px;
-
-    #product-image {
-      height: 200px;
-      width: 300px;
-
-      border: 1px solid ${({ theme }) => theme.colors.black};
+        background-color: ${({ theme }) => theme.colors.light};
+        border: 1px solid ${({ theme }) => theme.colors.black};
+        border-radius: 10px;
     }
-    #product-info {      
-      display: grid
-      grid-template-columns: 1fr;
-      grid-auto-rows: minmax(100px auto);
+
+    @media (min-width: 70em) {
+        .product-detail-container {
+            flex-direction: row;
+        }
+
+        // .product-detail-container > * {
+        //     flex-basis: 100%;
+        // }
+
+        .product-detail-container > * + * {
+            margin-left: 2em;
+        }
     }
-    #product-description-header {
+
+    label {
       font-weight: 700;
     }
-    #product-order-controls {
-      display: grid;
-      grid-template-columns: 2fr 2fr 1fr;
+    
+    .product-image {
+        display: block;
+        margin: 0 auto;
 
-      grid-gap: 5px;
-      justify-items: end;
-      align-items: start;
+        min-height: 12rem;
+        min-width: 20rem;
+        max-height: 15rem;
+        max-width: 100%;
 
-      margin: 5px 0 0 0;
+        border: 1px solid ${({ theme }) => theme.colors.black};
     }
 
-    #remove-from-cart-button {
-      background-color: ${({ theme }) => theme.colors.warning};
-      color: ${({ theme }) => theme.colors.black};
-    }
-
-    button {
-        position: relative;
-        background-color: ${({ theme }) => theme.colors.info};
-        border: none;
-        color: ${({ theme }) => theme.colors.complimentary};
-        text-align: center;
-        -webkit-transition-duration: 0.4s; /* Safari */
-        transition-duration: 0.4s;
-        text-decoration: none;
-        overflow: hidden;
-        cursor: pointer;
-      }
-      
-    button:after {
-      content: "";
-      background: #90EE90;
-      display: block;
-      position: absolute;
-      padding-top: 300%;
-      padding-left: 350%;
-      margin-left: -20px!important;
-      margin-top: -120%;
-      opacity: 0;
-      transition: all 0.8s
-    }
-      
-    button:active:after {
-      padding: 0;
-      margin: 0;
-      opacity: 1;
-      transition: 0s
+    .product-info {      
+        margin: 10px 10px;
+    
+        min-height: 5rem;
+        min-width: 20rem;
     }
 `

@@ -10,4 +10,6 @@ export const Container = styled.div`
 
     border: 3px solid ${({ theme }) => theme.colors.info};
     border-radius: 5px;
+
+    opacity: 1.0;
 `

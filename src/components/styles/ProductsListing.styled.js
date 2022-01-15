@@ -12,8 +12,8 @@ export const StyledProductsListingDisplay = styled.div`
 
     max-width: 100%;
     background-color: ${({ theme }) => theme.colors.complimentary};
-    margin: 10px 0 20px 0;
-    padding: 40px 40px;
+    margin: 1em 2em;
+    padding: 2rem;
 
     border: 1px solid black;
     border-radius: 10px;
