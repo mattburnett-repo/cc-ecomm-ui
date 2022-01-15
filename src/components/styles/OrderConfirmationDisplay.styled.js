@@ -3,23 +3,25 @@
 import styled from 'styled-components'
 
 export const StyledOrderConfirmationDisplay = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: top;
-    justify-content: space-between;
+    .order-confirmation-container {
+        display: flex;
+        flex-direction: column;
+        align-items: top;
+        justify-content: space-between;
 
-    width: 750px;
-    height: 400px;
-    text-align: left;
+        width: 25rem;
+        // height: 400px;
+        text-align: left;
 
-    background-color: ${({ theme }) => theme.colors.light};
-    margin: 20px auto;
-    padding: 30px 10px;
+        background-color: ${({ theme }) => theme.colors.light};
+        margin: 20px auto;
+        padding: 30px 10px;
 
-    border: 1px solid black;
-    border-radius: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
 
-    #order-details {
+    .order-details {
         display: flex;
         flex-direction: column;
         align-content: left;
@@ -35,7 +37,7 @@ export const StyledOrderConfirmationDisplay = styled.div`
         color: ${({ theme }) => theme.colors.black};
     }
 
-    #order-confirmation-nav-buttons {
+    .order-confirmation-nav-buttons {
         text-align: center;
     }
 `

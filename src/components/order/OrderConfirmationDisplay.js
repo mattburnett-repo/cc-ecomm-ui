@@ -37,8 +37,8 @@ export default function OrderConfirmationDisplay ( props ) {
     try {
         return (
             <StyledOrderConfirmationDisplay>
-                <div role="presentation" aria-label="confirmation-info">
-                    <div id="order-details">
+                <div className="order-confirmation-container" role="presentation" aria-label="confirmation-info">
+                    <div className="order-details">
                         <div role="presentation" aria-label="order-amount-date">
                             Your order for $ {currentOrder.data[0].total_price} has been placed on {currentOrder.data[0].order_date}
                         </div>
@@ -60,7 +60,7 @@ export default function OrderConfirmationDisplay ( props ) {
                         </div>
                     </div>
                     <br />
-                    <div role="presentation" id="order-confirmation-nav-buttons" aria-label='order-confirmation-nav-buttons'>
+                    <div className="order-confirmation-nav-buttons" role="presentation" aria-label='order-confirmation-nav-buttons'>
                         <button aria-label="home" onClick={() => handleHomeClick()}>Home</button>
                         <button aria-label="logout" onClick={() => handleLogoutClick()}>Log Out</button>                        
                     </div>

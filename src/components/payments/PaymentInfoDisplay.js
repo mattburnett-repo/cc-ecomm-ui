@@ -83,33 +83,35 @@ const PaymentInfoDisplay = ( props ) => {
         <>
             <NavBar calledFrom="paymentInfo" />
             <StyledPaymentInfoDisplay>
-                <div role="presentation" aria-label='payment-info'>
-                    <h3>Payment Info</h3>
-                    <CartSummary />
-                    <ShippingInfoSummary />
-                </div>
-            
-                <br/>
-                <div>
-                    <form onSubmit={handleProcessPayment}>
-                        <div id="card-details">
-                            <label>Card Number (use 4242 4242 4242 4242)</label>
-                            <CardNumberElement />
-                        </div>
-                        <div id="expiration-date">
-                            <label>Expiration Date (use 424)</label>
-                            <CardExpiryElement />               
-                        </div>
-                        <div id="cvd">
-                            <label>CVC (use 424)</label>
-                            <CardCVCElement />                     
-                        </div>
+                <div className="payment-info-container">
+                    <div role="presentation" aria-label='payment-info'>
+                        <h3>Payment Info</h3>
+                        <CartSummary />
+                        <ShippingInfoSummary />
+                    </div>
+                
+                    <br/>
+                    <div>
+                        <form onSubmit={handleProcessPayment}>
+                            <div id="card-details">
+                                <label>Card Number (use 4242 4242 4242 4242)</label>
+                                <CardNumberElement />
+                            </div>
+                            <div id="expiration-date">
+                                <label>Expiration Date (use 424)</label>
+                                <CardExpiryElement />               
+                            </div>
+                            <div id="cvd">
+                                <label>CVC (use 424)</label>
+                                <CardCVCElement />                     
+                            </div>
 
-                        <br/>
-                        <button type="submit" className="order-button">
-                            Finish Order
-                        </button>
-                    </form>
+                            <br/>
+                            <button type="submit" className="order-button">
+                                Finish Order
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </StyledPaymentInfoDisplay>
         </>

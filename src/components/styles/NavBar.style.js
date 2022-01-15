@@ -23,6 +23,9 @@ export const StyledNavBar = styled.div`
             font-size: 1rem;
         }
 
+        .header-message {
+            font-size: 2rem !important;
+        }
         button {
             margin-top: 2rem;
         }

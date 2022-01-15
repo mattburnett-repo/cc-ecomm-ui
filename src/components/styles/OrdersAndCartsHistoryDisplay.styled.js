@@ -15,4 +15,5 @@ export const StyledOrderAndCartsHistoryDisplay = styled.div`
 
     border: 1px solid black;
     border-radius: 10px;
+
 `
