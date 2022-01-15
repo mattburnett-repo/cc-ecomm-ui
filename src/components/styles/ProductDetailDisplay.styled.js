@@ -1,6 +1,6 @@
 
 
-// grid stuff: https://www.youtube.com/watch?v=jV8B24rSN5o&t=1298s
+// responsive stuff: https://www.youtube.com/watch?v=bn-DQCifeQQ
 
 import styled from 'styled-components'
 
@@ -37,20 +37,15 @@ export const StyledProductDetailDisplay = styled.div`
     
     .product-image {
         display: block;
+        // max-width: 100%;
+        width: min(100%, 25rem);
         margin: 0 auto;
-
-        min-height: 12rem;
-        min-width: 20rem;
-        max-height: 15rem;
-        max-width: 100%;
 
         border: 1px solid ${({ theme }) => theme.colors.black};
     }
 
     .product-info {      
         margin: 10px 10px;
-    
-        min-height: 5rem;
-        min-width: 20rem;
+        max-width: 100%
     }
 `

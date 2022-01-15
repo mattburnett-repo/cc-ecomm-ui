@@ -18,7 +18,7 @@ export default function ProductDetailDisplay ( props ) {
 
                 <div className="product-info" role="presentation" aria-label='product-info'>
                     <label htmlFor='product-description'>Description:</label>
-                    <div className="product-description" role='presentation' aria-label='product-description'>{item.description}</div>
+                    <div name="product-description" className="product-description" role='presentation' aria-label='product-description'>{item.description}</div>
                 </div>    
                 <OrderControls item={item} />
             </div>
