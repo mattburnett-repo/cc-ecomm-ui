@@ -1,4 +1,7 @@
 
+
+// responsive stuff: https://www.youtube.com/watch?v=bn-DQCifeQQ
+
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`

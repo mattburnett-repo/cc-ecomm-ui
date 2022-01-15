@@ -13,43 +13,45 @@ export default function NavBarDisplay (props) {
 
     return (
         <StyledNavBar>
-            <div></div>
-            <div role="presentation" aria-label="nav-bar-message">
-                <div role="presentation" id="header-message" aria-label="header-message">{headerMessage}</div>
-                {(calledFrom === 'dashboard') ? (
-                    <>
-                        <div role="presentation" aria-label="header-current-cart-item-count">
-                            {(currentCartCount === 0) ?
-                                (<div>You have no items in your current cart</div>)
-                                : ( <Link to ="/cart-detail"  aria-label="go-to-current-cart-link">
-                                    You have {currentCartCount} {(currentCartCount === 1) ? "item" : "items"} in your current cart</Link>
-                                )
-                            }
-                        </div>
-                    </>
-                ) : (<></>)}
-            </div>
-            <div role="presentation" aria-label="nav-bar-buttons">
-                {(calledFrom === 'productDetail') ? (
-                    <>
-                        <ShowCartButton />
-                        <GoHomeButton />
-                        <LogoutButton />
-                    </>
-                ) : (<></>)}
-                {(calledFrom === 'cart') ? (
-                    <>
-                        <GoToCheckoutButton />
-                        <GoHomeButton />
-                        <LogoutButton />
-                    </>
-                ) : (<></>)}
-                {(calledFrom === 'shippingInfo' || calledFrom === 'paymentInfo' || calledFrom === "dashboard") ? (
-                    <>
-                        <GoHomeButton />  
-                        <LogoutButton />
-                    </>
-                ) : (<></>)}
+            <div className='nav-bar-container'>
+                <div></div>
+                <div role="presentation" aria-label="nav-bar-message">
+                    <div className="header-message" role="presentation" aria-label="header-message">{headerMessage}</div>
+                    {(calledFrom === 'dashboard') ? (
+                        <>
+                            <div role="presentation" aria-label="header-current-cart-item-count">
+                                {(currentCartCount === 0) ?
+                                    (<div>You have no items in your current cart</div>)
+                                    : ( <Link to ="/cart-detail"  aria-label="go-to-current-cart-link">
+                                        You have {currentCartCount} {(currentCartCount === 1) ? "item" : "items"} in your current cart</Link>
+                                    )
+                                }
+                            </div>
+                        </>
+                    ) : (<></>)}
+                </div>
+                <div role="presentation" aria-label="nav-bar-buttons">
+                    {(calledFrom === 'productDetail') ? (
+                        <>
+                            <ShowCartButton />
+                            <GoHomeButton />
+                            <LogoutButton />
+                        </>
+                    ) : (<></>)}
+                    {(calledFrom === 'cart') ? (
+                        <>
+                            <GoToCheckoutButton />
+                            <GoHomeButton />
+                            <LogoutButton />
+                        </>
+                    ) : (<></>)}
+                    {(calledFrom === 'shippingInfo' || calledFrom === 'paymentInfo' || calledFrom === "dashboard") ? (
+                        <>
+                            <GoHomeButton />  
+                            <LogoutButton />
+                        </>
+                    ) : (<></>)}
+                </div>
             </div>
         </StyledNavBar>
     )
