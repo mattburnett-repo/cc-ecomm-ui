@@ -4,6 +4,11 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
 import LoginDisplay from '../../components/auth/LoginDisplay';
 
 const mockHandleClick = jest.fn(); // should be able to add .mockImplementation(...) here, but ok...
@@ -17,9 +22,9 @@ function mockHandlers() {
 }
 
 describe('<LoginDisplay /> component tests', () => { 
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
-
-    // beforeEach(() => render(<LoginDisplay handlers={mockHandlers()} />));
+    test.todo('fix unexplainable problems')
+    
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><LoginDisplay handlers={mockHandlers()} /></ThemeProvider>));
 
     // it('renders the display component', () => {
     //     screen.getByRole('presentation', { name: /^login-display$/i })
@@ -104,7 +109,7 @@ describe('<LoginDisplay /> component tests', () => {
     // });
 
     // it('renders a snapshot', () => {
-    //     const tree = renderer.create(<LoginDisplay handlers={mockHandlers()} />).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><LoginDisplay handlers={mockHandlers()} /></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();
     // });
 })

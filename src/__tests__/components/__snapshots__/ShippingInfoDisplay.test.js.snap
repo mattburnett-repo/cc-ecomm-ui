@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShippingInfo /> component tests creates a snapshot 1`] = `
+Array [
+  <div
+    className="sc-bdvvtL jYEqkG"
+  >
+    <div
+      className="nav-bar-container"
+    >
+      <div />
+      <div
+        aria-label="nav-bar-message"
+        role="presentation"
+      >
+        <div
+          aria-label="header-message"
+          className="header-message"
+          role="presentation"
+        >
+          Order Checkout
+        </div>
+      </div>
+      <div
+        aria-label="nav-bar-buttons"
+        role="presentation"
+      >
+        <button
+          aria-label="show-cart"
+          onClick={[Function]}
+        >
+          Home
+        </button>
+        <button
+          aria-label="logout-button"
+          onClick={[Function]}
+        >
+          Log Out
+        </button>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="sc-gsDKAQ ekZbVV"
+  >
+    <div
+      className="shipping-info-container"
+    >
+      <h3>
+        Shipping Info
+      </h3>
+      <div
+        aria-label="cart-summary-info"
+        role="presentation"
+      >
+        Order has 
+        0
+         items, total price: 
+      </div>
+      <br />
+      <div
+        aria-label="shipping-info"
+        id="shipping-info"
+        role="presentation"
+      >
+        <form
+          method="post"
+        >
+          <div
+            id="first-name"
+          >
+            <label
+              htmlFor="first-name"
+            >
+              First Name:
+            </label>
+            <input
+              aria-label="first-name"
+              id="first-name"
+              name="firstName"
+              required={true}
+            />
+          </div>
+          <div
+            id="last-name"
+          >
+            <label
+              htmlFor="last-name"
+            >
+              Last Name:
+            </label>
+            <input
+              aria-label="last-name"
+              id="last-name"
+              name="lastName"
+              required={true}
+            />
+          </div>
+          <div
+            id="address-1"
+          >
+            <label
+              htmlFor="address-1"
+            >
+              Address 1:
+            </label>
+            <input
+              aria-label="address-1"
+              id="address-1"
+              name="address1"
+              required={true}
+            />
+          </div>
+          <div
+            id="address-2"
+          >
+            <label
+              htmlFor="address-2"
+            >
+              Address 2:
+            </label>
+            <input
+              aria-label="address-2"
+              id="address-2"
+              name="address2"
+            />
+          </div>
+          <div
+            id="city"
+          >
+            <label
+              htmlFor="city"
+            >
+              City:
+            </label>
+            <input
+              aria-label="city"
+              id="city"
+              name="city"
+              required={true}
+            />
+          </div>
+          <div
+            id="state-province"
+          >
+            <label
+              htmlFor="state-province"
+            >
+              State / Province:
+            </label>
+            <input
+              aria-label="state-province"
+              id="state-province"
+              name="stateProvince"
+              required={true}
+            />
+          </div>
+          <div
+            id="postal-code"
+          >
+            <label
+              htmlFor="postal-code"
+            >
+              Postal Code:
+            </label>
+            <input
+              aria-label="postal-code"
+              id="postal-code"
+              name="postalCode"
+              required={true}
+            />
+          </div>
+          <div
+            id="country"
+          >
+            <label
+              htmlFor="country"
+            >
+              Country:
+            </label>
+            <input
+              aria-label="country"
+              id="country"
+              name="country"
+              required={true}
+            />
+          </div>
+          <br />
+          <button
+            aria-label="go-to-payment-info"
+            type="submit"
+          >
+            Go To Payment Info
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>,
+]
+`;

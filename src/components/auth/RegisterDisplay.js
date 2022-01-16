@@ -26,20 +26,16 @@ export default function Register( props ) {
                     {(message && <div id="register-error-message" role="presentation" aria-label='register-error-message'>{message}</div>)}
                     <form onSubmit={handleRegister} method="post">
                         <div>
-                            {/* <label htmlFor="username">Username:</label> */}
-                            <input id="username" aria-label="username" placeholder="User name" required />
+                            <input name="username" aria-label="username" placeholder="User name" required />
                         </div>
                         <div>
-                            {/* <label htmlFor="email">Email:</label> */}
-                            <input id="email" type="email" aria-label="email" placeholder="Email adddress" required />
+                            <input name="email" type="email" aria-label="email" placeholder="Email adddress" required />
                         </div>
                         <div>
-                            {/* <label htmlFor="password">Password:</label> */}
-                            <input id="password" type="password" aria-label="password" placeholder="Password" required />
+                            <input name="password" type="password" aria-label="password" placeholder="Password" required />
                         </div>
                         <div>
-                            {/* <label htmlFor="password2">Re-enter password:</label> */}
-                            <input id="password2" type="password" aria-label="password" placeholder="Re-enter Password" required />
+                            <input name="password2" type="password" aria-label="password-verify" placeholder="Re-enter Password" required />
                         </div>
                         <br />
                         <div>

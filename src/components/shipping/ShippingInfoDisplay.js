@@ -1,7 +1,5 @@
 
 
-import { useState, useEffect } from 'react'
-
 import CartSummary from '../../widgets/CartSummary'
 import NavBar from '../../features/nav/navBar'
 

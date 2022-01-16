@@ -7,6 +7,10 @@ import { Provider } from 'react-redux'
 import store from '../../store'
 import { MemoryRouter as Router } from 'react-router-dom';
 
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
 import NavBarDisplay from '../../components/nav/NavBarDisplay';
 
 // FIXME: need a better way to keep track of cart_items count. this is an inadequate stub
@@ -25,69 +29,78 @@ function mockHandlers() {
 }
 
 describe('<NavBarDisplay /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
+    test.todo('fix unexplainable problems')
 
     // it('should display a header message', () => { // TODO: check other components that have header messages, and refactor to here
-    //     render(<Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router></ThemeProvider>);
     //     screen.getByRole('presentation', {name: /header-message/i});
     //     // TODO: test conditional header messages in feature tests
     // });
     // it('should render Current Cart item count', () => {
-    //     render(<Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router></ThemeProvider>);
     //     screen.getByRole('presentation', { name: /header-current-cart-item-count/i})
     // })
     // it('renders and clicks a logout button', () => {
-    //     render(<Provider store={store}><Router>
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
     //                 <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
-    //             </Router></Provider>);
+    //             </Router></Provider>
+    //             </ThemeProvider>);
 
     //     const theVal = screen.getByRole('button', { name: /logout/i});
     //     fireEvent.click(theVal);
     // });
 
     // it('renders and clicks a home button if user is not on dashboard', () => {
-    //     render(<Provider store={store}><Router>
-    //                 <NavBarDisplay calledFrom="login" handlers={mockHandlers()} />
-    //             </Router></ Provider>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
+    //                 <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
+    //             </Router></Provider>
+    //             </ThemeProvider>);
 
     //     const theVal = screen.getByRole('button', { name: /home/i});
     //     fireEvent.click(theVal);
     // });
     // it('renders and clicks a show cart button if user is not on dashboard', () => {
-    //     render(<Provider store={store}><Router>
-    //                 <NavBarDisplay calledFrom="login" handlers={mockHandlers()} />
-    //             </Router></Provider>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
+    //                 <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
+    //             </Router></Provider>
+    //             </ThemeProvider>);
 
     //     const theVal = screen.getByRole('button', { name: /show-cart/i});
     //     fireEvent.click(theVal);
     // });
     // it('renders and clicks a checkout button if user is on the cart page', () => {
-    //     render(<Provider store={store}><Router>
-    //                 <NavBarDisplay calledFrom="cart"  handlers={mockHandlers()} />
-    //             </Router></Provider>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
+    //                 <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
+    //             </Router></Provider>
+    //             </ThemeProvider>);
 
     //     const theVal = screen.getByRole('button', { name: /checkout/i});
     //     fireEvent.click(theVal);
     // });
     // it('renders and clicks a cancel button if user is on the shipping info page', () => {
-    //     render(<Provider store={store}><Router>
-    //                 <NavBarDisplay calledFrom="shippingInfo" handlers={mockHandlers()} />
-    //             </Router></Provider>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
+    //                 <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
+    //             </Router></Provider>
+    //             </ThemeProvider>);
 
     //     const theVal = screen.getByRole('button', { name: /cancel/i});
     //     fireEvent.click(theVal);
     // });
     // it('renders and clicks a cancel button if user is on the payment info page', () => {
-    //     render(<Provider store={store}><Router>
-    //                 <NavBarDisplay calledFrom="paymentInfo" handlers={mockHandlers()} />
-    //             </Router></Provider>);
+    //     render(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
+    //                 <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
+    //             </Router></Provider>
+    //             </ThemeProvider>);
 
     //     const theVal = screen.getByRole('button', { name: /cancel/i});
     //     fireEvent.click(theVal);
     // });
 
     // it('renders a snapshot', () => {
-    //     const tree = renderer.create(<Router><NavBarDisplay handlers={mockHandlers()}  /></Router>).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><Router><NavBarDisplay calledFrom="" handlers={mockHandlers()} /></Router><Provider store={store}><Router>
+    //                                     <NavBarDisplay calledFrom="dashboard" handlers={mockHandlers()} />
+    //                                 </Router></Provider>
+    //                                 </ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();
     // });
 }); // end component

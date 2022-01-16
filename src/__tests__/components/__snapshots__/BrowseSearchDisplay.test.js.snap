@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BrowseSearchDisplay /> component tests creates a snapshot 1`] = `
+<div
+  className="sc-bdvvtL bXtRzv"
+>
+  <div
+    aria-label="browse-search"
+    className="browse-search-container"
+    role="presentation"
+  >
+    <div
+      aria-label="browse"
+      role="presentation"
+    >
+      <label
+        className="browse"
+        htmlFor="product-categories"
+      >
+        Product Categories: 
+      </label>
+      <select
+        aria-label="product-categories"
+        defaultValue="0"
+        id="product-categories"
+        name="productCategories"
+        onChange={[MockFunction]}
+        role="presentation"
+      >
+        <option
+          value="0"
+        >
+          Show all products
+        </option>
+        <option
+          value={4}
+        >
+          Auto
+        </option>
+        <option
+          value={3}
+        >
+          Health
+        </option>
+        <option
+          value={1}
+        >
+          Pets
+        </option>
+        <option
+          value={2}
+        >
+          Tech
+        </option>
+      </select>
+    </div>
+    <div
+      aria-label="search"
+      className="search"
+      role="presentation"
+    >
+      <form
+        method="post"
+        onSubmit={[MockFunction]}
+      >
+        <div>
+          <label
+            htmlFor="searchTerms"
+          >
+            Search: 
+          </label>
+          <input
+            aria-label="search-terms"
+            id="searchTerms"
+            name="searchTerms"
+            placeholder="Search Products"
+          />
+          <button
+            aria-label="search-button"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

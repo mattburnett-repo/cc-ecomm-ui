@@ -1,21 +1,18 @@
 // 20211217: Wireframe https://wireframe.cc/nx8Dv9
 
-// import { render, screen, fireEvent } from '@testing-library/react';
-// import renderer from 'react-test-renderer';
-// import userEvent from '@testing-library/user-event';
+import { render, screen, fireEvent } from '@testing-library/react';
+import renderer from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
 
-// import PaymentInfoDisplay from '../../components/payments/PaymentInfoDisplay';
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
+import PaymentInfoDisplay from '../../components/payments/PaymentInfoDisplay';
 
 describe('<PaymentInfo /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
-
-    // beforeEach(() => render(<PaymentInfoDisplay  />));
-
-    // test.todo('should render')
-    // test.todo('should render cart / order summary')
-    // test.todo('should render shipping summary')
-    // test.todo('should render Stripe Elements')
-    // test.todo('should render a snapshot')
+    test.todo('fix unexplainable problems')
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><PaymentInfoDisplay  /></ThemeProvider>));
 
     // it('should render', () => {
     //     screen.getByRole('presentation', { name: /payment-info/i})
@@ -27,7 +24,7 @@ describe('<PaymentInfo /> component tests', () => {
     //     screen.getByRole('presentation', { name: /shipping-summary-info/i} )
     // })
 
-    // Payment data capture is performed by Stripe elements
+    test.todo('Payment data capture is performed by Stripe elements.');
 
     // it('should render a payment types selector', () => {
     //     screen.getByRole('presentation', { name: /^payment-types$/i })
@@ -83,7 +80,7 @@ describe('<PaymentInfo /> component tests', () => {
     // });
 
     // it('creates a snapshot', () => {
-    //     const tree = renderer.create(<PaymentInfoDisplay />).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><PaymentInfoDisplay /></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();  
     // });
 }); // end component

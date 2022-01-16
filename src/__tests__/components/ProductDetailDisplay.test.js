@@ -5,15 +5,17 @@ import renderer from 'react-test-renderer';
 
 import { Provider } from 'react-redux';
 import store from '../../store'
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
 
 import ProductDetailDisplay from '../../components/product/ProductDetailDisplay';
 
 import { mockProduct } from '../../utils/mockData'
 
 describe('<ProductDetailDisplay /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
-
-    // beforeEach(() => render(<Provider store={store}><ProductDetailDisplay data={mockProduct} /></Provider>));
+    test.todo('fix unexplainable problems')
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><Provider store={store}><ProductDetailDisplay data={mockProduct} /></Provider></ThemeProvider>));
 
     // it('should render two Go Back buttons', () => {
     //     let theVals = screen.getAllByRole('button', { name: /product-detail-go-back-button/i})
@@ -59,7 +61,7 @@ describe('<ProductDetailDisplay /> component tests', () => {
     //     expect(options[9].selected).toBeFalsy();
     // });
 
-    // TODO: add mockHandleAddToCart test/s
+    // // TODO: add mockHandleAddToCart test/s
     // it('should display an add-to-cart button', () => {
     //     let theVal = screen.getByRole('button', {name: /add-to-cart/i});
     //     fireEvent.click(theVal)
@@ -68,7 +70,7 @@ describe('<ProductDetailDisplay /> component tests', () => {
     // });
 
     // it('renders a snapshot', () => {
-    //     const tree = renderer.create(<Provider store={store}><ProductDetailDisplay data={mockProduct} /></Provider>).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><Provider store={store}><ProductDetailDisplay data={mockProduct} /></Provider></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();
     // });
 }) // end component

@@ -4,6 +4,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 // import userEvent from '@testing-library/user-event';
 
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
 import { mockOrderData } from '../../utils/mockData';
 import OrdersDisplay from '../../components/orders/OrdersDisplay'
 
@@ -16,9 +20,9 @@ function mockHandlers () {
 }
 
 describe('<OrdersDisplay orderData={mockOrderData} /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
-
-    // beforeEach(() => render(<OrdersDisplay ordersData={mockOrderData} handlers={mockHandlers()}/>));
+    test.todo('fix unexplainable problems')
+    
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><OrdersDisplay ordersData={mockOrderData} handlers={mockHandlers()}/></ThemeProvider>));
 
     // it('should render a component', () => {
     //     screen.getByRole('presentation', { name: /^orders$/i})
@@ -46,7 +50,7 @@ describe('<OrdersDisplay orderData={mockOrderData} /> component tests', () => {
     // })
 
     // it('creates a snapshot', () => {
-    //     const tree = renderer.create(<OrdersDisplay ordersData={mockOrderData}  handlers={mockHandlers()} />).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><OrdersDisplay ordersData={mockOrderData}  handlers={mockHandlers()} /></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();  
     // });
 }) // end component

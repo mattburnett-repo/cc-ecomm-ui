@@ -6,6 +6,9 @@ import renderer from 'react-test-renderer';
 
 import { Provider } from 'react-redux';
 import store from '../../store'
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
 
 import ProductsListingDisplay from '../../components/products/ProductsListingDisplay';
 
@@ -22,11 +25,10 @@ function handlers() {
 }
 
 describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
+    test.todo('fix unexplainable problems')
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><Provider store={store}><ProductsListingDisplay data={mockProducts} handlers={handlers()}/></ Provider></ThemeProvider>));
 
-    // beforeEach(() => render(<Provider store={store}><ProductsListingDisplay data={mockProducts} handlers={handlers()}/></ Provider>));
-
-    // it('should display products', () => { 
+    // it('should render', () => { 
     //     screen.getByRole('presentation', {name: /products/i});
         
     //     let theVals = screen.getAllByRole('presentation', {name: /^product$/i});
@@ -79,7 +81,7 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
     //     expect(options[9].selected).toBeFalsy();
     // });
 
-    // TODO: add mockHandleAddToCart test/s
+    // // TODO: add mockHandleAddToCart test/s
     // it('should display an add-to-cart button', () => {
     //     let theVals = screen.getAllByRole('button', {name: /add-to-cart/i});
 
@@ -91,7 +93,7 @@ describe('<ProductsListingDisplay data={mockData} /> component tests', () => {
     // })
 
     // it('creates a snapshot', () => {
-    //     const tree = renderer.create(<Provider store={store}><ProductsListingDisplay data={mockProducts}  handlers={handlers()} /></ Provider>).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><Provider store={store}><ProductsListingDisplay data={mockProducts}  handlers={handlers()} /></ Provider></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();  
     // });
 }); // end component

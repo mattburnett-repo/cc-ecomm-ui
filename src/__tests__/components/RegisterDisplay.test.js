@@ -4,6 +4,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
 import RegisterDisplay from '../../components/auth/RegisterDisplay';
 
 const mockHandleClick = jest.fn();
@@ -19,13 +23,11 @@ function mockHandlers() {
 }
 
 describe('<RegisterDisplay /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
+    beforeEach(() => render(<ThemeProvider theme= { theme }><RegisterDisplay handlers={mockHandlers()}/></ThemeProvider>));
 
-    // beforeEach(() => render(<RegisterDisplay handlers={mockHandlers()}/>));
-
-    // it('renders the display component', () => {
-    //     screen.getByRole('presentation', { name: /^register-display$/i })
-    // })
+    it('renders the display component', () => {
+        screen.getByRole('presentation', { name: /^register-display$/i })
+    })
 
     // it('renders an oauth section', () => {
     //     screen.getByRole('presentation', { name: /^oauth$/i })
@@ -57,77 +59,70 @@ describe('<RegisterDisplay /> component tests', () => {
     //     expect(mockHandleClick()).toBe('Log in with GitHub');               // FIXME
     // });
 
-    // it('renders a registration form', () => {
-    //     screen.getByRole('presentation', { name: /register-display-form/i})
-    // })
-    // it('renders a username input', () => {
-    //     screen.getByRole('textbox', { name: /username/i});
-    // });
-    // it('accept a value for username', ()=> {
-    //     const theElement = screen.getByRole('textbox', {name: /username/i});
+    it('renders a registration form', () => {
+        screen.getByRole('presentation', { name: /register-display-form/i})
+    })
+    it('renders a username input', () => {
+        screen.getByRole('textbox', { name: /username/i});
+    });
+    it('accept a value for username', ()=> {
+        const theElement = screen.getByRole('textbox', {name: /username/i});
+        userEvent.type(theElement, 'asdf');
+        
+        expect(theElement).toHaveValue('asdf');
+    });
+    it('renders an email input and accepts input', () => {
+        const theElement = screen.getByRole('textbox', { name: /email/i});
+        userEvent.type(theElement, 'asdf@asdf.com');
+        
+        expect(theElement).toHaveValue('asdf@asdf.com');
+    });
+
+    test.todo('doesn\'t allow for password field tests. figure this out.')
+
+    // it('renders a password input and accepts input', () => {
+    //     const theElement = screen.getByRole('textbox', { name: /password/i});
     //     userEvent.type(theElement, 'asdf');
         
     //     expect(theElement).toHaveValue('asdf');
     // });
-    // it('renders an email input', () => {
-    //     screen.getByRole('textbox', { name: /email/i});
-    // });
-    // it('accepts a value for email', ()=> {
-    //     const theElement = screen.getByLabelText('Email:');
-    //     userEvent.type(theElement, 'asdf@asdf.com');
-        
-    //     expect(theElement).toHaveValue('asdf@asdf.com');
-    // });
-    // it('renders a password input', () => {
-    //     screen.getByLabelText('Password:');
-    // });
-    // it('accepts a value for password', ()=> {
-    //     const theElement = screen.getByLabelText('Password:');
-    //     userEvent.type(theElement, 'asdf');
-        
-    //     expect(theElement).toHaveValue('asdf');
-    // });
-    // it('renders a password verification input', () => {
-    //     screen.getByLabelText('Re-enter password:');
-    // });
-    // it('accepts a value for password verification', ()=> {
-    //     const theElement = screen.getByLabelText('Re-enter password:');
+    // it('renders a password verification input and accepts input', () => {
+    //     const theElement = screen.getByRole('textbox', { name: /password-verify/i});
     //     userEvent.type(theElement, 'asdf');
         
     //     expect(theElement).toHaveValue('asdf');
     // });
 
-    // it('renders a Register button', () => {
-    //     screen.getByRole('button', { name: /register/i});
-    // });
-    // it('clicks the Register button', () => {
-    //     mockHandleRegister.mockImplementation((e) => {e.preventDefault()});
-    //     const theVal = screen.getByRole('button', {name: /register-button/i});
-    //     fireEvent.click(theVal);
+    it('renders a Register button', () => {
+        screen.getByRole('button', { name: /register/i});
+    });
+    it('clicks the Register button', () => {
+        mockHandleRegister.mockImplementation((e) => {e.preventDefault()});
+        const theVal = screen.getByRole('button', {name: /register-button/i});
+        fireEvent.click(theVal);
 
-    //     expect(mockHandleRegister.mock.calls.length).toBe(1);
-    //     // expect(mockHandleClick()).toBe('Log in'); 
-    // });
+        expect(mockHandleRegister.mock.calls.length).toBe(1);
+        // expect(mockHandleClick()).toBe('Log in'); 
+    });
 
-    // it('renders a Login section', () => {
-    //     let theVal = screen.getByRole('presentation', { name: /^login$/i});
-    //     expect(theVal).toHaveTextContent('Login');
-    // });
-    // it('renders a Login link', () => {
-    //     let theVal = screen.getByRole('link', { name: /login-link/i});
-    //     expect(theVal).toHaveTextContent('Login');
-    // });
-    // it('clicks the Login ink', () => {
-    //     const theVal = screen.getByRole('link', {name: /login-link/i});
-    //     fireEvent.click(theVal);
+    it('renders a Login section', () => {
+        let theVal = screen.getByRole('presentation', { name: /^login$/i});
+        expect(theVal).toHaveTextContent('Login');
+    });
+    it('renders a Login link', () => {
+        let theVal = screen.getByRole('link', { name: /login-link/i});
+        expect(theVal).toHaveTextContent('Login');
+    });
+    it('clicks the Login link', () => {
+        const theVal = screen.getByRole('link', {name: /login-link/i});
+        fireEvent.click(theVal);
 
-    //     // expect(theVal).toHaveBeenClicked() // FIXME: find the appropriate matcher
-    // });
+        // expect(theVal).toHaveBeenClicked() // FIXME: find the appropriate matcher
+    });
 
     // it('renders a snapshot', () => {
-    //     const tree = renderer.create(<RegisterDisplay handlers={mockHandlers()}/>).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><RegisterDisplay handlers={mockHandlers()}/></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();
     // });
-
 }); // end component
 

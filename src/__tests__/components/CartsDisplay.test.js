@@ -7,6 +7,10 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import store from '../../store'
 
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
 import CartsDisplay from '../../components/carts/CartsDisplay';
 
 import { mockCartsData } from '../../utils/mockData'
@@ -27,9 +31,8 @@ function mockHandlers () {
 }
 
 describe('<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
-
-    // beforeEach(() => render(<Provider store={store}><CartsDisplay cartsData={allCartData()} handlers={mockHandlers()}/></Provider>));
+    test.todo('fix unexplainable problems')
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><Provider store={store}><CartsDisplay cartsData={allCartData()} handlers={mockHandlers()}/></Provider></ThemeProvider>));
 
     // it('should render a component', () => {
     //     screen.getAllByRole('presentation', {name: /^carts$/i});
@@ -55,7 +58,7 @@ describe('<CartsDisplay cartsData={mockCartData} handlers={mockHandlers()}/> com
     // })
 
     // it('creates a snapshot', () => {
-    //   const tree = renderer.create(<Provider store={store}><CartsDisplay cartsData={allCartData()} handlers={mockHandlers()} /></Provider>).toJSON();
+    //   const tree = renderer.create(<ThemeProvider theme= { theme }><Provider store={store}><CartsDisplay cartsData={allCartData()} handlers={mockHandlers()}/></Provider></ThemeProvider>).toJSON();
     //   expect(tree).toMatchSnapshot();  
     // });
 }); // end component

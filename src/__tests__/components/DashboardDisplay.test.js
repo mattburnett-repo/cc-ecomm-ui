@@ -8,15 +8,17 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux'
 import store from '../../store'
 
+import { ThemeProvider } from 'styled-components'
+import theme from '../../components/styles/Theme'
+// <ThemeProvider theme= { theme }> </ThemeProvider>
+
 import DashboardDisplay from '../../components/dashboard/DashboardDisplay';
 
 import { mockOrderData, mockCartData } from '../../utils/mockData'
 
 describe('<DashboardDisplay /> component tests', () => {
-    test.todo('Adding StyledComponents results in \'TypeError: Cannot read properties of undefined (reading \'light\')\' errors. Figure this out someday.')
-
-    // test.todo('there are test problems with the history.push call in CheckLoginStatus. Fix this someday')
-    // beforeEach(() => render(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>));
+    test.todo('there are test problems with the history.push call in CheckLoginStatus. Fix this someday')
+    // beforeEach(() => render(<ThemeProvider theme= { theme }><Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider></ThemeProvider>));
 
     // it('should render a NavBar', () => {
     //     screen.getByRole('presentation', {name: /nav-bar/i});
@@ -35,7 +37,7 @@ describe('<DashboardDisplay /> component tests', () => {
     // })
 
     // it('renders a snapshot', () => {
-    //     const tree = renderer.create(<Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider>).toJSON();
+    //     const tree = renderer.create(<ThemeProvider theme= { theme }><Provider store={store}><DashboardDisplay cartData={ mockCartData } /></Provider></ThemeProvider>).toJSON();
     //     expect(tree).toMatchSnapshot();
     // });
 }); // end component
