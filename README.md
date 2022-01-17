@@ -57,7 +57,7 @@ Tests are located in two folders under the src/\__tests\__ folder
 * React Testing Library
 * Passport Authentication Library
   * Local Strategy
-  * Google OAuth Strategy
+  * Google OAuth Strategy 
 * JSON Web Token authorization
 *  E-Commerce REST API (built as separate project)
      * Production: https://e-commerce-rest-api-v2.herokuapp.com/
@@ -68,7 +68,6 @@ Tests are located in two folders under the src/\__tests\__ folder
 ---
 
 ## Features
-* User can log in with either a local account, or with OAuth through Google
 * API calls are authenticated using Json Web Tokens
 * Displays a user-specific dashboard
 * Users can browse / search product categories
