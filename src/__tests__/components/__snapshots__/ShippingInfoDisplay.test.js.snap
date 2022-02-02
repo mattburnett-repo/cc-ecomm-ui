@@ -6,7 +6,9 @@ Array [
     className="sc-bdvvtL jYEqkG"
   >
     <div
+      aria-label="nav-bar-container"
       className="nav-bar-container"
+      role="presentation"
     >
       <div />
       <div
@@ -26,7 +28,7 @@ Array [
         role="presentation"
       >
         <button
-          aria-label="show-cart"
+          aria-label="go-home-button"
           onClick={[Function]}
         >
           Home

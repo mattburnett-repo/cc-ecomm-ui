@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrdersDisplay orderData={mockOrderData} /> component tests creates a snapshot 1`] = `
+<div
+  className="sc-bdvvtL iuBcOW"
+>
+  <h2>
+    Order History
+  </h2>
+  <div
+    aria-label="orders"
+    className="orders"
+    role="presentation"
+  >
+    <label>
+      ID:
+    </label>
+    <label>
+      Price:
+    </label>
+    <label>
+      Date:
+    </label>
+    <div
+      aria-label="order-item"
+      role="presentation"
+    >
+      <div>
+        1
+      </div>
+      <div>
+        30.00
+      </div>
+      <div />
+    </div>
+  </div>
+</div>
+`;

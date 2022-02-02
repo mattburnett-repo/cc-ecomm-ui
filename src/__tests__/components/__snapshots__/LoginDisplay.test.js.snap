@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
+<div
+  className="sc-bdvvtL hRDtKg"
+>
+  <div
+    aria-label="login-display-container"
+    role="presentation"
+  >
+    <div
+      aria-label="login-header"
+      id="auth-header"
+      role="presentation"
+    >
+      Log In
+    </div>
+    <br />
+    <div
+      aria-label="login-display-form"
+      role="presentation"
+    >
+      <form
+        method="post"
+        onSubmit={[MockFunction]}
+      >
+        <div>
+          <input
+            aria-label="username"
+            id="username"
+            placeholder="User name"
+            required={true}
+          />
+        </div>
+        <div>
+          <input
+            aria-label="password"
+            data-testid="password"
+            id="password"
+            placeholder="Password"
+            required={true}
+            type="password"
+          />
+        </div>
+        <br />
+        <div>
+          <button
+            aria-label="login"
+            type="submit"
+          >
+            Log in
+          </button>
+        </div>
+      </form>
+    </div>
+    <br />
+    <div
+      aria-label="register"
+      role="presentation"
+    >
+      <label
+        htmlFor="register"
+      >
+        Don't have an account yet? 
+      </label>
+      <a
+        aria-label="register-link"
+        href="/register"
+        id="register"
+      >
+        Register
+      </a>
+    </div>
+  </div>
+</div>
+`;

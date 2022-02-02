@@ -78,20 +78,28 @@ describe('<RegisterDisplay /> component tests', () => {
         expect(theElement).toHaveValue('asdf@asdf.com');
     });
 
-    test.todo('doesn\'t allow for password field tests. figure this out.')
-
-    // it('renders a password input and accepts input', () => {
-    //     const theElement = screen.getByRole('textbox', { name: /password/i});
-    //     userEvent.type(theElement, 'asdf');
+    // I don't like using test ids, but can't find a simple / clean solution to test passwords,
+    //      so here we are...
+    it('renders a password input', () => {
+        screen.getByTestId('password')
+        // screen.getByLabelText('Password:');
+    });
+    it('accepts a value for password', ()=> {
+        const theElement = screen.getByTestId('password')
+        userEvent.type(theElement, 'asdf');
         
-    //     expect(theElement).toHaveValue('asdf');
-    // });
-    // it('renders a password verification input and accepts input', () => {
-    //     const theElement = screen.getByRole('textbox', { name: /password-verify/i});
-    //     userEvent.type(theElement, 'asdf');
+        expect(theElement).toHaveValue('asdf');
+    });
+    it('renders a password verify input', () => {
+        screen.getByTestId('password-verify')
+        // screen.getByLabelText('Password:');
+    });
+    it('accepts a value for password verify', ()=> {
+        const theElement = screen.getByTestId('password-verify')
+        userEvent.type(theElement, 'asdf');
         
-    //     expect(theElement).toHaveValue('asdf');
-    // });
+        expect(theElement).toHaveValue('asdf');
+    });
 
     it('renders a Register button', () => {
         screen.getByRole('button', { name: /register/i});

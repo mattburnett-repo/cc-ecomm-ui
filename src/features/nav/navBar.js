@@ -48,7 +48,7 @@ export default function NavBar ( props ) {
             headerMessage = `Hello ${user.username}`
             break;
         case 'productsListing':
-            headerMessage = '(Category) Products'
+            // headerMessage = '(Category) Products'
             break;
         case 'productDetail':
             headerMessage = `${productName}`

@@ -32,10 +32,10 @@ export default function Register( props ) {
                             <input name="email" type="email" aria-label="email" placeholder="Email adddress" required />
                         </div>
                         <div>
-                            <input name="password" type="password" aria-label="password" placeholder="Password" required />
+                            <input name="password" type="password" aria-label="password" data-testid="password" placeholder="Password" required />
                         </div>
                         <div>
-                            <input name="password2" type="password" aria-label="password-verify" placeholder="Re-enter Password" required />
+                            <input name="password2" type="password" aria-label="password-verify" data-testid="password-verify" placeholder="Re-enter Password" required />
                         </div>
                         <br />
                         <div>

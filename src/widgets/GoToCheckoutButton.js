@@ -5,6 +5,6 @@ export default function GoToCheckoutButton() {
     const history = useHistory()
 
     return (
-        <button aria-label="show-cart" onClick={() => history.push('/shipping-info')}>Checkout</button>
+        <button aria-label="go-to-checkout" onClick={() => history.push('/shipping-info')}>Checkout</button>
     )
 }

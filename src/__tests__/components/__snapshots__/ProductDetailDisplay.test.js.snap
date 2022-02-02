@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
+<div
+  className="sc-gsDKAQ YtaTd"
+>
+  <div
+    aria-label="product-detail-display"
+    className="product-detail-container"
+    role="presentation"
+  >
+    <div>
+      <img
+        alt="glowing cube"
+        className="product-image"
+        src="https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg"
+      />
+    </div>
+    <div
+      aria-label="product-info"
+      className="product-info"
+      role="presentation"
+    >
+      <label
+        htmlFor="product-description"
+      >
+        Description:
+      </label>
+      <div
+        aria-label="product-description"
+        className="product-description"
+        name="product-description"
+        role="presentation"
+      >
+        prod desc 02
+      </div>
+    </div>
+    <div
+      className="sc-bdvvtL cuvldm"
+    >
+      <div
+        aria-label="order-controls"
+        className="order-controls"
+        role="presentation"
+      >
+        <div
+          aria-label="item-price"
+          id="item-price"
+          role="presentation"
+        >
+          <label
+            htmlFor="item-price"
+          >
+            Price: 
+          </label>
+          1.00
+        </div>
+        <div>
+           
+        </div>
+        <div
+          aria-label="item-quantity"
+          role="presentation"
+        >
+          <label
+            htmlFor="item-quantity-selector"
+          >
+            Quantity:
+          </label>
+          <select
+            aria-label="item-quantity-selector"
+            defaultValue={1}
+            id="item-quantity-selector"
+            name="itemQuantity"
+            onChange={[Function]}
+            role="presentation"
+          >
+            <option
+              value={1}
+            >
+              1
+            </option>
+            <option
+              value={2}
+            >
+              2
+            </option>
+            <option
+              value={3}
+            >
+              3
+            </option>
+            <option
+              value={4}
+            >
+              4
+            </option>
+            <option
+              value={5}
+            >
+              5
+            </option>
+            <option
+              value={6}
+            >
+              6
+            </option>
+            <option
+              value={7}
+            >
+              7
+            </option>
+            <option
+              value={8}
+            >
+              8
+            </option>
+            <option
+              value={9}
+            >
+              9
+            </option>
+            <option
+              value={10}
+            >
+              10
+            </option>
+          </select>
+          <button
+            aria-label="remove-from-cart-button"
+            className="remove-from-cart-button"
+            onClick={[Function]}
+          >
+            Remove Item
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

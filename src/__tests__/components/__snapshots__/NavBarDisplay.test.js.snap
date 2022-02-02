@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBarDisplay /> component tests renders a snapshot 1`] = `
+Array [
+  <div
+    className="sc-bdvvtL jYEqkG"
+  >
+    <div
+      aria-label="nav-bar-container"
+      className="nav-bar-container"
+      role="presentation"
+    >
+      <div />
+      <div
+        aria-label="nav-bar-message"
+        role="presentation"
+      >
+        <div
+          aria-label="header-message"
+          className="header-message"
+          role="presentation"
+        />
+      </div>
+      <div
+        aria-label="nav-bar-buttons"
+        role="presentation"
+      />
+    </div>
+  </div>,
+  <div
+    className="sc-bdvvtL jYEqkG"
+  >
+    <div
+      aria-label="nav-bar-container"
+      className="nav-bar-container"
+      role="presentation"
+    >
+      <div />
+      <div
+        aria-label="nav-bar-message"
+        role="presentation"
+      >
+        <div
+          aria-label="header-message"
+          className="header-message"
+          role="presentation"
+        />
+      </div>
+      <div
+        aria-label="nav-bar-buttons"
+        role="presentation"
+      />
+    </div>
+  </div>,
+]
+`;

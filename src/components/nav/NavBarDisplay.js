@@ -13,7 +13,7 @@ export default function NavBarDisplay (props) {
 
     return (
         <StyledNavBar>
-            <div className='nav-bar-container'>
+            <div className='nav-bar-container' role="presentation" aria-label="nav-bar-container">
                 <div></div>
                 <div role="presentation" aria-label="nav-bar-message">
                     <div className="header-message" role="presentation" aria-label="header-message">{headerMessage}</div>

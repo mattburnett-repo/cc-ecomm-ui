@@ -5,6 +5,6 @@ export default function GoHomeButton() {
     const history = useHistory()
 
     return (
-        <button aria-label="show-cart" onClick={() => history.push('/dashboard')}>Home</button>
+        <button aria-label="go-home-button" onClick={() => history.push('/dashboard')}>Home</button>
     )
 }

@@ -21,14 +21,12 @@ function mockHandlers() {
     }
 }
 
-describe('<LoginDisplay /> component tests', () => { 
-    test.todo('fix unexplainable problems')
-    
-    // beforeEach(() => render(<ThemeProvider theme= { theme }><LoginDisplay handlers={mockHandlers()} /></ThemeProvider>));
+describe('<LoginDisplay /> component tests', () => {     
+    beforeEach(() => render(<ThemeProvider theme= { theme }><LoginDisplay handlers={mockHandlers()} /></ThemeProvider>));
 
-    // it('renders the display component', () => {
-    //     screen.getByRole('presentation', { name: /^login-display$/i })
-    // })
+    it('renders the display component', () => {
+        screen.getByRole('presentation', { name: /login-display-container/i })
+    })
 
     // it('renders an oauth section', () => {
     //     screen.getByRole('presentation', { name: /^oauth$/i })
@@ -60,56 +58,60 @@ describe('<LoginDisplay /> component tests', () => {
     //     expect(mockHandleClick()).toBe('Log in with GitHub');               // FIXME
     // });
 
-    // it('renders a login form', () => {
-    //     screen.getByRole('presentation', { name: /login-display-form/i})
-    // })
-    // it('renders a username input', () => {
-    //     screen.getByRole('textbox', { name: /username/i});
-    // });
-    // it('accept a value for username', ()=> {
-    //     const theElement = screen.getByRole('textbox', {name: /username/i});
-    //     userEvent.type(theElement, 'asdf');
+    it('renders a login form', () => {
+        screen.getByRole('presentation', { name: /login-display-form/i})
+    })
+    it('renders a username input', () => {
+        screen.getByRole('textbox', { name: /username/i});
+    });
+    it('accept a value for username', ()=> {
+        const theElement = screen.getByRole('textbox', {name: /username/i});
+        userEvent.type(theElement, 'asdf');
         
-    //     expect(theElement).toHaveValue('asdf');
-    // });
-    // it('renders a password input', () => {
-    //     screen.getByLabelText('Password:');
-    // });
-    // it('accepts a value for password', ()=> {
-    //     const theElement = screen.getByLabelText('Password:');
-    //     userEvent.type(theElement, 'asdf');
+        expect(theElement).toHaveValue('asdf');
+    });
+
+    // I don't like using test ids, but can't find a simple / clean solution to test passwords,
+    //      so here we are...
+    it('renders a password input', () => {
+        screen.getByTestId('password')
+        // screen.getByLabelText('Password:');
+    });
+    it('accepts a value for password', ()=> {
+        const theElement = screen.getByTestId('password')
+        userEvent.type(theElement, 'asdf');
         
-    //     expect(theElement).toHaveValue('asdf');
-    // });
-    // it('renders a login button', () => {
-    //     screen.getByRole('button', { name: /login/i});
-    // });
-    // it('clicks the Login button', () => {
-    //     mockHandleLogin.mockImplementation((e) => {e.preventDefault()});
-    //     const theVal = screen.getByRole('button', {name: /login/i});
-    //     fireEvent.click(theVal);
+        expect(theElement).toHaveValue('asdf');
+    });
+    it('renders a login button', () => {
+        screen.getByRole('button', { name: /login/i});
+    });
+    it('clicks the Login button', () => {
+        mockHandleLogin.mockImplementation((e) => {e.preventDefault()});
+        const theVal = screen.getByRole('button', {name: /login/i});
+        fireEvent.click(theVal);
 
-    //     expect(mockHandleLogin.mock.calls.length).toBe(1);
-    //     // expect(mockHandleClick()).toBe('Log in'); 
-    // });
+        expect(mockHandleLogin.mock.calls.length).toBe(1);
+        // expect(mockHandleClick()).toBe('Log in'); 
+    });
 
-    // it('renders a Register section', () => {
-    //     let theVal = screen.getByRole('presentation', { name: /^register$/i});
-    //     expect(theVal).toHaveTextContent('Register');
-    // });
-    // it('renders a Register link', () => {
-    //     let theVal = screen.getByRole('link', { name: /register-link/i});
-    //     expect(theVal).toHaveTextContent('Register');
-    // });
-    // it('clicks the Register link', () => {
-    //     const theVal = screen.getByRole('link', {name: /register-link/i});
-    //     fireEvent.click(theVal);
+    it('renders a Register section', () => {
+        let theVal = screen.getByRole('presentation', { name: /^register$/i});
+        expect(theVal).toHaveTextContent('Register');
+    });
+    it('renders a Register link', () => {
+        let theVal = screen.getByRole('link', { name: /register-link/i});
+        expect(theVal).toHaveTextContent('Register');
+    });
+    it('clicks the Register link', () => {
+        const theVal = screen.getByRole('link', {name: /register-link/i});
+        fireEvent.click(theVal);
 
-    //     // expect(theVal).toHaveBeenClicked() // FIXME: find the appropriate matcher
-    // });
+        // expect(theVal).toHaveBeenClicked() // FIXME: find the appropriate matcher
+    });
 
-    // it('renders a snapshot', () => {
-    //     const tree = renderer.create(<ThemeProvider theme= { theme }><LoginDisplay handlers={mockHandlers()} /></ThemeProvider>).toJSON();
-    //     expect(tree).toMatchSnapshot();
-    // });
+    it('renders a snapshot', () => {
+        const tree = renderer.create(<ThemeProvider theme= { theme }><LoginDisplay handlers={mockHandlers()} /></ThemeProvider>).toJSON();
+        expect(tree).toMatchSnapshot();
+    });
 })

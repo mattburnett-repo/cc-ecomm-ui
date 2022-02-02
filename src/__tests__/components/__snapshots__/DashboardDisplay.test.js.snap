@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
+<div>
+  <div
+    className="sc-bdvvtL jYEqkG"
+  >
+    <div
+      aria-label="nav-bar-container"
+      className="nav-bar-container"
+      role="presentation"
+    >
+      <div />
+      <div
+        aria-label="nav-bar-message"
+        role="presentation"
+      >
+        <div
+          aria-label="header-message"
+          className="header-message"
+          role="presentation"
+        >
+          Hello undefined
+        </div>
+        <div
+          aria-label="header-current-cart-item-count"
+          role="presentation"
+        >
+          <div>
+            You have no items in your current cart
+          </div>
+        </div>
+      </div>
+      <div
+        aria-label="nav-bar-buttons"
+        role="presentation"
+      >
+        <button
+          aria-label="go-home-button"
+          onClick={[Function]}
+        >
+          Home
+        </button>
+        <button
+          aria-label="logout-button"
+          onClick={[Function]}
+        >
+          Log Out
+        </button>
+      </div>
+    </div>
+  </div>
+  <header
+    aria-controls="react-collapsed-panel-7"
+    aria-expanded={false}
+    disabled={false}
+    id="react-collapsed-toggle-7"
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+    type="button"
+  >
+    <h2>
+      Click to 
+      Show
+       Order and Cart History 
+    </h2>
+  </header>
+  <div
+    aria-hidden={true}
+    id="react-collapsed-panel-7"
+    onTransitionEnd={[Function]}
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "display": "none",
+        "height": "0px",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      className="sc-hKwDye hXctKo"
+    >
+      <div
+        className="sc-gsDKAQ gPuzIT"
+      >
+        <h2>
+          Order History
+        </h2>
+        <div
+          aria-label="orders"
+          className="orders"
+          role="presentation"
+        >
+          <label>
+            ID:
+          </label>
+          <label>
+            Price:
+          </label>
+          <label>
+            Date:
+          </label>
+          <h5>
+            No orders to show
+          </h5>
+        </div>
+      </div>
+      <div
+        className="sc-dkPtRN TATKs"
+      >
+        <h2>
+          Cart History
+        </h2>
+        <div
+          aria-label="carts"
+          className="carts"
+          role="presentation"
+        >
+          <label>
+            ID:
+          </label>
+          <label>
+            Date:
+          </label>
+          <h5>
+            No saved carts to show
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <header
+    aria-controls="react-collapsed-panel-8"
+    aria-expanded={false}
+    aria-label="toggle-product-display"
+    disabled={false}
+    id="react-collapsed-toggle-8"
+    onClick={[Function]}
+    role="button"
+    tabIndex={0}
+    type="button"
+  >
+    <h2>
+      Click to 
+      Show
+       Products
+    </h2>
+  </header>
+  <div
+    aria-hidden={true}
+    aria-label="products"
+    id="react-collapsed-panel-8"
+    onTransitionEnd={[Function]}
+    role="presentation"
+    style={
+      Object {
+        "boxSizing": "border-box",
+        "display": "none",
+        "height": "0px",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <div
+      className="sc-eCImPb iOzkHd"
+    >
+      <div
+        aria-label="browse-search"
+        className="browse-search-container"
+        role="presentation"
+      >
+        <div
+          aria-label="browse"
+          role="presentation"
+        >
+          <label
+            className="browse"
+            htmlFor="product-categories"
+          >
+            Product Categories: 
+          </label>
+          <select
+            aria-label="product-categories"
+            defaultValue="0"
+            id="product-categories"
+            name="productCategories"
+            onChange={[Function]}
+            role="presentation"
+          >
+            <option
+              value="0"
+            >
+              Show all products
+            </option>
+          </select>
+        </div>
+        <div
+          aria-label="search"
+          className="search"
+          role="presentation"
+        >
+          <form
+            method="post"
+            onSubmit={[Function]}
+          >
+            <div>
+              <label
+                htmlFor="searchTerms"
+              >
+                Search: 
+              </label>
+              <input
+                aria-label="search-terms"
+                id="searchTerms"
+                name="searchTerms"
+                placeholder="Search Products"
+              />
+              <button
+                aria-label="search-button"
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-iCfMLu boWkIl"
+    >
+      <br />
+    </div>
+  </div>
+</div>
+`;

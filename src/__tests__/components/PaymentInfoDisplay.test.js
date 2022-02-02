@@ -11,7 +11,7 @@ import theme from '../../components/styles/Theme'
 import PaymentInfoDisplay from '../../components/payments/PaymentInfoDisplay';
 
 describe('<PaymentInfo /> component tests', () => {
-    test.todo('fix unexplainable problems')
+    // test.todo('fix unexplainable problems')
     // beforeEach(() => render(<ThemeProvider theme= { theme }><PaymentInfoDisplay  /></ThemeProvider>));
 
     // it('should render', () => {
@@ -24,7 +24,7 @@ describe('<PaymentInfo /> component tests', () => {
     //     screen.getByRole('presentation', { name: /shipping-summary-info/i} )
     // })
 
-    test.todo('Payment data capture is performed by Stripe elements.');
+    test.todo('Payment data capture is performed by Stripe elements. These items / elements are injected, and I can\'t figure out how to test them using RTL');
 
     // it('should render a payment types selector', () => {
     //     screen.getByRole('presentation', { name: /^payment-types$/i })

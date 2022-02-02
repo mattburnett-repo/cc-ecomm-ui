@@ -40,7 +40,7 @@ export default function CartDetailDisplay (props) {
             <StyledCartDetailDisplay>
                 <div role="presentation" aria-label="cart-items">
                     {data.map((item, index) => (
-                        <CartItemDisplay item={item} />
+                        <CartItemDisplay item={item} key={index}/>
                     ))} 
                 </div>
             </StyledCartDetailDisplay>

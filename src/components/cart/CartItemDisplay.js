@@ -24,7 +24,7 @@ export default function CartItemDisplay(props) {
         <StyledCartItemDisplay>
             <div className="cart-item-container" role="presentation" aria-label='cart-item-container'>
                 <div> 
-                    <img className="cart-item-image" src={item.image_url} alt={item.name} />
+                    <img className="cart-item-image" aria-label="cart-item-image" src={item.image_url} alt={item.name} />
                 </div>                    
                 <div className="cart-item-info" role="presentation" aria-label="cart-item-info">
                     <label htmlFor='cart-item-name'>Name:</label> 

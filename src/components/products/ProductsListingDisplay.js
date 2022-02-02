@@ -13,16 +13,16 @@ export default function ProductListingDisplay ( props ) {
 
     return (
         <>
-            <header  {...getToggleProps()}>
+            <header  {...getToggleProps()} aria-label="toggle-product-display">
                 {/*  TODO: add product category description to h2 */}
                 <h2>Click to {isExpanded ? 'Hide' : 'Show'} Products</h2>         
             </header>
-            <div {...getCollapseProps()}>
+            <div {...getCollapseProps()} role="presentation" aria-label="products">
                 <BrowseSearch />
                 <StyledProductsListingDisplay>
                     <br />
                     {data.map((item) => (
-                        <ProductDisplay item={item} />
+                        <ProductDisplay item={item} key={item.id}/>
                     ))}     
                 </StyledProductsListingDisplay>
             </div>

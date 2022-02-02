@@ -92,34 +92,43 @@ module.exports = {
       ],
       cart_total_price: { sum: 30, cart_id: 1 }
     }},
+    mockSingleCartItem: [
+      {
+        id: 1,
+        name: 'hedgehog',
+        price: 1,
+        quantity: 1,
+        total_price: 1
+      },
+    ],
     mockCurrentCartData: [
         {
-          product_id: 1,
-          product_name: 'hedgehog',
-          product_price: 1,
-          product_quantity: 1,
-          product_total_price: 1
+          id: 1,
+          name: 'hedgehog',
+          price: 1,
+          quantity: 1,
+          total_price: 1
         },
         {
-          product_id: 2,
-          product_name: 'maine coon cat',
-          product_price: 2,
-          product_quantity: 2,
-          product_total_price: 4
+          id: 2,
+          name: 'maine coon cat',
+          price: 2,
+          quantity: 2,
+          total_price: 4
         },
         {
-          product_id: 3,
-          product_name: 'bulldog',
-          product_price: 3,
-          product_quantity: 3,
-          product_total_price: 9
+          id: 3,
+          name: 'bulldog',
+          price: 3,
+          quantity: 3,
+          total_price: 9
         },
         {
-          product_id: 4,
-          product_name: 'bunny',
-          product_price: 4,
-          product_quantity: 4,
-          product_total_price: 16
+          id: 4,
+          name: 'bunny',
+          price: 4,
+          quantity: 4,
+          total_price: 16
         }
     ],
     mockOrderData: [{
@@ -197,12 +206,12 @@ module.exports = {
         }
       ],
     mockProduct:{
-        "id": 10,
-        "category_id": 2,
-        "name": "glowing cube",
-        "description": "prod desc 02",
-        "image_url": "https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg",
-        "price": "1.00"
+        id: 10,
+        category_id: 2,
+        name: "glowing cube",
+        description: "prod desc 02",
+        image_url: "https://cdn.pixabay.com/photo/2017/07/10/23/45/cubes-2492010__340.jpg",
+        price: "1.00"
      },
     mockProducts: [
         {

@@ -14,11 +14,11 @@ export default function OrdersDisplay ( props ) {
                 <label>Date:</label> 
                 {(ordersData.length > 0 ) ? (
                     ordersData.map((item, index) => (
-                        <>
+                        <div key={index} role="presentation" aria-label="order-item">
                             <div>{item.order.order_id}</div>
                             <div>{formatAsCurrency.format(item.order.total_price.sum)}</div>
                             <div>{item.order.order_date}</div> 
-                        </>
+                        </div>
                     )
                 )) : (<h5>No orders to show</h5>)}     
             </div>
