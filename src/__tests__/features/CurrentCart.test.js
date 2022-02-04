@@ -56,6 +56,7 @@ const mockItemThree = {
 
 describe('CurrentCart initial feature test', () => {
     test.todo('should return the initial state')
+
     // test('should return the initial state', () => {
     //     expect(cartsSlice(undefined, {})).toEqual(
     //         {"currentCart": [], "errorMsg": "", "hasError": false, "isLoading": false, "savedCarts": []}
@@ -86,15 +87,3 @@ describe('CurrentCart initial feature test', () => {
 
     // test.todo('it should render a snapshot')
 }) // end CurrentCart feature test
-
-describe('CurrentCart saved cart feature test', () => {
-    test.todo('it should load a saved cart as current cart')
-    test.todo('it should add an item to a saved cart')
-    test.todo('if an item is already in the saved cart, the item quantity should increase')
-    test.todo('it should increase a saved carts item quantity')
-    test.todo('it should decrease a saved carts items quantity')
-    test.todo('it should remove a saved carts item')
-    test.todo('it should save an updated saved cart to the database')
-
-    // test.todo('it should render a snapshot')
-}) // end CurrentCart saved cart feature test

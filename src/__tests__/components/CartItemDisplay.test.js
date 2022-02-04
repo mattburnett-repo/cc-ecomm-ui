@@ -65,6 +65,6 @@ describe('<CartItemDisplay /> component tests', () => {
         screen.getByRole('button', { name: /remove-from-cart-button/i})
     })
     
-    
-    test.todo('add tests for state (quantity / price changes)')
+    // can't figure out how to do this in the test. it works IRL...
+    test.todo('it should change the item total price when quantity changes')
 })

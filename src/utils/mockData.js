@@ -92,7 +92,7 @@ module.exports = {
       ],
       cart_total_price: { sum: 30, cart_id: 1 }
     }},
-    mockSingleCartItem: [
+    mockSingleCartItem: 
       {
         id: 1,
         name: 'hedgehog',
@@ -100,7 +100,6 @@ module.exports = {
         quantity: 1,
         total_price: 1
       },
-    ],
     mockCurrentCartData: [
         {
           id: 1,
