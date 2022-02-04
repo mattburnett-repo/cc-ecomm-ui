@@ -65,6 +65,21 @@ describe('<CartItemDisplay /> component tests', () => {
         screen.getByRole('button', { name: /remove-from-cart-button/i})
     })
     
-    // can't figure out how to do this in the test. it works IRL...
     test.todo('it should change the item total price when quantity changes')
+    // // can't figure out how to do this in the test. it works IRL...
+    // it('should change the item total price when quantity changes', () => {
+    //     let cartItemTotal = screen.getByRole('presentation', { name: /cart-item-total/i}) 
+    //     let cartItemQuantity = screen.getByRole('presentation', { name: /cart-item-quantity/i}) 
+    //     let cartQuantitySelector = screen.getByRole('presentation', {name: /item-quantity-selector/i});
+    //     let options = cartQuantitySelector;
+
+    //     expect(cartItemTotal).toHaveTextContent('1')
+    //     expect(cartItemQuantity).toHaveTextContent('1')
+    //     expect(options[0].selected).toBeTruthy(); // value: 1
+
+    //     fireEvent.change(cartQuantitySelector, { target: { value: 7 } })
+    //     expect(options[6].selected).toBeTruthy(); // value: 7
+
+    //     expect(cartItemTotal).toHaveTextContent('7.00') // everything works, until this line. receives '1.00' instead of '7.00'
+    // })
 })
