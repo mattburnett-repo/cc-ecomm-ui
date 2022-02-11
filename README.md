@@ -1,7 +1,10 @@
-# E-commerce UI project
+# E-commerce UI / React project
 
-This is a portfolio project as part of the Codecademy Full Stack Engineer certification program:\
+This React application is a portfolio project completed as part of the Codecademy Full Stack Engineer certification program:\
     https://www.codecademy.com/paths/full-stack-engineer-career-path/tracks/fscp-full-stack-portfolio-project/modules/fscp-ecommerce-app-client/kanban_projects/ecommerce-app-client\
+
+Click the link below to see the deployed app:\
+https://ecommerce-react-ui.herokuapp.com/
 
 Only generally-worded requirements are provided. All design / test / code is done without assistance / guidance.
 
@@ -54,7 +57,7 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Redux / Redux Toolkit / Redux Persist
 * React Router
 * React Styled Components
-* React Testing Library
+* React Testing Library / Jest
 * Passport Authentication Library
   * Local Strategy
   * Google OAuth Strategy 
@@ -65,6 +68,7 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Stripe payment API integration
 
 * Product descriptions generated with Rytr (https://rytr.me/)
+  
 ---
 
 ## Features
@@ -73,14 +77,14 @@ Tests are located in two folders under the src/\__tests\__ folder
 * Users can browse / search product categories
 * Users can add / read / update / delete cart items
 * Users can add shipping and payment information
-* Users can make a simulated payment via Stripe to complete an order
+* Users can make a simulated credit card payment via Stripe to complete an order
 
 ---
 
 ### Future work / TODO
 * Everything can always be better
   * Sort out OAuth callback issue that doesn't redirect to React app server
-  * RTL tests are broken after implementing Styled Components
 * Implement admin functionality to
   * Manage users / orders / carts
   * Manage product listings
+  * Order fulfillment tracking / processing
