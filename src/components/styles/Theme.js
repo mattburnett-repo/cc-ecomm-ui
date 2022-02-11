@@ -4,14 +4,16 @@
 
 const theme = {
     colors: {
-      primary: '#9FB6C1',
+      // primary: '#9FB6C1',
+      primary: '#E2F3F8',
       complimentary: '#FCFDFF',
       secondary: '#000',
       success: '#00B3CC',
       info: '#5DADEC',
       warning: '#FFA500',
       danger: '#F00',
-      light: '#D3D3D3',
+      // light: '#D3D3D3',
+      light: '#E9E9E9',
       dark: '#676767',
       black: '#000',
       white: '#FFF',
