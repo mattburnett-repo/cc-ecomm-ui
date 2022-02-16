@@ -3,7 +3,7 @@
 exports[`<ShippingInfo /> component tests creates a snapshot 1`] = `
 Array [
   <div
-    className="sc-bdvvtL jYEqkG"
+    className="sc-bdvvtL gUxESt"
   >
     <div
       aria-label="nav-bar-container"
@@ -43,7 +43,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-gsDKAQ ekZbVV"
+    className="sc-gsDKAQ gzkzDm"
   >
     <div
       className="shipping-info-container"

@@ -2,7 +2,7 @@
 
 exports[`<ProductDetailDisplay /> component tests renders a snapshot 1`] = `
 <div
-  className="sc-gsDKAQ YtaTd"
+  className="sc-gsDKAQ gnrLZa"
 >
   <div
     aria-label="product-detail-display"

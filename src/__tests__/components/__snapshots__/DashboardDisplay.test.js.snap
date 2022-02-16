@@ -3,7 +3,7 @@
 exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
 <div>
   <div
-    className="sc-bdvvtL jYEqkG"
+    className="sc-bdvvtL gUxESt"
   >
     <div
       aria-label="nav-bar-container"
@@ -83,7 +83,7 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
       className="sc-hKwDye hXctKo"
     >
       <div
-        className="sc-gsDKAQ gPuzIT"
+        className="sc-gsDKAQ gjaldc"
       >
         <h2>
           Order History
@@ -108,7 +108,7 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-dkPtRN TATKs"
+        className="sc-dkPtRN efQgRD"
       >
         <h2>
           Cart History
@@ -164,7 +164,7 @@ exports[`<DashboardDisplay /> component tests renders a snapshot 1`] = `
     }
   >
     <div
-      className="sc-eCImPb iOzkHd"
+      className="sc-eCImPb dnltOm"
     >
       <div
         aria-label="browse-search"

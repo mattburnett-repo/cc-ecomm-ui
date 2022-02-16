@@ -2,7 +2,7 @@
 
 exports[`<OrdersDisplay orderData={mockOrderData} /> component tests creates a snapshot 1`] = `
 <div
-  className="sc-bdvvtL iuBcOW"
+  className="sc-bdvvtL eRufTN"
 >
   <h2>
     Order History
@@ -21,18 +21,13 @@ exports[`<OrdersDisplay orderData={mockOrderData} /> component tests creates a s
     <label>
       Date:
     </label>
-    <div
-      aria-label="order-item"
-      role="presentation"
-    >
-      <div>
-        1
-      </div>
-      <div>
-        30.00
-      </div>
-      <div />
+    <div>
+      1
     </div>
+    <div>
+      30.00
+    </div>
+    <div />
   </div>
 </div>
 `;

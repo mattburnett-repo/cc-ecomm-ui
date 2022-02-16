@@ -3,14 +3,14 @@
 exports[`<CartDetailDisplay /> component tests renders a snapshot 1`] = `
 Array [
   <div
-    className="sc-gsDKAQ fffetF"
+    className="sc-gsDKAQ bthBK"
   >
     <div
       aria-label="cart-items"
       role="presentation"
     >
       <div
-        className="sc-bdvvtL gIHxDf"
+        className="sc-bdvvtL ihKhro"
       >
         <div
           aria-label="cart-item-container"
@@ -154,7 +154,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-bdvvtL gIHxDf"
+        className="sc-bdvvtL ihKhro"
       >
         <div
           aria-label="cart-item-container"
@@ -298,7 +298,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-bdvvtL gIHxDf"
+        className="sc-bdvvtL ihKhro"
       >
         <div
           aria-label="cart-item-container"
@@ -442,7 +442,7 @@ Array [
         </div>
       </div>
       <div
-        className="sc-bdvvtL gIHxDf"
+        className="sc-bdvvtL ihKhro"
       >
         <div
           aria-label="cart-item-container"
@@ -588,7 +588,7 @@ Array [
     </div>
   </div>,
   <div
-    className="sc-dkPtRN kinGaA"
+    className="sc-dkPtRN esThgP"
   >
     <div />
     <div

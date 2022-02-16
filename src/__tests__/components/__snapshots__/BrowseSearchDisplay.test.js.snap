@@ -2,7 +2,7 @@
 
 exports[`<BrowseSearchDisplay /> component tests creates a snapshot 1`] = `
 <div
-  className="sc-bdvvtL bXtRzv"
+  className="sc-bdvvtL fypNyc"
 >
   <div
     aria-label="browse-search"

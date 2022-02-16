@@ -2,7 +2,7 @@
 
 exports[`<LoginDisplay /> component tests renders a snapshot 1`] = `
 <div
-  className="sc-bdvvtL hRDtKg"
+  className="sc-bdvvtL eprqXz"
 >
   <div
     aria-label="login-display-container"
