@@ -42,6 +42,8 @@ To install after downloading / cloning this repo,
 ## Testing
 Tests are located in two folders under the src/\__tests\__ folder
 
+Tests are written using React Testing Library and are run using Jest test runner.
+
 ---
 
 ## Technologies used
