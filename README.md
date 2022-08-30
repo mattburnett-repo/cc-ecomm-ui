@@ -3,13 +3,9 @@
 This React application is a portfolio project completed as part of the Codecademy Full Stack Engineer certification program:\
     https://www.codecademy.com/paths/full-stack-engineer-career-path/tracks/fscp-full-stack-portfolio-project/modules/fscp-ecommerce-app-client/kanban_projects/ecommerce-app-client\
 
-Click the link below to see the deployed app:\
-https://ecommerce-react-ui.herokuapp.com/
-
 Only generally-worded requirements are provided. All design / test / code is done without assistance / guidance.
 
-It interfaces with a RESTful API developed in a previous Codecademy project
-* https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
+It interfaces with a [RESTful API](https://github.com/mattburnett-repo/cc-ecom-rest-api-v2) developed in a previous Codecademy project
   
 ---
 
@@ -28,8 +24,7 @@ Wireframes:
 
 Project Kanban: https://www.codecademy.com/paths/full-stack-engineer-career-path/tracks/fscp-full-stack-portfolio-project/modules/fscp-ecommerce-app-client/kanban_projects/ecommerce-app-client
 
-Datasource / API: https://e-commerce-rest-api-v2.herokuapp.com/
-* API source code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
+Datasource / API: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
   
 To install after downloading / cloning this repo, 
   * run
@@ -64,9 +59,7 @@ Tests are written using React Testing Library and are run using Jest test runner
   * Local Strategy
   * Google OAuth Strategy 
 * JSON Web Token authorization
-*  E-Commerce REST API (built as separate project)
-     * Production: https://e-commerce-rest-api-v2.herokuapp.com/
-     * API code: https://github.com/mattburnett-repo/cc-ecom-rest-api-v2
+*  E-Commerce REST API [built as separate project](https://github.com/mattburnett-repo/cc-ecom-rest-api-v2)
 * Stripe payment API integration
 
 * Product descriptions generated with Rytr (https://rytr.me/)
